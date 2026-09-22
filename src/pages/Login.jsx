@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { supabase } from '../lib/supabase';
 import { Lock, User, Shield, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export default function Login() {
@@ -12,16 +11,16 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     setErro('');
     setLoading(true);
 
     const userInputClean = usuarioInput.trim().toLowerCase();
 
-    // Login especial para o proprietário Tércio e equipe
+    // Acesso exclusivo para o usuário 'tercio' com a senha 'admin1993'
     if (
-      (userInputClean === 'tercio' || userInputClean === 'tercio@publicarte.com.br' || userInputClean === 'admin') &&
+      (userInputClean === 'tercio' || userInputClean === 'tercio@publicarte.com.br') &&
       password === 'admin1993'
     ) {
       localStorage.setItem(
@@ -34,28 +33,9 @@ export default function Login() {
       );
       setLoading(false);
       navigate('/admin');
-      return;
-    }
-
-    try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: usuarioInput.includes('@') ? usuarioInput : `${usuarioInput}@publicarte.com.br`,
-        password,
-      });
-
-      if (error) {
-        setErro('Credenciais incorretas. Utilize usuário "tercio" e senha "admin1993".');
-      } else {
-        localStorage.setItem(
-          'usuario',
-          JSON.stringify({ email: data.user.email, tipo: 'admin', nome: 'Tércio' })
-        );
-        navigate('/admin');
-      }
-    } catch (err) {
-      setErro('Erro de conexão. Utilize as credenciais padrão de acesso.');
-    } finally {
+    } else {
       setLoading(false);
+      setErro('Acesso negado. Usuário ou senha incorretos. Utilize o usuário "tercio" e a senha cadastrada.');
     }
   };
 
@@ -80,7 +60,7 @@ export default function Login() {
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-3 mb-5 text-xs text-blue-900 flex items-center gap-2.5">
             <CheckCircle2 size={18} className="text-blue-700 shrink-0" />
             <div>
-              <strong>Acesso do Proprietário:</strong><br />
+              <strong>Acesso Exclusivo:</strong><br />
               Usuário: <code className="bg-white px-1.5 py-0.5 rounded font-mono font-bold">tercio</code> | Senha: <code className="bg-white px-1.5 py-0.5 rounded font-mono font-bold">admin1993</code>
             </div>
           </div>
@@ -95,7 +75,7 @@ export default function Login() {
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                Usuário / E-mail
+                Usuário
               </label>
               <div className="relative">
                 <input
@@ -112,7 +92,7 @@ export default function Login() {
 
             <div>
               <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                Senha de Acesso
+                Senha
               </label>
               <div className="relative">
                 <input

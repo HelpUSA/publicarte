@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import {
   LayoutDashboard,
@@ -27,7 +28,9 @@ import {
   Unlock,
   Building2,
   Phone,
-  Calendar
+  Calendar,
+  BookOpen,
+  ArrowLeft
 } from 'lucide-react';
 
 export default function Admin() {
@@ -110,7 +113,6 @@ export default function Admin() {
 
   // State: Caixa
   const [caixaAberto, setCaixaAberto] = useState(true);
-  const [saldoInicialCaixa, setSaldoInicialCaixa] = useState(150.0);
 
   // Form states
   const [novaComanda, setNovaComanda] = useState({
@@ -285,11 +287,20 @@ export default function Admin() {
               Área Administrativa & Gestão de Gráfica
             </h1>
             <p className="text-gray-500 text-xs sm:text-sm mt-0.5">
-              Public Arte – Comunicação Visual · Controle de Vendas, Comandas, Orçamentos, Financeiro e Suprimentos
+              Public Arte – Comunicação Visual · Gestor: Tércio Grassi
             </p>
           </div>
 
           <div className="flex items-center gap-3 w-full md:w-auto">
+            {/* BOTÃO DO MANUAL DO SISTEMA */}
+            <Link
+              to="/manual"
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-extrabold flex items-center gap-2 shadow-md transition"
+            >
+              <BookOpen size={16} />
+              Manual do Sistema
+            </Link>
+
             <button
               onClick={() => setCaixaAberto(!caixaAberto)}
               className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition ${
@@ -349,6 +360,27 @@ export default function Admin() {
         {/* --- CONTEÚDO DA ABA 1: DASHBOARD --- */}
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
+            {/* BANNER DO MANUAL DE ORIENTAÇÃO */}
+            <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-2xl p-5 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-white/10 rounded-xl">
+                  <BookOpen size={28} />
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-base">Precisa de ajuda para utilizar o sistema?</h3>
+                  <p className="text-blue-100 text-xs mt-0.5">
+                    Acesse o manual completo de instruções de operação para Tércio Grassi.
+                  </p>
+                </div>
+              </div>
+              <Link
+                to="/manual"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold px-5 py-2.5 rounded-xl text-xs transition shadow whitespace-nowrap"
+              >
+                Abrir Manual do Sistema
+              </Link>
+            </div>
+
             {/* CARDS METRICAS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">

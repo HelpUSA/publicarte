@@ -6,6 +6,7 @@ import Contato from './pages/Contato';
 import Orcamento from './pages/Orcamento';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
+import Manual from './pages/Manual';
 import NewsletterAdmin from './pages/NewsletterAdmin';
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/orcamento" element={<Orcamento />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/manual" element={<Manual />} />
       <Route path="/admin/newsletter" element={<NewsletterAdmin />} />
       <Route path="*" element={<Home />} />
     </Routes>

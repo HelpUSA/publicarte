@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import UserIcon from './UserIcon';
 import { useLanguage } from '../lib/i18n';
-import { ShieldCheck, FileText, Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { FileText, Menu, X, Globe, ChevronDown } from 'lucide-react';
 
 export default function Header({
   logo = '/logo-publicarte.png',
@@ -91,15 +91,6 @@ export default function Header({
             <FileText size={14} />
             {t('navQuote')}
           </Link>
-
-          {/* Direct Admin Link */}
-          <Link
-            to="/admin"
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-blue-800 text-white text-xs font-semibold hover:bg-blue-900 transition shadow-sm"
-          >
-            <ShieldCheck size={15} />
-            {t('navAdmin')}
-          </Link>
         </nav>
 
         {/* Right Section: Language + User Icon + Mobile Toggle */}
@@ -178,14 +169,6 @@ export default function Header({
             className="block py-2 text-sm font-medium text-emerald-700 hover:text-emerald-800"
           >
             {t('navQuote')}
-          </Link>
-          <Link
-            to="/admin"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex items-center gap-2 py-2 text-sm font-bold text-blue-800"
-          >
-            <ShieldCheck size={16} />
-            {t('navAdmin')}
           </Link>
         </div>
       )}
