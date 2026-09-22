@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, ShieldCheck } from 'lucide-react';
 import NewsletterForm from './NewsletterForm';
 
 const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => (
@@ -11,10 +11,18 @@ const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => (
       <div>
         <h4 className="font-semibold mb-2 uppercase text-gray-800">Institucional</h4>
         <ul className="space-y-1 text-blue-600">
-          <li><Link to="/como-comprar" className="hover:underline">Como comprar</Link></li>
-          <li><Link to="/seguranca" className="hover:underline">Segurança</Link></li>
-          <li><Link to="/tempo-garantia" className="hover:underline">Pagamento e Garantia</Link></li>
-          <li><Link to="/trocas" className="hover:underline">Trocas e devoluções</Link></li>
+          <li><Link to="/sobre" className="hover:underline">Sobre a Public Arte</Link></li>
+          <li><Link to="/orcamento" className="hover:underline">Solicitar Orçamento</Link></li>
+          <li><Link to="/contato" className="hover:underline">Contato & Localização</Link></li>
+          <li className="pt-2 border-t border-gray-200 mt-2">
+            <Link
+              to="/admin"
+              className="font-bold text-blue-800 hover:text-blue-950 flex items-center gap-1.5 transition"
+            >
+              <ShieldCheck size={16} className="text-blue-700" />
+              Área Administrativa
+            </Link>
+          </li>
         </ul>
       </div>
 
@@ -85,9 +93,6 @@ const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => (
       >
         HelpUS
       </a>{' '}– HelpUS LLC · USA
-      <div className="mt-2 flex justify-center">
-        <img src="/helpus-logo.png" alt="HelpUS Logo" className="h-6" />
-      </div>
     </div>
   </footer>
 );
