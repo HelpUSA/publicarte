@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
+import { useLanguage } from '../lib/i18n';
 import {
   LayoutDashboard,
   ShoppingCart,
@@ -14,21 +14,13 @@ import {
   Trash2,
   Printer,
   Send,
-  CheckCircle,
   AlertTriangle,
   Clock,
-  User,
-  Search,
-  Filter,
   ArrowUpRight,
   TrendingUp,
-  FileText,
   Boxes,
   Lock,
   Unlock,
-  Building2,
-  Phone,
-  Calendar,
   BookOpen,
   Image as ImageIcon,
   Edit2,
@@ -37,6 +29,7 @@ import {
 } from 'lucide-react';
 
 export default function Admin() {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('dashboard');
 
   // State: Vendas / Comandas
@@ -143,7 +136,6 @@ export default function Admin() {
         url: 'https://images.unsplash.com/photo-1542744094-3a3172720449?w=500&auto=format&fit=crop&q=60'
       }
     ];
-    // Remove qualquer item de marca interna HelpUS da lista editável
     return items.filter((i) => !i.titulo?.toLowerCase().includes('helpus') && !i.url?.toLowerCase().includes('helpus'));
   });
 
@@ -342,6 +334,15 @@ export default function Admin() {
     setProdutos(produtos.filter((p) => p.id !== id));
   };
 
+  const formatStatusText = (st) => {
+    if (st === 'Aguardando') return t('statusPending');
+    if (st === 'Em Impressão') return t('statusPrinting');
+    if (st === 'Acabamento') return t('statusFinishing');
+    if (st === 'Pronto para Retirada') return t('statusReady');
+    if (st === 'Entregue') return t('statusDelivered');
+    return st;
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <Header />
@@ -352,18 +353,18 @@ export default function Admin() {
           <div>
             <div className="flex items-center gap-2">
               <span className="bg-blue-800 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
-                Sistema Eficiente
+                {t('adminBadgeSystem')}
               </span>
               <span className="text-xs font-medium text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                Caixa {caixaAberto ? 'Aberto' : 'Fechado'}
+                {caixaAberto ? t('cashOpen') : t('cashClosed')}
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-blue-900 mt-2">
-              Área Administrativa & Gestão de Gráfica
+              {t('adminMainTitle')}
             </h1>
             <p className="text-gray-500 text-xs sm:text-sm mt-0.5">
-              Public Arte – Comunicação Visual · Gestor: Tércio Grassi
+              {t('adminMainSubtitle')}
             </p>
           </div>
 
@@ -374,7 +375,7 @@ export default function Admin() {
               className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-extrabold flex items-center gap-2 shadow-md transition"
             >
               <BookOpen size={16} />
-              Manual do Sistema
+              {t('btnSystemManual')}
             </Link>
 
             <button
@@ -386,7 +387,7 @@ export default function Admin() {
               }`}
             >
               {caixaAberto ? <Lock size={15} /> : <Unlock size={15} />}
-              {caixaAberto ? 'Fechar Caixa' : 'Abrir Caixa'}
+              {caixaAberto ? t('closeCashBtn') : t('openCashBtn')}
             </button>
           </div>
         </div>
@@ -394,14 +395,14 @@ export default function Admin() {
         {/* NAVEGAÇÃO DE ABAS */}
         <div className="flex flex-wrap gap-2 mb-6 bg-white p-2 rounded-2xl border border-gray-200 shadow-sm overflow-x-auto">
           {[
-            { id: 'dashboard', label: 'Painel Geral', icon: LayoutDashboard },
-            { id: 'comandas', label: 'Vendas & Comandas', icon: ShoppingCart, count: comandas.length },
-            { id: 'orcamentos', label: 'Orçamentos', icon: FileSpreadsheet, count: totalOrcamentos },
-            { id: 'produtos', label: 'Produtos & Insumos', icon: Package, count: produtos.length },
-            { id: 'midias', label: 'Gerenciador de Imagens', icon: ImageIcon, count: midias.length },
-            { id: 'financeiro', label: 'Financeiro & Fiado', icon: DollarSign },
-            { id: 'estoque', label: 'Estoque & Alertas', icon: Boxes, alert: estoqueCritico.length > 0 },
-            { id: 'mobile', label: 'Smartphone POS', icon: Smartphone }
+            { id: 'dashboard', label: t('tabDashboard'), icon: LayoutDashboard },
+            { id: 'comandas', label: t('tabComandas'), icon: ShoppingCart, count: comandas.length },
+            { id: 'orcamentos', label: t('tabOrcamentos'), icon: FileSpreadsheet, count: totalOrcamentos },
+            { id: 'produtos', label: t('tabProdutos'), icon: Package, count: produtos.length },
+            { id: 'midias', label: t('tabMidias'), icon: ImageIcon, count: midias.length },
+            { id: 'financeiro', label: t('tabFinanceiro'), icon: DollarSign },
+            { id: 'estoque', label: t('tabEstoque'), icon: Boxes, alert: estoqueCritico.length > 0 },
+            { id: 'mobile', label: t('tabMobile'), icon: Smartphone }
           ].map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -444,9 +445,9 @@ export default function Admin() {
                   <BookOpen size={28} />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-base">Precisa de ajuda para utilizar o sistema?</h3>
+                  <h3 className="font-extrabold text-base">{t('dashboardBannerTitle')}</h3>
                   <p className="text-blue-100 text-xs mt-0.5">
-                    Acesse o manual completo de instruções de operação para Tércio Grassi.
+                    {t('dashboardBannerSubtitle')}
                   </p>
                 </div>
               </div>
@@ -454,7 +455,7 @@ export default function Admin() {
                 to="/manual"
                 className="bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold px-5 py-2.5 rounded-xl text-xs transition shadow whitespace-nowrap"
               >
-                Abrir Manual do Sistema
+                {t('btnOpenManual')}
               </Link>
             </div>
 
@@ -462,11 +463,11 @@ export default function Admin() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-bold text-gray-500 uppercase">Faturamento Recebido</span>
+                  <span className="text-xs font-bold text-gray-500 uppercase">{t('metricRevenue')}</span>
                   <div className="text-2xl font-black text-emerald-600 mt-1">
                     R$ {totalFaturamento.toFixed(2)}
                   </div>
-                  <span className="text-[11px] text-gray-400 mt-1 block">Lançamentos confirmados</span>
+                  <span className="text-[11px] text-gray-400 mt-1 block">{t('metricRevenueSub')}</span>
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
                   <TrendingUp size={24} />
@@ -475,11 +476,11 @@ export default function Admin() {
 
               <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-bold text-gray-500 uppercase">Contas a Receber (Fiado)</span>
+                  <span className="text-xs font-bold text-gray-500 uppercase">{t('metricReceivables')}</span>
                   <div className="text-2xl font-black text-amber-600 mt-1">
                     R$ {totalContasAReceber.toFixed(2)}
                   </div>
-                  <span className="text-[11px] text-gray-400 mt-1 block">Vendas a prazo em aberto</span>
+                  <span className="text-[11px] text-gray-400 mt-1 block">{t('metricReceivablesSub')}</span>
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
                   <DollarSign size={24} />
@@ -488,9 +489,9 @@ export default function Admin() {
 
               <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-bold text-gray-500 uppercase">Comandas Ativas</span>
+                  <span className="text-xs font-bold text-gray-500 uppercase">{t('metricActiveOrders')}</span>
                   <div className="text-2xl font-black text-blue-800 mt-1">{comandas.length}</div>
-                  <span className="text-[11px] text-gray-400 mt-1 block">Pedidos em produção</span>
+                  <span className="text-[11px] text-gray-400 mt-1 block">{t('metricActiveOrdersSub')}</span>
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-800 flex items-center justify-center">
                   <ShoppingCart size={24} />
@@ -499,9 +500,9 @@ export default function Admin() {
 
               <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
                 <div>
-                  <span className="text-xs font-bold text-gray-500 uppercase">Alertas de Suprimentos</span>
+                  <span className="text-xs font-bold text-gray-500 uppercase">{t('metricAlerts')}</span>
                   <div className="text-2xl font-black text-red-600 mt-1">{estoqueCritico.length}</div>
-                  <span className="text-[11px] text-gray-400 mt-1 block">Itens abaixo do estoque mínimo</span>
+                  <span className="text-[11px] text-gray-400 mt-1 block">{t('metricAlertsSub')}</span>
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center">
                   <AlertTriangle size={24} />
@@ -514,13 +515,13 @@ export default function Admin() {
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
                   <Clock size={18} className="text-blue-800" />
-                  Últimos Pedidos & Comandas no Balcão
+                  {t('recentOrdersTitle')}
                 </h2>
                 <button
                   onClick={() => setActiveTab('comandas')}
                   className="text-xs font-bold text-blue-800 hover:underline flex items-center gap-1"
                 >
-                  Ver Todas <ArrowUpRight size={14} />
+                  {t('btnSeeAll')} <ArrowUpRight size={14} />
                 </button>
               </div>
 
@@ -528,12 +529,12 @@ export default function Admin() {
                 <table className="w-full text-left text-xs sm:text-sm">
                   <thead className="bg-gray-50 text-gray-600 font-bold border-b">
                     <tr>
-                      <th className="p-3">Comanda</th>
-                      <th className="p-3">Cliente</th>
-                      <th className="p-3">Itens</th>
-                      <th className="p-3">Total</th>
-                      <th className="p-3">Pago</th>
-                      <th className="p-3">Status</th>
+                      <th className="p-3">{t('thOrder')}</th>
+                      <th className="p-3">{t('thClient')}</th>
+                      <th className="p-3">{t('thItems')}</th>
+                      <th className="p-3">{t('thTotal')}</th>
+                      <th className="p-3">{t('thPaid')}</th>
+                      <th className="p-3">{t('thStatus')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
@@ -559,7 +560,7 @@ export default function Admin() {
                                 : 'bg-amber-100 text-amber-800'
                             }`}
                           >
-                            {c.status}
+                            {formatStatusText(c.status)}
                           </span>
                         </td>
                       </tr>
@@ -578,13 +579,13 @@ export default function Admin() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-fit">
               <h2 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
                 <Plus size={20} className="text-blue-800" />
-                Incluir Nova Imagem no Site
+                {t('newImageTitle')}
               </h2>
 
               <form onSubmit={handleCriarMidia} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Título / Identificação *
+                    {t('lblImageTitle')}
                   </label>
                   <input
                     type="text"
@@ -598,7 +599,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Localização no Site / Categoria
+                    {t('lblImageLocation')}
                   </label>
                   <select
                     value={novaMidia.categoria}
@@ -614,7 +615,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    URL da Imagem (Link) *
+                    {t('lblImageUrl')}
                   </label>
                   <input
                     type="url"
@@ -629,7 +630,7 @@ export default function Admin() {
                 {/* Pré-visualização da Imagem */}
                 {novaMidia.url && (
                   <div className="bg-gray-50 border p-2 rounded-xl text-center">
-                    <span className="text-[10px] font-bold text-gray-400 block mb-1">PRÉ-VISUALIZAÇÃO</span>
+                    <span className="text-[10px] font-bold text-gray-400 block mb-1">{t('lblPreview')}</span>
                     <img
                       src={novaMidia.url}
                       alt="Preview"
@@ -643,7 +644,7 @@ export default function Admin() {
                   type="submit"
                   className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2"
                 >
-                  <Plus size={16} /> Adicionar Imagem ao Site
+                  <Plus size={16} /> {t('btnAddImage')}
                 </button>
               </form>
             </div>
@@ -651,7 +652,7 @@ export default function Admin() {
             {/* GALERIA DE IMAGENS DO SITE */}
             <div className="lg:col-span-2 space-y-4">
               <h2 className="text-lg font-bold text-gray-800 flex items-center justify-between">
-                <span>Galeria de Imagens do Site ({midias.length})</span>
+                <span>{t('galleryTitle')} ({midias.length})</span>
                 <span className="text-xs text-gray-500 font-normal">
                   Altere ou remova imagens exibidas nas páginas
                 </span>
@@ -687,7 +688,7 @@ export default function Admin() {
                         rel="noreferrer"
                         className="text-xs text-blue-700 hover:underline flex items-center gap-1 font-semibold"
                       >
-                        <ExternalLink size={14} /> Ver Imagem
+                        <ExternalLink size={14} /> {t('btnViewImage')}
                       </a>
 
                       <div className="flex items-center gap-2">
@@ -695,7 +696,7 @@ export default function Admin() {
                           onClick={() => setMidiaEditando(item)}
                           className="text-blue-700 hover:text-blue-900 p-1.5 bg-blue-50 rounded-lg text-xs font-bold flex items-center gap-1"
                         >
-                          <Edit2 size={14} /> Editar
+                          <Edit2 size={14} /> {t('btnEdit')}
                         </button>
                         <button
                           onClick={() => handleDeletarMidia(item.id)}
@@ -724,13 +725,13 @@ export default function Admin() {
               </button>
 
               <h2 className="text-lg font-bold text-blue-900 flex items-center gap-2">
-                <Edit2 size={18} /> Alterar Imagem
+                <Edit2 size={18} /> {t('editImageTitle')}
               </h2>
 
               <form onSubmit={handleSalvarEdicaoMidia} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Título / Identificação
+                    {t('lblImageTitle')}
                   </label>
                   <input
                     type="text"
@@ -743,7 +744,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Categoria
+                    {t('lblImageLocation')}
                   </label>
                   <select
                     value={midiaEditando.categoria}
@@ -759,7 +760,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    URL da Imagem
+                    {t('lblImageUrl')}
                   </label>
                   <input
                     type="url"
@@ -776,13 +777,13 @@ export default function Admin() {
                     onClick={() => setMidiaEditando(null)}
                     className="px-4 py-2 bg-gray-100 text-gray-700 font-bold text-xs rounded-xl"
                   >
-                    Cancelar
+                    {t('btnCancel')}
                   </button>
                   <button
                     type="submit"
                     className="px-5 py-2 bg-blue-800 text-white font-bold text-xs rounded-xl flex items-center gap-1.5"
                   >
-                    <Save size={14} /> Salvar Alterações
+                    <Save size={14} /> {t('btnSaveEdit')}
                   </button>
                 </div>
               </form>
@@ -797,13 +798,13 @@ export default function Admin() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-fit">
               <h2 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
                 <Plus size={20} className="text-blue-800" />
-                Nova Comanda / Venda de Balcão
+                {t('newComandaTitle')}
               </h2>
 
               <form onSubmit={handleCriarComanda} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Nome do Cliente *
+                    {t('lblClientName')}
                   </label>
                   <input
                     type="text"
@@ -817,7 +818,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Telefone / WhatsApp
+                    {t('lblClientPhone')}
                   </label>
                   <input
                     type="text"
@@ -830,7 +831,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Produto Selecionado
+                    {t('lblSelectProduct')}
                   </label>
                   <select
                     value={novaComanda.produtoNome}
@@ -848,7 +849,7 @@ export default function Admin() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Quantidade
+                      {t('lblQuantity')}
                     </label>
                     <input
                       type="number"
@@ -861,7 +862,7 @@ export default function Admin() {
 
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Pagamento Inicial (R$)
+                      {t('lblInitialPayment')}
                     </label>
                     <input
                       type="number"
@@ -877,7 +878,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Forma de Pagamento
+                    {t('lblPaymentMethod')}
                   </label>
                   <select
                     value={novaComanda.formaPagamento}
@@ -901,7 +902,7 @@ export default function Admin() {
                     className="rounded text-blue-800"
                   />
                   <label htmlFor="chkPrazo" className="text-xs font-semibold text-gray-700">
-                    Venda a Prazo (Lançar em Contas a Receber)
+                    {t('lblCreditSale')}
                   </label>
                 </div>
 
@@ -909,7 +910,7 @@ export default function Admin() {
                   type="submit"
                   className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2"
                 >
-                  <Plus size={16} /> Abrir Comanda de Produção
+                  <Plus size={16} /> {t('btnOpenComanda')}
                 </button>
               </form>
             </div>
@@ -917,9 +918,9 @@ export default function Admin() {
             {/* LISTAGEM DE COMANDAS ATIVAS */}
             <div className="lg:col-span-2 space-y-4">
               <h2 className="text-lg font-bold text-gray-800 flex items-center justify-between">
-                <span>Comandas em Aberto e Produção ({comandas.length})</span>
+                <span>{t('openComandasTitle')} ({comandas.length})</span>
                 <span className="text-xs text-gray-500 font-normal">
-                  Filtre ou atualize o status dos trabalhos
+                  {t('comandaSubInfo')}
                 </span>
               </h2>
 
@@ -943,36 +944,36 @@ export default function Admin() {
                           onChange={(e) => handleAtualizarStatus(c.id, e.target.value)}
                           className="text-xs font-bold px-3 py-1 rounded-full border border-gray-300 bg-gray-50 focus:outline-none"
                         >
-                          <option value="Aguardando">Aguardando Produção</option>
-                          <option value="Em Impressão">Em Impressão / Recorte</option>
-                          <option value="Acabamento">Em Acabamento</option>
-                          <option value="Pronto para Retirada">Pronto para Retirada</option>
-                          <option value="Entregue">Entregue & Concluído</option>
+                          <option value="Aguardando">{t('statusPending')}</option>
+                          <option value="Em Impressão">{t('statusPrinting')}</option>
+                          <option value="Acabamento">{t('statusFinishing')}</option>
+                          <option value="Pronto para Retirada">{t('statusReady')}</option>
+                          <option value="Entregue">{t('statusDelivered')}</option>
                         </select>
                       </div>
 
                       <div className="text-xs text-gray-600 flex flex-wrap justify-between gap-2">
                         <div>
-                          <strong>Itens:</strong>{' '}
+                          <strong>{t('thItems')}:</strong>{' '}
                           {c.itens.map((i) => `${i.qtd}x ${i.produto}`).join(', ')}
                         </div>
                         <div>
-                          <strong>Forma Pgto:</strong> {c.formaPagamento}
+                          <strong>{t('lblPaymentMethod')}:</strong> {c.formaPagamento}
                         </div>
                       </div>
 
                       <div className="flex items-center justify-between pt-2 border-t text-xs">
                         <div className="flex items-center gap-4">
                           <div>
-                            Total: <strong className="text-gray-900">R$ {c.total.toFixed(2)}</strong>
+                            {t('thTotal')}: <strong className="text-gray-900">R$ {c.total.toFixed(2)}</strong>
                           </div>
                           <div>
-                            Pago:{' '}
+                            {t('thPaid')}:{' '}
                             <strong className="text-emerald-600">R$ {c.pago.toFixed(2)}</strong>
                           </div>
                           {restante > 0 && (
                             <div className="text-amber-600 font-bold">
-                              Pendente: R$ {restante.toFixed(2)}
+                              {t('thPending')}: R$ {restante.toFixed(2)}
                             </div>
                           )}
                         </div>
@@ -982,7 +983,7 @@ export default function Admin() {
                             onClick={() => handleQuitarComanda(c.id)}
                             className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-1 rounded-lg text-[11px] transition shadow"
                           >
-                            Dar Baixa no Pagamento
+                            {t('btnMarkPaid')}
                           </button>
                         )}
                       </div>
@@ -1001,13 +1002,13 @@ export default function Admin() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-fit">
               <h2 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
                 <FileSpreadsheet size={20} className="text-blue-800" />
-                Gerar Novo Orçamento
+                {t('newQuoteTitle')}
               </h2>
 
               <form onSubmit={handleCriarOrcamento} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Cliente / Empresa *
+                    {t('lblCompany')}
                   </label>
                   <input
                     type="text"
@@ -1021,7 +1022,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Telefone / WhatsApp *
+                    {t('lblClientPhone')}
                   </label>
                   <input
                     type="text"
@@ -1035,7 +1036,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Descrição do Material / Serviço
+                    {t('lblDescription')}
                   </label>
                   <input
                     type="text"
@@ -1049,7 +1050,7 @@ export default function Admin() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Valor Material (R$)
+                      {t('lblMaterialCost')}
                     </label>
                     <input
                       type="number"
@@ -1063,7 +1064,7 @@ export default function Admin() {
 
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Mão de Obra (R$)
+                      {t('lblLaborCost')}
                     </label>
                     <input
                       type="number"
@@ -1080,7 +1081,7 @@ export default function Admin() {
                   type="submit"
                   className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2"
                 >
-                  <Plus size={16} /> Emitir Orçamento
+                  <Plus size={16} /> {t('btnEmitQuote')}
                 </button>
               </form>
             </div>
@@ -1088,7 +1089,7 @@ export default function Admin() {
             {/* LISTA DE ORÇAMENTOS GERADOS */}
             <div className="lg:col-span-2 space-y-4">
               <h2 className="text-lg font-bold text-gray-800">
-                Orçamentos Emitidos ({orcamentos.length})
+                {t('issuedQuotesTitle')} ({orcamentos.length})
               </h2>
 
               <div className="space-y-3">
@@ -1117,7 +1118,7 @@ export default function Admin() {
 
                     <div className="flex items-center justify-between pt-2 border-t">
                       <span className="text-sm font-black text-emerald-700">
-                        Total: R$ {orc.total.toFixed(2)}
+                        {t('thTotal')}: R$ {orc.total.toFixed(2)}
                       </span>
 
                       <div className="flex items-center gap-2">
@@ -1125,14 +1126,14 @@ export default function Admin() {
                           onClick={() => setOrcamentoModal(orc)}
                           className="bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1.5 transition"
                         >
-                          <Printer size={14} /> Espelho / Imprimir
+                          <Printer size={14} /> {t('btnPrintQuote')}
                         </button>
 
                         <button
                           onClick={() => handleEnviarOrcamentoWhatsApp(orc)}
                           className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1.5 transition shadow"
                         >
-                          <Send size={14} /> WhatsApp
+                          <Send size={14} /> {t('btnWhatsAppQuote')}
                         </button>
                       </div>
                     </div>
@@ -1156,26 +1157,26 @@ export default function Admin() {
 
               <div className="border-b pb-4 text-center">
                 <div className="text-xl font-black text-blue-900 uppercase tracking-wide">
-                  PUBLIC ARTE – COMUNICAÇÃO VISUAL
+                  {t('quoteModalTitle')}
                 </div>
                 <div className="text-xs text-gray-500">
                   Rua Ascendino Feitosa, 324 - Castelo Branco III · João Pessoa - PB · (83) 98610-4153
                 </div>
                 <div className="mt-3 inline-block bg-blue-100 text-blue-900 font-extrabold text-xs px-3 py-1 rounded-full">
-                  ORÇAMENTO Nº {orcamentoModal.id}
+                  {t('quoteModalNo')} {orcamentoModal.id}
                 </div>
               </div>
 
               <div className="grid grid-cols-2 text-xs gap-2 bg-gray-50 p-3 rounded-xl">
-                <div><strong>Cliente:</strong> {orcamentoModal.cliente}</div>
-                <div><strong>Contato:</strong> {orcamentoModal.contato}</div>
+                <div><strong>{t('thClient')}:</strong> {orcamentoModal.cliente}</div>
+                <div><strong>{t('thPhone')}:</strong> {orcamentoModal.contato}</div>
                 <div><strong>Data:</strong> {orcamentoModal.data}</div>
                 <div><strong>Validade:</strong> {orcamentoModal.validade}</div>
               </div>
 
               <div className="space-y-2">
                 <div className="text-xs font-bold uppercase text-gray-700 border-b pb-1">
-                  Especificação dos Itens & Serviços
+                  {t('quoteModalSpec')}
                 </div>
                 {orcamentoModal.itens.map((it, idx) => (
                   <div key={idx} className="flex justify-between text-xs py-1 border-b border-gray-100">
@@ -1186,7 +1187,7 @@ export default function Admin() {
               </div>
 
               <div className="flex items-center justify-between bg-emerald-50 p-4 rounded-xl border border-emerald-200">
-                <span className="text-xs font-bold text-emerald-800 uppercase">Valor Total Proposto:</span>
+                <span className="text-xs font-bold text-emerald-800 uppercase">{t('quoteModalProposedTotal')}</span>
                 <span className="text-2xl font-black text-emerald-700">R$ {orcamentoModal.total.toFixed(2)}</span>
               </div>
 
@@ -1195,7 +1196,7 @@ export default function Admin() {
                   onClick={() => window.print()}
                   className="bg-blue-800 text-white px-5 py-2 rounded-xl text-xs font-bold flex items-center gap-2 hover:bg-blue-900 transition"
                 >
-                  <Printer size={15} /> Imprimir / Salvar PDF
+                  <Printer size={15} /> {t('btnPrintSavePdf')}
                 </button>
               </div>
             </div>
@@ -1209,13 +1210,13 @@ export default function Admin() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-fit">
               <h2 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
                 <Plus size={20} className="text-blue-800" />
-                Cadastrar Produto ou Insumo
+                {t('newProductTitle')}
               </h2>
 
               <form onSubmit={handleCriarProduto} className="space-y-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Nome do Item *
+                    {t('lblItemName')}
                   </label>
                   <input
                     type="text"
@@ -1230,21 +1231,21 @@ export default function Admin() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Tipo
+                      {t('lblItemType')}
                     </label>
                     <select
                       value={novoProduto.tipo}
                       onChange={(e) => setNovoProduto({ ...novoProduto, tipo: e.target.value })}
                       className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white"
                     >
-                      <option value="Produto">Produto de Venda</option>
-                      <option value="Insumo">Insumo de Produção</option>
+                      <option value="Produto">{t('optSaleProduct')}</option>
+                      <option value="Insumo">{t('optSupplyItem')}</option>
                     </select>
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Preço (R$)
+                      {t('lblItemPrice')}
                     </label>
                     <input
                       type="number"
@@ -1260,7 +1261,7 @@ export default function Admin() {
 
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                    Categoria
+                    {t('lblCategory')}
                   </label>
                   <input
                     type="text"
@@ -1274,7 +1275,7 @@ export default function Admin() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Qtd Estoque
+                      {t('lblStockQty')}
                     </label>
                     <input
                       type="number"
@@ -1288,7 +1289,7 @@ export default function Admin() {
 
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                      Estoque Mínimo
+                      {t('lblMinStock')}
                     </label>
                     <input
                       type="number"
@@ -1304,7 +1305,7 @@ export default function Admin() {
                   type="submit"
                   className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2"
                 >
-                  <Plus size={16} /> Salvar no Catálogo
+                  <Plus size={16} /> {t('btnSaveCatalog')}
                 </button>
               </form>
             </div>
@@ -1312,7 +1313,7 @@ export default function Admin() {
             {/* TABELA DE PRODUTOS E INSUMOS */}
             <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-4">
               <h2 className="text-lg font-bold text-gray-800">
-                Catálogo de Produtos & Insumos ({produtos.length})
+                {t('catalogTitle')} ({produtos.length})
               </h2>
 
               <div className="overflow-x-auto">
@@ -1320,11 +1321,11 @@ export default function Admin() {
                   <thead className="bg-gray-50 text-gray-600 font-bold border-b">
                     <tr>
                       <th className="p-3">Item</th>
-                      <th className="p-3">Tipo</th>
-                      <th className="p-3">Categoria</th>
-                      <th className="p-3">Preço</th>
-                      <th className="p-3">Estoque</th>
-                      <th className="p-3 text-right">Ação</th>
+                      <th className="p-3">{t('thType')}</th>
+                      <th className="p-3">{t('thCategory')}</th>
+                      <th className="p-3">{t('thPrice')}</th>
+                      <th className="p-3">{t('thStock')}</th>
+                      <th className="p-3 text-right">{t('thActions')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
@@ -1348,7 +1349,7 @@ export default function Admin() {
                           <td className="p-3 font-bold text-emerald-700">R$ {p.preco.toFixed(2)}</td>
                           <td className="p-3">
                             <span className={`font-bold ${isLow ? 'text-red-600' : 'text-gray-700'}`}>
-                              {p.estoque} un {isLow && '(Alerta)'}
+                              {p.estoque} un {isLow && t('alertLabel')}
                             </span>
                           </td>
                           <td className="p-3 text-right">
@@ -1375,20 +1376,20 @@ export default function Admin() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
               <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
                 <DollarSign size={20} className="text-emerald-600" />
-                Contas a Receber (Fiado / Vendas a Prazo)
+                {t('receivablesTitle')}
               </h2>
 
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs sm:text-sm">
                   <thead className="bg-gray-50 text-gray-600 font-bold border-b">
                     <tr>
-                      <th className="p-3">Comanda</th>
-                      <th className="p-3">Cliente</th>
-                      <th className="p-3">Telefone</th>
-                      <th className="p-3">Valor Total</th>
-                      <th className="p-3">Valor Pago</th>
-                      <th className="p-3">Pendente</th>
-                      <th className="p-3 text-right">Ação</th>
+                      <th className="p-3">{t('thOrder')}</th>
+                      <th className="p-3">{t('thClient')}</th>
+                      <th className="p-3">{t('thPhone')}</th>
+                      <th className="p-3">{t('thTotal')}</th>
+                      <th className="p-3">{t('thPaid')}</th>
+                      <th className="p-3">{t('thPending')}</th>
+                      <th className="p-3 text-right">{t('thActions')}</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
@@ -1409,7 +1410,7 @@ export default function Admin() {
                                 onClick={() => handleQuitarComanda(c.id)}
                                 className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-1.5 rounded-lg text-xs transition shadow"
                               >
-                                Dar Baixa
+                                {t('btnMarkPaid')}
                               </button>
                             </td>
                           </tr>
@@ -1429,10 +1430,10 @@ export default function Admin() {
               <div>
                 <h2 className="text-lg font-bold text-gray-800 flex items-center gap-2">
                   <Boxes size={20} className="text-red-600" />
-                  Controle de Suprimentos & Estoque Crítico
+                  {t('stockControlTitle')}
                 </h2>
                 <p className="text-xs text-gray-500 mt-0.5">
-                  Materiais de gráfica que atingiram o nível de alerta de reposição
+                  {t('stockControlSubtitle')}
                 </p>
               </div>
             </div>
@@ -1454,14 +1455,14 @@ export default function Admin() {
 
                     <div className="mt-4 flex items-center justify-between border-t pt-3">
                       <div>
-                        <span className="text-xs text-gray-500 block">Estoque Atual:</span>
+                        <span className="text-xs text-gray-500 block">{t('lblCurrentStock')}</span>
                         <span className={`text-lg font-black ${isLow ? 'text-red-600' : 'text-emerald-600'}`}>
                           {p.estoque} un
                         </span>
                       </div>
 
                       <div className="text-right">
-                        <span className="text-xs text-gray-500 block">Estoque Mínimo:</span>
+                        <span className="text-xs text-gray-500 block">{t('lblMinStockLimit')}</span>
                         <span className="text-sm font-bold text-gray-700">{p.min} un</span>
                       </div>
                     </div>
@@ -1477,14 +1478,14 @@ export default function Admin() {
           <div className="max-w-md mx-auto bg-white rounded-3xl border-4 border-gray-800 shadow-2xl overflow-hidden p-6 space-y-4">
             <div className="text-center border-b pb-3">
               <span className="text-[10px] font-extrabold uppercase bg-blue-100 text-blue-900 px-3 py-1 rounded-full">
-                Modo Smartphone POS Balcão
+                {t('posTitle')}
               </span>
-              <h2 className="text-xl font-black text-gray-900 mt-2">Vendas Rápidas</h2>
+              <h2 className="text-xl font-black text-gray-900 mt-2">{t('posSubtitle')}</h2>
             </div>
 
             <div className="space-y-3">
               <label className="block text-xs font-bold text-gray-700 uppercase">
-                Seleção Rápida de Produto
+                {t('posQuickSelect')}
               </label>
               <div className="grid grid-cols-2 gap-2">
                 {produtos.slice(0, 4).map((p) => (
@@ -1505,7 +1506,7 @@ export default function Admin() {
 
             <div className="border-t pt-3 text-center">
               <p className="text-xs text-gray-500">
-                Acesse esta área a partir de qualquer celular conectado à rede da gráfica para lançar comandas instantaneamente.
+                {t('posDescription')}
               </p>
             </div>
           </div>

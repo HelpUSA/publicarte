@@ -89,7 +89,165 @@ export const translations = {
     footerContact: "Contato",
     footerMessage: "Envie uma mensagem",
     footerCopyright: "Todos os direitos reservados.",
-    footerDevBy: "Desenvolvido por HelpUS Technology"
+    footerDevBy: "Desenvolvido por HelpUS Technology",
+
+    // Login Page
+    loginTitle: "Área Administrativa",
+    loginSubtitle: "Public Arte – Comunicação Visual · Painel do Gestor",
+    loginNoticeTitle: "Acesso Exclusivo:",
+    loginUserLabel: "Usuário",
+    loginPassLabel: "Senha",
+    loginBtn: "Entrar na Área Administrativa",
+    loginErrorMsg: "Acesso negado. Usuário ou senha incorretos. Utilize o usuário 'tercio' e a senha cadastrada.",
+
+    // Admin Dashboard & Tabs
+    adminBadgeSystem: "Sistema Eficiente",
+    cashOpen: "Caixa Aberto",
+    cashClosed: "Caixa Fechado",
+    closeCashBtn: "Fechar Caixa",
+    openCashBtn: "Abrir Caixa",
+    adminMainTitle: "Área Administrativa & Gestão de Gráfica",
+    adminMainSubtitle: "Public Arte – Comunicação Visual · Gestor: Tércio Grassi",
+    btnSystemManual: "Manual do Sistema",
+    
+    // Tab Labels
+    tabDashboard: "Painel Geral",
+    tabComandas: "Vendas & Comandas",
+    tabOrcamentos: "Orçamentos",
+    tabProdutos: "Produtos & Insumos",
+    tabMidias: "Gerenciador de Imagens",
+    tabFinanceiro: "Financeiro & Fiado",
+    tabEstoque: "Estoque & Alertas",
+    tabMobile: "Smartphone POS",
+
+    // Dashboard Banner & Metrics
+    dashboardBannerTitle: "Precisa de ajuda para utilizar o sistema?",
+    dashboardBannerSubtitle: "Acese o manual completo de instruções de operação para Tércio Grassi.",
+    btnOpenManual: "Abrir Manual do Sistema",
+    metricRevenue: "Faturamento Recebido",
+    metricRevenueSub: "Lançamentos confirmados",
+    metricReceivables: "Contas a Receber (Fiado)",
+    metricReceivablesSub: "Vendas a prazo em aberto",
+    metricActiveOrders: "Comandas Ativas",
+    metricActiveOrdersSub: "Pedidos em produção",
+    metricAlerts: "Alertas de Suprimentos",
+    metricAlertsSub: "Itens abaixo do estoque mínimo",
+    recentOrdersTitle: "Últimos Pedidos & Comandas no Balcão",
+    btnSeeAll: "Ver Todas",
+
+    // Status Badges
+    statusPending: "Aguardando Produção",
+    statusPrinting: "Em Impressão / Recorte",
+    statusFinishing: "Em Acabamento",
+    statusReady: "Pronto para Retirada",
+    statusDelivered: "Entregue & Concluído",
+
+    // Table Headers
+    thOrder: "Comanda",
+    thClient: "Cliente",
+    thItems: "Itens",
+    thTotal: "Total",
+    thPaid: "Pago",
+    thStatus: "Status",
+    thActions: "Ações",
+    thPhone: "Telefone",
+    thPending: "Pendente",
+    thType: "Tipo",
+    thCategory: "Categoria",
+    thPrice: "Preço",
+    thStock: "Estoque",
+
+    // Comandas Form & Actions
+    newComandaTitle: "Nova Comanda / Venda de Balcão",
+    lblClientName: "Nome do Cliente *",
+    lblClientPhone: "Telefone / WhatsApp",
+    lblSelectProduct: "Produto Selecionado",
+    lblQuantity: "Quantidade",
+    lblInitialPayment: "Pagamento Inicial (R$)",
+    lblPaymentMethod: "Forma de Pagamento",
+    lblCreditSale: "Venda a Prazo (Lançar em Contas a Receber)",
+    btnOpenComanda: "Abrir Comanda de Produção",
+    btnMarkPaid: "Dar Baixa no Pagamento",
+    openComandasTitle: "Comandas em Aberto e Produção",
+    comandaSubInfo: "Filtre ou atualize o status dos trabalhos",
+
+    // Orçamentos Form & Actions
+    newQuoteTitle: "Gerar Novo Orçamento",
+    lblCompany: "Cliente / Empresa *",
+    lblDescription: "Descrição do Material / Serviço",
+    lblMaterialCost: "Valor Material (R$)",
+    lblLaborCost: "Mão de Obra (R$)",
+    btnEmitQuote: "Emitir Orçamento",
+    issuedQuotesTitle: "Orçamentos Emitidos",
+    btnPrintQuote: "Espelho / Imprimir",
+    btnWhatsAppQuote: "WhatsApp",
+    quoteModalTitle: "PUBLIC ARTE – COMUNICAÇÃO VISUAL",
+    quoteModalNo: "ORÇAMENTO Nº",
+    quoteModalSpec: "Especificação dos Itens & Serviços",
+    quoteModalProposedTotal: "Valor Total Proposto:",
+    btnPrintSavePdf: "Imprimir / Salvar PDF",
+
+    // Produtos & Insumos Form
+    newProductTitle: "Cadastrar Produto ou Insumo",
+    lblItemName: "Nome do Item *",
+    lblItemType: "Tipo",
+    optSaleProduct: "Produto de Venda",
+    optSupplyItem: "Insumo de Produção",
+    lblItemPrice: "Preço (R$)",
+    lblCategory: "Categoria",
+    lblStockQty: "Qtd Estoque",
+    lblMinStock: "Estoque Mínimo",
+    btnSaveCatalog: "Salvar no Catálogo",
+    catalogTitle: "Catálogo de Produtos & Insumos",
+
+    // Gerenciador de Imagens
+    newImageTitle: "Incluir Nova Imagem no Site",
+    lblImageTitle: "Título / Identificação *",
+    lblImageLocation: "Localização no Site / Categoria",
+    lblImageUrl: "URL da Imagem (Link) *",
+    lblPreview: "PRÉ-VISUALIZAÇÃO",
+    btnAddImage: "Adicionar Imagem ao Site",
+    galleryTitle: "Galeria de Imagens do Site",
+    btnViewImage: "Ver Imagem",
+    btnEdit: "Editar",
+    btnDelete: "Excluir",
+    editImageTitle: "Alterar Imagem",
+    btnCancel: "Cancelar",
+    btnSaveEdit: "Salvar Alterações",
+
+    // Financeiro & Fiado
+    receivablesTitle: "Contas a Receber (Fiado / Vendas a Prazo)",
+
+    // Estoque & Alertas
+    stockControlTitle: "Controle de Suprimentos & Estoque Crítico",
+    stockControlSubtitle: "Materiais de gráfica que atingiram o nível de alerta de reposição",
+    lblCurrentStock: "Estoque Atual:",
+    lblMinStockLimit: "Estoque Mínimo:",
+    alertLabel: "(Alerta)",
+
+    // Smartphone POS
+    posTitle: "Modo Smartphone POS Balcão",
+    posSubtitle: "Vendas Rápidas",
+    posQuickSelect: "Seleção Rápida de Produto",
+    posDescription: "Acesse esta área a partir de qualquer celular conectado à rede da gráfica para lançar comandas instantaneamente.",
+
+    // Manual do Sistema Page (/manual)
+    manualDocBadge: "Guia Oficial do Usuário",
+    manualDocTitle: "Manual do Sistema de Gestão – Public Arte",
+    manualDocSubtitle: "Orientações completas de operação para o proprietário Tércio Grassi e equipe",
+    btnBackAdmin: "Voltar ao Painel Admin",
+    authBoxTitle: "Acesso Seguro do Gestor",
+    authBoxSubtitle: "O acesso à Área Administrativa é restrito exclusivamente ao usuário credenciado.",
+    manualSec1Title: "1. Vendas & Comandas de Produção (Balcão)",
+    manualSec1Desc: "Este módulo gerencia todos os trabalhos de comunicação visual em andamento na gráfica. Cada pedido gerado vira uma Comanda de Produção com status rastreável.",
+    manualSec2Title: "2. Emissão & Envio de Orçamentos (Quotes)",
+    manualSec2Desc: "Elabore propostas comerciais completas para empresas, fachadas, eventos ou pacotes promocionais.",
+    manualSec3Title: "3. Gestão de Produtos & Insumos",
+    manualSec3Desc: "Cadastre tanto os produtos comercializados ao cliente quanto os insumos consumidos pela gráfica (lonas, tintas eco-solvente, chapas de acrílico, pacotes de ilhós).",
+    manualSec4Title: "4. Financeiro, Caixa & Contas a Receber (Fiado)",
+    manualSec4Desc: "Acompanhe o faturamento diário, realize o controle de Abertura e Fechamento de Caixa e efetue cobranças de vendas a prazo através do painel de Contas a Receber.",
+    manualSec5Title: "5. Modo Smartphone POS",
+    manualSec5Desc: "Interface simplificada acessível por qualquer celular conectado à internet para que os atendentes lancem comandas diretamente do balcão da gráfica."
   },
 
   en: {
@@ -179,7 +337,165 @@ export const translations = {
     footerContact: "Contact",
     footerMessage: "Send a Message",
     footerCopyright: "All rights reserved.",
-    footerDevBy: "Powered by HelpUS Technology"
+    footerDevBy: "Powered by HelpUS Technology",
+
+    // Login Page
+    loginTitle: "Administrative Portal",
+    loginSubtitle: "Public Arte – Visual Communication · Manager Portal",
+    loginNoticeTitle: "Exclusive Access:",
+    loginUserLabel: "Username",
+    loginPassLabel: "Password",
+    loginBtn: "Enter Admin Portal",
+    loginErrorMsg: "Access denied. Incorrect username or password. Use username 'tercio' and password.",
+
+    // Admin Dashboard & Tabs
+    adminBadgeSystem: "Efficient System",
+    cashOpen: "Cash Register Open",
+    cashClosed: "Cash Register Closed",
+    closeCashBtn: "Close Cash",
+    openCashBtn: "Open Cash",
+    adminMainTitle: "Print Shop Management & Admin Portal",
+    adminMainSubtitle: "Public Arte – Visual Communication · Manager: Tércio Grassi",
+    btnSystemManual: "System Manual",
+
+    // Tab Labels
+    tabDashboard: "Dashboard Overview",
+    tabComandas: "Sales & Orders",
+    tabOrcamentos: "Quotes & Bids",
+    tabProdutos: "Products & Supplies",
+    tabMidias: "Image Manager",
+    tabFinanceiro: "Financials & Receivables",
+    tabEstoque: "Inventory & Alerts",
+    tabMobile: "Smartphone POS",
+
+    // Dashboard Banner & Metrics
+    dashboardBannerTitle: "Need help using the system?",
+    dashboardBannerSubtitle: "Access the complete operating instruction manual for Tércio Grassi.",
+    btnOpenManual: "Open System Manual",
+    metricRevenue: "Total Revenue Received",
+    metricRevenueSub: "Confirmed payments",
+    metricReceivables: "Accounts Receivable (Credit)",
+    metricReceivablesSub: "Outstanding credit sales",
+    metricActiveOrders: "Active Job Orders",
+    metricActiveOrdersSub: "Orders in production",
+    metricAlerts: "Supply Alerts",
+    metricAlertsSub: "Items below minimum stock level",
+    recentOrdersTitle: "Recent Balcony Orders & Job Sheets",
+    btnSeeAll: "View All",
+
+    // Status Badges
+    statusPending: "Awaiting Production",
+    statusPrinting: "Printing / Cutting",
+    statusFinishing: "Finishing & Assembly",
+    statusReady: "Ready for Pickup",
+    statusDelivered: "Delivered & Completed",
+
+    // Table Headers
+    thOrder: "Order ID",
+    thClient: "Client",
+    thItems: "Items",
+    thTotal: "Total",
+    thPaid: "Paid",
+    thStatus: "Status",
+    thActions: "Actions",
+    thPhone: "Phone",
+    thPending: "Pending",
+    thType: "Type",
+    thCategory: "Category",
+    thPrice: "Price",
+    thStock: "Stock",
+
+    // Comandas Form & Actions
+    newComandaTitle: "New Job Order / Counter Sale",
+    lblClientName: "Client Name *",
+    lblClientPhone: "Phone / WhatsApp",
+    lblSelectProduct: "Selected Product",
+    lblQuantity: "Quantity",
+    lblInitialPayment: "Initial Payment (R$)",
+    lblPaymentMethod: "Payment Method",
+    lblCreditSale: "Credit Sale (Post to Receivables)",
+    btnOpenComanda: "Create Job Order",
+    btnMarkPaid: "Settle Payment",
+    openComandasTitle: "Open Orders & Jobs in Production",
+    comandaSubInfo: "Filter or update job status",
+
+    // Orçamentos Form & Actions
+    newQuoteTitle: "Create New Quote Proposal",
+    lblCompany: "Client / Company *",
+    lblDescription: "Material / Service Description",
+    lblMaterialCost: "Material Cost (R$)",
+    lblLaborCost: "Labor Cost (R$)",
+    btnEmitQuote: "Generate Proposal",
+    issuedQuotesTitle: "Issued Quote Proposals",
+    btnPrintQuote: "View / Print",
+    btnWhatsAppQuote: "WhatsApp",
+    quoteModalTitle: "PUBLIC ARTE – VISUAL COMMUNICATION",
+    quoteModalNo: "QUOTE PROPOSAL Nº",
+    quoteModalSpec: "Items & Services Specifications",
+    quoteModalProposedTotal: "Proposed Total Value:",
+    btnPrintSavePdf: "Print / Save PDF",
+
+    // Produtos & Insumos Form
+    newProductTitle: "Add Product or Raw Material",
+    lblItemName: "Item Name *",
+    lblItemType: "Type",
+    optSaleProduct: "Finished Product",
+    optSupplyItem: "Raw Material Supply",
+    lblItemPrice: "Price (R$)",
+    lblCategory: "Category",
+    lblStockQty: "Stock Qty",
+    lblMinStock: "Min Stock",
+    btnSaveCatalog: "Save to Catalog",
+    catalogTitle: "Products & Raw Materials Catalog",
+
+    // Gerenciador de Imagens
+    newImageTitle: "Add New Image to Website",
+    lblImageTitle: "Title / Label *",
+    lblImageLocation: "Website Section / Category",
+    lblImageUrl: "Image Link URL *",
+    lblPreview: "IMAGE PREVIEW",
+    btnAddImage: "Add Image to Website",
+    galleryTitle: "Website Images Gallery",
+    btnViewImage: "View Image",
+    btnEdit: "Edit",
+    btnDelete: "Delete",
+    editImageTitle: "Edit Image",
+    btnCancel: "Cancel",
+    btnSaveEdit: "Save Changes",
+
+    // Financeiro & Fiado
+    receivablesTitle: "Accounts Receivable (Credit Sales)",
+
+    // Estoque & Alertas
+    stockControlTitle: "Supply Management & Critical Inventory",
+    stockControlSubtitle: "Printing materials reaching minimum restock levels",
+    lblCurrentStock: "Current Stock:",
+    lblMinStockLimit: "Min Stock:",
+    alertLabel: "(Alert)",
+
+    // Smartphone POS
+    posTitle: "Smartphone Counter POS",
+    posSubtitle: "Quick Register",
+    posQuickSelect: "Quick Product Selection",
+    posDescription: "Access this view from any smartphone connected to the shop network to create orders instantly.",
+
+    // Manual do Sistema Page (/manual)
+    manualDocBadge: "Official User Guide",
+    manualDocTitle: "Print Shop Management Manual – Public Arte",
+    manualDocSubtitle: "Complete operating manual for owner Tércio Grassi and staff",
+    btnBackAdmin: "Back to Admin Portal",
+    authBoxTitle: "Secure Manager Access",
+    authBoxSubtitle: "Access to the Admin Portal is restricted exclusively to authorized credentials.",
+    manualSec1Title: "1. Sales & Production Job Orders (Counter)",
+    manualSec1Desc: "This module manages all visual communication jobs in progress at the shop. Each order created becomes a trackable Job Order.",
+    manualSec2Title: "2. Quote Proposals & Billing (Quotes)",
+    manualSec2Desc: "Create detailed commercial proposals for corporate clients, store facades, events, or volume packages.",
+    manualSec3Title: "3. Products & Raw Materials Management",
+    manualSec3Desc: "Manage both finished products sold to clients and raw material supplies consumed during production.",
+    manualSec4Title: "4. Financials, Cash Register & Accounts Receivable",
+    manualSec4Desc: "Track daily revenue, manage Cash Register Opening and Closing, and settle credit payments.",
+    manualSec5Title: "5. Smartphone POS Mode",
+    manualSec5Desc: "Streamlined mobile interface accessible from any phone connected to the internet for counter staff."
   },
 
   es: {
@@ -269,7 +585,165 @@ export const translations = {
     footerContact: "Contacto",
     footerMessage: "Envíe un mensaje",
     footerCopyright: "Todos los derechos reservados.",
-    footerDevBy: "Desarrollado por HelpUS Technology"
+    footerDevBy: "Desarrollado por HelpUS Technology",
+
+    // Login Page
+    loginTitle: "Panel Administrativo",
+    loginSubtitle: "Public Arte – Comunicación Visual · Panel de Gestión",
+    loginNoticeTitle: "Acceso Exclusivo:",
+    loginUserLabel: "Usuario",
+    loginPassLabel: "Contraseña",
+    loginBtn: "Entrar al Panel Administrativo",
+    loginErrorMsg: "Acceso denegado. Usuario o contraseña incorrectos. Use el usuario 'tercio' y su contraseña.",
+
+    // Admin Dashboard & Tabs
+    adminBadgeSystem: "Sistema Eficiente",
+    cashOpen: "Caja Abierta",
+    cashClosed: "Caja Cerrada",
+    closeCashBtn: "Cerrar Caja",
+    openCashBtn: "Abrir Caja",
+    adminMainTitle: "Gestión de Imprenta y Panel de Control",
+    adminMainSubtitle: "Public Arte – Comunicación Visual · Gestor: Tércio Grassi",
+    btnSystemManual: "Manual del Sistema",
+
+    // Tab Labels
+    tabDashboard: "Panel General",
+    tabComandas: "Ventas y Pedidos",
+    tabOrcamentos: "Presupuestos",
+    tabProdutos: "Productos e Insumos",
+    tabMidias: "Gestor de Imágenes",
+    tabFinanceiro: "Finanzas y Crédito",
+    tabEstoque: "Inventario y Alertas",
+    tabMobile: "Smartphone POS",
+
+    // Dashboard Banner & Metrics
+    dashboardBannerTitle: "¿Necesita ayuda para usar el sistema?",
+    dashboardBannerSubtitle: "Acceda al manual completo de instrucciones de operación para Tércio Grassi.",
+    btnOpenManual: "Abrir Manual del Sistema",
+    metricRevenue: "Ingresos Recibidos",
+    metricRevenueSub: "Pagos confirmados",
+    metricReceivables: "Cuentas por Cobrar (Crédito)",
+    metricReceivablesSub: "Ventas a plazo pendientes",
+    metricActiveOrders: "Pedidos Activos",
+    metricActiveOrdersSub: "Trabajos en producción",
+    metricAlerts: "Alertas de Insumos",
+    metricAlertsSub: "Artículos por debajo del stock mínimo",
+    recentOrdersTitle: "Últimos Pedidos en Mostrador",
+    btnSeeAll: "Ver Todos",
+
+    // Status Badges
+    statusPending: "Esperando Producción",
+    statusPrinting: "En Impresión / Corte",
+    statusFinishing: "En Acabado",
+    statusReady: "Listo para Retirar",
+    statusDelivered: "Entregado y Concluido",
+
+    // Table Headers
+    thOrder: "Pedido ID",
+    thClient: "Cliente",
+    thItems: "Artículos",
+    thTotal: "Total",
+    thPaid: "Pagado",
+    thStatus: "Estado",
+    thActions: "Acciones",
+    thPhone: "Teléfono",
+    thPending: "Pendiente",
+    thType: "Tipo",
+    thCategory: "Categoría",
+    thPrice: "Precio",
+    thStock: "Stock",
+
+    // Comandas Form & Actions
+    newComandaTitle: "Nuevo Pedido / Venta de Mostrador",
+    lblClientName: "Nombre del Cliente *",
+    lblClientPhone: "Teléfono / WhatsApp",
+    lblSelectProduct: "Producto Seleccionado",
+    lblQuantity: "Cantidad",
+    lblInitialPayment: "Pago Inicial (R$)",
+    lblPaymentMethod: "Forma de Pago",
+    lblCreditSale: "Venta a Crédito (Registrar en Cuentas por Cobrar)",
+    btnOpenComanda: "Crear Pedido de Trabajo",
+    btnMarkPaid: "Liquidar Pago",
+    openComandasTitle: "Pedidos Abiertos en Producción",
+    comandaSubInfo: "Filtre o actualice el estado del trabajo",
+
+    // Orçamentos Form & Actions
+    newQuoteTitle: "Generar Nuevo Presupuesto",
+    lblCompany: "Cliente / Empresa *",
+    lblDescription: "Descripción del Material / Servicio",
+    lblMaterialCost: "Costo de Material (R$)",
+    lblLaborCost: "Mano de Obra (R$)",
+    btnEmitQuote: "Generar Propuesta",
+    issuedQuotesTitle: "Presupuestos Emitidos",
+    btnPrintQuote: "Ver / Imprimir",
+    btnWhatsAppQuote: "WhatsApp",
+    quoteModalTitle: "PUBLIC ARTE – COMUNICACIÓN VISUAL",
+    quoteModalNo: "PRESUPUESTO Nº",
+    quoteModalSpec: "Especificación de Artículos y Servicios",
+    quoteModalProposedTotal: "Valor Total Propuesto:",
+    btnPrintSavePdf: "Imprimir / Guardar PDF",
+
+    // Produtos & Insumos Form
+    newProductTitle: "Agregar Producto o Insumo",
+    lblItemName: "Nombre del Artículo *",
+    lblItemType: "Tipo",
+    optSaleProduct: "Producto Terminado",
+    optSupplyItem: "Insumo de Producción",
+    lblItemPrice: "Precio (R$)",
+    lblCategory: "Categoría",
+    lblStockQty: "Cant. Stock",
+    lblMinStock: "Stock Mínimo",
+    btnSaveCatalog: "Guardar en Catálogo",
+    catalogTitle: "Catálogo de Productos e Insumos",
+
+    // Gerenciador de Imagens
+    newImageTitle: "Agregar Nueva Imagen al Sitio",
+    lblImageTitle: "Título / Etiqueta *",
+    lblImageLocation: "Sección del Sitio / Categoría",
+    lblImageUrl: "Enlace URL de Imagen *",
+    lblPreview: "VISTA PREVIA",
+    btnAddImage: "Agregar Imagen al Sitio",
+    galleryTitle: "Galería de Imágenes del Sitio",
+    btnViewImage: "Ver Imagen",
+    btnEdit: "Editar",
+    btnDelete: "Eliminar",
+    editImageTitle: "Editar Imagen",
+    btnCancel: "Cancelar",
+    btnSaveEdit: "Guardar Cambios",
+
+    // Financeiro & Fiado
+    receivablesTitle: "Cuentas por Cobrar (Ventas a Crédito)",
+
+    // Estoque & Alertas
+    stockControlTitle: "Control de Insumos y Stock Crítico",
+    stockControlSubtitle: "Materiales que alcanzaron el límite de reposición",
+    lblCurrentStock: "Stock Actual:",
+    lblMinStockLimit: "Stock Mínimo:",
+    alertLabel: "(Alerta)",
+
+    // Smartphone POS
+    posTitle: "Modo Smartphone POS Mostrador",
+    posSubtitle: "Ventas Rápidas",
+    posQuickSelect: "Selección Rápida de Producto",
+    posDescription: "Acceda a esta vista desde cualquier teléfono inteligente conectado a la red para crear pedidos al instante.",
+
+    // Manual do Sistema Page (/manual)
+    manualDocBadge: "Guía Oficial del Usuario",
+    manualDocTitle: "Manual de Gestión de Imprenta – Public Arte",
+    manualDocSubtitle: "Guía de operación completa para el propietario Tércio Grassi y equipo",
+    btnBackAdmin: "Volver al Panel Admin",
+    authBoxTitle: "Acceso Seguro del Gestor",
+    authBoxSubtitle: "El acceso al Panel Administrativo está restringido exclusivamente a credenciales autorizadas.",
+    manualSec1Title: "1. Ventas y Pedidos de Producción (Mostrador)",
+    manualSec1Desc: "Este módulo gestiona todos los trabajos de comunicación visual en curso. Cada pedido se convierte en una orden rastreable.",
+    manualSec2Title: "2. Propuestas de Presupuesto (Quotes)",
+    manualSec2Desc: "Elabore propuestas comerciales completas para empresas, fachadas de tiendas o eventos.",
+    manualSec3Title: "3. Gestión de Productos e Insumos",
+    manualSec3Desc: "Gestione tanto los productos terminados vendidos a clientes como los insumos de materia prima consumidos en la producción.",
+    manualSec4Title: "4. Finanzas, Caja y Cuentas por Cobrar",
+    manualSec4Desc: "Siga los ingresos diarios, controle la Apertura y Cierre de Caja y liquide créditos pendientes.",
+    manualSec5Title: "5. Modo Smartphone POS",
+    manualSec5Desc: "Interfaz móvil simplificada accesible desde cualquier teléfono conectado a internet para el personal de mostrador."
   }
 };
 

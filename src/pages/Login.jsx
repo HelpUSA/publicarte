@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useLanguage } from '../lib/i18n';
 import { Lock, User, Shield, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export default function Login() {
+  const { t } = useLanguage();
   const [usuarioInput, setUsuarioInput] = useState('');
   const [password, setPassword] = useState('');
   const [erro, setErro] = useState('');
@@ -35,7 +37,7 @@ export default function Login() {
       navigate('/admin');
     } else {
       setLoading(false);
-      setErro('Acesso negado. Usuário ou senha incorretos. Utilize o usuário "tercio" e a senha cadastrada.');
+      setErro(t('loginErrorMsg'));
     }
   };
 
@@ -51,17 +53,17 @@ export default function Login() {
             <div className="w-14 h-14 bg-blue-900 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-blue-900/30">
               <Shield size={28} />
             </div>
-            <h1 className="text-2xl font-extrabold text-blue-900 tracking-tight">Área Administrativa</h1>
+            <h1 className="text-2xl font-extrabold text-blue-900 tracking-tight">{t('loginTitle')}</h1>
             <p className="text-gray-500 text-xs mt-1">
-              Public Arte – Comunicação Visual · Painel do Gestor
+              {t('loginSubtitle')}
             </p>
           </div>
 
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-3 mb-5 text-xs text-blue-900 flex items-center gap-2.5">
             <CheckCircle2 size={18} className="text-blue-700 shrink-0" />
             <div>
-              <strong>Acesso Exclusivo:</strong><br />
-              Usuário: <code className="bg-white px-1.5 py-0.5 rounded font-mono font-bold">tercio</code> | Senha: <code className="bg-white px-1.5 py-0.5 rounded font-mono font-bold">admin1993</code>
+              <strong>{t('loginNoticeTitle')}</strong><br />
+              {t('loginUserLabel')}: <code className="bg-white px-1.5 py-0.5 rounded font-mono font-bold">tercio</code> | {t('loginPassLabel')}: <code className="bg-white px-1.5 py-0.5 rounded font-mono font-bold">admin1993</code>
             </div>
           </div>
 
@@ -75,7 +77,7 @@ export default function Login() {
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                Usuário
+                {t('loginUserLabel')}
               </label>
               <div className="relative">
                 <input
@@ -92,7 +94,7 @@ export default function Login() {
 
             <div>
               <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
-                Senha
+                {t('loginPassLabel')}
               </label>
               <div className="relative">
                 <input
@@ -112,7 +114,7 @@ export default function Login() {
               disabled={loading}
               className="w-full bg-blue-900 hover:bg-blue-950 text-white font-extrabold py-3.5 rounded-xl transition shadow-xl hover:shadow-blue-900/20 text-sm mt-2 flex items-center justify-center gap-2"
             >
-              {loading ? 'Acessando Sistema...' : 'Entrar na Área Administrativa'}
+              {loading ? '...' : t('loginBtn')}
             </button>
           </form>
         </div>
