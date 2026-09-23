@@ -8,6 +8,7 @@ import Admin from './pages/Admin';
 import Login from './pages/Login';
 import Manual from './pages/Manual';
 import NewsletterAdmin from './pages/NewsletterAdmin';
+import ProtectedRoute from './components/ProtectedRoute';
 
 export default function App() {
   return (
@@ -16,10 +17,24 @@ export default function App() {
       <Route path="/sobre" element={<Sobre />} />
       <Route path="/contato" element={<Contato />} />
       <Route path="/orcamento" element={<Orcamento />} />
-      <Route path="/admin" element={<Admin />} />
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute>
+            <Admin />
+          </ProtectedRoute>
+        }
+      />
       <Route path="/login" element={<Login />} />
       <Route path="/manual" element={<Manual />} />
-      <Route path="/admin/newsletter" element={<NewsletterAdmin />} />
+      <Route
+        path="/admin/newsletter"
+        element={
+          <ProtectedRoute>
+            <NewsletterAdmin />
+          </ProtectedRoute>
+        }
+      />
       <Route path="*" element={<Home />} />
     </Routes>
   );

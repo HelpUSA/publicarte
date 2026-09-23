@@ -30,7 +30,10 @@ import {
   Phone,
   Calendar,
   BookOpen,
-  ArrowLeft
+  Image as ImageIcon,
+  Edit2,
+  ExternalLink,
+  Save
 } from 'lucide-react';
 
 export default function Admin() {
@@ -111,6 +114,51 @@ export default function Admin() {
     ];
   });
 
+  // State: Gerenciador de Imagens / Mídias do Site
+  const [midias, setMidias] = useState(() => {
+    const local = localStorage.getItem('publicarte_midias');
+    return local ? JSON.parse(local) : [
+      {
+        id: 1,
+        titulo: 'Logo Oficial Public Arte',
+        categoria: 'Logotipos & Marcas',
+        url: '/logo-publicarte.png'
+      },
+      {
+        id: 2,
+        titulo: 'Logo Oficial HelpUS',
+        categoria: 'Logotipos & Marcas',
+        url: '/helpus-logo.png'
+      },
+      {
+        id: 3,
+        titulo: 'Banner Banners & Lonas',
+        categoria: 'Especialidades',
+        url: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&auto=format&fit=crop&q=60'
+      },
+      {
+        id: 4,
+        titulo: 'Adesivos Vinílicos Recorte',
+        categoria: 'Especialidades',
+        url: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60'
+      },
+      {
+        id: 5,
+        titulo: 'Placa em Metalon com Lona',
+        categoria: 'Especialidades',
+        url: 'https://images.unsplash.com/photo-1542744094-3a3172720449?w=500&auto=format&fit=crop&q=60'
+      }
+    ];
+  });
+
+  const [novaMidia, setNovaMidia] = useState({
+    titulo: '',
+    categoria: 'Especialidades',
+    url: ''
+  });
+
+  const [midiaEditando, setMidiaEditando] = useState(null);
+
   // State: Caixa
   const [caixaAberto, setCaixaAberto] = useState(true);
 
@@ -157,11 +205,43 @@ export default function Admin() {
     localStorage.setItem('publicarte_produtos', JSON.stringify(produtos));
   }, [produtos]);
 
+  useEffect(() => {
+    localStorage.setItem('publicarte_midias', JSON.stringify(midias));
+  }, [midias]);
+
   // Cálculos financeiros
   const totalFaturamento = comandas.reduce((sum, c) => sum + Number(c.pago), 0);
   const totalContasAReceber = comandas.reduce((sum, c) => sum + (Number(c.total) - Number(c.pago)), 0);
   const totalOrcamentos = orcamentos.length;
   const estoqueCritico = produtos.filter((p) => p.estoque <= p.min);
+
+  // Handlers Mídias
+  const handleCriarMidia = (e) => {
+    e.preventDefault();
+    if (!novaMidia.titulo || !novaMidia.url) return;
+
+    const item = {
+      id: Date.now(),
+      titulo: novaMidia.titulo,
+      categoria: novaMidia.categoria,
+      url: novaMidia.url
+    };
+
+    setMidias([item, ...midias]);
+    setNovaMidia({ titulo: '', categoria: 'Especialidades', url: '' });
+  };
+
+  const handleSalvarEdicaoMidia = (e) => {
+    e.preventDefault();
+    if (!midiaEditando) return;
+
+    setMidias(midias.map((m) => (m.id === midiaEditando.id ? midiaEditando : m)));
+    setMidiaEditando(null);
+  };
+
+  const handleDeletarMidia = (id) => {
+    setMidias(midias.filter((m) => m.id !== id));
+  };
 
   // Handlers Comandas
   const handleCriarComanda = (e) => {
@@ -322,6 +402,7 @@ export default function Admin() {
             { id: 'comandas', label: 'Vendas & Comandas', icon: ShoppingCart, count: comandas.length },
             { id: 'orcamentos', label: 'Orçamentos', icon: FileSpreadsheet, count: totalOrcamentos },
             { id: 'produtos', label: 'Produtos & Insumos', icon: Package, count: produtos.length },
+            { id: 'midias', label: 'Gerenciador de Imagens', icon: ImageIcon, count: midias.length },
             { id: 'financeiro', label: 'Financeiro & Fiado', icon: DollarSign },
             { id: 'estoque', label: 'Estoque & Alertas', icon: Boxes, alert: estoqueCritico.length > 0 },
             { id: 'mobile', label: 'Smartphone POS', icon: Smartphone }
@@ -490,6 +571,225 @@ export default function Admin() {
                   </tbody>
                 </table>
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* --- CONTEÚDO DA ABA GERENCIADOR DE IMAGENS --- */}
+        {activeTab === 'midias' && (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* FORMULÁRIO DE NOVA IMAGEM */}
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-fit">
+              <h2 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+                <Plus size={20} className="text-blue-800" />
+                Incluir Nova Imagem no Site
+              </h2>
+
+              <form onSubmit={handleCriarMidia} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                    Título / Identificação *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={novaMidia.titulo}
+                    onChange={(e) => setNovaMidia({ ...novaMidia, titulo: e.target.value })}
+                    placeholder="Ex: Foto Fachada Loja Principal"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                    Localização no Site / Categoria
+                  </label>
+                  <select
+                    value={novaMidia.categoria}
+                    onChange={(e) => setNovaMidia({ ...novaMidia, categoria: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white"
+                  >
+                    <option value="Especialidades">Especialidades & Soluções</option>
+                    <option value="Vitrine">Vitrine de Produtos</option>
+                    <option value="Logotipos & Marcas">Logotipos & Marcas</option>
+                    <option value="Banners Principais">Banners Principais</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                    URL da Imagem (Link) *
+                  </label>
+                  <input
+                    type="url"
+                    required
+                    value={novaMidia.url}
+                    onChange={(e) => setNovaMidia({ ...novaMidia, url: e.target.value })}
+                    placeholder="https://exemplo.com/imagem.png ou /logo-publicarte.png"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  />
+                </div>
+
+                {/* Pré-visualização da Imagem */}
+                {novaMidia.url && (
+                  <div className="bg-gray-50 border p-2 rounded-xl text-center">
+                    <span className="text-[10px] font-bold text-gray-400 block mb-1">PRÉ-VISUALIZAÇÃO</span>
+                    <img
+                      src={novaMidia.url}
+                      alt="Preview"
+                      className="max-h-32 mx-auto rounded-lg object-contain"
+                      onError={(e) => (e.target.style.display = 'none')}
+                    />
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2"
+                >
+                  <Plus size={16} /> Adicionar Imagem ao Site
+                </button>
+              </form>
+            </div>
+
+            {/* GALERIA DE IMAGENS DO SITE */}
+            <div className="lg:col-span-2 space-y-4">
+              <h2 className="text-lg font-bold text-gray-800 flex items-center justify-between">
+                <span>Galeria de Imagens do Site ({midias.length})</span>
+                <span className="text-xs text-gray-500 font-normal">
+                  Altere ou remova imagens exibidas nas páginas
+                </span>
+              </h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {midias.map((item) => (
+                  <div
+                    key={item.id}
+                    className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4 space-y-3 flex flex-col justify-between hover:border-blue-300 transition"
+                  >
+                    {/* Imagem */}
+                    <div className="h-36 bg-gray-100 rounded-xl overflow-hidden relative border border-gray-100">
+                      <img
+                        src={item.url}
+                        alt={item.titulo}
+                        className="w-full h-full object-cover"
+                      />
+                      <span className="absolute top-2 left-2 bg-blue-900 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow">
+                        {item.categoria}
+                      </span>
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold text-gray-900 text-sm">{item.titulo}</h3>
+                      <p className="text-[11px] text-gray-400 truncate mt-0.5">{item.url}</p>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-2 border-t">
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs text-blue-700 hover:underline flex items-center gap-1 font-semibold"
+                      >
+                        <ExternalLink size={14} /> Ver Imagem
+                      </a>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => setMidiaEditando(item)}
+                          className="text-blue-700 hover:text-blue-900 p-1.5 bg-blue-50 rounded-lg text-xs font-bold flex items-center gap-1"
+                        >
+                          <Edit2 size={14} /> Editar
+                        </button>
+                        <button
+                          onClick={() => handleDeletarMidia(item.id)}
+                          className="text-red-500 hover:text-red-700 p-1.5 bg-red-50 rounded-lg"
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* MODAL DE EDIÇÃO DE IMAGEM */}
+        {midiaEditando && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4 border border-gray-300 relative">
+              <button
+                onClick={() => setMidiaEditando(null)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 font-bold"
+              >
+                ✕
+              </button>
+
+              <h2 className="text-lg font-bold text-blue-900 flex items-center gap-2">
+                <Edit2 size={18} /> Alterar Imagem
+              </h2>
+
+              <form onSubmit={handleSalvarEdicaoMidia} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                    Título / Identificação
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={midiaEditando.titulo}
+                    onChange={(e) => setMidiaEditando({ ...midiaEditando, titulo: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                    Categoria
+                  </label>
+                  <select
+                    value={midiaEditando.categoria}
+                    onChange={(e) => setMidiaEditando({ ...midiaEditando, categoria: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs bg-white"
+                  >
+                    <option value="Especialidades">Especialidades & Soluções</option>
+                    <option value="Vitrine">Vitrine de Produtos</option>
+                    <option value="Logotipos & Marcas">Logotipos & Marcas</option>
+                    <option value="Banners Principais">Banners Principais</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
+                    URL da Imagem
+                  </label>
+                  <input
+                    type="url"
+                    required
+                    value={midiaEditando.url}
+                    onChange={(e) => setMidiaEditando({ ...midiaEditando, url: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs"
+                  />
+                </div>
+
+                <div className="flex justify-end gap-2 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setMidiaEditando(null)}
+                    className="px-4 py-2 bg-gray-100 text-gray-700 font-bold text-xs rounded-xl"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-5 py-2 bg-blue-800 text-white font-bold text-xs rounded-xl flex items-center gap-1.5"
+                  >
+                    <Save size={14} /> Salvar Alterações
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         )}

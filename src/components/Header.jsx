@@ -42,14 +42,20 @@ export default function Header({
           to="/"
           className="flex items-center gap-3 hover:scale-105 transition-transform duration-300"
         >
-          <div className="w-10 h-10 rounded-lg bg-blue-800 text-white flex items-center justify-center font-black text-xl shadow-md">
-            PA
-          </div>
+          <img
+            src={logo}
+            alt={nomeEmpresa}
+            className="h-10 w-auto max-h-12 object-contain bg-white p-1 rounded-lg shadow-sm border border-gray-100"
+            onError={(e) => {
+              // Fallback se a imagem não carregar por algum motivo
+              e.target.style.display = 'none';
+            }}
+          />
           <div className="flex flex-col">
-            <span className="text-lg font-bold text-blue-900 tracking-tight leading-tight">
+            <span className="text-lg font-extrabold text-blue-950 tracking-tight leading-tight">
               PUBLIC ARTE
             </span>
-            <span className="text-[10px] text-gray-500 font-medium tracking-wider uppercase">
+            <span className="text-[10px] text-blue-800 font-bold tracking-wider uppercase">
               Comunicação Visual
             </span>
           </div>

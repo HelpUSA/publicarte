@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Mail, Phone, MapPin, ShieldCheck } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, ShieldCheck, ExternalLink } from 'lucide-react';
 import NewsletterForm from './NewsletterForm';
 
 const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => (
@@ -55,10 +55,10 @@ const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => (
       <div>
         <h4 className="font-semibold mb-2 uppercase text-gray-800">Envie uma mensagem</h4>
         <form className="flex flex-col gap-2">
-          <input type="text" placeholder="Seu nome" className="px-3 py-2 border rounded text-sm" />
-          <input type="email" placeholder="Seu e-mail" className="px-3 py-2 border rounded text-sm" />
-          <textarea placeholder="Sua mensagem" rows={3} className="px-3 py-2 border rounded text-sm"></textarea>
-          <button type="submit" className="bg-blue-700 text-white py-2 rounded hover:bg-blue-800 transition">
+          <input type="text" placeholder="Seu nome" className="px-3 py-2 border rounded text-sm bg-white" />
+          <input type="email" placeholder="Seu e-mail" className="px-3 py-2 border rounded text-sm bg-white" />
+          <textarea placeholder="Sua mensagem" rows={3} className="px-3 py-2 border rounded text-sm bg-white"></textarea>
+          <button type="submit" className="bg-blue-700 text-white py-2 rounded hover:bg-blue-800 transition font-semibold">
             Enviar
           </button>
         </form>
@@ -81,18 +81,28 @@ const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => (
       ></iframe>
     </div>
 
-    <div className="text-center border-t border-gray-200 py-4 text-gray-500 text-xs leading-relaxed">
+    <div className="text-center border-t border-gray-200 py-6 text-gray-600 text-xs leading-relaxed bg-white">
       © {new Date().getFullYear()} {nomeEmpresa}. Todos os direitos reservados.
-      <br />
-      Site desenvolvido por{' '}
-      <a
-        href="https://helpusa.com.br"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-700 hover:underline font-semibold"
-      >
-        HelpUS
-      </a>{' '}– HelpUS LLC · USA
+      <div className="mt-3 flex flex-col items-center justify-center gap-2">
+        <a
+          href="https://helpusbr.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-blue-900 hover:text-blue-700 font-extrabold group"
+        >
+          <span>Desenvolvido por HelpUS Technology</span>
+          <ExternalLink size={14} className="group-hover:translate-x-0.5 transition-transform" />
+        </a>
+
+        {/* LOGO OFICIAL HELPUS */}
+        <a href="https://helpusbr.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="/helpus-logo.png"
+            alt="HelpUS Logo"
+            className="h-14 w-auto object-contain rounded-xl hover:scale-105 transition-transform shadow-sm border border-gray-200 p-1 bg-white"
+          />
+        </a>
+      </div>
     </div>
   </footer>
 );
