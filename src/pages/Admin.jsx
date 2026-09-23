@@ -117,18 +117,12 @@ export default function Admin() {
   // State: Gerenciador de Imagens / Mídias do Site
   const [midias, setMidias] = useState(() => {
     const local = localStorage.getItem('publicarte_midias');
-    return local ? JSON.parse(local) : [
+    const items = local ? JSON.parse(local) : [
       {
         id: 1,
         titulo: 'Logo Oficial Public Arte',
         categoria: 'Logotipos & Marcas',
         url: '/logo-publicarte.png'
-      },
-      {
-        id: 2,
-        titulo: 'Logo Oficial HelpUS',
-        categoria: 'Logotipos & Marcas',
-        url: '/helpus-logo.png'
       },
       {
         id: 3,
@@ -149,6 +143,8 @@ export default function Admin() {
         url: 'https://images.unsplash.com/photo-1542744094-3a3172720449?w=500&auto=format&fit=crop&q=60'
       }
     ];
+    // Remove qualquer item de marca interna HelpUS da lista editável
+    return items.filter((i) => !i.titulo?.toLowerCase().includes('helpus') && !i.url?.toLowerCase().includes('helpus'));
   });
 
   const [novaMidia, setNovaMidia] = useState({

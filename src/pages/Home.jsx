@@ -9,7 +9,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import { supabase } from '../lib/supabase';
 import { useLanguage } from '../lib/i18n';
 import { Link } from 'react-router-dom';
-import { Calculator, ArrowRight, ShieldCheck, Sparkles, Award } from 'lucide-react';
+import { Calculator, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -30,14 +30,14 @@ export default function Home() {
       id: 102,
       nome: 'Adesivo Vinílico Recorte Eletrônico',
       preco: 40.0,
-      marca: 'Adesivos & Rótulos',
+      marca: 'Adesivos Vinílicos',
       imagem_url: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 103,
       nome: 'Placa em Metalon com Lona Impressa',
       preco: 120.0,
-      marca: 'Fachadas & Placas',
+      marca: 'Placas & Fachadas',
       imagem_url: 'https://images.unsplash.com/photo-1542744094-3a3172720449?w=500&auto=format&fit=crop&q=60'
     },
     {
@@ -58,7 +58,7 @@ export default function Home() {
       id: 106,
       nome: 'Caneca Porcelana Personalizada',
       preco: 28.0,
-      marca: 'Brindes & Canecas',
+      marca: 'Brindes Promocionais',
       imagem_url: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60'
     }
   ];
@@ -116,17 +116,17 @@ export default function Home() {
         />
 
         {/* CTA RAPIDO PARA ORÇAMENTO ONLINE */}
-        <section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-8 px-4 shadow-md">
+        <section className="bg-gradient-to-r from-blue-950 to-blue-850 text-white py-8 px-4 shadow-md">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-blue-200 block mb-1">
-                Atendimento Rápido & Personalizado
+                {t('heroBadge')}
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-                Precisa de um orçamento para sua empresa?
+                {t('needQuoteTitle')}
               </h2>
               <p className="text-blue-100 text-sm mt-1 max-w-xl">
-                Calcule a estimativa de banners, placas, adesivos ou brindes em segundos e envie via WhatsApp.
+                {t('needQuoteSubtitle')}
               </p>
             </div>
 
@@ -158,11 +158,11 @@ export default function Home() {
         <section className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex items-center justify-between mb-8 border-b pb-4">
             <div>
-              <h2 className="text-2xl font-bold text-gray-800">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-blue-950">
                 {t('featuredProducts')}
               </h2>
-              <p className="text-xs text-gray-500 mt-0.5">
-                Soluções em alta definição para alavancar a presença visual do seu negócio
+              <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+                {t('featuredSubtitle')}
               </p>
             </div>
 
@@ -171,7 +171,7 @@ export default function Home() {
                 onClick={() => setCategoriaSelecionada('')}
                 className="text-xs font-bold text-blue-800 hover:underline"
               >
-                Limpar Filtro ({categoriaSelecionada})
+                {t('clearFilter')} ({categoriaSelecionada})
               </button>
             )}
           </div>
@@ -179,7 +179,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {produtosFiltrados.length === 0 ? (
               <p className="col-span-full text-center text-gray-500 py-12">
-                Nenhum produto encontrado para a busca especificada.
+                {t('noProducts')}
               </p>
             ) : (
               produtosFiltrados.map((p) => (
