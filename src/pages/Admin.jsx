@@ -17,7 +17,9 @@ import {
   BookOpen,
   User as UserIcon,
   CheckCircle2,
-  Receipt
+  Receipt,
+  Edit2,
+  Save
 } from 'lucide-react';
 
 export default function Admin() {
@@ -93,6 +95,8 @@ export default function Admin() {
           { id: 6, nome: 'Caneca Promocional Personalizada', categoria: 'Brindes Promocionais', preco: 28.0, unidade: 'un' }
         ];
   });
+
+  const [produtoEditando, setProdutoEditando] = useState(null);
 
   const [novoProduto, setNovoProduto] = useState({
     nome: '',
@@ -212,23 +216,59 @@ export default function Admin() {
   };
 
   // Handlers Produtos
-  const handleCriarProduto = (e) => {
+  const handleCriarOuSalvarProduto = (e) => {
     e.preventDefault();
     if (!novoProduto.nome || !novoProduto.preco) return;
 
-    const prod = {
-      id: Date.now(),
-      nome: novoProduto.nome,
-      categoria: novoProduto.categoria || 'Geral',
-      preco: Number(novoProduto.preco),
-      unidade: novoProduto.unidade || 'un'
-    };
-    setProdutos([...produtos, prod]);
+    if (produtoEditando) {
+      setProdutos(
+        produtos.map((p) =>
+          p.id === produtoEditando.id
+            ? {
+                ...p,
+                nome: novoProduto.nome,
+                categoria: novoProduto.categoria || 'Geral',
+                preco: Number(novoProduto.preco),
+                unidade: novoProduto.unidade || 'un'
+              }
+            : p
+        )
+      );
+      setProdutoEditando(null);
+    } else {
+      const prod = {
+        id: Date.now(),
+        nome: novoProduto.nome,
+        categoria: novoProduto.categoria || 'Geral',
+        preco: Number(novoProduto.preco),
+        unidade: novoProduto.unidade || 'un'
+      };
+      setProdutos([...produtos, prod]);
+    }
     setNovoProduto({ nome: '', categoria: 'Impressão Digital', preco: '', unidade: 'un' });
+  };
+
+  const handleCancelarEdicaoProduto = () => {
+    setProdutoEditando(null);
+    setNovoProduto({ nome: '', categoria: 'Impressão Digital', preco: '', unidade: 'un' });
+  };
+
+  const handleEditarProduto = (prod) => {
+    setProdutoEditando(prod);
+    setNovoProduto({
+      nome: prod.nome,
+      categoria: prod.categoria,
+      preco: prod.preco,
+      unidade: prod.unidade || 'un'
+    });
   };
 
   const handleDeletarProduto = (id) => {
     setProdutos(produtos.filter((p) => p.id !== id));
+    if (produtoEditando && produtoEditando.id === id) {
+      setProdutoEditando(null);
+      setNovoProduto({ nome: '', categoria: 'Impressão Digital', preco: '', unidade: 'un' });
+    }
   };
 
   const handleQuitarComanda = (id) => {
@@ -624,14 +664,14 @@ export default function Admin() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* FORMULARIO CADASTRAR PRODUTO */}
+              {/* FORMULARIO CADASTRAR/EDITAR PRODUTO */}
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-fit">
                 <h2 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
-                  <Plus size={20} className="text-blue-800" />
-                  Cadastrar Produto / Serviço
+                  {produtoEditando ? <Edit2 size={20} className="text-blue-800" /> : <Plus size={20} className="text-blue-800" />}
+                  {produtoEditando ? 'Alterar / Editar Produto' : 'Cadastrar Produto / Serviço'}
                 </h2>
 
-                <form onSubmit={handleCriarProduto} className="space-y-4">
+                <form onSubmit={handleCriarOuSalvarProduto} className="space-y-4">
                   <div>
                     <label className="block text-xs font-bold text-gray-700 uppercase mb-1">
                       Nome do Produto / Serviço *
@@ -693,12 +733,32 @@ export default function Admin() {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2"
-                  >
-                    <Plus size={16} /> Salvar no Catálogo
-                  </button>
+                  <div className="space-y-2">
+                    <button
+                      type="submit"
+                      className="w-full bg-blue-800 hover:bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-2"
+                    >
+                      {produtoEditando ? (
+                        <>
+                          <Save size={16} /> Salvar Alterações
+                        </>
+                      ) : (
+                        <>
+                          <Plus size={16} /> Salvar no Catálogo
+                        </>
+                      )}
+                    </button>
+
+                    {produtoEditando && (
+                      <button
+                        type="button"
+                        onClick={handleCancelarEdicaoProduto}
+                        className="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 rounded-xl text-xs transition"
+                      >
+                        Cancelar Edição
+                      </button>
+                    )}
+                  </div>
                 </form>
               </div>
 
@@ -728,8 +788,16 @@ export default function Admin() {
                           <td className="p-3 font-bold text-emerald-700">R$ {p.preco.toFixed(2)}</td>
                           <td className="p-3 text-right">
                             <button
+                              onClick={() => handleEditarProduto(p)}
+                              className="text-blue-600 hover:text-blue-800 p-1 mr-2 transition"
+                              title="Editar Produto"
+                            >
+                              <Edit2 size={16} />
+                            </button>
+                            <button
                               onClick={() => handleDeletarProduto(p.id)}
                               className="text-red-500 hover:text-red-700 p-1 transition"
+                              title="Excluir Produto"
                             >
                               <Trash2 size={16} />
                             </button>
