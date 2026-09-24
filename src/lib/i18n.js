@@ -111,6 +111,7 @@ export const translations = {
     btnSystemManual: "Manual do Sistema",
     
     // Tab Labels
+    tabPdv: "🛒 Frente de Caixa (PDV)",
     tabDashboard: "Painel Geral",
     tabComandas: "Vendas & Comandas",
     tabOrcamentos: "Orçamentos",
@@ -119,6 +120,32 @@ export const translations = {
     tabFinanceiro: "Financeiro & Fiado",
     tabEstoque: "Estoque & Alertas",
     tabMobile: "Smartphone POS",
+
+    // PDV / Frente de Caixa estilo Softcom
+    pdvTitle: "Frente de Caixa & Tela de Vendas (Modelo Softcom)",
+    pdvSubtitle: "Realize vendas rápidas no balcão sem restrição de estoque e com controle financeiro completo em tempo real.",
+    pdvCustomerSelect: "Cliente no Balcão / Identificação",
+    pdvCustomerPlaceholder: "Nome do Cliente (deixe em branco para 'Cliente Balcão')",
+    pdvPhonePlaceholder: "WhatsApp / Telefone",
+    pdvProductSearch: "Buscar produto ou serviço pelo nome...",
+    pdvAddCustomItem: "+ Adicionar Item Avulso / Sob Medida",
+    pdvCartTitle: "Itens da Venda Atual",
+    pdvEmptyCart: "Nenhum produto no carrinho. Selecione um item ao lado para iniciar a venda.",
+    pdvSubtotal: "Subtotal:",
+    pdvDiscount: "Desconto (R$):",
+    pdvTotalToPay: "Total a Pagar:",
+    pdvPaymentMethod: "Forma de Pagamento:",
+    pdvCashReceived: "Valor Recebido (R$):",
+    pdvChange: "Troco a Devolver:",
+    pdvDownPayment: "Valor de Entrada (R$):",
+    pdvBalanceDue: "Saldo Restante (A Prazo / Fiado):",
+    pdvFinalizeSaleBtn: "FINALIZAR VENDA (F9)",
+    pdvSaleSuccess: "Venda Concluída com Sucesso!",
+    pdvReceiptTitle: "PUBLIC ARTE – COMPROVANTE DE VENDA",
+    pdvPrintReceipt: "Imprimir Cupom / Recibo",
+    pdvSendWhatsAppReceipt: "Enviar Comprovante via WhatsApp",
+    pdvCloseModal: "Fechar",
+    noStockLimitNotice: "Sistema simplificado: sem bloqueio ou controle numérico de estoque.",
 
     // Dashboard Banner & Metrics
     dashboardBannerTitle: "Precisa de ajuda para utilizar o sistema?",
@@ -359,6 +386,7 @@ export const translations = {
     btnSystemManual: "System Manual",
 
     // Tab Labels
+    tabPdv: "🛒 Point of Sale (POS)",
     tabDashboard: "Dashboard Overview",
     tabComandas: "Sales & Orders",
     tabOrcamentos: "Quotes & Bids",
@@ -367,6 +395,32 @@ export const translations = {
     tabFinanceiro: "Financials & Receivables",
     tabEstoque: "Inventory & Alerts",
     tabMobile: "Smartphone POS",
+
+    // PDV / Frente de Caixa estilo Softcom
+    pdvTitle: "Point of Sale & Register (Softcom Style)",
+    pdvSubtitle: "Make fast counter sales without stock limitations and full real-time financial tracking.",
+    pdvCustomerSelect: "Counter Customer / Identification",
+    pdvCustomerPlaceholder: "Customer Name (leave blank for 'Counter Client')",
+    pdvPhonePlaceholder: "WhatsApp / Phone",
+    pdvProductSearch: "Search product or service by name...",
+    pdvAddCustomItem: "+ Add Custom Item / Custom Size",
+    pdvCartTitle: "Current Sale Items",
+    pdvEmptyCart: "No products in cart. Select an item on the left to start sale.",
+    pdvSubtotal: "Subtotal:",
+    pdvDiscount: "Discount (R$):",
+    pdvTotalToPay: "Total to Pay:",
+    pdvPaymentMethod: "Payment Method:",
+    pdvCashReceived: "Amount Received (R$):",
+    pdvChange: "Change Due:",
+    pdvDownPayment: "Down Payment (R$):",
+    pdvBalanceDue: "Remaining Balance (On Credit):",
+    pdvFinalizeSaleBtn: "FINALIZE SALE (F9)",
+    pdvSaleSuccess: "Sale Completed Successfully!",
+    pdvReceiptTitle: "PUBLIC ARTE – SALE RECEIPT",
+    pdvPrintReceipt: "Print Receipt",
+    pdvSendWhatsAppReceipt: "Send Receipt via WhatsApp",
+    pdvCloseModal: "Close",
+    noStockLimitNotice: "Simplified system: no stock quantity restrictions or blocks.",
 
     // Dashboard Banner & Metrics
     dashboardBannerTitle: "Need help using the system?",
@@ -607,6 +661,7 @@ export const translations = {
     btnSystemManual: "Manual del Sistema",
 
     // Tab Labels
+    tabPdv: "🛒 Frente de Caja (TPV)",
     tabDashboard: "Panel General",
     tabComandas: "Ventas y Pedidos",
     tabOrcamentos: "Presupuestos",
@@ -615,6 +670,32 @@ export const translations = {
     tabFinanceiro: "Finanzas y Crédito",
     tabEstoque: "Inventario y Alertas",
     tabMobile: "Smartphone POS",
+
+    // PDV / Frente de Caixa estilo Softcom
+    pdvTitle: "Frente de Caja y Pantalla de Ventas (Estilo Softcom)",
+    pdvSubtitle: "Realice ventas rápidas en mostrador sin restricciones de stock y con control financiero en tiempo real.",
+    pdvCustomerSelect: "Cliente en Mostrador / Identificación",
+    pdvCustomerPlaceholder: "Nombre del Cliente (deje en blanco para 'Cliente Mostrador')",
+    pdvPhonePlaceholder: "WhatsApp / Teléfono",
+    pdvProductSearch: "Buscar producto o servicio por nombre...",
+    pdvAddCustomItem: "+ Agregar Ítem Personalizado",
+    pdvCartTitle: "Ítems de la Venta Actual",
+    pdvEmptyCart: "Sin productos en el carrito. Seleccione un ítem a la izquierda para iniciar la venta.",
+    pdvSubtotal: "Subtotal:",
+    pdvDiscount: "Descuento (R$):",
+    pdvTotalToPay: "Total a Pagar:",
+    pdvPaymentMethod: "Forma de Pago:",
+    pdvCashReceived: "Monto Recibido (R$):",
+    pdvChange: "Cambio a Devolver:",
+    pdvDownPayment: "Monto de Entrada (R$):",
+    pdvBalanceDue: "Saldo Pendiente (A Plazo):",
+    pdvFinalizeSaleBtn: "FINALIZAR VENTA (F9)",
+    pdvSaleSuccess: "¡Venta Completada con Éxito!",
+    pdvReceiptTitle: "PUBLIC ARTE – COMPROBANTE DE VENTA",
+    pdvPrintReceipt: "Imprimir Comprobante",
+    pdvSendWhatsAppReceipt: "Enviar Comprobante por WhatsApp",
+    pdvCloseModal: "Cerrar",
+    noStockLimitNotice: "Sistema simplificado: sin restricciones ni bloqueos de cantidad de stock.",
 
     // Dashboard Banner & Metrics
     dashboardBannerTitle: "¿Necesita ayuda para usar el sistema?",

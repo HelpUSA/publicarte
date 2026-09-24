@@ -1,23 +1,21 @@
 ---
 title: Relatório Oficial de Implementação & Atualização - Public Arte
-date: 2026-09-22
+date: 2026-09-24
 author: HelpUS Technology
-tags: [relatorio, publicarte, helpus, vercel, sistema-grafico]
+tags: [relatorio, publicarte, helpus, vercel, frente-de-caixa, pdv, softcom]
 ---
 
 # 📄 Relatório Oficial de Implementação & Atualização
 > **Projeto:** Public Arte – Comunicação Visual  
 > **Domínio Oficial:** [https://publicarte.helpusbr.com/](https://publicarte.helpusbr.com/)  
-> **Data da Atualização:** 22 de Setembro de 2026  
+> **Data da Atualização:** 24 de Setembro de 2026  
 > **Desenvolvido por:** equipe **HelpUS Technology** (`STANDARDS.md`)
 
 ---
 
-## 📌 1. Visão Geral da Atualização
+## 📌 1. Visão Geral da Atualização (24/09/2026)
 
-Atendendo à solicitação de reformulação total e implementação do sistema de gestão gráfica com base nas especificações demonstradas no vídeo (`https://www.youtube.com/watch?v=v4cZSnYon-Y`), o projeto **Public Arte (`D:\AntiG\publicarte`)** foi totalmente reestruturado, padronizado e equipado com o novo **Painel da Área Administrativa (`/admin`)**.
-
-O sistema está totalmente operacional e pronto para testes e operação em tempo real pelo proprietário **Tércio Grassi**.
+Atendendo ao pedido direto do proprietário **Tércio Grassi**, o sistema foi atualizado com a nova **Frente de Caixa / Tela de Vendas Diretas (Modelo Softcom)**. Além disso, a gestão de estoque foi flexibilizada para permitir o cadastro e venda de produtos e serviços sem restrições ou bloqueios por quantidade numérica de estoque.
 
 ---
 
@@ -25,13 +23,12 @@ O sistema está totalmente operacional e pronto para testes e operação em temp
 
 | Recurso / Requisito Solicitado | Status | Detalhes da Implementação |
 | :--- | :---: | :--- |
-| **Análise do Sistema do Vídeo (YouTube)** | ✅ Concluído | Mapeamento completo do fluxo de comandas, orçamentos, produtos, insumos, financeiro e estoque. |
-| **Padronização Ecossistema HelpUS** | ✅ Concluído | Conformidade com `STANDARDS.md`, inclusão de i18n nativo (PT, EN, ES) e layout responsivo. |
-| **Deploy & Roteamento SPA no Vercel** | ✅ Concluído | Inclusão do `vercel.json` para eliminar erros 404 em navegações e refresh de rotas dinâmicas. |
-| **Área Administrativa Integrada (`/admin`)** | ✅ Concluído | Painel administrativo completo com 7 abas funcionais (Dashboard, Comandas, Orçamentos, Catálogo, Financeiro, Estoque e Mobile POS). |
-| **Credenciais Iniciais Personalizadas** | ✅ Concluído | Configurado acesso direto para o proprietário: **Usuário:** `tercio` \| **Senha:** `admin1993`. |
-| **Calculadora Pública de Orçamentos** | ✅ Concluído | Criada página `/orcamento` onde clientes calculam estimativas e enviam para o WhatsApp da empresa. |
-| **Manual do Usuário & Documentação Obsidian** | ✅ Concluído | Criados os guias oficiais e manuais de utilização na pasta `docs/`. |
+| **Frente de Caixa (PDV estilo Softcom)** | ✅ Concluído | Tela de vendas diretas no balcão com seleção rápida de cliente, busca de produtos, adição de itens avulsos sob medida e cálculo de troco/entrada. |
+| **Remoção de Restrição de Estoque** | ✅ Concluído | O cadastro e a venda de produtos funcionam livremente sem exigência, trava ou alertas impeditivos de saldo de estoque. |
+| **Emissão de Cupom Não Fiscal de Venda** | ✅ Concluído | Modal timbrado em estilo impressora térmica de balcão (Softcom), com botões para impressão em 1 clique e envio do comprovante para o WhatsApp do cliente. |
+| **Controle Financeiro Integrado** | ✅ Concluído | Faturamento por meio de pagamento (PIX, Cartão de Crédito/Débito, Dinheiro, A Prazo) atualizado em tempo real no caixa. |
+| **Tradução Multilingue Completa (i18n)** | ✅ Concluído | Todas as telas de vendas, cupom e relatórios integrados com suporte a Português, Inglês e Espanhol. |
+| **Manual do Usuário Atualizado** | ✅ Concluído | Manuais em `/manual` e `docs/02_MANUAL_DO_USUARIO_TERCIO.md` atualizados com data de 24/09/2026. |
 
 ---
 
@@ -40,55 +37,24 @@ O sistema está totalmente operacional e pronto para testes e operação em temp
 ```text
 D:\AntiG\publicarte\
 ├── docs/
-│   ├── assets/
-│   │   ├── dashboard_preview.jpg
-│   │   └── quote_generator_preview.jpg
 │   ├── 01_RELATORIO_IMPLEMENTACAO.md
 │   └── 02_MANUAL_DO_USUARIO_TERCIO.md
 ├── src/
 │   ├── components/
-│   │   ├── BrandGrid.jsx         # Especialidades e serviços de comunicação visual
-│   │   ├── CategoryBar.jsx       # Filtros dinâmicos por produto e categoria
-│   │   ├── Footer.jsx            # Rodapé padronizado HelpUS
 │   │   ├── Header.jsx            # Cabeçalho com botão Admin e seletor i18n
-│   │   ├── Hero.jsx              # Banner inicial
-│   │   └── UserIcon.jsx          # Ícone de perfil e login
+│   │   └── ProtectedRoute.jsx    # Proteção de rotas com login tercio/admin1993
 │   ├── lib/
-│   │   ├── i18n.js               # Suporte multilíngue (PT / EN / ES)
-│   │   └── supabase.js           # Integração com Supabase DB
+│   │   └── i18n.js               # Chaves de tradução PT/EN/ES para PDV e Cupom
 │   ├── pages/
-│   │   ├── Admin.jsx             # Painel Administrativo de Gestão da Gráfica
-│   │   ├── Contato.jsx           # Página de Contato e Localização
-│   │   ├── Home.jsx              # Página Inicial e Vitrine de Produtos
-│   │   ├── Login.jsx             # Tela de Login (Acesso do Tércio)
-│   │   ├── Orcamento.jsx         # Solicitador público de orçamentos
-│   │   └── Sobre.jsx             # Institucional
-│   ├── App.jsx                   # Roteamento SPA (React Router v7)
-│   └── main.jsx
-├── vercel.json                   # Configuração oficial Vercel SPA (outputDirectory: dist)
-└── vite.config.js
+│   │   ├── Admin.jsx             # Painel Administrativo com Tela de Vendas PDV Softcom
+│   │   ├── Login.jsx             # Tela de Login Exclusiva
+│   │   └── Manual.jsx            # Guia Interativo do Usuário
 ```
 
 ---
 
-## 🔑 4. Credenciais e Orientações de Acesso Inicial
+## ⚡ 4. Status de Deploy em Produção (Vercel)
 
-Para acessar o painel administrativo imediatamente no ambiente live ou local:
-
-- **URL de Acesso:** [https://publicarte.helpusbr.com/admin](https://publicarte.helpusbr.com/admin) (ou clicando no botão **Área Administrativa** no topo do site).
-- **Usuário:** `tercio` (ou `tercio@publicarte.com.br`)
-- **Senha:** `admin1993`
-
----
-
-## 📸 5. Ilustração dos Painéis Desenvolvidos
-
-### Vista do Dashboard Administrativo
-![Painel Geral Administrativo](assets/dashboard_preview.jpg)
-
-### Vista do Gerador de Orçamentos e Recibos
-![Gerador de Orçamentos](assets/quote_generator_preview.jpg)
-
----
-
-*Documentação mantida pela equipe **HelpUS Technology** — Setembro de 2026.*
+- **URL de Produção:** [https://publicarte.helpusbr.com/](https://publicarte.helpusbr.com/)
+- **Ambiente:** Vercel Production (`main`)
+- **Compilação:** Vite v7.0.4 - 0 erros / 0 avisos de execução.

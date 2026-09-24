@@ -25,12 +25,24 @@ import {
   Image as ImageIcon,
   Edit2,
   ExternalLink,
-  Save
+  Save,
+  User as UserIcon
 } from 'lucide-react';
 
 export default function Admin() {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState('pdv');
+
+  // State: Frente de Caixa / PDV estilo Softcom
+  const [pdvCliente, setPdvCliente] = useState('');
+  const [pdvTelefone, setPdvTelefone] = useState('');
+  const [pdvSearchQuery, setPdvSearchQuery] = useState('');
+  const [pdvCarrinho, setPdvCarrinho] = useState([]);
+  const [pdvDesconto, setPdvDesconto] = useState('');
+  const [pdvFormaPagamento, setPdvFormaPagamento] = useState('PIX');
+  const [pdvValorRecebido, setPdvValorRecebido] = useState('');
+  const [pdvEntrada, setPdvEntrada] = useState('');
+  const [cupomModal, setCupomModal] = useState(null);
 
   // State: Vendas / Comandas
   const [comandas, setComandas] = useState(() => {
@@ -202,6 +214,107 @@ export default function Admin() {
   const totalContasAReceber = comandas.reduce((sum, c) => sum + (Number(c.total) - Number(c.pago)), 0);
   const totalOrcamentos = orcamentos.length;
   const estoqueCritico = produtos.filter((p) => p.estoque <= p.min);
+
+  // Cálculos PDV Frente de Caixa
+  const pdvSubtotal = pdvCarrinho.reduce((acc, item) => acc + (Number(item.total) || 0), 0);
+  const pdvValorDesconto = Number(pdvDesconto) || 0;
+  const pdvTotalFinal = Math.max(0, pdvSubtotal - pdvValorDesconto);
+  const pdvTroco =
+    pdvFormaPagamento === 'Dinheiro' && Number(pdvValorRecebido) > pdvTotalFinal
+      ? Number(pdvValorRecebido) - pdvTotalFinal
+      : 0;
+
+  // Handlers PDV
+  const handleAdicionarAoCarrinho = (produto) => {
+    const idx = pdvCarrinho.findIndex((c) => c.produto === produto.nome);
+    if (idx >= 0) {
+      const copy = [...pdvCarrinho];
+      copy[idx].qtd += 1;
+      copy[idx].total = copy[idx].qtd * copy[idx].unit;
+      setPdvCarrinho(copy);
+    } else {
+      setPdvCarrinho([
+        ...pdvCarrinho,
+        {
+          id: Date.now(),
+          produto: produto.nome,
+          unit: Number(produto.preco),
+          qtd: 1,
+          total: Number(produto.preco)
+        }
+      ]);
+    }
+  };
+
+  const handleAlterarQtdCarrinho = (index, delta) => {
+    const copy = [...pdvCarrinho];
+    const novaQtd = copy[index].qtd + delta;
+    if (novaQtd <= 0) {
+      copy.splice(index, 1);
+    } else {
+      copy[index].qtd = novaQtd;
+      copy[index].total = novaQtd * copy[index].unit;
+    }
+    setPdvCarrinho(copy);
+  };
+
+  const handleAdicionarItemAvulso = () => {
+    const nome = prompt('Nome do Produto/Serviço Avulso:', 'Serviço sob medida');
+    if (!nome) return;
+    const val = prompt('Valor Unitário (R$):', '50.00');
+    if (!val || isNaN(val)) return;
+    setPdvCarrinho([
+      ...pdvCarrinho,
+      {
+        id: Date.now(),
+        produto: nome,
+        unit: Number(val),
+        qtd: 1,
+        total: Number(val)
+      }
+    ]);
+  };
+
+  const handleFinalizarVendaPDV = (e) => {
+    e.preventDefault();
+    if (pdvCarrinho.length === 0) {
+      alert(t('pdvEmptyCart'));
+      return;
+    }
+
+    const clienteNome = pdvCliente.trim() || 'Cliente Balcão';
+    const clienteFone = pdvTelefone.trim() || '(83) 90000-0000';
+    const ePrazo = pdvFormaPagamento === 'A Prazo';
+    const valorPago = ePrazo ? Number(pdvEntrada || 0) : pdvTotalFinal;
+
+    const novaVenda = {
+      id: `VND-${Math.floor(1000 + Math.random() * 9000)}`,
+      cliente: clienteNome,
+      telefone: clienteFone,
+      itens: pdvCarrinho,
+      subtotal: pdvSubtotal,
+      desconto: pdvValorDesconto,
+      total: pdvTotalFinal,
+      pago: valorPago,
+      formaPagamento: pdvFormaPagamento,
+      valorRecebido: Number(pdvValorRecebido) || pdvTotalFinal,
+      troco: pdvTroco,
+      status: ePrazo ? 'Aguardando' : 'Entregue & Concluído',
+      data: new Date().toLocaleString('pt-BR').slice(0, 16),
+      prazo: ePrazo
+    };
+
+    setComandas([novaVenda, ...comandas]);
+    setCupomModal(novaVenda);
+
+    // Limpar PDV para o próximo atendimento
+    setPdvCarrinho([]);
+    setPdvCliente('');
+    setPdvTelefone('');
+    setPdvDesconto('');
+    setPdvValorRecebido('');
+    setPdvEntrada('');
+  };
 
   // Handlers Mídias
   const handleCriarMidia = (e) => {
@@ -395,8 +508,9 @@ export default function Admin() {
         {/* NAVEGAÇÃO DE ABAS */}
         <div className="flex flex-wrap gap-2 mb-6 bg-white p-2 rounded-2xl border border-gray-200 shadow-sm overflow-x-auto">
           {[
+            { id: 'pdv', label: t('tabPdv'), icon: ShoppingCart },
             { id: 'dashboard', label: t('tabDashboard'), icon: LayoutDashboard },
-            { id: 'comandas', label: t('tabComandas'), icon: ShoppingCart, count: comandas.length },
+            { id: 'comandas', label: t('tabComandas'), icon: Boxes, count: comandas.length },
             { id: 'orcamentos', label: t('tabOrcamentos'), icon: FileSpreadsheet, count: totalOrcamentos },
             { id: 'produtos', label: t('tabProdutos'), icon: Package, count: produtos.length },
             { id: 'midias', label: t('tabMidias'), icon: ImageIcon, count: midias.length },
@@ -434,6 +548,424 @@ export default function Admin() {
             );
           })}
         </div>
+
+        {/* --- CONTEÚDO DA ABA PDV: FRENTE DE CAIXA / TELA DE VENDAS ESTILO SOFTCOM --- */}
+        {activeTab === 'pdv' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            {/* PAINEL ESQUERDO: CLIENTE + BUSCA & SELEÇÃO DE PRODUTOS */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* CABEÇALHO DA TELA DE VENDAS */}
+              <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-2xl p-5 shadow-lg flex items-center justify-between">
+                <div>
+                  <div className="text-xs uppercase font-extrabold tracking-wider text-amber-300">
+                    FRENTE DE CAIXA · MODELO SOFTCOM
+                  </div>
+                  <h2 className="text-xl font-extrabold">{t('pdvTitle')}</h2>
+                  <p className="text-xs text-blue-100 mt-1">{t('pdvSubtitle')}</p>
+                </div>
+                <div className="hidden sm:flex items-center gap-2 bg-white/10 px-3 py-2 rounded-xl text-xs font-bold">
+                  <Clock size={16} />
+                  <span>{new Date().toLocaleDateString('pt-BR')}</span>
+                </div>
+              </div>
+
+              {/* BLOCO CLIENTE */}
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 space-y-4">
+                <div className="flex items-center justify-between border-b pb-3">
+                  <h2 className="text-sm font-bold text-blue-900 uppercase tracking-wider flex items-center gap-2">
+                    <UserIcon size={18} className="text-blue-800" />
+                    {t('pdvCustomerSelect')}
+                  </h2>
+                  <span className="text-[11px] font-medium text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                    ⚡ Venda Rápida sem Trava de Estoque
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-700 uppercase mb-1">
+                      {t('lblClientName')}
+                    </label>
+                    <input
+                      type="text"
+                      value={pdvCliente}
+                      onChange={(e) => setPdvCliente(e.target.value)}
+                      placeholder={t('pdvCustomerPlaceholder')}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-700 uppercase mb-1">
+                      {t('lblClientPhone')}
+                    </label>
+                    <input
+                      type="text"
+                      value={pdvTelefone}
+                      onChange={(e) => setPdvTelefone(e.target.value)}
+                      placeholder={t('pdvPhonePlaceholder')}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* BLOCO DE CATÁLOGO & ADIÇÃO DE PRODUTOS */}
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 space-y-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b pb-3">
+                  <h2 className="text-sm font-bold text-blue-900 uppercase tracking-wider flex items-center gap-2">
+                    <Package size={18} className="text-blue-800" />
+                    Lançamento de Produtos & Serviços
+                  </h2>
+                  <button
+                    type="button"
+                    onClick={handleAdicionarItemAvulso}
+                    className="text-xs bg-amber-50 hover:bg-amber-100 text-amber-800 font-bold px-3 py-1.5 rounded-xl border border-amber-300 transition flex items-center gap-1 shadow-sm"
+                  >
+                    <Plus size={14} />
+                    {t('pdvAddCustomItem')}
+                  </button>
+                </div>
+
+                {/* CAMPO DE BUSCA */}
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={pdvSearchQuery}
+                    onChange={(e) => setPdvSearchQuery(e.target.value)}
+                    placeholder={t('pdvProductSearch')}
+                    className="w-full pl-9 pr-4 py-2.5 border border-gray-300 rounded-xl text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none shadow-sm"
+                  />
+                  <Package size={16} className="absolute left-3 top-3 text-gray-400" />
+                </div>
+
+                {/* GRADE DE PRODUTOS DISPONÍVEIS */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[380px] overflow-y-auto pr-1">
+                  {produtos
+                    .filter((p) => p.nome.toLowerCase().includes(pdvSearchQuery.toLowerCase()))
+                    .map((prod) => (
+                      <div
+                        key={prod.id}
+                        onClick={() => handleAdicionarAoCarrinho(prod)}
+                        className="p-3 border border-gray-200 hover:border-blue-500 hover:bg-blue-50/50 rounded-xl cursor-pointer transition flex items-center justify-between group shadow-sm bg-white"
+                      >
+                        <div>
+                          <div className="font-extrabold text-xs text-gray-900 group-hover:text-blue-900">
+                            {prod.nome}
+                          </div>
+                          <div className="text-[11px] text-gray-500 mt-0.5">
+                            {prod.categoria} · R$ {Number(prod.preco).toFixed(2)}
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          className="bg-blue-800 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg group-hover:bg-blue-900 transition flex items-center gap-1"
+                        >
+                          <Plus size={13} /> Add
+                        </button>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
+
+            {/* PAINEL DIREITO: CARRINHO + DESCONTO + TOTAL + FORMA DE PAGAMENTO + FINALIZAR */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-md p-5 space-y-4 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between border-b pb-3 mb-3">
+                    <h2 className="text-sm font-bold text-blue-900 uppercase tracking-wider flex items-center gap-2">
+                      <ShoppingCart size={18} className="text-blue-800" />
+                      {t('pdvCartTitle')} ({pdvCarrinho.length})
+                    </h2>
+                    {pdvCarrinho.length > 0 && (
+                      <button
+                        onClick={() => setPdvCarrinho([])}
+                        className="text-[11px] text-red-600 hover:underline font-bold"
+                      >
+                        Limpar Carrinho
+                      </button>
+                    )}
+                  </div>
+
+                  {/* LISTA DO CARRINHO */}
+                  {pdvCarrinho.length === 0 ? (
+                    <div className="py-12 text-center text-gray-400 text-xs">
+                      <ShoppingCart size={32} className="mx-auto mb-2 opacity-30 text-blue-800" />
+                      {t('pdvEmptyCart')}
+                    </div>
+                  ) : (
+                    <div className="space-y-3 max-h-[260px] overflow-y-auto pr-1">
+                      {pdvCarrinho.map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between p-2.5 bg-gray-50 rounded-xl border border-gray-200 text-xs"
+                        >
+                          <div className="flex-1 pr-2">
+                            <div className="font-bold text-gray-900">{item.produto}</div>
+                            <div className="text-[11px] text-gray-500">
+                              R$ {item.unit.toFixed(2)} x {item.qtd} ={' '}
+                              <strong className="text-blue-900">R$ {item.total.toFixed(2)}</strong>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center gap-1.5">
+                            <button
+                              type="button"
+                              onClick={() => handleAlterarQtdCarrinho(index, -1)}
+                              className="w-6 h-6 bg-white border border-gray-300 hover:bg-gray-200 text-gray-700 font-bold rounded flex items-center justify-center text-xs"
+                            >
+                              -
+                            </button>
+                            <span className="font-extrabold text-xs w-4 text-center">{item.qtd}</span>
+                            <button
+                              type="button"
+                              onClick={() => handleAlterarQtdCarrinho(index, 1)}
+                              className="w-6 h-6 bg-white border border-gray-300 hover:bg-gray-200 text-gray-700 font-bold rounded flex items-center justify-center text-xs"
+                            >
+                              +
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => handleAlterarQtdCarrinho(index, -item.qtd)}
+                              className="text-red-500 hover:text-red-700 p-1 ml-1"
+                            >
+                              <Trash2 size={14} />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* TOTAIS E PAGAMENTO */}
+                <div className="border-t pt-4 space-y-3 mt-4">
+                  <div className="flex justify-between text-xs text-gray-600">
+                    <span>{t('pdvSubtotal')}</span>
+                    <span className="font-bold">R$ {pdvSubtotal.toFixed(2)}</span>
+                  </div>
+
+                  <div className="flex items-center justify-between gap-2 text-xs">
+                    <span className="text-gray-600">{t('pdvDiscount')}</span>
+                    <input
+                      type="number"
+                      step="0.01"
+                      value={pdvDesconto}
+                      onChange={(e) => setPdvDesconto(e.target.value)}
+                      placeholder="0.00"
+                      className="w-24 text-right px-2 py-1 border border-gray-300 rounded-lg text-xs font-bold focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                    />
+                  </div>
+
+                  {/* TOTAL FINAL A PAGAR */}
+                  <div className="bg-blue-900 text-white p-3.5 rounded-xl flex items-center justify-between shadow-md">
+                    <span className="text-xs font-bold uppercase tracking-wider">{t('pdvTotalToPay')}</span>
+                    <span className="text-2xl font-black text-amber-300">R$ {pdvTotalFinal.toFixed(2)}</span>
+                  </div>
+
+                  {/* SELEÇÃO DA FORMA DE PAGAMENTO */}
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-700 uppercase mb-1">
+                      {t('pdvPaymentMethod')}
+                    </label>
+                    <select
+                      value={pdvFormaPagamento}
+                      onChange={(e) => setPdvFormaPagamento(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-xl text-xs font-bold text-blue-900 focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white"
+                    >
+                      <option value="PIX">⚡ PIX (Transferência Instantânea)</option>
+                      <option value="Cartão de Crédito">💳 Cartão de Crédito</option>
+                      <option value="Cartão de Débito">💳 Cartão de Débito</option>
+                      <option value="Dinheiro">💵 Dinheiro (Espécie)</option>
+                      <option value="A Prazo">📝 A Prazo (Fiado / Convênio)</option>
+                    </select>
+                  </div>
+
+                  {/* CÁLCULO DE TROCO PARA DINHEIRO */}
+                  {pdvFormaPagamento === 'Dinheiro' && (
+                    <div className="grid grid-cols-2 gap-2 bg-amber-50 p-2.5 rounded-xl border border-amber-200 text-xs">
+                      <div>
+                        <label className="block text-[10px] font-bold text-amber-900 uppercase">
+                          {t('pdvCashReceived')}
+                        </label>
+                        <input
+                          type="number"
+                          step="0.01"
+                          value={pdvValorRecebido}
+                          onChange={(e) => setPdvValorRecebido(e.target.value)}
+                          placeholder={pdvTotalFinal.toFixed(2)}
+                          className="w-full px-2 py-1 border border-amber-300 rounded text-xs font-bold bg-white"
+                        />
+                      </div>
+                      <div className="flex flex-col justify-center text-right">
+                        <span className="text-[10px] text-amber-800 font-bold uppercase">{t('pdvChange')}</span>
+                        <span className="text-base font-black text-emerald-700">R$ {pdvTroco.toFixed(2)}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* SE FOR VENDA A PRAZO */}
+                  {pdvFormaPagamento === 'A Prazo' && (
+                    <div className="bg-amber-50 p-2.5 rounded-xl border border-amber-200 text-xs space-y-1.5">
+                      <div className="flex justify-between items-center">
+                        <label className="text-[10px] font-bold text-amber-900 uppercase">
+                          {t('pdvDownPayment')}
+                        </label>
+                        <input
+                          type="number"
+                          step="0.01"
+                          value={pdvEntrada}
+                          onChange={(e) => setPdvEntrada(e.target.value)}
+                          placeholder="0.00"
+                          className="w-24 text-right px-2 py-1 border border-amber-300 rounded text-xs font-bold bg-white"
+                        />
+                      </div>
+                      <div className="flex justify-between text-[11px] font-extrabold text-amber-900 pt-1 border-t border-amber-200">
+                        <span>{t('pdvBalanceDue')}</span>
+                        <span className="text-red-700">
+                          R$ {Math.max(0, pdvTotalFinal - (Number(pdvEntrada) || 0)).toFixed(2)}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* BOTÃO DE FINALIZAR VENDA */}
+                  <button
+                    type="button"
+                    onClick={handleFinalizarVendaPDV}
+                    disabled={pdvCarrinho.length === 0}
+                    className={`w-full py-3.5 rounded-xl font-extrabold text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition ${
+                      pdvCarrinho.length > 0
+                        ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    }`}
+                  >
+                    <ShoppingCart size={18} />
+                    {t('pdvFinalizeSaleBtn')}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* MODAL CUPOM NÃO FISCAL DE VENDA (ESTILO SOFTCOM PDV) */}
+        {cupomModal && (
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4 border border-gray-300 font-mono text-xs text-gray-800 relative">
+              <button
+                onClick={() => setCupomModal(null)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-lg font-bold"
+              >
+                ✕
+              </button>
+
+              <div className="text-center space-y-1 border-b-2 border-dashed border-gray-300 pb-3">
+                <div className="flex justify-center mb-2">
+                  <img src="/logo-publicarte.png" alt="Public Arte" className="h-10 object-contain" />
+                </div>
+                <h3 className="font-extrabold text-sm uppercase text-gray-900 tracking-wider">
+                  PUBLIC ARTE – COMUNICAÇÃO VISUAL
+                </h3>
+                <p className="text-[10px] text-gray-500">Rua Ascendino Feitosa, 324 - Castelo Branco III</p>
+                <p className="text-[10px] text-gray-500">João Pessoa - PB · Tel: (83) 98610-4153</p>
+                <div className="mt-2 text-xs font-bold bg-gray-100 py-1 px-3 rounded inline-block">
+                  COMPROVANTE NÃO FISCAL · {cupomModal.id}
+                </div>
+              </div>
+
+              <div className="space-y-1 text-[11px] border-b border-dashed border-gray-300 pb-2">
+                <div><strong>Data/Hora:</strong> {cupomModal.data}</div>
+                <div><strong>Cliente:</strong> {cupomModal.cliente}</div>
+                {cupomModal.telefone && <div><strong>Contato:</strong> {cupomModal.telefone}</div>}
+                <div><strong>Forma de Pagto:</strong> {cupomModal.formaPagamento}</div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="font-bold border-b border-gray-200 pb-1 flex justify-between uppercase text-[10px] text-gray-500">
+                  <span>QTD x ITEM</span>
+                  <span>TOTAL (R$)</span>
+                </div>
+                {cupomModal.itens.map((it, i) => (
+                  <div key={i} className="flex justify-between items-start text-[11px]">
+                    <div>
+                      <div className="font-bold text-gray-900">{it.produto}</div>
+                      <div className="text-[10px] text-gray-500">{it.qtd} x R$ {it.unit.toFixed(2)}</div>
+                    </div>
+                    <div className="font-bold text-gray-900">R$ {it.total.toFixed(2)}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="border-t-2 border-dashed border-gray-300 pt-3 space-y-1.5 text-[11px]">
+                <div className="flex justify-between">
+                  <span>Subtotal:</span>
+                  <span>R$ {cupomModal.subtotal.toFixed(2)}</span>
+                </div>
+                {cupomModal.desconto > 0 && (
+                  <div className="flex justify-between text-red-600">
+                    <span>Desconto:</span>
+                    <span>- R$ {cupomModal.desconto.toFixed(2)}</span>
+                  </div>
+                )}
+                <div className="flex justify-between text-sm font-black text-blue-900 border-t border-gray-200 pt-1">
+                  <span>TOTAL PAGO:</span>
+                  <span>R$ {cupomModal.total.toFixed(2)}</span>
+                </div>
+
+                {cupomModal.formaPagamento === 'Dinheiro' && (
+                  <>
+                    <div className="flex justify-between text-gray-600">
+                      <span>Valor Recebido:</span>
+                      <span>R$ {cupomModal.valorRecebido.toFixed(2)}</span>
+                    </div>
+                    <div className="flex justify-between font-bold text-emerald-600">
+                      <span>Troco:</span>
+                      <span>R$ {cupomModal.troco.toFixed(2)}</span>
+                    </div>
+                  </>
+                )}
+
+                {cupomModal.prazo && (
+                  <div className="bg-amber-50 p-2 rounded text-amber-900 font-bold text-[10px] mt-2">
+                    ⚠️ Venda a Prazo / Saldo Restante: R$ {(cupomModal.total - cupomModal.pago).toFixed(2)}
+                  </div>
+                )}
+              </div>
+
+              <div className="text-center text-[10px] text-gray-400 pt-2 border-t border-gray-100">
+                Obrigado pela preferência! · Public Arte
+              </div>
+
+              <div className="flex gap-2 pt-2">
+                <button
+                  onClick={() => window.print()}
+                  className="flex-1 bg-blue-800 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 hover:bg-blue-900 transition"
+                >
+                  <Printer size={15} /> {t('pdvPrintReceipt')}
+                </button>
+                <button
+                  onClick={() => {
+                    let text = `*PUBLIC ARTE - COMPROVANTE DE VENDA ${cupomModal.id}*\n`;
+                    text += `*Cliente:* ${cupomModal.cliente}\n`;
+                    text += `*Data:* ${cupomModal.data}\n\n`;
+                    text += `*ITENS:*\n`;
+                    cupomModal.itens.forEach((it) => {
+                      text += `• ${it.qtd}x ${it.produto} - R$ ${it.total.toFixed(2)}\n`;
+                    });
+                    text += `\n*TOTAL:* R$ ${cupomModal.total.toFixed(2)}\n`;
+                    text += `*Forma de Pagamento:* ${cupomModal.formaPagamento}\n\n`;
+                    text += `Obrigado pela preferência!`;
+                    window.open(`https://wa.me/55${cupomModal.telefone.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`, '_blank');
+                  }}
+                  className="bg-emerald-600 text-white font-bold px-3 py-2 rounded-xl text-xs flex items-center justify-center gap-1 hover:bg-emerald-700 transition"
+                >
+                  <Send size={15} /> WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* --- CONTEÚDO DA ABA 1: DASHBOARD --- */}
         {activeTab === 'dashboard' && (
@@ -1205,7 +1737,15 @@ export default function Admin() {
 
         {/* --- CONTEÚDO DA ABA 4: PRODUTOS & INSUMOS --- */}
         {activeTab === 'produtos' && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="space-y-6">
+            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 flex items-center justify-between text-xs text-blue-900 font-bold">
+              <div className="flex items-center gap-2">
+                <Package size={18} className="text-blue-700" />
+                <span>⚡ {t('noStockLimitNotice')} Os produtos cadastrados aqui estarão prontos para venda direta no PDV Frente de Caixa.</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* CADASTRAR NOVO PRODUTO */}
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 h-fit">
               <h2 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
@@ -1368,6 +1908,7 @@ export default function Admin() {
               </div>
             </div>
           </div>
+        </div>
         )}
 
         {/* --- CONTEÚDO DA ABA 5: FINANCEIRO & FIADO --- */}

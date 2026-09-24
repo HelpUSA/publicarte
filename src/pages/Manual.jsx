@@ -68,17 +68,28 @@ export default function Manual() {
           {/* MÓDULOS DO SISTEMA */}
           <div className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-8">
 
-            {/* Módulo 1 */}
+            {/* Módulo 1: Frente de Caixa / PDV Softcom */}
             <div className="border-b pb-6 space-y-3">
               <div className="flex items-center gap-3 text-blue-900">
                 <div className="p-2.5 bg-blue-100 rounded-xl text-blue-800">
                   <ShoppingCart size={22} />
                 </div>
-                <h3 className="text-lg font-bold">{t('manualSec1Title')}</h3>
+                <div>
+                  <h3 className="text-lg font-bold">1. Frente de Caixa & Tela de Vendas Diretas (Modelo Softcom)</h3>
+                  <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                    ⚡ Vendas sem controle de quantidade de estoque
+                  </span>
+                </div>
               </div>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                {t('manualSec1Desc')}
+                Este módulo foi desenvolvido seguindo o modelo <strong>Softcom PDV</strong> para atendimento presencial rápido no balcão:
               </p>
+              <ul className="list-disc list-inside text-xs sm:text-sm text-gray-700 space-y-1.5 pl-2">
+                <li><strong>Identificação do Cliente:</strong> Preencha o nome/telefone do cliente ou mantenha o valor padrão <em>"Cliente Balcão"</em>.</li>
+                <li><strong>Lançamento de Produtos & Avulsos:</strong> Adicione produtos do catálogo com 1 clique ou insira itens personalizados sob medida.</li>
+                <li><strong>Desconto & Forma de Pagamento:</strong> Defina descontos (R$), selecione o meio de pagamento (PIX, Cartão, Dinheiro com cálculo de troco, ou A Prazo/Fiado).</li>
+                <li><strong>Comprovante Não Fiscal:</strong> Ao clicar em <strong>"FINALIZAR VENDA (F9)"</strong>, o sistema gera o cupom não fiscal timbrado para impressão em impressora de recibo ou envio automático via WhatsApp.</li>
+              </ul>
             </div>
 
             {/* Módulo 2 */}
@@ -100,10 +111,10 @@ export default function Manual() {
                 <div className="p-2.5 bg-purple-100 rounded-xl text-purple-800">
                   <Package size={22} />
                 </div>
-                <h3 className="text-lg font-bold">{t('manualSec3Title')}</h3>
+                <h3 className="text-lg font-bold">3. Cadastro Simplificado de Produtos & Serviços</h3>
               </div>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                {t('manualSec3Desc')}
+                Cadastre os produtos e serviços da gráfica com nome, categoria e preço. <strong>Sem trava de estoque:</strong> você pode cadastrar e vender qualquer quantidade de itens sem preocupação com saldos numéricos ou bloqueios.
               </p>
             </div>
 
@@ -113,10 +124,10 @@ export default function Manual() {
                 <div className="p-2.5 bg-amber-100 rounded-xl text-amber-800">
                   <DollarSign size={22} />
                 </div>
-                <h3 className="text-lg font-bold">{t('manualSec4Title')}</h3>
+                <h3 className="text-lg font-bold">4. Controle Financeiro & Fluxo de Caixa Integrado</h3>
               </div>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                {t('manualSec4Desc')}
+                Acompanhe em tempo real todas as entradas financeiras das vendas efetuadas, abra/feche o caixa diário e gerencie cobranças de vendas a prazo (fiado).
               </p>
             </div>
 

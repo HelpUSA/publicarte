@@ -1,28 +1,29 @@
 ---
 title: Manual do Usuário & Guia de Operação - Public Arte
-date: 2026-09-22
+date: 2026-09-24
 author: HelpUS Technology
-tags: [manual-usuario, tercio, publicarte, operacao, grafica]
+tags: [manual-usuario, tercio, publicarte, operacao, frente-de-caixa, pdv, softcom]
 ---
 
 # 📘 Manual de Operação & Guia do Usuário
 > **Proprietário / Gestor:** Tércio Grassi  
 > **Empresa:** Public Arte – Comunicação Visual  
 > **Endereço do Sistema:** [https://publicarte.helpusbr.com/admin](https://publicarte.helpusbr.com/admin)  
-> **Acesso Inicial:** Usuário `tercio` \| Senha `admin1993`
+> **Acesso Inicial:** Usuário `tercio` \| Senha `admin1993`  
+> **Última Atualização:** 24/09/2026
 
 ---
 
 ## 🚀 Seja bem-vindo ao seu Novo Sistema de Gestão!
 
-Este manual foi elaborado para orientá-lo em todas as funcionalidades da **Área Administrativa** do seu site Public Arte. O sistema foi desenvolvido sob medida para gráficas e empresas de comunicação visual, automatizando desde o atendimento inicial no balcão até a entrega final e o controle financeiro.
+Este manual foi atualizado em **24/09/2026** para orientá-lo na utilização da nova **Frente de Caixa (PDV / Tela de Vendas Diretas estilo Softcom)**, desenvolvida sem restrições nem controle numérico de estoque, focada na agilidade do atendimento de balcão e no controle financeiro instantâneo.
 
 ---
 
 ## 🔑 1. Como Acessar a Área Administrativa
 
 1. Acesse o site **[https://publicarte.helpusbr.com/](https://publicarte.helpusbr.com/)**.
-2. No menu superior (cabeçalho), clique no botão azul **"Área Administrativa"** (ou acesse diretamente `/admin` ou `/login`).
+2. Clique no link **"Área Administrativa"** no rodapé do site (ou acesse diretamente `/admin` ou `/login`).
 3. Digite suas credenciais:
    - **Usuário:** `tercio`
    - **Senha:** `admin1993`
@@ -32,91 +33,63 @@ Este manual foi elaborado para orientá-lo em todas as funcionalidades da **Áre
 
 ## 📊 2. Visão Geral das Abas de Gestão
 
-Após efetuar o login, você terá acesso a **7 abas de controle integradas**:
+Após efetuar o login, você terá acesso às abas de controle integradas:
 
 ```
-[ Painel Geral ]  [ Vendas & Comandas ]  [ Orçamentos ]  [ Produtos & Insumos ]  [ Financeiro & Fiado ]  [ Estoque & Alertas ]  [ Smartphone POS ]
+[ 🛒 Frente de Caixa (PDV) ]  [ Painel Geral ]  [ Vendas & Comandas ]  [ Orçamentos ]  [ Produtos & Insumos ]  [ Gerenciador de Imagens ]  [ Financeiro & Fiado ]
 ```
 
 ---
 
-### 🛍️ Módulo 1: Vendas & Comandas de Produção (Balcão)
+### 🛒 Módulo 1: Frente de Caixa & Tela de Vendas (Modelo Softcom)
 
-Este módulo substitui o papel no balcão de atendimento, permitindo manter comandas de trabalho abertas enquanto o material está na impressora, na mesa de corte ou no acabamento.
+Desenvolvida especialmente para quando você ou um funcionário estiver com o cliente na frente do caixa ou atendendo via WhatsApp.
 
-#### Passo a Passo para Lançar um Pedido:
-1. Clique na aba **"Vendas & Comandas"**.
-2. No formulário à esquerda (**Nova Comanda / Venda de Balcão**):
-   - Digite o **Nome do Cliente** (ex: *Maria Silva*) e o **WhatsApp**.
-   - Escolha o produto (ex: *Banner de Vinil 440g*) e a quantidade.
-   - Digite o **Pagamento Inicial / Sinal** (ex: se o banner custa R$ 135,00 e o cliente deu R$ 67,50 de entrada).
-   - Selecione a **Forma de Pagamento** (*PIX, Cartão, Dinheiro ou A Prazo*).
-   - Se for uma venda sem entrada (fiado), marque a opção **"Venda a Prazo"**.
-3. Clique em **"Abrir Comanda de Produção"**.
-
-#### Atualizando o Status de Produção:
-Na lista de comandas, altere o status de cada trabalho à medida que ele avança na oficina:
-- **Aguardando Produção** (Novo pedido lançado)
-- **Em Impressão / Recorte** (Material na impressora eco-solvente ou plotter)
-- **Em Acabamento** (Aplicação de ilhós, bastão, dobra ou laminação)
-- **Pronto para Retirada** (Cliente pode vir buscar)
-- **Entregue & Concluído** (Trabalho finalizado)
-
-#### Dar Baixa no Pagamento Restante:
-Quando o cliente vier retirar o material e pagar o restante, basta clicar no botão verde **"Dar Baixa no Pagamento"**.
+#### Passo a Passo para Realizar uma Venda:
+1. Clique na aba **"🛒 Frente de Caixa (PDV)"**.
+2. **Identificação do Cliente**:
+   - Informe o **Nome do Cliente** e o **WhatsApp** (ou deixe em branco para vender como *"Cliente Balcão"*).
+3. **Lançamento de Produtos**:
+   - Utilize o campo de busca rápida ou clique diretamente na grade de produtos cadastrados.
+   - Para cadastrar um item sob medida que não está no catálogo, clique no botão **"+ Adicionar Item Avulso"**.
+   - Ajuste as quantidades ou remova itens no painel do carrinho à direita.
+4. **Desconto & Pagamento**:
+   - Insira o valor do **Desconto (R$)** se houver.
+   - Selecione a **Forma de Pagamento** (*PIX, Cartão de Crédito, Cartão de Débito, Dinheiro ou A Prazo*).
+   - Se a venda for em **Dinheiro**, informe o valor recebido para o cálculo automático do **Troco**.
+   - Se for **A Prazo**, informe o valor de **Entrada** e o saldo restante será registrado em Contas a Receber (Fiado).
+5. **Finalizar Venda (F9)**:
+   - Clique no botão verde **"FINALIZAR VENDA (F9)"**.
+   - O sistema abrirá o **Comprovante Não Fiscal estilo Softcom**, com atalhos para **Imprimir o Recibo** ou **Enviar via WhatsApp** ao cliente.
 
 ---
 
-### 📄 Módulo 2: Emissão & Envio de Orçamentos (Quotes)
+### 📦 Módulo 2: Cadastro de Produtos (Sem Trava de Estoque)
 
-Permite elaborar propostas comerciais completas para empresas, fachadas, eventos ou grandes volumes de impressos.
-
-#### Passo a Passo para Gerar um Orçamento:
-1. Clique na aba **"Orçamentos"**.
-2. Preencha o **Nome do Cliente / Empresa** e o **WhatsApp**.
-3. Descreva o serviço (ex: *Fachada em ACM 3m x 1m com letras em acrílico*).
-4. Informe o **Valor do Material** e o **Valor da Mão de Obra / Instalação**.
-5. Clique em **"Emitir Orçamento"**.
-
-#### Recursos do Orçamento:
-- **Espelho / Imprimir**: Abre o documento timbrado da Public Arte formatado para impressão em papel ou exportação em PDF.
-- **WhatsApp**: Envia a proposta formatada diretamente para o WhatsApp do cliente com um clique.
+- **Vendas Desbloqueadas**: Não há exigência nem controle de saldos mínimos de estoque. Você pode cadastrar produtos e serviços livremente e vendê-los a qualquer momento no PDV.
+- Para cadastrar um novo item, acesse a aba **"Produtos & Insumos"**, informe o nome, tipo, categoria e preço unitário.
 
 ---
 
-### 📦 Módulo 3: Produtos & Insumos (Catálogo e Matéria-Prima)
+### 💰 Módulo 3: Controle Financeiro & Fluxo de Caixa
 
-Permite gerenciar tanto os itens finalizados que você vende ao cliente quanto os insumos consumidos na produção.
-
-- **Produtos de Venda**: Banners, Adesivos, Placas, Cartões de Visita, Canecas, Ecobags, Serigrafia DTF.
-- **Insumos de Produção**: Rolos de Lona Vinílica 440g, Galões de Tinta Eco-Solvente, Pacotes de Ilhós, Chapas de Acrílico.
-
-Para cadastrar um novo item, preencha o formulário **"Cadastrar Produto ou Insumo"** e defina a **Quantidade Mínima de Estoque** para receber alertas automáticos quando o suprimento estiver acabando.
+- Todas as vendas finalizadas no PDV ou lançadas em comandas contabilizam no **Faturamento Recebido do Dia**.
+- As vendas **A Prazo** ficam registradas na aba **"Financeiro & Fiado"**, permitindo dar baixa no pagamento assim que o cliente quitar o débito.
+- Abertura e Fechamento de Caixa podem ser controlados no topo da tela com um clique.
 
 ---
 
-### 💰 Módulo 4: Financeiro & Contas a Receber (Fiado)
+### 📄 Módulo 4: Emissão de Orçamentos
 
-- **Abertura & Fechamento de Caixa**: No topo da tela, clique em **"Abrir Caixa"** ou **"Fechar Caixa"** no início e no final do expediente.
-- **Contas a Receber (Fiado)**: Exibe uma lista de todas as vendas marcadas a prazo. Assim que o cliente quitar a dívida, clique em **"Dar Baixa"** para lançar a entrada no caixa.
-
----
-
-### 📦 Módulo 5: Estoque & Alertas de Suprimentos
-
-Exibe os materiais cujo saldo está igual ou inferior ao limite mínimo configurado, evitando que a gráfica fique sem tinta, lona ou ilhós no meio de uma produção importante.
+Permite elaborar propostas comerciais para fachadas, grandes impressões ou empresas com espelho timbrado e link para envio no WhatsApp.
 
 ---
 
-### 📱 Módulo 6: Smartphone POS (Atendimento Móvel)
+### 🖼️ Módulo 5: Gerenciador de Imagens do Site
 
-Permite que você ou seus colaboradores usem o celular dentro da gráfica para lançar comandas rápidas no balcão sem precisar ir até o computador principal.
+Permite adicionar, editar ou excluir fotos das especialidades exibidas no site institucional, mantendo a logo oficial protegida.
 
 ---
 
-## 📞 Suporte Técnico HelpUS
-
-Em caso de dúvidas ou sugestões de novos recursos, a equipe **HelpUS Technology** está à disposição.
-
-*Aproveite seu novo sistema e excelentes vendas!*  
-**HelpUS Technology · 2026**
+## 📞 Suporte Técnico
+Qualquer dúvida ou suporte sobre a Frente de Caixa, entre em contato com a equipe **HelpUS Technology**.
