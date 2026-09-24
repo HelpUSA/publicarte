@@ -2,59 +2,85 @@
 title: Relatório Oficial de Implementação & Atualização - Public Arte
 date: 2026-09-24
 author: HelpUS Technology
-tags: [relatorio, publicarte, helpus, vercel, frente-de-caixa, pdv, softcom]
+tags: [relatorio, publicarte, helpus, vercel, frente-de-caixa, pdv, softcom, gestao]
 ---
 
 # 📄 Relatório Oficial de Implementação & Atualização
-> **Projeto:** Public Arte – Comunicação Visual  
+> **Cliente / Proprietário:** Tércio Grassi  
+> **Empresa:** Public Arte – Comunicação Visual  
 > **Domínio Oficial:** [https://publicarte.helpusbr.com/](https://publicarte.helpusbr.com/)  
 > **Data da Atualização:** 24 de Setembro de 2026  
-> **Desenvolvido por:** equipe **HelpUS Technology** (`STANDARDS.md`)
+> **Desenvolvido por:** Equipe **HelpUS Technology**
 
 ---
 
-## 📌 1. Visão Geral da Atualização (24/09/2026)
+## 📌 1. Visão Geral da Atualização
 
-Atendendo ao pedido direto do proprietário **Tércio Grassi**, o sistema foi atualizado com a nova **Frente de Caixa / Tela de Vendas Diretas (Modelo Softcom)**. Além disso, a gestão de estoque foi flexibilizada para permitir o cadastro e venda de produtos e serviços sem restrições ou bloqueios por quantidade numérica de estoque.
+Conforme alinhado diretamente com o proprietário **Tércio Grassi**, a Área Administrativa (`/admin`) foi completamente simplificada e focada exclusivamente no modelo **Softcom PDV (Frente de Caixa)**.
+
+Foram removidas todas as abas legadas não utilizadas (orçamentos antigos, gerenciador de mídias, alertas de estoque crítico, comandas de produção extensas) para garantir uma interface **enxuta, rápida e sem poluição visual**, dividida em **3 abas principais**:
+
+1. **🛒 Frente de Caixa (PDV)**
+2. **📦 Produtos & Serviços** *(com funcionalidade de Inclusão, Edição e Exclusão sem travas de estoque)*
+3. **💰 Financeiro & Vendas**
 
 ---
 
-## 📋 2. Solicitado vs. Implementado
+## 📊 2. Tabela: O Que Foi Solicitado vs. O Que Foi Implementado
 
-| Recurso / Requisito Solicitado | Status | Detalhes da Implementação |
+| Requisito Solicitado | Status | Detalhes da Implementação |
 | :--- | :---: | :--- |
-| **Frente de Caixa (PDV estilo Softcom)** | ✅ Concluído | Tela de vendas diretas no balcão com seleção rápida de cliente, busca de produtos, adição de itens avulsos sob medida e cálculo de troco/entrada. |
-| **Remoção de Restrição de Estoque** | ✅ Concluído | O cadastro e a venda de produtos funcionam livremente sem exigência, trava ou alertas impeditivos de saldo de estoque. |
-| **Emissão de Cupom Não Fiscal de Venda** | ✅ Concluído | Modal timbrado em estilo impressora térmica de balcão (Softcom), com botões para impressão em 1 clique e envio do comprovante para o WhatsApp do cliente. |
-| **Controle Financeiro Integrado** | ✅ Concluído | Faturamento por meio de pagamento (PIX, Cartão de Crédito/Débito, Dinheiro, A Prazo) atualizado em tempo real no caixa. |
-| **Tradução Multilingue Completa (i18n)** | ✅ Concluído | Todas as telas de vendas, cupom e relatórios integrados com suporte a Português, Inglês e Espanhol. |
-| **Manual do Usuário Atualizado** | ✅ Concluído | Manuais em `/manual` e `docs/02_MANUAL_DO_USUARIO_TERCIO.md` atualizados com data de 24/09/2026. |
+| **Interface Simplificada estilo Softcom** | ✅ Implementado | Painel enxuto em 3 abas essenciais, reduzindo a complexidade de uso. |
+| **Frente de Caixa (PDV Balcão)** | ✅ Implementado | Tela para registrar vendas presenciais ou WhatsApp, com busca rápida e adição de itens avulsos. |
+| **Sem Controle de Estoque** | ✅ Implementado | Vendas livres e cadastro de produtos sem bloqueios numéricos de quantidade de estoque. |
+| **Cálculo de Troco & Vendas a Prazo** | ✅ Implementado | Campo para valor recebido em dinheiro com troco automático e registro de entrada para fiado. |
+| **Cupom Não Fiscal para Impressão & WhatsApp** | ✅ Implementado | Modal timbrado em estilo bobina térmica com botões de Impressão (1 clique) e envio direto via WhatsApp. |
+| **Edição e Exclusão de Produtos** | ✅ Implementado | Botão de Editar (Lápis Azul) e Excluir (Lixeira Vermelha) na tabela de produtos, com formulário dinâmico de alteração. |
+| **Relatório Financeiro de Caixa** | ✅ Implementado | Exibição de Faturamento Recebido, Contas a Receber (Fiado) e Histórico de Vendas com reemissão de recibo. |
+| **Documentação Obsidian & PDF** | ✅ Implementado | Documentação estruturada na pasta `docs/` e arquivo PDF gerado para envio ao Tércio. |
 
 ---
 
-## 🛠️ 3. Arquitetura Técnica & Estrutura de Arquivos
+## 🗺️ 3. Diagrama do Fluxo de Venda (PDV Softcom)
 
-```text
-D:\AntiG\publicarte\
-├── docs/
-│   ├── 01_RELATORIO_IMPLEMENTACAO.md
-│   └── 02_MANUAL_DO_USUARIO_TERCIO.md
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx            # Cabeçalho com botão Admin e seletor i18n
-│   │   └── ProtectedRoute.jsx    # Proteção de rotas com login tercio/admin1993
-│   ├── lib/
-│   │   └── i18n.js               # Chaves de tradução PT/EN/ES para PDV e Cupom
-│   ├── pages/
-│   │   ├── Admin.jsx             # Painel Administrativo com Tela de Vendas PDV Softcom
-│   │   ├── Login.jsx             # Tela de Login Exclusiva
-│   │   └── Manual.jsx            # Guia Interativo do Usuário
+```mermaid
+flowchart LR
+    A["👤 Cliente no Balcão"] --> B["🛒 Selecionar Produtos ou Item Avulso"]
+    B --> C["💵 Escolher Meio de Pagamento (PIX/Cartão/Dinheiro/Fiado)"]
+    C --> D["⚡ Aplicar Desconto & Calcular Troco/Entrada"]
+    D --> E["✅ Clique 'FINALIZAR VENDA (F9)'"]
+    E --> F["📄 Emissão do Cupom Não Fiscal"]
+    F --> G1["🖨️ Imprimir Recibo"]
+    F --> G2["📲 Enviar no WhatsApp"]
+    F --> H["💰 Atualização Automática no Caixa"]
 ```
 
 ---
 
-## ⚡ 4. Status de Deploy em Produção (Vercel)
+## 📱 4. Detalhamento Visual das Telas e Como Usar
 
-- **URL de Produção:** [https://publicarte.helpusbr.com/](https://publicarte.helpusbr.com/)
-- **Ambiente:** Vercel Production (`main`)
-- **Compilação:** Vite v7.0.4 - 0 erros / 0 avisos de execução.
+### 🛒 Tela 1: Frente de Caixa & PDV
+- **Identificação do Cliente:** Digite o nome e WhatsApp do cliente. Se deixado em branco, o sistema assume automaticamente *"Cliente Balcão"*.
+- **Grade & Busca de Produtos:** Digite o nome do produto no campo de busca ou clique diretamente na grade à direita.
+- **Item Avulso / Sob Medida:** Clique em `+ Adicionar Item Avulso` para informar o nome e o valor de um serviço personalizado na hora.
+- **Fechamento Financeiro:**
+  - **Dinheiro:** Digite quanto o cliente entregou para visualizar o troco instantâneo.
+  - **A Prazo (Fiado):** Digite o valor dado de entrada; o saldo restante ficará registrado em Contas a Receber.
+
+### 📦 Tela 2: Cadastro & Edição de Produtos & Serviços
+- **Inclusão:** Preencha Nome, Categoria, Preço Unitário e Unidade (`un`, `m²`, `pacote`, `milheiro`, `serviço`) e clique em `Salvar no Catálogo`.
+- **Edição:** Na tabela de produtos, clique no botão azul com o ícone de lápis (`✏️`). O formulário à esquerda se converterá em **"Alterar / Editar Produto"**. Ajuste as informações e clique em `Salvar Alterações`.
+- **Exclusão:** Clique no ícone vermelho de lixeira (`🗑️`) para remover um produto do catálogo.
+
+### 💰 Tela 3: Financeiro & Vendas
+- **Faturamento do Dia:** Exibe o total em R$ recebido de vendas confirmadas.
+- **Contas a Receber (Fiado):** Exibe o saldo pendente de clientes que compraram a prazo. Para quitar, basta clicar no botão verde `Quitar Fiado`.
+- **Reemitir Recibo:** Em qualquer venda registrada, clique em `Ver Recibo` para abrir o cupom não fiscal e reutilizar as funções de impressão ou WhatsApp.
+
+---
+
+## ⚡ 5. Verificação de Produção (Vercel)
+
+- **Endereço do Sistema:** [https://publicarte.helpusbr.com/admin](https://publicarte.helpusbr.com/)
+- **Credenciais de Acesso:** Usuário `tercio` | Senha `admin1993`
+- **Status do Build:** Compilado via Vite v7.0.4 - 0 erros / 0 avisos.
