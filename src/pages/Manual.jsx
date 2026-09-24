@@ -7,10 +7,8 @@ import {
   BookOpen,
   ArrowLeft,
   ShoppingCart,
-  FileSpreadsheet,
   Package,
-  DollarSign,
-  Smartphone,
+  DollarSign
 } from 'lucide-react';
 
 export default function Manual() {
@@ -20,7 +18,7 @@ export default function Manual() {
     <div className="bg-gray-100 min-h-screen flex flex-col justify-between">
       <Header />
 
-      <main className="max-w-5xl mx-auto px-4 pt-24 pb-16 w-full">
+      <main className="max-w-5xl mx-auto px-4 pt-24 pb-16 w-full flex-1">
         {/* Header do Manual */}
         <div className="bg-white rounded-3xl shadow-sm border border-gray-200 p-6 sm:p-8 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
@@ -28,10 +26,10 @@ export default function Manual() {
               <BookOpen size={16} /> {t('manualDocBadge')}
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-blue-950 tracking-tight">
-              {t('manualDocTitle')}
+              Manual do Sistema de Gestão – Public Arte
             </h1>
             <p className="text-gray-500 text-xs sm:text-sm mt-1">
-              {t('manualDocSubtitle')}
+              Guia simplificado para operação da Área Administrativa em 3 passos
             </p>
           </div>
 
@@ -48,24 +46,24 @@ export default function Manual() {
           <div className="bg-blue-900 text-white rounded-3xl p-6 shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <span className="text-xs font-bold text-blue-300 uppercase tracking-wider block">
-                {t('authBoxTitle')}
+                Acesso Seguro do Gestor
               </span>
-              <h2 className="text-xl font-bold mt-1">{t('authBoxTitle')}</h2>
+              <h2 className="text-xl font-bold mt-1">Credenciais da Área Administrativa</h2>
               <p className="text-blue-200 text-xs mt-1">
-                {t('authBoxSubtitle')}
+                Acesse <code className="bg-white/20 text-white px-1.5 py-0.5 rounded">/admin</code> com seu usuário e senha.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur border border-white/20 p-4 rounded-2xl text-xs space-y-1">
               <div>
-                <strong>{t('loginUserLabel')}:</strong> <code className="bg-white text-blue-900 px-2 py-0.5 rounded font-mono font-bold">tercio</code>
+                <strong>Usuário:</strong> <code className="bg-white text-blue-900 px-2 py-0.5 rounded font-mono font-bold">tercio</code>
               </div>
               <div>
-                <strong>{t('loginPassLabel')}:</strong> <code className="bg-white text-blue-900 px-2 py-0.5 rounded font-mono font-bold">admin1993</code>
+                <strong>Senha:</strong> <code className="bg-white text-blue-900 px-2 py-0.5 rounded font-mono font-bold">admin1993</code>
               </div>
             </div>
           </div>
 
-          {/* MÓDULOS DO SISTEMA */}
+          {/* ESTRUTURA EM 3 ABAS SIMPLIFICADAS */}
           <div className="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-8">
 
             {/* Módulo 1: Frente de Caixa / PDV Softcom */}
@@ -75,73 +73,56 @@ export default function Manual() {
                   <ShoppingCart size={22} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">1. Frente de Caixa & Tela de Vendas Diretas (Modelo Softcom)</h3>
+                  <h3 className="text-lg font-bold">1. Aba "🛒 Frente de Caixa (PDV)"</h3>
                   <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                    ⚡ Vendas sem controle de quantidade de estoque
+                    ⚡ Modelo Softcom Balcão - Vendas sem controle de estoque
                   </span>
                 </div>
               </div>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                Este módulo foi desenvolvido seguindo o modelo <strong>Softcom PDV</strong> para atendimento presencial rápido no balcão:
+                Desenvolvida para registrar vendas presenciais no balcão ou por atendimento via WhatsApp:
               </p>
-              <ul className="list-disc list-inside text-xs sm:text-sm text-gray-700 space-y-1.5 pl-2">
-                <li><strong>Identificação do Cliente:</strong> Preencha o nome/telefone do cliente ou mantenha o valor padrão <em>"Cliente Balcão"</em>.</li>
-                <li><strong>Lançamento de Produtos & Avulsos:</strong> Adicione produtos do catálogo com 1 clique ou insira itens personalizados sob medida.</li>
-                <li><strong>Desconto & Forma de Pagamento:</strong> Defina descontos (R$), selecione o meio de pagamento (PIX, Cartão, Dinheiro com cálculo de troco, ou A Prazo/Fiado).</li>
-                <li><strong>Comprovante Não Fiscal:</strong> Ao clicar em <strong>"FINALIZAR VENDA (F9)"</strong>, o sistema gera o cupom não fiscal timbrado para impressão em impressora de recibo ou envio automático via WhatsApp.</li>
+              <ul className="list-disc list-inside text-xs sm:text-sm text-gray-700 space-y-2 pl-2">
+                <li><strong>Passo 1:</strong> Preencha o nome e WhatsApp do cliente (ou mantenha <em>"Cliente Balcão"</em>).</li>
+                <li><strong>Passo 2:</strong> Clique no produto desejado no catálogo ou adicione um <em>"+ Item Avulso"</em> para cobrir serviços sob medida.</li>
+                <li><strong>Passo 3:</strong> Insira um desconto se desejar e selecione a forma de pagamento (PIX, Cartão de Crédito, Cartão de Débito, Dinheiro ou A Prazo). Se for Dinheiro, informe quanto o cliente entregou para ver o troco automático.</li>
+                <li><strong>Passo 4:</strong> Clique em <strong>"FINALIZAR VENDA (F9)"</strong>. O sistema registrará a venda e abrirá o comprovante timbrado para imprimir ou enviar no WhatsApp.</li>
               </ul>
             </div>
 
-            {/* Módulo 2 */}
-            <div className="border-b pb-6 space-y-3">
-              <div className="flex items-center gap-3 text-blue-900">
-                <div className="p-2.5 bg-emerald-100 rounded-xl text-emerald-800">
-                  <FileSpreadsheet size={22} />
-                </div>
-                <h3 className="text-lg font-bold">{t('manualSec2Title')}</h3>
-              </div>
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                {t('manualSec2Desc')}
-              </p>
-            </div>
-
-            {/* Módulo 3 */}
+            {/* Módulo 2: Produtos & Serviços */}
             <div className="border-b pb-6 space-y-3">
               <div className="flex items-center gap-3 text-blue-900">
                 <div className="p-2.5 bg-purple-100 rounded-xl text-purple-800">
                   <Package size={22} />
                 </div>
-                <h3 className="text-lg font-bold">3. Cadastro Simplificado de Produtos & Serviços</h3>
+                <h3 className="text-lg font-bold">2. Aba "📦 Produtos & Serviços"</h3>
               </div>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                Cadastre os produtos e serviços da gráfica com nome, categoria e preço. <strong>Sem trava de estoque:</strong> você pode cadastrar e vender qualquer quantidade de itens sem preocupação com saldos numéricos ou bloqueios.
+                Cadastre e consulte os produtos da sua gráfica (Banners, Adesivos, Placas, Cartões, Serigrafia, Canecas):
               </p>
+              <ul className="list-disc list-inside text-xs sm:text-sm text-gray-700 space-y-1.5 pl-2">
+                <li>Cadastre o nome do produto, categoria, preço unitário e unidade de medida (un, m², pacote, milheiro, serviço).</li>
+                <li><strong>Sem estoque:</strong> você pode cadastrar e vender livremente qualquer produto sem travas numéricas.</li>
+              </ul>
             </div>
 
-            {/* Módulo 4 */}
-            <div className="border-b pb-6 space-y-3">
+            {/* Módulo 3: Financeiro & Vendas */}
+            <div className="space-y-3">
               <div className="flex items-center gap-3 text-blue-900">
                 <div className="p-2.5 bg-amber-100 rounded-xl text-amber-800">
                   <DollarSign size={22} />
                 </div>
-                <h3 className="text-lg font-bold">4. Controle Financeiro & Fluxo de Caixa Integrado</h3>
+                <h3 className="text-lg font-bold">3. Aba "💰 Financeiro & Vendas"</h3>
               </div>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                Acompanhe em tempo real todas as entradas financeiras das vendas efetuadas, abra/feche o caixa diário e gerencie cobranças de vendas a prazo (fiado).
+                Acompanhe o desempenho financeiro e o histórico de vendas:
               </p>
-            </div>
-
-            {/* Módulo 5 */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-blue-900">
-                <div className="p-2.5 bg-indigo-100 rounded-xl text-indigo-800">
-                  <Smartphone size={22} />
-                </div>
-                <h3 className="text-lg font-bold">{t('manualSec5Title')}</h3>
-              </div>
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                {t('manualSec5Desc')}
-              </p>
+              <ul className="list-disc list-inside text-xs sm:text-sm text-gray-700 space-y-1.5 pl-2">
+                <li><strong>Faturamento Recebido:</strong> Soma total das vendas confirmadas e pagas.</li>
+                <li><strong>Contas a Receber (Fiado):</strong> Saldo pendente das vendas efetuadas A Prazo. Clique em <strong>"Quitar Fiado"</strong> para dar baixa no pagamento.</li>
+                <li><strong>Reemissão de Comprovantes:</strong> Clique em <strong>"Ver Recibo"</strong> em qualquer venda para reabrir o cupom não fiscal e imprimir ou enviar pelo WhatsApp.</li>
+              </ul>
             </div>
 
           </div>
