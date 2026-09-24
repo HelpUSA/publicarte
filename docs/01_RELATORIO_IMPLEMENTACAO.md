@@ -2,7 +2,7 @@
 title: Relatório Oficial de Implementação & Atualização - Public Arte
 date: 2026-09-24
 author: HelpUS Technology
-tags: [relatorio, publicarte, helpus, vercel, frente-de-caixa, pdv, softcom, gestao]
+tags: [relatorio, publicarte, helpus, vercel, frente-de-caixa, pdv, softcom, gestao, cadastros]
 ---
 
 # 📄 Relatório Oficial de Implementação & Atualização
@@ -16,13 +16,16 @@ tags: [relatorio, publicarte, helpus, vercel, frente-de-caixa, pdv, softcom, ges
 
 ## 📌 1. Visão Geral da Atualização
 
-Conforme alinhado diretamente com o proprietário **Tércio Grassi**, a Área Administrativa (`/admin`) foi completamente simplificada e focada exclusivamente no modelo **Softcom PDV (Frente de Caixa)**.
+Conforme as últimas solicitações repassadas pelo proprietário **Tércio Grassi**, a Área Administrativa (`/admin`) foi aprimorada com uma estrutura completa de **Cadastros Unificados**, **Perfis de Acesso com Permissões**, **Grade com Fotos de Produtos no PDV** e **Configurações da Empresa**, mantendo a agilidade do modelo **Softcom Frente de Caixa (sem travamento por saldo de estoque)**.
 
-Foram removidas todas as abas legadas não utilizadas (orçamentos antigos, gerenciador de mídias, alertas de estoque crítico, comandas de produção extensas) para garantir uma interface **enxuta, rápida e sem poluição visual**, dividida em **3 abas principais**:
-
-1. **🛒 Frente de Caixa (PDV)**
-2. **📦 Produtos & Serviços** *(com funcionalidade de Inclusão, Edição e Exclusão sem travas de estoque)*
-3. **💰 Financeiro & Vendas**
+As abas da Área Administrativa estão organizadas de forma limpa e intuitiva:
+1. **🛒 Frente de Caixa (PDV Softcom)** *(com foto dos produtos na grade, busca rápida, item avulso, desconto, troco e fiado)*
+2. **👥 Clientes** *(cadastro completo e modal com histórico de compras)*
+3. **📦 Produtos & Serviços** *(com foto/URL, custo, preço de venda, cálculo automático de margem de lucro %, edição e exclusão)*
+4. **👔 Funcionários** *(cadastro de equipe e cargos)*
+5. **🏢 Fornecedores** *(cadastro de fornecedores com nome da empresa, contato "pessoa que falo", WhatsApp e endereço)*
+6. **💰 Financeiro & Vendas** *(resumo de faturamento, contas a receber/fiado e histórico de recibos)*
+7. **⚙️ Configurações** *(dados da empresa, CNPJ, endereço, PIX e logo)*
 
 ---
 
@@ -30,57 +33,70 @@ Foram removidas todas as abas legadas não utilizadas (orçamentos antigos, gere
 
 | Requisito Solicitado | Status | Detalhes da Implementação |
 | :--- | :---: | :--- |
-| **Interface Simplificada estilo Softcom** | ✅ Implementado | Painel enxuto em 3 abas essenciais, reduzindo a complexidade de uso. |
-| **Frente de Caixa (PDV Balcão)** | ✅ Implementado | Tela para registrar vendas presenciais ou WhatsApp, com busca rápida e adição de itens avulsos. |
-| **Sem Controle de Estoque** | ✅ Implementado | Vendas livres e cadastro de produtos sem bloqueios numéricos de quantidade de estoque. |
-| **Cálculo de Troco & Vendas a Prazo** | ✅ Implementado | Campo para valor recebido em dinheiro com troco automático e registro de entrada para fiado. |
-| **Cupom Não Fiscal para Impressão & WhatsApp** | ✅ Implementado | Modal timbrado em estilo bobina térmica com botões de Impressão (1 clique) e envio direto via WhatsApp. |
-| **Edição e Exclusão de Produtos** | ✅ Implementado | Botão de Editar (Lápis Azul) e Excluir (Lixeira Vermelha) na tabela de produtos, com formulário dinâmico de alteração. |
-| **Relatório Financeiro de Caixa** | ✅ Implementado | Exibição de Faturamento Recebido, Contas a Receber (Fiado) e Histórico de Vendas com reemissão de recibo. |
-| **Documentação Obsidian & PDF** | ✅ Implementado | Documentação estruturada na pasta `docs/` e arquivo PDF gerado para envio ao Tércio. |
+| **Interface Simplificada estilo Softcom** | ✅ Implementado | Painel rápido e limpo com navegação em abas claras e objetivas. |
+| **Perfis de Acesso (Admin / Vendedor)** | ✅ Implementado | Admin (`tercio` / `admin1993`) com acesso total e seletor de simulação de perfil; Vendedor (`vendedor` / `venda123`) restrito a PDV e Orçamentos. |
+| **Cadastros Unificados Completos** | ✅ Implementado | Clientes (com histórico de compras), Produtos (com fotos e margem de lucro), Funcionários (com cargos) e Fornecedores ("pessoa que falo"). |
+| **Fotos dos Produtos no PDV** | ✅ Implementado | Grade de seleção rápida no PDV exibindo fotos dos produtos em cada cartão. |
+| **Sem Controle de Estoque** | ✅ Implementado | Vendas livres e cadastro de produtos sem restrições ou bloqueios numéricos de estoque. |
+| **Configurações da Empresa (`⚙️`)** | ✅ Implementado | Formulário para definir Razão Social, CNPJ, Endereço, WhatsApp, Chave PIX e Logo. |
+| **Cálculo de Troco & Vendas a Prazo** | ✅ Implementado | Troco automático para pagamentos em dinheiro e lançamento de saldo pendente em Contas a Receber (Fiado). |
+| **Cupom Não Fiscal (Bobina Thermal)** | ✅ Implementado | Comprovante timbrado com botões de Impressão direta e envio formatado para WhatsApp. |
+| **Edição e Exclusão de Produtos** | ✅ Implementado | Botão de Editar (Lápis Azul) e Excluir (Lixeira Vermelha) com formulário dinâmico. |
+| **Documentação Obsidian & PDF** | ✅ Implementado | Arquivos `.md` na pasta `docs/` e manual PDF completo gerado para envio ao Tércio. |
 
 ---
 
-## 🗺️ 3. Diagrama do Fluxo de Venda (PDV Softcom)
+## 🗺️ 3. Diagrama do Fluxo de Venda & Acessos (PDV Softcom)
 
 ```mermaid
-flowchart LR
-    A["👤 Cliente no Balcão"] --> B["🛒 Selecionar Produtos ou Item Avulso"]
-    B --> C["💵 Escolher Meio de Pagamento (PIX/Cartão/Dinheiro/Fiado)"]
-    C --> D["⚡ Aplicar Desconto & Calcular Troco/Entrada"]
-    D --> E["✅ Clique 'FINALIZAR VENDA (F9)'"]
-    E --> F["📄 Emissão do Cupom Não Fiscal"]
-    F --> G1["🖨️ Imprimir Recibo"]
-    F --> G2["📲 Enviar no WhatsApp"]
-    F --> H["💰 Atualização Automática no Caixa"]
+flowchart TD
+    A["👤 Login do Usuário"] --> B{"Verificação de Perfil"}
+    B -- "Admin (tercio / admin1993)" --> C["👑 Painel Completo (PDV, Cadastros, Financeiro, Configurações)"]
+    B -- "Vendedor (vendedor / venda123)" --> D["🛒 Acesso Restrito (Frente de Caixa & Orçamentos)"]
+    
+    D --> E["🛒 Seleção Visual de Produtos com Foto ou Item Avulso"]
+    E --> F["💵 Definir Pagamento (PIX / Cartão / Dinheiro com Troco / Fiado)"]
+    F --> G["✅ Clique 'FINALIZAR VENDA (F9)'"]
+    G --> H["📄 Emissão do Cupom Não Fiscal"]
+    H --> I1["🖨️ Imprimir Recibo"]
+    H --> I2["📲 Enviar via WhatsApp"]
+    H --> J["💰 Lançamento Automático no Financeiro"]
 ```
 
 ---
 
-## 📱 4. Detalhamento Visual das Telas e Como Usar
+## 📱 4. Detalhamento dos Módulos e Como Usar
 
-### 🛒 Tela 1: Frente de Caixa & PDV
-- **Identificação do Cliente:** Digite o nome e WhatsApp do cliente. Se deixado em branco, o sistema assume automaticamente *"Cliente Balcão"*.
-- **Grade & Busca de Produtos:** Digite o nome do produto no campo de busca ou clique diretamente na grade à direita.
-- **Item Avulso / Sob Medida:** Clique em `+ Adicionar Item Avulso` para informar o nome e o valor de um serviço personalizado na hora.
+### 🛒 1. Frente de Caixa & PDV Softcom
+- **Grade com Fotos:** Produtos são exibidos com foto e preço na grade do catálogo para inclusão no carrinho em 1 clique.
+- **Identificação do Cliente:** Digite o nome/WhatsApp ou selecione um cliente cadastrado (ou deixe em branco para *"Cliente Balcão"*).
+- **Item Avulso / Sob Medida:** Clique em `+ Adicionar Item Avulso` para informar a descrição e o valor de um serviço personalizado.
 - **Fechamento Financeiro:**
-  - **Dinheiro:** Digite quanto o cliente entregou para visualizar o troco instantâneo.
-  - **A Prazo (Fiado):** Digite o valor dado de entrada; o saldo restante ficará registrado em Contas a Receber.
+  - **Dinheiro:** Digite o valor recebido para calcular o troco instantâneo.
+  - **A Prazo (Fiado):** Informe o valor da entrada; o restante vai para Contas a Receber.
 
-### 📦 Tela 2: Cadastro & Edição de Produtos & Serviços
-- **Inclusão:** Preencha Nome, Categoria, Preço Unitário e Unidade (`un`, `m²`, `pacote`, `milheiro`, `serviço`) e clique em `Salvar no Catálogo`.
-- **Edição:** Na tabela de produtos, clique no botão azul com o ícone de lápis (`✏️`). O formulário à esquerda se converterá em **"Alterar / Editar Produto"**. Ajuste as informações e clique em `Salvar Alterações`.
-- **Exclusão:** Clique no ícone vermelho de lixeira (`🗑️`) para remover um produto do catálogo.
+### 👥 2. Clientes & Histórico de Compras
+- **Cadastro:** Registre Nome, CPF/CNPJ, WhatsApp, E-mail e Endereço.
+- **Histórico:** Clique em `📋 Histórico` no cliente para abrir a janela modal com todas as compras anteriores, datas e valores.
 
-### 💰 Tela 3: Financeiro & Vendas
-- **Faturamento do Dia:** Exibe o total em R$ recebido de vendas confirmadas.
-- **Contas a Receber (Fiado):** Exibe o saldo pendente de clientes que compraram a prazo. Para quitar, basta clicar no botão verde `Quitar Fiado`.
-- **Reemitir Recibo:** Em qualquer venda registrada, clique em `Ver Recibo` para abrir o cupom não fiscal e reutilizar as funções de impressão ou WhatsApp.
+### 📦 3. Produtos & Serviços (Com Margem de Lucro)
+- **Inclusão:** Informe Nome, Foto (URL), Categoria, Preço de Custo, Preço de Venda e Unidade (`un`, `m²`, `pacote`, `milheiro`, `serviço`).
+- **Margem %:** O sistema calcula a porcentagem de margem de lucro automaticamente.
+- **Edição & Exclusão:** Altere dados com o botão azul `✏️` ou remova com a lixeira vermelha `🗑️`.
+
+### 👔 4. Funcionários & 🏢 5. Fornecedores
+- **Funcionários:** Nome, Cargo, WhatsApp, E-mail e Nível de Acesso.
+- **Fornecedores:** Razão Social, **Pessoa de Contato ("Pessoa que falo")**, WhatsApp, Endereço e Categoria.
+
+### 💰 6. Financeiro & ⚙️ 7. Configurações
+- **Financeiro:** Faturamento total recebido, baixa em vendas fiado com `Quitar Fiado` e reemissão de cupons.
+- **Configurações:** Edite os dados cadastrais da empresa (CNPJ, Endereço, PIX, Logo) exibidos nos comprovantes.
 
 ---
 
 ## ⚡ 5. Verificação de Produção (Vercel)
 
 - **Endereço do Sistema:** [https://publicarte.helpusbr.com/admin](https://publicarte.helpusbr.com/)
-- **Credenciais de Acesso:** Usuário `tercio` | Senha `admin1993`
+- **Credencial Admin:** `tercio` | `admin1993`
+- **Credencial Vendedor:** `vendedor` | `venda123`
 - **Status do Build:** Compilado via Vite v7.0.4 - 0 erros / 0 avisos.

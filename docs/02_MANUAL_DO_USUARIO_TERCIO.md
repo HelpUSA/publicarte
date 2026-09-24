@@ -2,71 +2,71 @@
 title: Manual do Usuário & Guia de Operação - Public Arte
 date: 2026-09-24
 author: HelpUS Technology
-tags: [manual-usuario, tercio, publicarte, operacao, frente-de-caixa, pdv, softcom, guia-passo-a-passo]
+tags: [manual-usuario, tercio, publicarte, operacao, frente-de-caixa, pdv, softcom, guia-passo-a-passo, perfis, cadastros]
 ---
 
 # 📘 Manual de Operação & Guia do Usuário
 > **Proprietário / Gestor:** Tércio Grassi  
 > **Empresa:** Public Arte – Comunicação Visual  
 > **Link de Acesso Directo:** [https://publicarte.helpusbr.com/admin](https://publicarte.helpusbr.com/admin)  
-> **Usuário Inicial:** `tercio` \| **Senha:** `admin1993`  
+> **Acesso Admin:** `tercio` \| **Senha:** `admin1993`  
+> **Acesso Vendedor:** `vendedor` \| **Senha:** `venda123`  
 > **Data de Emissão:** 24/09/2026
 
 ---
 
 > [!IMPORTANT]
-> **Acesso Exclusivo do Gestor**
-> A Área Administrativa é protegida contra acessos externos. Somente usuários autenticados com o login `tercio` e a senha cadastrada conseguem visualizar os relatórios e operar a frente de caixa.
+> **Perfis de Acesso & Segurança**
+> - **Administrador (`tercio` / `admin1993`):** Possui acesso total a todos os relatórios, cadastros completos (clientes, produtos, funcionários, fornecedores), configurações da empresa e opção de alternar a simulação de visualização no topo da tela (*"Simular: Admin / Vendedor"*).
+> - **Vendedor (`vendedor` / `venda123`):** Acesso restrito EXCLUSIVAMENTE à Frente de Caixa (PDV) e Orçamentos Rápidos, garantindo que os funcionários operem o balcão sem visualizar o faturamento total ou dados sensíveis.
 
 ---
 
 ## 🔑 1. Como Acessar a Área Administrativa
 
-1. Abra o navegador no seu computador, notebook ou smartphone e acesse: **[https://publicarte.helpusbr.com/](https://publicarte.helpusbr.com/)**.
-2. Clique no link **"Área Administrativa"** no rodapé da página (ou digite `/admin` na barra de endereço).
-3. Preencha os dados:
-   - **Usuário:** `tercio`
-   - **Senha:** `admin1993`
-4. Clique no botão azul **"Entrar na Área Administrativa"**.
+1. Acesse o site oficial: **[https://publicarte.helpusbr.com/](https://publicarte.helpusbr.com/)**.
+2. Clique no link **"Área Administrativa"** no rodapé (ou digite `/admin` na barra do seu navegador).
+3. Insira as credenciais desejadas:
+   - Para acesso total (Tércio): `tercio` / `admin1993`
+   - Para colaboradores: `vendedor` / `venda123`
+4. Clique no botão **"Entrar na Área Administrativa"**.
 
 ---
 
-## 📊 2. Estrutura das Abas de Gestão
+## 📊 2. Estrutura dos Módulos do Sistema
 
-O sistema é composto por **3 abas principais** localizadas no topo do painel:
+O sistema conta com abas superiores para navegação conforme o perfil de acesso:
 
 ```
-[ 🛒 Frente de Caixa (PDV) ]  [ 📦 Produtos & Serviços ]  [ 💰 Financeiro & Vendas ]
+[ 🛒 Frente de Caixa (PDV) ]  [ 👥 Clientes ]  [ 📦 Produtos & Serviços ]  [ 👔 Funcionários ]  [ 🏢 Fornecedores ]  [ 💰 Financeiro ]  [ ⚙️ Configurações ]
 ```
 
 ---
 
-## 🛒 3. Guia Operacional: Frente de Caixa (PDV Softcom)
+## 🛒 3. Guia Operacional: Frente de Caixa (PDV Softcom com Fotos)
 
 > [!TIP]
 > **Modelo Softcom Balcão**
-> Esta tela foi desenhada para a máxima rapidez no balcão. Você não precisa cadastrar o cliente previamente nem se preocupar com contagem de estoque para realizar a venda.
+> Desenvolvido para máxima rapidez na venda. Produtos aparecem com **foto na grade**, e as vendas ocorrem sem bloqueios por quantidade de estoque.
 
-### Passo a Passo da Venda:
+### Passo a Passo para Realizar uma Venda:
 
 1. **Acesse a Aba `🛒 Frente de Caixa (PDV)`**.
-2. **Identificar o Cliente (Opcional)**:
-   - Se desejar, digite o **Nome** e **WhatsApp** do cliente.
-   - Se for uma venda rápida sem cadastro, deixe em branco e o sistema registrará como *"Cliente Balcão"*.
-3. **Adicionar Produtos ao Carrinho**:
-   - Digite o nome no campo de busca ou clique diretamente sobre o item na grade.
-   - Para alterar a quantidade de um item no carrinho, utilize os botões `+` e `-`.
-   - Para remover um item, clique na lixeira vermelha (`🗑️`).
+2. **Identificar o Cliente**:
+   - Digite o **Nome** e **WhatsApp** do cliente ou selecione um cliente da lista cadastrada.
+   - Se for uma venda rápida de balcão sem identificação, deixe em branco (o sistema usará *"Cliente Balcão"*).
+3. **Adicionar Produtos**:
+   - Clique diretamente sobre a imagem/cartão do produto na grade visual ou utilize o campo de busca.
+   - Ajuste as quantidades com `+` ou `-` no carrinho.
 4. **Adicionar Item Avulso / Sob Medida**:
-   - Se o cliente for comprar algo sob medida que não está no catálogo (ex: *"Placa em ACM 3.5m x 1.2m"*), clique no botão `+ Adicionar Item Avulso`.
-   - Digite a descrição e o valor combinado.
+   - Clique em `+ Adicionar Item Avulso` para informar a descrição e o valor de um produto/serviço personalizado na hora.
 5. **Aplicar Desconto (Opcional)**:
-   - Insira o valor em R$ no campo **Desconto (R$)**. O total a pagar atualizará instantaneamente.
+   - Digite o valor em R$ no campo **Desconto (R$)**.
 6. **Selecionar a Forma de Pagamento**:
    - **PIX:** Pagamento instantâneo.
-   - **Cartão de Crédito ou Débito:** Pagamento via maquininha.
-   - **Dinheiro:** Digite o **Valor Recebido** para ver o cálculo exato do **Troco a Devolver**.
-   - **A Prazo (Fiado):** Digite quanto o cliente deu de **Entrada** (pode ser 0). O saldo restante irá automaticamente para *Contas a Receber*.
+   - **Cartão de Crédito / Débito:** Maquininha.
+   - **Dinheiro:** Digite o **Valor Recebido** para o cálculo exato do **Troco a Devolver**.
+   - **A Prazo (Fiado):** Digite a **Entrada** recebida (pode ser R$ 0,00). O saldo devedor irá automaticamente para Contas a Receber.
 7. **Finalizar Venda**:
    - Clique no botão verde **"FINALIZAR VENDA (F9)"**.
 
@@ -74,56 +74,42 @@ O sistema é composto por **3 abas principais** localizadas no topo do painel:
 
 ## 📄 4. Emissão e Envio do Comprovante Não Fiscal
 
-Ao finalizar a venda, o modal de **Comprovante Não Fiscal estilo Softcom** abrirá na tela:
+Ao finalizar a venda, o comprovante timbrado estilo bobina térmica é gerado instantaneamente:
 
-- **Imprimir Recibo (`🖨️`):** Aciona a impressora térmica de cupom (80mm/58mm) ou impressora A4 convencional com a formatação timbrada da Public Arte.
-- **Enviar via WhatsApp (`📲`):** Abre o WhatsApp diretamente com a mensagem formatada contendo o número da venda, itens, total e forma de pagamento.
+- **Imprimir Recibo (`🖨️`):** Aciona a impressora de cupom (80mm) ou A4 convencional.
+- **Enviar via WhatsApp (`📲`):** Abre a conversa no WhatsApp já com os itens, valores e instruções de pagamento.
 
 ---
 
-## 📦 5. Gestão de Produtos & Serviços (Sem Trava de Estoque)
+## 👥 5. Gestão de Clientes & Histórico de Compras
 
-> [!NOTE]
-> **Flexibilidade Total no Catálogo**
-> Os produtos não possuem trava de quantidade. Você pode vender qualquer produto no PDV sem mensagens de "estoque esgotado".
+1. Acesse a aba **`👥 Clientes`**.
+2. Cadastre o Nome, CPF/CNPJ, WhatsApp, E-mail e Endereço.
+3. Na tabela de clientes, clique no botão **`📋 Histórico`** para abrir o modal com a lista de todas as compras realizadas por aquele cliente, com datas, totais e status de pagamento.
 
-### Como Cadastrar um Novo Produto:
+---
+
+## 📦 6. Catálogo de Produtos, Fotos & Margem de Lucro
+
 1. Acesse a aba **`📦 Produtos & Serviços`**.
-2. No formulário à esquerda, preencha:
-   - **Nome:** ex: *Adesivo Recorte Eletrônico*
-   - **Preço Unitário:** ex: *40.00*
-   - **Unidade:** escolha entre `un`, `m²`, `pacote`, `milheiro` ou `serviço`.
-   - **Categoria:** ex: *Adesivos & Rótulos*
-3. Clique em **"Salvar no Catálogo"**.
-
-### Como Editar / Alterar um Produto Existente:
-1. Na tabela de produtos à direita, clique no ícone azul de lápis (**`✏️ Editar`**).
-2. O formulário à esquerda mudará para **"Alterar / Editar Produto"** com os dados carregados.
-3. Modifique o preço, nome ou unidade e clique em **"Salvar Alterações"**.
-4. Se quiser cancelar, clique em **"Cancelar Edição"**.
-
-### Como Excluir um Produto:
-1. Na tabela de produtos, clique no ícone vermelho de lixeira (**`🗑️ Excluir`**).
+2. Preencha Nome, Foto (URL da imagem), Categoria, Preço de Custo, Preço de Venda e Unidade (`un`, `m²`, `pacote`, `milheiro`, `serviço`).
+3. O sistema calcula automaticamente a **Margem de Lucro (%)**.
+4. **Editar:** Clique no ícone de lápis azul (`✏️ Editar`) para alterar preços ou fotos.
+5. **Excluir:** Clique na lixeira vermelha (`🗑️ Excluir`) para remover um item do catálogo.
 
 ---
 
-## 💰 6. Financeiro & Gestão de Fiado
+## 👔 7. Cadastros de Funcionários & 🏢 Fornecedores
 
-### Faturamento do Dia:
-A aba **`💰 Financeiro & Vendas`** mostra o valor acumulado de todas as vendas pagas.
-
-### Baixa em Vendas a Prazo (Fiado):
-1. Na tabela de Histórico de Vendas, as vendas a prazo são destacadas com o aviso **"Fiado"** e o valor restante.
-2. Quando o cliente vier pagar o restante, clique no botão verde **"Quitar Fiado"**.
-3. O status mudará imediatamente para **"Pago"** e o valor entrará no faturamento total do caixa.
+- **Funcionários:** Cadastre o nome, cargo/função (ex: Impressor, Gerente, Vendedor), WhatsApp, e-mail e nível de acesso.
+- **Fornecedores:** Registre a Razão Social da empresa, a **Pessoa de Contato ("Pessoa que falo")**, WhatsApp direto, Endereço e Categoria de insumos.
 
 ---
 
-## 📱 7. Controle de Caixa (Abertura e Fechamento)
+## 💰 8. Financeiro & ⚙️ Configurações da Empresa
 
-No topo da Área Administrativa, você pode controlar o status do expediente:
-- Clique em **"Fechar Caixa"** no final do dia para congelar o resumo diário.
-- Clique em **"Abrir Caixa"** no início do expediente.
+- **Financeiro:** Acompanhe o Faturamento Recebido do dia e o saldo pendente em Contas a Receber. Para dar baixa em vendas fiado, clique em **`Quitar Fiado`**.
+- **Configurações:** Altere Razão Social, CNPJ, Endereço da loja, WhatsApp oficial, Chave PIX e Logo da empresa.
 
 ---
 

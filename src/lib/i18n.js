@@ -112,14 +112,17 @@ export const translations = {
     
     // Tab Labels
     tabPdv: "🛒 Frente de Caixa (PDV)",
-    tabDashboard: "Painel Geral",
-    tabComandas: "Vendas & Comandas",
-    tabOrcamentos: "Orçamentos",
-    tabProdutos: "Produtos & Insumos",
-    tabMidias: "Gerenciador de Imagens",
-    tabFinanceiro: "Financeiro & Fiado",
-    tabEstoque: "Estoque & Alertas",
-    tabMobile: "Smartphone POS",
+    tabOrcamentos: "📄 Orçamentos",
+    tabCadastros: "🗂️ Cadastros",
+    tabProdutos: "📦 Produtos & Serviços",
+    tabClientes: "👥 Clientes",
+    tabFuncionarios: "👔 Funcionários",
+    tabFornecedores: "🚚 Fornecedores",
+    tabEstoque: "📦 Estoque & Entradas",
+    tabFinanceiro: "💰 Financeiro & Vendas",
+    tabConfig: "⚙️ Configurações da Empresa",
+    roleAdmin: "Perfil: Administrador (Total)",
+    roleStaff: "Perfil: Vendedor (Restrito)",
 
     // PDV / Frente de Caixa estilo Softcom
     pdvTitle: "Frente de Caixa & Tela de Vendas (Modelo Softcom)",

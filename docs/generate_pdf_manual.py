@@ -36,22 +36,22 @@ def build_pdf():
         'DocTitle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=20,
-        leading=24,
+        fontSize=18,
+        leading=22,
         textColor=PRIMARY,
         alignment=TA_LEFT,
-        spaceAfter=6
+        spaceAfter=4
     )
 
     style_subtitle = ParagraphStyle(
         'DocSubtitle',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=12,
-        leading=16,
+        fontSize=11,
+        leading=15,
         textColor=SECONDARY,
         alignment=TA_LEFT,
-        spaceAfter=12
+        spaceAfter=10
     )
 
     style_meta = ParagraphStyle(
@@ -61,17 +61,17 @@ def build_pdf():
         fontSize=9,
         leading=13,
         textColor=DARK,
-        spaceAfter=4
+        spaceAfter=2
     )
 
     style_h1 = ParagraphStyle(
         'SectionH1',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=14,
-        leading=18,
+        fontSize=13,
+        leading=17,
         textColor=PRIMARY,
-        spaceBefore=14,
+        spaceBefore=12,
         spaceAfter=6,
         keepWithNext=True
     )
@@ -80,10 +80,10 @@ def build_pdf():
         'SectionH2',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=11,
-        leading=15,
+        fontSize=10,
+        leading=14,
         textColor=SECONDARY,
-        spaceBefore=10,
+        spaceBefore=8,
         spaceAfter=4,
         keepWithNext=True
     )
@@ -92,10 +92,10 @@ def build_pdf():
         'BodyTextCustom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9,
-        leading=13,
+        fontSize=8.5,
+        leading=12,
         textColor=DARK,
-        spaceAfter=6,
+        spaceAfter=5,
         alignment=TA_LEFT
     )
 
@@ -103,11 +103,11 @@ def build_pdf():
         'BulletCustom',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=9,
-        leading=13,
+        fontSize=8.5,
+        leading=12,
         textColor=DARK,
-        leftIndent=12,
-        spaceAfter=4
+        leftIndent=10,
+        spaceAfter=3
     )
 
     style_th = ParagraphStyle(
@@ -124,8 +124,8 @@ def build_pdf():
         'TableCell',
         parent=styles['Normal'],
         fontName='Helvetica',
-        fontSize=8,
-        leading=11,
+        fontSize=7.5,
+        leading=10.5,
         textColor=DARK,
         alignment=TA_LEFT
     )
@@ -134,8 +134,8 @@ def build_pdf():
         'TableCellStatus',
         parent=styles['Normal'],
         fontName='Helvetica-Bold',
-        fontSize=8,
-        leading=11,
+        fontSize=7.5,
+        leading=10.5,
         textColor=ACCENT,
         alignment=TA_CENTER
     )
@@ -157,29 +157,29 @@ def build_pdf():
     t_header.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, -1), LIGHT_BG),
         ('BOX', (0, 0), (-1, -1), 1, PRIMARY),
-        ('PADDING', (0, 0), (-1, -1), 8),
+        ('PADDING', (0, 0), (-1, -1), 6),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
     ]))
     story.append(t_header)
-    story.append(Spacer(1, 14))
+    story.append(Spacer(1, 10))
 
     # Document Title
     story.append(Paragraph("DOCUMENTAÇÃO OFICIAL & MANUAL DO USUÁRIO", style_title))
-    story.append(Paragraph("Sistema de Vendas Frente de Caixa (Modelo Softcom) & Gestão sem Estoque", style_subtitle))
-    story.append(HRFlowable(width="100%", thickness=1.5, color=PRIMARY, spaceBefore=2, spaceAfter=14))
+    story.append(Paragraph("Sistema de Vendas Frente de Caixa (Modelo Softcom), Cadastros Unificados & Perfis de Acesso", style_subtitle))
+    story.append(HRFlowable(width="100%", thickness=1.5, color=PRIMARY, spaceBefore=2, spaceAfter=10))
 
     # --- SEÇÃO 1: RELATÓRIO DE IMPLEMENTAÇÃO ---
     story.append(Paragraph("1. Relatório Oficial de Implementação", style_h1))
     story.append(Paragraph(
         "Conforme solicitado pelo proprietário <b>Tércio Grassi</b>, o sistema da Public Arte "
-        "(<font color='#0284c7'><u>https://publicarte.helpusbr.com/admin</u></font>) foi atualizado para "
-        "uma estrutura enxuta e direta em <b>3 abas principais</b>, focando exclusivamente no modelo "
-        "<b>Frente de Caixa (PDV Softcom)</b> sem restrições ou bloqueios numéricos de estoque.",
+        "(<font color='#0284c7'><u>https://publicarte.helpusbr.com/admin</u></font>) foi atualizado com "
+        "<b>Cadastros Unificados Completo</b>, <b>Perfis de Acesso (Admin e Vendedor)</b>, <b>Grade Visual com Fotos de Produtos no PDV</b> "
+        "e <b>Configurações da Empresa</b>, mantendo a agilidade do modelo <b>Frente de Caixa (PDV Softcom)</b> sem travamento de estoque.",
         style_body
     ))
 
-    story.append(Spacer(1, 6))
-    story.append(Paragraph("<b>Tabela: O Que Foi Solicitado vs. O Que Foi Implementado</b>", style_h2))
+    story.append(Spacer(1, 4))
+    story.append(Paragraph("<b>Tabela: Resumo dos Requisitos Solicitados vs. Implementados</b>", style_h2))
 
     req_data = [
         [
@@ -188,100 +188,75 @@ def build_pdf():
             Paragraph("Detalhes da Implementação", style_th)
         ],
         [
-            Paragraph("<b>Interface Simplificada</b>", style_td),
+            Paragraph("<b>Perfis de Acesso (Admin / Vendedor)</b>", style_td),
             Paragraph("<b>CONCLUÍDO</b>", style_td_status),
-            Paragraph("Painel limpo em 3 abas essenciais (PDV, Produtos e Financeiro), sem poluição visual.", style_td)
+            Paragraph("Admin (tercio / admin1993) com acesso total e simulador de perfis; Vendedor (vendedor / venda123) restrito ao PDV e Orçamentos.", style_td)
         ],
         [
-            Paragraph("<b>Frente de Caixa (PDV Softcom)</b>", style_td),
+            Paragraph("<b>Cadastros Unificados Completo</b>", style_td),
             Paragraph("<b>CONCLUÍDO</b>", style_td_status),
-            Paragraph("Tela de vendas rápidas com busca de produtos, carrinho, desconto e item avulso.", style_td)
+            Paragraph("Clientes (com histórico de compras), Produtos (com foto, custo e margem de lucro %), Funcionários (cargos) e Fornecedores ('pessoa que falo').", style_td)
+        ],
+        [
+            Paragraph("<b>Fotos dos Produtos no PDV</b>", style_td),
+            Paragraph("<b>CONCLUÍDO</b>", style_td_status),
+            Paragraph("Grade de seleção no PDV exibindo foto/imagem visual de cada produto no catálogo.", style_td)
         ],
         [
             Paragraph("<b>Sem Trava de Estoque</b>", style_td),
             Paragraph("<b>CONCLUÍDO</b>", style_td_status),
-            Paragraph("Cadastro e vendas desbloqueados, sem exigência de quantidade ou bloqueio numérico.", style_td)
+            Paragraph("Vendas e cadastro sem bloqueio por quantidade de estoque.", style_td)
+        ],
+        [
+            Paragraph("<b>Configurações da Empresa (⚙️)</b>", style_td),
+            Paragraph("<b>CONCLUÍDO</b>", style_td_status),
+            Paragraph("Painel para definir CNPJ, Endereço, WhatsApp, Chave PIX e Logo oficial.", style_td)
         ],
         [
             Paragraph("<b>Cálculo de Troco & Fiado</b>", style_td),
             Paragraph("<b>CONCLUÍDO</b>", style_td_status),
-            Paragraph("Troco automático para pagamento em dinheiro e valor de entrada para vendas a prazo.", style_td)
+            Paragraph("Cálculo automático de troco e envio de saldo devedor para Contas a Receber.", style_td)
         ],
         [
             Paragraph("<b>Cupom Não Fiscal</b>", style_td),
             Paragraph("<b>CONCLUÍDO</b>", style_td_status),
-            Paragraph("Comprovante timbrado estilo bobina térmica com botões de Impressão e WhatsApp.", style_td)
-        ],
-        [
-            Paragraph("<b>Editar e Excluir Produtos</b>", style_td),
-            Paragraph("<b>CONCLUÍDO</b>", style_td_status),
-            Paragraph("Opções de Editar (Lápis Azul) e Excluir (Lixeira Vermelha) no catálogo de produtos.", style_td)
-        ],
-        [
-            Paragraph("<b>Controle Financeiro de Caixa</b>", style_td),
-            Paragraph("<b>CONCLUÍDO</b>", style_td_status),
-            Paragraph("Resumo de faturamento recebido, contas a receber (fiado) e controle de caixa.", style_td)
+            Paragraph("Comprovante timbrado estilo bobina com botões para Impressão e WhatsApp.", style_td)
         ]
     ]
 
-    t_req = Table(req_data, colWidths=[140, 75, 305])
+    t_req = Table(req_data, colWidths=[130, 70, 320])
     t_req.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, 0), PRIMARY),
         ('GRID', (0, 0), (-1, -1), 0.5, BORDER),
-        ('PADDING', (0, 0), (-1, -1), 6),
+        ('PADDING', (0, 0), (-1, -1), 5),
         ('VALIGN', (0, 0), (-1, -1), 'TOP'),
         ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, LIGHT_BG])
     ]))
     story.append(t_req)
-    story.append(Spacer(1, 14))
+    story.append(Spacer(1, 10))
 
     # --- SEÇÃO 2: MANUAL DO USUÁRIO ---
-    story.append(Paragraph("2. Manual de Operação do Gestor (Passo a Passo)", style_h1))
-    story.append(Paragraph(
-        "A Área Administrativa é dividida em apenas <b>3 abas diretas</b>. A seguir está o guia prático "
-        "de utilização para Tércio Grassi e sua equipe:",
-        style_body
-    ))
+    story.append(Paragraph("2. Manual de Operação dos Módulos do Sistema", style_h1))
 
-    # Aba 1 PDV
-    story.append(Paragraph("🛒 Aba 1: Frente de Caixa (PDV Modelo Softcom)", style_h2))
-    story.append(Paragraph("• <b>Cliente Balcão:</b> Digite o Nome e WhatsApp do cliente (ou deixe em branco para 'Cliente Balcão').", style_bullet))
-    story.append(Paragraph("• <b>Adicionar Produtos:</b> Digite o nome no campo de busca ou clique na grade de produtos.", style_bullet))
-    story.append(Paragraph("• <b>Item Avulso / Sob Medida:</b> Clique no botão '<b>+ Adicionar Item Avulso</b>' para registrar serviços sob medida com valor personalizado.", style_bullet))
-    story.append(Paragraph("• <b>Desconto & Meio de Pagamento:</b> Insira o valor do desconto (R$) e selecione a forma de pagamento (PIX, Cartão, Dinheiro ou A Prazo).", style_bullet))
-    story.append(Paragraph("• <b>Dinheiro & Troco:</b> Digite quanto o cliente entregou para visualizar o troco automático.", style_bullet))
-    story.append(Paragraph("• <b>A Prazo (Fiado):</b> Digite quanto o cliente deu de entrada. O saldo restante irá para o controle de Contas a Receber.", style_bullet))
-    story.append(Paragraph("• <b>Finalizar Venda (F9):</b> Clique no botão verde '<b>FINALIZAR VENDA (F9)</b>' para emitir o comprovante.", style_bullet))
-    story.append(Paragraph("• <b>Impressão & WhatsApp:</b> Utilize os botões no cupom para <b>Imprimir o Recibo (🖨️)</b> ou <b>Enviar via WhatsApp (📲)</b>.", style_bullet))
+    # Abas
+    story.append(Paragraph("🛒 <b>1. Frente de Caixa (PDV Softcom com Fotos):</b> Seleção rápida de produtos na grade com imagem. Suporte a cliente balcão ou cadastrado, item avulso sob medida, desconto, troco automático em dinheiro e venda fiado (A Prazo). Emissão de recibo não fiscal com 1 clique para imprimir (🖨️) ou enviar no WhatsApp (📲).", style_bullet))
+    story.append(Paragraph("👥 <b>2. Gestão de Clientes:</b> Cadastro completo e botão '📋 Histórico' para abrir modal com todas as compras já realizadas pelo cliente.", style_bullet))
+    story.append(Paragraph("📦 <b>3. Produtos & Serviços:</b> Cadastro com URL da Foto, Preço de Custo, Preço de Venda e cálculo em tempo real da Margem de Lucro (%). Funções de Editar (✏️) e Excluir (🗑️).", style_bullet))
+    story.append(Paragraph("👔 <b>4. Funcionários:</b> Cadastro da equipe com cargos/funções e nível de acesso.", style_bullet))
+    story.append(Paragraph("🏢 <b>5. Fornecedores:</b> Empresa, contato direto ('Pessoa que falo'), WhatsApp, endereço e categoria de produtos.", style_bullet))
+    story.append(Paragraph("💰 <b>6. Financeiro & Caixa:</b> Resumo de faturamento, controle de Contas a Receber (Fiado) com botão 'Quitar Fiado' e reemissão de cupons.", style_bullet))
+    story.append(Paragraph("⚙️ <b>7. Configurações da Empresa:</b> Alteração de CNPJ, Endereço da loja, WhatsApp oficial, Chave PIX e Logo da empresa.", style_bullet))
 
-    story.append(Spacer(1, 6))
-
-    # Aba 2 Produtos
-    story.append(Paragraph("📦 Aba 2: Cadastrar & Editar Produtos / Serviços", style_h2))
-    story.append(Paragraph("• <b>Inclusão:</b> Preencha Nome, Categoria, Preço e Unidade (un, m², pacote, milheiro, serviço) e clique em '<b>Salvar no Catálogo</b>'.", style_bullet))
-    story.append(Paragraph("• <b>Editar / Alterar:</b> Na tabela de produtos, clique no ícone de <b>Lápis Azul (✏️)</b>. O formulário mudará para 'Alterar / Editar Produto'. Modifique os dados e clique em '<b>Salvar Alterações</b>'.", style_bullet))
-    story.append(Paragraph("• <b>Excluir:</b> Clique no ícone de <b>Lixeira Vermelha (🗑️)</b> para remover o produto do catálogo.", style_bullet))
-    story.append(Paragraph("• <b>Sem Trava de Estoque:</b> Os produtos não exigem saldo nem bloqueiam vendas por quantidade de estoque.", style_bullet))
-
-    story.append(Spacer(1, 6))
-
-    # Aba 3 Financeiro
-    story.append(Paragraph("💰 Aba 3: Financeiro, Caixa & Vendas", style_h2))
-    story.append(Paragraph("• <b>Faturamento Recebido:</b> Total em R$ das vendas pagas e confirmadas.", style_bullet))
-    story.append(Paragraph("• <b>Contas a Receber (Fiado):</b> Saldo pendente das vendas a prazo. Clique em '<b>Quitar Fiado</b>' para dar baixa assim que o cliente pagar.", style_bullet))
-    story.append(Paragraph("• <b>Reemitir Comprovantes:</b> Clique em '<b>Ver Recibo</b>' em qualquer venda do histórico para abrir o cupom não fiscal e imprimir ou enviar pelo WhatsApp.", style_bullet))
-    story.append(Paragraph("• <b>Abertura e Fechamento de Caixa:</b> Utilize o botão no topo da tela para abrir ou fechar o caixa do expediente.", style_bullet))
-
-    story.append(Spacer(1, 14))
+    story.append(Spacer(1, 10))
 
     # Access Box Callout
     box_data = [
         [
             Paragraph(
-                "<b>🔑 CREDENCIAIS DE ACESSO DO GESTOR TÉRCIO GRASSI:</b><br/>"
+                "<b>🔑 CREDENCIAIS DE ACESSO DO SISTEMA:</b><br/>"
                 "• <b>URL Oficial:</b> <font color='#0284c7'>https://publicarte.helpusbr.com/admin</font><br/>"
-                "• <b>Usuário:</b> <font fontName='Helvetica-Bold' color='#1e3a8a'>tercio</font> &nbsp;&nbsp;|&nbsp;&nbsp; "
-                "<b>Senha:</b> <font fontName='Helvetica-Bold' color='#1e3a8a'>admin1993</font>",
+                "• <b>Perfil Gestor / Admin (Tércio):</b> Usuário <font fontName='Helvetica-Bold' color='#1e3a8a'>tercio</font> | Senha <font fontName='Helvetica-Bold' color='#1e3a8a'>admin1993</font> (Acesso Total + Simulador de Perfil)<br/>"
+                "• <b>Perfil Vendedor / Funcionários:</b> Usuário <font fontName='Helvetica-Bold' color='#0284c7'>vendedor</font> | Senha <font fontName='Helvetica-Bold' color='#0284c7'>venda123</font> (Exclusivo Frente de Caixa & Orçamentos)",
                 style_body
             )
         ]
@@ -290,11 +265,11 @@ def build_pdf():
     t_box.setStyle(TableStyle([
         ('BACKGROUND', (0, 0), (-1, -1), AMBER_BG),
         ('BOX', (0, 0), (-1, -1), 1, colors.HexColor("#d97706")),
-        ('PADDING', (0, 0), (-1, -1), 10),
+        ('PADDING', (0, 0), (-1, -1), 8),
     ]))
     story.append(t_box)
 
-    story.append(Spacer(1, 16))
+    story.append(Spacer(1, 12))
     story.append(Paragraph(
         "<font size=8 color='#64748b'>Documentação gerada por <b>HelpUS Technology</b> · Todos os direitos reservados · (83) 98610-4153 · helpusbr.com</font>",
         ParagraphStyle('FooterNotice', parent=styles['Normal'], alignment=TA_CENTER)

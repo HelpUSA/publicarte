@@ -20,7 +20,7 @@ export default function Login() {
 
     const userInputClean = usuarioInput.trim().toLowerCase();
 
-    // Acesso exclusivo para o usuário 'tercio' com a senha 'admin1993'
+    // 1. Acesso Administrador (Tércio Grassi)
     if (
       (userInputClean === 'tercio' || userInputClean === 'tercio@publicarte.com.br') &&
       password === 'admin1993'
@@ -35,10 +35,49 @@ export default function Login() {
       );
       setLoading(false);
       navigate('/admin');
-    } else {
-      setLoading(false);
-      setErro(t('loginErrorMsg'));
+      return;
     }
+
+    // 2. Acesso Funcionário / Vendedor (Restrito para Vendas e Orçamentos)
+    if (
+      (userInputClean === 'vendedor' || userInputClean === 'funcionario' || userInputClean === 'vendas') &&
+      password === 'venda123'
+    ) {
+      localStorage.setItem(
+        'usuario',
+        JSON.stringify({
+          nome: 'Atendente de Vendas',
+          email: 'vendas@publicarte.com.br',
+          tipo: 'vendedor'
+        })
+      );
+      setLoading(false);
+      navigate('/admin');
+      return;
+    }
+
+    // Verificação em funcionários cadastrados
+    const funcLocais = JSON.parse(localStorage.getItem('publicarte_funcionarios') || '[]');
+    const funcMatch = funcLocais.find(
+      (f) => f.usuario?.toLowerCase() === userInputClean && password === 'venda123'
+    );
+
+    if (funcMatch) {
+      localStorage.setItem(
+        'usuario',
+        JSON.stringify({
+          nome: funcMatch.nome,
+          email: `${userInputClean}@publicarte.com.br`,
+          tipo: funcMatch.nivel === 'Admin' ? 'admin' : 'vendedor'
+        })
+      );
+      setLoading(false);
+      navigate('/admin');
+      return;
+    }
+
+    setLoading(false);
+    setErro("Acesso negado. Admin: 'tercio' / 'admin1993' | Vendedor: 'vendedor' / 'venda123'");
   };
 
   return (
@@ -61,9 +100,9 @@ export default function Login() {
 
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-3 mb-5 text-xs text-blue-900 flex items-center gap-2.5">
             <CheckCircle2 size={18} className="text-blue-700 shrink-0" />
-            <div>
-              <strong>{t('loginNoticeTitle')}</strong><br />
-              {t('loginUserLabel')}: <code className="bg-white px-1.5 py-0.5 rounded font-mono font-bold">tercio</code> | {t('loginPassLabel')}: <code className="bg-white px-1.5 py-0.5 rounded font-mono font-bold">admin1993</code>
+            <div className="space-y-0.5">
+              <div><strong>Admin (Tércio):</strong> <code className="bg-white px-1 rounded font-mono font-bold">tercio</code> | <code className="bg-white px-1 rounded font-mono font-bold">admin1993</code></div>
+              <div><strong>Funcionários (Vendas):</strong> <code className="bg-white px-1 rounded font-mono font-bold">vendedor</code> | <code className="bg-white px-1 rounded font-mono font-bold">venda123</code></div>
             </div>
           </div>
 

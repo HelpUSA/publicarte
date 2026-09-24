@@ -11,8 +11,8 @@ export default function ProtectedRoute({ children }) {
     usuario = null;
   }
 
-  // Verifica se existe usuário autenticado como gestor/admin tercio
-  if (!usuario || (usuario.email !== 'tercio@publicarte.com.br' && usuario.tipo !== 'admin')) {
+  // Verifica se existe usuário autenticado
+  if (!usuario) {
     return <Navigate to="/login" replace />;
   }
 
