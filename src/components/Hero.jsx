@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Hero({
   videoUrl = '/video-publicarte.mp4',
-  altTexto = 'Public Arte – Comunicação Visual',
+  altTexto = 'ATENDIMENTO EXPRESSO EM JOÃO PESSOA',
   instagram = 'terciograssi'
 }) {
   return (
