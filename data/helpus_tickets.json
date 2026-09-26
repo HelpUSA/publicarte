@@ -1,5 +1,52 @@
 [
   {
+    "id": "tck-1790459969996",
+    "tenantId": "publicarte",
+    "tenantName": "Public Arte",
+    "code": "PUB-129",
+    "title": "teste pos-vercel pro: mude a imagem de brindes para um caderno de anotacoes elegante.",
+    "description": "teste pos-vercel pro: mude a imagem de brindes para um caderno de anotacoes elegante.",
+    "category": "support",
+    "priority": "medium",
+    "status": "in_production",
+    "pendingLocalExecution": true,
+    "createdByEmail": "tercio@publicarte.com.br",
+    "createdByName": "Tércio (Public Arte)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "tercio@publicarte.com.br",
+      "userName": "Tércio (Public Arte)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1790459969996",
+        "ticketId": "tck-1790459969996",
+        "senderId": "tercio@publicarte.com.br",
+        "senderName": "Tércio (Public Arte)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "teste pos-vercel pro: mude a imagem de brindes para um caderno de anotacoes elegante.",
+        "attachments": [],
+        "createdAt": "2026-09-26T21:59:29.996Z"
+      },
+      {
+        "id": "msg-app-1790459969998",
+        "ticketId": "tck-1790459969997",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS na Vercel Pro Cloud. Notificando agente local...",
+        "createdAt": "2026-09-26T21:59:29.997Z"
+      }
+    ],
+    "createdAt": "2026-09-26T21:59:29.997Z",
+    "updatedAt": "2026-09-26T21:59:29.997Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
+  },
+  {
     "id": "tck-1790457765724",
     "tenantId": "publicarte",
     "tenantName": "Public Arte",
