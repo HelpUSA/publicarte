@@ -38,7 +38,7 @@ export default function Home() {
       nome: 'Placa em Metalon com Lona Impressa',
       preco: 120.0,
       marca: 'Placas & Fachadas',
-      imagem_url: 'https://images.unsplash.com/photo-1542744094-3a3172720449?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 104,
