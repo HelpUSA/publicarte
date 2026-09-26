@@ -1,5 +1,52 @@
 [
   {
+    "id": "tck-1790457765724",
+    "tenantId": "publicarte",
+    "tenantName": "Public Arte",
+    "code": "PUB-128",
+    "title": "teste direto da nuvem vercel: altere a imagem de brindes para um relogio / smartwatch elegante.",
+    "description": "teste direto da nuvem vercel: altere a imagem de brindes para um relogio / smartwatch elegante.",
+    "category": "support",
+    "priority": "medium",
+    "status": "in_production",
+    "pendingLocalExecution": true,
+    "createdByEmail": "tercio@publicarte.com.br",
+    "createdByName": "Tércio (Public Arte)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "tercio@publicarte.com.br",
+      "userName": "Tércio (Public Arte)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1790457765724",
+        "ticketId": "tck-1790457765724",
+        "senderId": "tercio@publicarte.com.br",
+        "senderName": "Tércio (Public Arte)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "teste direto da nuvem vercel: altere a imagem de brindes para um relogio / smartwatch elegante.",
+        "attachments": [],
+        "createdAt": "2026-09-26T21:22:45.724Z"
+      },
+      {
+        "id": "msg-app-1790457765726",
+        "ticketId": "tck-1790457765725",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS na Vercel Cloud. Notificando agente local...",
+        "createdAt": "2026-09-26T21:22:45.725Z"
+      }
+    ],
+    "createdAt": "2026-09-26T21:22:45.725Z",
+    "updatedAt": "2026-09-26T21:22:45.725Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
+  },
+  {
     "id": "tck-1790456964502",
     "tenantId": "publicarte",
     "tenantName": "Public Arte",
