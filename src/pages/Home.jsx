@@ -24,14 +24,14 @@ export default function Home() {
       nome: 'Banner de Vinil 440g com Ilhós',
       preco: 45.0,
       marca: 'Banners & Lonas',
-      imagem_url: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 102,
       nome: 'Adesivo Vinílico Recorte Eletrônico',
       preco: 40.0,
       marca: 'Adesivos Vinílicos',
-      imagem_url: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 103,
