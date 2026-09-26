@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1790453583475",
+    "tenantId": "publicarte",
+    "tenantName": "Public Arte",
+    "code": "PUB-123",
+    "title": "para testar o processo, mude agora para uma xicara de cor preta.",
+    "description": "para testar o processo, mude agora para uma xicara de cor preta.",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "tercio@publicarte.com.br",
+    "createdByName": "Tércio (Public Arte)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "tercio@publicarte.com.br",
+      "userName": "Tércio (Public Arte)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1790453583475",
+        "ticketId": "tck-1790453583475",
+        "senderId": "tercio@publicarte.com.br",
+        "senderName": "Tércio (Public Arte)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "para testar o processo, mude agora para uma xicara de cor preta.",
+        "attachments": [],
+        "createdAt": "2026-09-26T20:13:03.475Z"
+      }
+    ],
+    "createdAt": "2026-09-26T20:13:03.475Z",
+    "updatedAt": "2026-09-26T20:13:03.475Z"
+  },
+  {
     "id": "tck-1790452725053",
     "tenantId": "publicarte",
     "tenantName": "Public Arte",
