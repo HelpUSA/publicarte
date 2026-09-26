@@ -74,13 +74,16 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
                   src={serv.image}
                   alt={title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  onError={(e) => {
+                    e.target.src = 'https://via.placeholder.com/600x400?text=Imagem+Indisponível';
+                  }}
                 />
                 <div className={`absolute inset-0 transition-opacity ${isSelected ? 'bg-blue-900/30' : 'bg-black/10 group-hover:bg-transparent'}`} />
               </div>
 
               {/* Título */}
               <div className="p-3 text-center flex-grow flex flex-col justify-center">
-                <h3 className={`font-bold text-xs sm:text-sm ${isSelected ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`font-bold text-xs sm:text-sm ${isSelected ? 'text-white' : 'text-gray-900'}`}> 
                   {title}
                 </h3>
               </div>
