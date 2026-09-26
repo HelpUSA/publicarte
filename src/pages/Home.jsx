@@ -24,42 +24,42 @@ export default function Home() {
       nome: 'Banner de Vinil 440g com Ilhós',
       preco: 45.0,
       marca: 'Banners & Lonas',
-      imagem_url: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 102,
       nome: 'Adesivo Vinílico Recorte Eletrônico',
       preco: 40.0,
       marca: 'Adesivos Vinílicos',
-      imagem_url: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 103,
       nome: 'Placa em Metalon com Lona Impressa',
       preco: 120.0,
       marca: 'Placas & Fachadas',
-      imagem_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 104,
       nome: 'Cartão de Visita 250g (1.000 unidades)',
       preco: 90.0,
       marca: 'Gráfica Rápida',
-      imagem_url: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 105,
       nome: 'Serigrafia & DTF em Camisetas',
       preco: 25.0,
       marca: 'Serigrafia & DTF',
-      imagem_url: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1622445268465-8438165a2683?w=500&auto=format&fit=crop&q=60'
     },
     {
       id: 106,
       nome: 'Caneca Porcelana Personalizada',
       preco: 28.0,
       marca: 'Brindes Promocionais',
-      imagem_url: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60'
+      imagem_url: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=500&auto=format&fit=crop&q=60'
     }
   ];
 
