@@ -21,7 +21,7 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
       id: 3,
       nameKey: 'catSigns',
       descKey: 'descSigns',
-      image: 'https://images.unsplash.com/photo-1542744094-3a3172720449?w=400&auto=format&fit=crop&q=60'
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 4,
