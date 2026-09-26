@@ -9,13 +9,13 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
       id: 1,
       nameKey: 'catBanners',
       descKey: 'descBanners',
-      image: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&auto=format&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 2,
       nameKey: 'catStickers',
       descKey: 'descStickers',
-      image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&auto=format&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
       id: 4,
       nameKey: 'catScreenprint',
       descKey: 'descScreenprint',
-      image: 'https://images.unsplash.com/photo-1622445268465-8438165a2683?w=600&auto=format&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 5,
@@ -39,19 +39,7 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
       id: 6,
       nameKey: 'catGiveaways',
       descKey: 'descGiveaways',
-      image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=600&auto=format&fit=crop&q=80'
-    },
-    {
-      id: 7,
-      nameKey: 'catVinylStickers',
-      descKey: 'descVinylStickers',
-      image: 'https://images.unsplash.com/photo-1601234567890-abcdef123456?w=600&auto=format&fit=crop&q=80'
-    },
-    {
-      id: 8,
-      nameKey: 'catScreenPrintingDTF',
-      descKey: 'descScreenPrintingDTF',
-      image: 'https://images.unsplash.com/photo-1601234567891-abcdef123457?w=600&auto=format&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&auto=format&fit=crop&q=80'
     },
   ];
 
