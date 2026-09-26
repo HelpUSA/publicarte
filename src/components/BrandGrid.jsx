@@ -41,6 +41,18 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
       descKey: 'descGiveaways',
       image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=600&auto=format&fit=crop&q=80'
     },
+    {
+      id: 7,
+      nameKey: 'catVinylStickers',
+      descKey: 'descVinylStickers',
+      image: 'https://images.unsplash.com/photo-1601234567890-abcdef123456?w=600&auto=format&fit=crop&q=80'
+    },
+    {
+      id: 8,
+      nameKey: 'catScreenPrintingDTF',
+      descKey: 'descScreenPrintingDTF',
+      image: 'https://images.unsplash.com/photo-1601234567891-abcdef123457?w=600&auto=format&fit=crop&q=80'
+    },
   ];
 
   return (
