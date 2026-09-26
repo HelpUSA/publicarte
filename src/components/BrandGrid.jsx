@@ -9,37 +9,37 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
       id: 1,
       nameKey: 'catBanners',
       descKey: 'descBanners',
-      image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&auto=format&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 2,
       nameKey: 'catStickers',
       descKey: 'descStickers',
-      image: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=600&auto=format&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 3,
       nameKey: 'catSigns',
       descKey: 'descSigns',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 4,
       nameKey: 'catScreenprint',
       descKey: 'descScreenprint',
-      image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&auto=format&fit=crop&q=60'
+      image: 'https://images.unsplash.com/photo-1622445268465-8438165a2683?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 5,
       nameKey: 'catPrintshop',
       descKey: 'descPrintshop',
-      image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=400&auto=format&fit=crop&q=60'
+      image: 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 6,
       nameKey: 'catGiveaways',
       descKey: 'descGiveaways',
-      image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&auto=format&fit=crop&q=60'
+      image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=600&auto=format&fit=crop&q=80'
     },
   ];
 
