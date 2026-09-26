@@ -8,7 +8,7 @@
     "description": "inclua uma imgaem representativa em adesivos vinilico e outra em serigrafia e dft.",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "tercio@publicarte.com.br",
     "createdByName": "Tércio (Public Arte)",
     "contextData": {
@@ -45,9 +45,30 @@
           }
         ],
         "createdAt": "2026-09-26T14:50:31.405Z"
+      },
+      {
+        "id": "msg-app-1790434243744",
+        "ticketId": "tck-1790434231405",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-09-26T14:50:43.744Z"
+      },
+      {
+        "id": "msg-prod-1790434243745",
+        "ticketId": "tck-1790434231405",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-09-26T14:50:43.744Z"
       }
     ],
     "createdAt": "2026-09-26T14:50:31.405Z",
-    "updatedAt": "2026-09-26T14:50:31.405Z"
+    "updatedAt": "2026-09-26T14:50:43.744Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
   }
 ]
