@@ -15,7 +15,7 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
       id: 2,
       nameKey: 'catStickers',
       descKey: 'descStickers',
-      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&auto=format&fit=crop&q=60'
+      image: 'https://images.unsplash.com/photo-1572375992501-4b0892d50c69?w=600&auto=format&fit=crop&q=80'
     },
     {
       id: 3,
