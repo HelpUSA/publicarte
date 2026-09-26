@@ -39,7 +39,7 @@ const BrandGrid = ({ categoriaSelecionada, onCategoriaSelect }) => {
       id: 6,
       nameKey: 'catGiveaways',
       descKey: 'descGiveaways',
-      image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80'
+      image: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=600&auto=format&fit=crop&q=80'
     },
   ];
 
