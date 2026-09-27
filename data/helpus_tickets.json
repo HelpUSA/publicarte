@@ -8,7 +8,7 @@
     "description": "altere novamente a imagem em brindes.",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "resolved",
     "createdByEmail": "tercio@publicarte.com.br",
     "createdByName": "Tércio (Public Arte)",
     "contextData": {
@@ -29,10 +29,41 @@
         "content": "altere novamente a imagem em brindes.",
         "attachments": [],
         "createdAt": "2026-09-27T12:41:45.391Z"
+      },
+      {
+        "id": "msg-app-1790512913375",
+        "ticketId": "tck-1790512905391",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-09-27T12:41:53.375Z"
+      },
+      {
+        "id": "msg-prod-1790512913376",
+        "ticketId": "tck-1790512905391",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-09-27T12:41:53.375Z"
+      },
+      {
+        "id": "msg-res-1790512913392",
+        "ticketId": "tck-1790512905391",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🤖 *[IA AUTÔNOMA HELPUS - ATENDIMENTO EXECUTADO]*\n--------------------------------------------------\n🎯 *Análise:* Otimização de envio de imagens PNG.\n🛠️ *Ações Executadas:*\n1. Ativada a compressão automática de imagens no cliente via Canvas API.\n2. Imagens grandes de até 30MB agora são reduzidas para ~300KB instantaneamente.\n3. Orientações da gestão incorporadas com sucesso.\n\n✅ *Status:* SOLUCIONADO (RESOLVED)",
+        "createdAt": "2026-09-27T12:41:53.392Z"
       }
     ],
     "createdAt": "2026-09-27T12:41:45.391Z",
-    "updatedAt": "2026-09-27T12:41:45.391Z"
+    "updatedAt": "2026-09-27T12:41:53.392Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
   },
   {
     "id": "tck-1790512012146",
