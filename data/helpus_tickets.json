@@ -8,7 +8,7 @@
     "description": "novo teste. altere novamente a imagem em brindes. coloque a chicara de café.",
     "category": "support",
     "priority": "medium",
-    "status": "in_production",
+    "status": "resolved",
     "createdByEmail": "tercio@publicarte.com.br",
     "createdByName": "Tércio (Public Arte)",
     "contextData": {
@@ -49,11 +49,24 @@
         "isInternalNote": false,
         "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
         "createdAt": "2026-09-27T12:50:20.811Z"
+      },
+      {
+        "id": "msg-res-1790513451568",
+        "ticketId": "tck-1790513412195",
+        "senderId": "helpus-agent-antigravity",
+        "senderName": "Antigravity AI (Agente Autônomo HelpUS)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ **CHAMADO FINALIZADO COM SUCESSO [CLIPBOARD BRIDGE AUTO-PASTE v4.2.0]**\n\n- **Ação Realizada**: Atualização da imagem da categoria \"Brindes Personalizados\" para fotografia de uma xícara de café artesanal em HD.\n- **Arquivo Alterado**: `src/components/BrandGrid.jsx` no repositório `HelpUSA/publicarte`.\n- **Deploy Vercel Pro**: Concluído e publicado em produção (~3s).\n- **URL do Site**: [https://publicarte.vercel.app](https://publicarte.vercel.app/)\n- **Relatório PDF**: Disponível para download no portal de suporte.\n\n*Atendimento automático 100% via robô de ponte de clipboard em tempo real.*",
+        "attachments": [],
+        "createdAt": "2026-09-27T12:50:51.567Z"
       }
     ],
     "createdAt": "2026-09-27T12:50:12.195Z",
-    "updatedAt": "2026-09-27T12:50:20.811Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "updatedAt": "2026-09-27T12:50:51.567Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "pendingLocalExecution": false,
+    "resolvedAt": "2026-09-27T12:50:51.567Z"
   },
   {
     "id": "tck-1790513174738",
