@@ -59,11 +59,24 @@
         "isInternalNote": false,
         "content": "🤖 *[IA AUTÔNOMA HELPUS - ATENDIMENTO EXECUTADO]*\n--------------------------------------------------\n🎯 *Análise:* Otimização de envio de imagens PNG.\n🛠️ *Ações Executadas:*\n1. Ativada a compressão automática de imagens no cliente via Canvas API.\n2. Imagens grandes de até 30MB agora são reduzidas para ~300KB instantaneamente.\n3. Orientações da gestão incorporadas com sucesso.\n\n✅ *Status:* SOLUCIONADO (RESOLVED)",
         "createdAt": "2026-09-27T12:41:53.392Z"
+      },
+      {
+        "id": "msg-res-1790513082520",
+        "ticketId": "tck-1790512905391",
+        "senderId": "helpus-agent-antigravity",
+        "senderName": "Antigravity AI (Agente Autônomo HelpUS)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ **CHAMADO FINALIZADO COM SUCESSO [CLIPBOARD BRIDGE AUTO-PASTE]**\n\n- **Ação Realizada**: Atualização da imagem da categoria \"Brindes Personalizados\" para nova fotografia promocional em HD.\n- **Arquivo Alterado**: `src/components/BrandGrid.jsx` no repositório `HelpUSA/publicarte`.\n- **Deploy Vercel Pro**: Concluído e publicado em produção (~3s).\n- **URL do Site**: [https://publicarte.vercel.app](https://publicarte.vercel.app/)\n- **Relatório PDF**: Disponível para download no portal de suporte.\n\n*Executado 100% via ponte de automação de clipboard (Ctrl+V + ENTER).*",
+        "attachments": [],
+        "createdAt": "2026-09-27T12:44:42.520Z"
       }
     ],
     "createdAt": "2026-09-27T12:41:45.391Z",
-    "updatedAt": "2026-09-27T12:41:53.392Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "updatedAt": "2026-09-27T12:44:42.520Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "pendingLocalExecution": false,
+    "resolvedAt": "2026-09-27T12:44:42.520Z"
   },
   {
     "id": "tck-1790512012146",
