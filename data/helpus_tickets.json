@@ -1,5 +1,63 @@
 [
   {
+    "id": "tck-1790510537221",
+    "tenantId": "publicarte",
+    "tenantName": "Public Arte",
+    "code": "PUB-131",
+    "title": "Teste de Notificacao Vercel para Antigravity",
+    "description": "Verificando para onde o robo da Vercel responde quando uma solicitacao e criada.",
+    "category": "support",
+    "priority": "medium",
+    "status": "resolved",
+    "createdByEmail": "tercio@publicarte.com.br",
+    "createdByName": "Tércio (Public Arte)",
+    "messages": [
+      {
+        "id": "msg-1790510537221",
+        "ticketId": "tck-1790510537221",
+        "senderId": "tercio@publicarte.com.br",
+        "senderName": "Tércio (Public Arte)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Verificando para onde o robo da Vercel responde quando uma solicitacao e criada.",
+        "createdAt": "2026-09-27T12:02:17.221Z"
+      },
+      {
+        "id": "msg-app-1790510552614",
+        "ticketId": "tck-1790510537221",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-09-27T12:02:32.614Z"
+      },
+      {
+        "id": "msg-prod-1790510552615",
+        "ticketId": "tck-1790510537221",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-09-27T12:02:32.614Z"
+      },
+      {
+        "id": "msg-res-1790510552633",
+        "ticketId": "tck-1790510537221",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🤖 *[IA AUTÔNOMA HELPUS - ATENDIMENTO & ALTERAÇÃO EXECUTADA]*\n--------------------------------------------------\n🎯 *Solicitação:* \"Teste de Notificacao Vercel para Antigravity\"\n🛠️ *Ações Executadas no Sistema:* \n1. **Processamento Autônomo:** A solicitação foi analisada, validada e aplicada com sucesso no sistema.\n2. **Atualização de Estado:** As modificações requisitadas foram implementadas e integradas ao ambiente.\n3. **Instruções do Administrador:** As demandas adicionais repassadas pelo painel master foram plenamente atendidas.\n4. **Notificação de Conclusão:** Cliente e administrador notificados via e-mail e relatório técnico em PDF liberado.\n\n✅ *Status:* SOLUCIONADO (RESOLVED)",
+        "createdAt": "2026-09-27T12:02:32.633Z"
+      }
+    ],
+    "createdAt": "2026-09-27T12:02:17.221Z",
+    "updatedAt": "2026-09-27T12:02:32.633Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
+  },
+  {
     "id": "tck-1790460229320",
     "tenantId": "publicarte",
     "tenantName": "Public Arte",
