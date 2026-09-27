@@ -77,7 +77,7 @@ export default function Login() {
     }
 
     setLoading(false);
-    setErro("Acesso negado. Admin: 'tercio' / 'admin1993' | Vendedor: 'vendedor' / 'venda123'");
+    setErro("Usuário ou senha incorretos. Por favor, verifique suas credenciais.");
   };
 
   return (
@@ -96,14 +96,6 @@ export default function Login() {
             <p className="text-gray-500 text-xs mt-1">
               {t('loginSubtitle')}
             </p>
-          </div>
-
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-3 mb-5 text-xs text-blue-900 flex items-center gap-2.5">
-            <CheckCircle2 size={18} className="text-blue-700 shrink-0" />
-            <div className="space-y-0.5">
-              <div><strong>Admin (Tércio):</strong> <code className="bg-white px-1 rounded font-mono font-bold">tercio</code> | <code className="bg-white px-1 rounded font-mono font-bold">admin1993</code></div>
-              <div><strong>Funcionários (Vendas):</strong> <code className="bg-white px-1 rounded font-mono font-bold">vendedor</code> | <code className="bg-white px-1 rounded font-mono font-bold">venda123</code></div>
-            </div>
           </div>
 
           {erro && (
