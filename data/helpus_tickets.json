@@ -8,7 +8,7 @@
     "description": "retire as informações de login e senha que estão expostas na parte de login.",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "tercio@publicarte.com.br",
     "createdByName": "Tércio (Public Arte)",
     "contextData": {
@@ -45,10 +45,31 @@
           }
         ],
         "createdAt": "2026-09-27T13:01:58.266Z"
+      },
+      {
+        "id": "msg-app-1790514134439",
+        "ticketId": "tck-1790514118266",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-09-27T13:02:14.439Z"
+      },
+      {
+        "id": "msg-prod-1790514134440",
+        "ticketId": "tck-1790514118266",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-09-27T13:02:14.439Z"
       }
     ],
     "createdAt": "2026-09-27T13:01:58.266Z",
-    "updatedAt": "2026-09-27T13:01:58.266Z"
+    "updatedAt": "2026-09-27T13:02:14.439Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
   },
   {
     "id": "tck-1790513561303",
