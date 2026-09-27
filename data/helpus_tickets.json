@@ -8,7 +8,7 @@
     "description": "[20:48, 24/09/2026] Tércio Grassi: Nome do produto:\nQuantidade que tem no estoque:\n\nQuantidade Mínima do. Estoque: \n\nObservação:\n[20:59, 24/09/2026] Tércio Grassi: Aí tem a parte da venda ... \n\nQue a pessoa escolhe o cliente cadastrado ou um cliente avulso (estilo) balcão\n[20:59, 24/09/2026] Tércio Grassi: Coloca o nome do produto que tá cadastrado ele já dá o preço de venda",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "tercio@publicarte.com.br",
     "createdByName": "Tércio (Public Arte)",
     "contextData": {
@@ -45,10 +45,31 @@
           }
         ],
         "createdAt": "2026-09-27T12:52:41.303Z"
+      },
+      {
+        "id": "msg-app-1790513575955",
+        "ticketId": "tck-1790513561303",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-09-27T12:52:55.955Z"
+      },
+      {
+        "id": "msg-prod-1790513575956",
+        "ticketId": "tck-1790513561303",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-09-27T12:52:55.955Z"
       }
     ],
     "createdAt": "2026-09-27T12:52:41.303Z",
-    "updatedAt": "2026-09-27T12:52:41.303Z"
+    "updatedAt": "2026-09-27T12:52:55.955Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
   },
   {
     "id": "tck-1790513412195",
