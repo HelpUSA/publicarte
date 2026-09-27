@@ -8,7 +8,7 @@
     "description": "altere novamente a imagem de brindes para um novo teste.",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "tercio@publicarte.com.br",
     "createdByName": "Tércio (Public Arte)",
     "contextData": {
@@ -29,10 +29,31 @@
         "content": "altere novamente a imagem de brindes para um novo teste.",
         "attachments": [],
         "createdAt": "2026-09-27T12:46:14.738Z"
+      },
+      {
+        "id": "msg-app-1790513182047",
+        "ticketId": "tck-1790513174738",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-09-27T12:46:22.047Z"
+      },
+      {
+        "id": "msg-prod-1790513182048",
+        "ticketId": "tck-1790513174738",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-09-27T12:46:22.047Z"
       }
     ],
     "createdAt": "2026-09-27T12:46:14.738Z",
-    "updatedAt": "2026-09-27T12:46:14.738Z"
+    "updatedAt": "2026-09-27T12:46:22.047Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
   },
   {
     "id": "tck-1790512905391",
