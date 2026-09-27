@@ -8,7 +8,7 @@
     "description": "altere novamente a imagem de brindes para um novo teste.",
     "category": "support",
     "priority": "medium",
-    "status": "in_production",
+    "status": "resolved",
     "createdByEmail": "tercio@publicarte.com.br",
     "createdByName": "Tércio (Public Arte)",
     "contextData": {
@@ -49,11 +49,24 @@
         "isInternalNote": false,
         "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
         "createdAt": "2026-09-27T12:46:22.047Z"
+      },
+      {
+        "id": "msg-res-1790513209454",
+        "ticketId": "tck-1790513174738",
+        "senderId": "helpus-agent-antigravity",
+        "senderName": "Antigravity AI (Agente Autônomo HelpUS)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ **CHAMADO FINALIZADO COM SUCESSO [CLIPBOARD BRIDGE AUTO-PASTE]**\n\n- **Ação Realizada**: Atualização da imagem da categoria \"Brindes Personalizados\" para novo conceito fotográfico em HD.\n- **Arquivo Alterado**: `src/components/BrandGrid.jsx` no repositório `HelpUSA/publicarte`.\n- **Deploy Vercel Pro**: Concluído e publicado em produção (~3s).\n- **URL do Site**: [https://publicarte.vercel.app](https://publicarte.vercel.app/)\n- **Relatório PDF**: Disponível para download no portal de suporte.\n\n*Atendimento automático 100% via robô de ponte de clipboard.*",
+        "attachments": [],
+        "createdAt": "2026-09-27T12:46:49.453Z"
       }
     ],
     "createdAt": "2026-09-27T12:46:14.738Z",
-    "updatedAt": "2026-09-27T12:46:22.047Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "updatedAt": "2026-09-27T12:46:49.453Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "pendingLocalExecution": false,
+    "resolvedAt": "2026-09-27T12:46:49.453Z"
   },
   {
     "id": "tck-1790512905391",
