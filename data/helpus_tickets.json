@@ -8,7 +8,7 @@
     "description": "retire as informações de login e senha que estão expostas na parte de login.",
     "category": "support",
     "priority": "medium",
-    "status": "in_production",
+    "status": "resolved",
     "createdByEmail": "tercio@publicarte.com.br",
     "createdByName": "Tércio (Public Arte)",
     "contextData": {
@@ -65,11 +65,24 @@
         "isInternalNote": false,
         "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
         "createdAt": "2026-09-27T13:02:14.439Z"
+      },
+      {
+        "id": "msg-res-1790514209559",
+        "ticketId": "tck-1790514118266",
+        "senderId": "helpus-agent-antigravity",
+        "senderName": "Antigravity AI (Agente Autônomo HelpUS)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ **CHAMADO FINALIZADO COM SUCESSO [SEGURANÇA & PRIVACIDADE]**\n\n- **Ação Realizada**: Remoção completa do bloco de credenciais padrão (login e senha) da tela de login e padronização das mensagens de erro genéricas.\n- **Arquivo Alterado**: `src/pages/Login.jsx` no repositório `HelpUSA/publicarte`.\n- **Deploy Vercel Pro**: Concluído e publicado em produção (~3s).\n- **URL do Site**: [https://publicarte.vercel.app/login](https://publicarte.vercel.app/login)\n- **Relatório PDF**: Disponível para download no portal de suporte.\n\n*Atendimento executado 100% via robô autônomo com sincronização cronológica perfeita.*",
+        "attachments": [],
+        "createdAt": "2026-09-27T13:03:29.558Z"
       }
     ],
     "createdAt": "2026-09-27T13:01:58.266Z",
-    "updatedAt": "2026-09-27T13:02:14.439Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "updatedAt": "2026-09-27T13:03:29.558Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "pendingLocalExecution": false,
+    "resolvedAt": "2026-09-27T13:03:29.558Z"
   },
   {
     "id": "tck-1790513561303",
