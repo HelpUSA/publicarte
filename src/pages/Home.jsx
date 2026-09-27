@@ -59,7 +59,7 @@ export default function Home() {
       nome: 'Caneca Porcelana Personalizada',
       preco: 28.0,
       marca: 'Brindes Promocionais',
-      imagem_url: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=500&auto=format&fit=crop&q=60'
+      imagem_url: '/estoque_nova.jpg'
     }
   ];
 
