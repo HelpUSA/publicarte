@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1790512905391",
+    "tenantId": "publicarte",
+    "tenantName": "Public Arte",
+    "code": "PUB-133",
+    "title": "altere novamente a imagem em brindes.",
+    "description": "altere novamente a imagem em brindes.",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "tercio@publicarte.com.br",
+    "createdByName": "Tércio (Public Arte)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "tercio@publicarte.com.br",
+      "userName": "Tércio (Public Arte)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1790512905391",
+        "ticketId": "tck-1790512905391",
+        "senderId": "tercio@publicarte.com.br",
+        "senderName": "Tércio (Public Arte)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "altere novamente a imagem em brindes.",
+        "attachments": [],
+        "createdAt": "2026-09-27T12:41:45.391Z"
+      }
+    ],
+    "createdAt": "2026-09-27T12:41:45.391Z",
+    "updatedAt": "2026-09-27T12:41:45.391Z"
+  },
+  {
     "id": "tck-1790512012146",
     "tenantId": "publicarte",
     "tenantName": "Public Arte",
