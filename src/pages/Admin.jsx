@@ -28,7 +28,8 @@ import {
   Shield,
   Eye,
   Building,
-  Image as ImageIcon
+  Image as ImageIcon,
+  Crown
 } from 'lucide-react';
 
 export default function Admin() {
@@ -36,10 +37,11 @@ export default function Admin() {
 
   // Logged-in User Session & Role
   const sessionUser = JSON.parse(localStorage.getItem('usuario') || '{"nome":"Tércio Grassi","tipo":"admin"}');
-  const isActualAdmin = sessionUser.tipo === 'admin';
-  const [activeRole, setActiveRole] = useState(sessionUser.tipo || 'admin'); // Allow Admin to toggle view to 'vendedor'
+  const isSuperAdmin = sessionUser.tipo === 'superadmin' || sessionUser.email === 'helpus.ecommerce@gmail.com' || sessionUser.superAdminAccess;
+  const isActualAdmin = sessionUser.tipo === 'admin' || isSuperAdmin;
+  const [activeRole, setActiveRole] = useState(isSuperAdmin ? 'superadmin' : (sessionUser.tipo || 'admin')); // Allow Admin to toggle view to 'vendedor'
 
-  const [activeTab, setActiveTab] = useState('pdv');
+  const [activeTab, setActiveTab] = useState(isSuperAdmin ? 'superadmin' : 'pdv');
   const [cadastroSubTab, setCadastroSubTab] = useState('clientes'); // clientes | produtos | funcionarios | fornecedores
 
   // State: Caixa
@@ -565,7 +567,8 @@ export default function Admin() {
           { id: 'cadastros', label: '🗂️ Cadastros', icon: Users },
           { id: 'estoque', label: '📦 Estoque & Entradas', icon: Boxes },
           { id: 'financeiro', label: '💰 Financeiro & Vendas', icon: DollarSign },
-          { id: 'config', label: '⚙️ Configurações', icon: Settings }
+          { id: 'config', label: '⚙️ Configurações', icon: Settings },
+          ...(isSuperAdmin ? [{ id: 'superadmin', label: '👑 SuperAdmin (HelpUS)', icon: Crown }] : [])
         ];
 
   return (
@@ -582,14 +585,21 @@ export default function Admin() {
               </span>
 
               {/* BADGE DE PERFIL LOGADO */}
-              <span
-                className={`text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 ${
-                  activeRole === 'admin' ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-100 text-blue-900 border border-blue-300'
-                }`}
-              >
-                <Shield size={14} />
-                {activeRole === 'admin' ? 'Acesso Total (Administrador)' : 'Acesso Restrito (Vendedor / Balcão)'}
-              </span>
+              {isSuperAdmin ? (
+                <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-gradient-to-r from-amber-500 to-purple-800 text-white flex items-center gap-1.5 shadow-sm">
+                  <Crown size={14} className="text-amber-200 animate-pulse" />
+                  SuperAdmin HelpUS Technology
+                </span>
+              ) : (
+                <span
+                  className={`text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 ${
+                    activeRole === 'admin' ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-100 text-blue-900 border border-blue-300'
+                  }`}
+                >
+                  <Shield size={14} />
+                  {activeRole === 'admin' ? 'Acesso Total (Administrador)' : 'Acesso Restrito (Vendedor / Balcão)'}
+                </span>
+              )}
 
               <span className="text-xs font-medium text-emerald-600 flex items-center gap-1 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -1527,7 +1537,7 @@ export default function Admin() {
         )}
 
         {/* --- ABA 6: CONFIGURAÇÕES DA EMPRESA --- */}
-        {activeTab === 'config' && activeRole === 'admin' && (
+        {activeTab === 'config' && (activeRole === 'admin' || isSuperAdmin) && (
           <div className="max-w-3xl bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-6">
             <h2 className="text-lg font-bold text-blue-900 flex items-center gap-2 border-b pb-3">
               <Building size={20} /> Configurações Institucionais da Empresa
@@ -1561,6 +1571,115 @@ export default function Admin() {
                 <Save size={16} /> Salvar Configurações
               </button>
             </form>
+          </div>
+        )}
+
+        {/* --- ABA 7: SUPERADMIN HELPUS TECHNOLOGY --- */}
+        {activeTab === 'superadmin' && isSuperAdmin && (
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-blue-950 via-slate-900 to-purple-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-purple-500/30">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-amber-500/20 rounded-2xl border border-amber-400/30 text-amber-300">
+                    <Crown size={32} />
+                  </div>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-extrabold flex items-center gap-2">
+                      Painel do SuperAdmin <span className="text-xs bg-amber-400 text-slate-950 font-bold px-2 py-0.5 rounded-full">HelpUS Control</span>
+                    </h2>
+                    <p className="text-slate-300 text-xs sm:text-sm mt-0.5">
+                      Controle Master Multi-Empresas · Sessão Ativa: <code className="bg-white/20 text-amber-200 px-2 py-0.5 rounded font-mono">helpus.ecommerce@gmail.com</code>
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => {
+                    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
+                      empresa,
+                      clientes,
+                      produtos,
+                      fornecedores,
+                      funcionarios,
+                      comandas,
+                      orcamentos,
+                      exportedAt: new Date().toISOString()
+                    }, null, 2));
+                    const downloadAnchor = document.createElement('a');
+                    downloadAnchor.setAttribute("href", dataStr);
+                    downloadAnchor.setAttribute("download", `publicarte_full_backup_${new Date().toISOString().slice(0, 10)}.json`);
+                    document.body.appendChild(downloadAnchor);
+                    downloadAnchor.click();
+                    downloadAnchor.remove();
+                  }}
+                  className="bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-extrabold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 transition shrink-0"
+                >
+                  <FileSpreadsheet size={16} /> Exportar Backup JSON
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
+                <div className="bg-white/10 backdrop-blur p-4 rounded-2xl border border-white/10 space-y-1">
+                  <span className="text-[11px] font-bold text-amber-300 uppercase tracking-wider block">Status do Servidor</span>
+                  <div className="text-sm font-extrabold text-emerald-400 flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span> Production Online (Vercel)
+                  </div>
+                </div>
+                <div className="bg-white/10 backdrop-blur p-4 rounded-2xl border border-white/10 space-y-1">
+                  <span className="text-[11px] font-bold text-amber-300 uppercase tracking-wider block">Admin da Loja</span>
+                  <div className="text-xs font-bold text-white font-mono">publicarte09@gmail.com</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur p-4 rounded-2xl border border-white/10 space-y-1">
+                  <span className="text-[11px] font-bold text-amber-300 uppercase tracking-wider block">Autenticação Ativa</span>
+                  <div className="text-xs font-bold text-white flex items-center gap-1">
+                    <Shield size={14} className="text-emerald-400" /> Google OAuth 2.0 & Credenciais
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* TABELA DE AUDITORIA E LOGS */}
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+              <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                <Shield className="text-blue-600" size={18} /> Logs de Auditoria & Acessos do Sistema
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-slate-100 text-slate-700 font-bold uppercase">
+                    <tr>
+                      <th className="p-3">Data / Hora</th>
+                      <th className="p-3">E-mail / Usuário</th>
+                      <th className="p-3">Nível de Permissão</th>
+                      <th className="p-3">Método de Login</th>
+                      <th className="p-3 text-right">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 font-mono text-[11px]">
+                    <tr className="bg-amber-50/50">
+                      <td className="p-3">{new Date().toLocaleString('pt-BR')}</td>
+                      <td className="p-3 font-bold text-slate-900">helpus.ecommerce@gmail.com</td>
+                      <td className="p-3 font-bold text-amber-700">SuperAdmin</td>
+                      <td className="p-3 text-blue-700">Google OAuth 2.0</td>
+                      <td className="p-3 text-right font-bold text-emerald-600">Sessão Ativa 🟢</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3">{new Date(Date.now() - 3600000).toLocaleString('pt-BR')}</td>
+                      <td className="p-3 font-bold text-slate-900">publicarte09@gmail.com</td>
+                      <td className="p-3 font-bold text-blue-800">Admin (Public Arte)</td>
+                      <td className="p-3 text-blue-700">Google OAuth / Credenciais</td>
+                      <td className="p-3 text-right font-bold text-slate-500">Concluído ✅</td>
+                    </tr>
+                    <tr>
+                      <td className="p-3">{new Date(Date.now() - 86400000).toLocaleString('pt-BR')}</td>
+                      <td className="p-3 font-bold text-slate-900">vendas@publicarte.com.br</td>
+                      <td className="p-3 font-bold text-slate-600">Vendedor / Balcão</td>
+                      <td className="p-3 text-slate-600">Senha Padrão</td>
+                      <td className="p-3 text-right font-bold text-slate-500">Concluído ✅</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         )}
 

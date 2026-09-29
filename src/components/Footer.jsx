@@ -1,8 +1,9 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Mail, Phone, MapPin, ShieldCheck, ExternalLink } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, ShieldCheck, ExternalLink, FileText } from 'lucide-react';
 import NewsletterForm from './NewsletterForm';
+import CookieBanner from './CookieBanner';
 import { useLanguage } from '../lib/i18n';
 
 const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => {
@@ -18,6 +19,11 @@ const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => {
             <li><Link to="/sobre" className="hover:underline">{t('navAbout')}</Link></li>
             <li><Link to="/orcamento" className="hover:underline">{t('navQuote')}</Link></li>
             <li><Link to="/contato" className="hover:underline">{t('navContact')}</Link></li>
+            <li>
+              <Link to="/privacidade" className="hover:underline flex items-center gap-1 text-slate-600">
+                <FileText size={14} /> Política de Privacidade (LGPD)
+              </Link>
+            </li>
             <li className="pt-2 border-t border-gray-200 mt-2">
               <Link
                 to="/admin"
@@ -108,6 +114,8 @@ const Footer = ({ nomeEmpresa = 'Public Arte – Comunicação Visual' }) => {
           </a>
         </div>
       </div>
+
+      <CookieBanner />
     </footer>
   );
 };

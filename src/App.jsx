@@ -7,6 +7,7 @@ import Orcamento from './pages/Orcamento';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
 import Manual from './pages/Manual';
+import Privacidade from './pages/Privacidade';
 import NewsletterAdmin from './pages/NewsletterAdmin';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/sobre" element={<Sobre />} />
       <Route path="/contato" element={<Contato />} />
       <Route path="/orcamento" element={<Orcamento />} />
+      <Route path="/privacidade" element={<Privacidade />} />
       <Route
         path="/admin"
         element={
