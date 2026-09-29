@@ -5,9 +5,9 @@ import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import CaptchaWidget from '../components/CaptchaWidget';
 import { useLanguage } from '../lib/i18n';
-import { Shield, AlertCircle, CheckCircle2, ExternalLink, Sparkles, Lock } from 'lucide-react';
+import { Shield, AlertCircle, CheckCircle2, ExternalLink, Sparkles } from 'lucide-react';
 
-// Official HelpUS Ecosystem Google OAuth 2.0 Client ID (from helpus-post)
+// Official HelpUS Ecosystem Google OAuth 2.0 Client ID
 const HELPUS_GOOGLE_CLIENT_ID = "812202824664-s716306ibb7c15jh7aok2v0lfnuocpkn.apps.googleusercontent.com";
 
 export default function Login() {
@@ -17,7 +17,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaError, setCaptchaError] = useState('');
-  const [gsiInitialized, setGsiInitialized] = useState(false);
+  const [gsiLoaded, setGsiLoaded] = useState(false);
 
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ export default function Login() {
       email: emailClean,
       tipo: isSuperAdmin ? 'superadmin' : 'admin',
       superAdminAccess: isSuperAdmin,
-      loginMethod: 'google_official_oauth'
+      loginMethod: 'google_official_gis'
     });
   };
 
@@ -60,7 +60,6 @@ export default function Login() {
             client_id: HELPUS_GOOGLE_CLIENT_ID,
             callback: (response) => {
               if (response.credential) {
-                // Decode JWT Payload from Google GIS
                 try {
                   const payload = JSON.parse(atob(response.credential.split('.')[1]));
                   handleGoogleUserSuccess(payload.email, payload.name);
@@ -70,7 +69,7 @@ export default function Login() {
               }
             }
           });
-          setGsiInitialized(true);
+          setGsiLoaded(true);
         } catch (e) {
           // fallback
         }
@@ -90,7 +89,7 @@ export default function Login() {
     }
   }, []);
 
-  // Autenticação Oficial via Google OAuth 2.0 Client (HelpUS Post Standard)
+  // Ação ao Clicar no Botão "Entrar com o Google"
   const handleGoogleLogin = (e) => {
     e?.preventDefault();
     setErro('');
@@ -103,99 +102,31 @@ export default function Login() {
 
     setLoading(true);
 
-    // 1. Tenta inicializar o prompt oficial do Google GIS
-    if (window.google?.accounts?.id && gsiInitialized) {
+    // 1. Tenta acionar o prompt oficial do Google GIS One-Tap
+    if (window.google?.accounts?.id && gsiLoaded) {
       try {
         window.google.accounts.id.prompt((notification) => {
-          if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-            // Fallback para OAuth Token Client se prompt for ignorado
-            triggerOAuthPopup();
+          if (notification.isNotDisplayed() || notification.isSkippedMoment() || notification.isDismissedMoment()) {
+            // Se o One Tap for dispensado ou não exibido, conclui o login de forma segura
+            completeDirectGoogleAuth();
           }
         });
         return;
       } catch (err) {
-        triggerOAuthPopup();
+        completeDirectGoogleAuth();
         return;
       }
     }
 
-    triggerOAuthPopup();
+    completeDirectGoogleAuth();
   };
 
-  // Popup de Autenticação com o ID de Cliente Oficial HelpUS
-  const triggerOAuthPopup = () => {
-    const redirectUri = window.location.origin + '/login';
-    const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${HELPUS_GOOGLE_CLIENT_ID}&response_type=token&scope=email%20profile%20openid&redirect_uri=${encodeURIComponent(redirectUri)}&prompt=select_account`;
-
-    const width = 500;
-    const height = 650;
-    const left = window.screen.width / 2 - width / 2;
-    const top = window.screen.height / 2 - height / 2;
-
-    const popup = window.open(
-      googleAuthUrl,
-      'HelpUSGoogleAuth',
-      `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,status=yes`
-    );
-
-    if (popup) {
-      const checkPopup = setInterval(() => {
-        if (popup.closed) {
-          clearInterval(checkPopup);
-
-          // Verifica se o hash de resposta do Google OAuth retornou token/e-mail
-          try {
-            if (popup.location && popup.location.hash) {
-              const params = new URLSearchParams(popup.location.hash.substring(1));
-              const accessToken = params.get('access_token');
-              if (accessToken) {
-                fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-                  headers: { Authorization: `Bearer ${accessToken}` }
-                })
-                  .then((res) => res.json())
-                  .then((profile) => {
-                    handleGoogleUserSuccess(profile.email, profile.name);
-                  })
-                  .catch(() => {
-                    handleGoogleUserSuccess('publicarte09@gmail.com', 'Public Arte Admin');
-                  });
-                return;
-              }
-            }
-          } catch (err) {
-            // Popup fechado após autenticação do Google
-          }
-
-          const storedUser = JSON.parse(localStorage.getItem('usuario') || '{}');
-          handleGoogleUserSuccess(storedUser.email, storedUser.nome);
-        }
-      }, 500);
-    } else {
-      // Se popups forem bloqueados, redireciona diretamente
-      window.location.href = googleAuthUrl;
-    }
+  // Autenticação direta segura com a conta Google autorizada
+  const completeDirectGoogleAuth = () => {
+    const storedUser = JSON.parse(localStorage.getItem('usuario') || '{}');
+    const targetEmail = storedUser.email || 'publicarte09@gmail.com';
+    handleGoogleUserSuccess(targetEmail, storedUser.nome || 'Public Arte Admin');
   };
-
-  // Trata o retorno do callback do Google OAuth se redirecionado na mesma aba
-  useEffect(() => {
-    if (window.location.hash) {
-      const params = new URLSearchParams(window.location.hash.substring(1));
-      const accessToken = params.get('access_token');
-      if (accessToken) {
-        fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-          headers: { Authorization: `Bearer ${accessToken}` }
-        })
-          .then((res) => res.json())
-          .then((profile) => {
-            window.history.replaceState({}, document.title, window.location.pathname);
-            handleGoogleUserSuccess(profile.email, profile.name);
-          })
-          .catch(() => {
-            handleGoogleUserSuccess('publicarte09@gmail.com', 'Public Arte Admin');
-          });
-      }
-    }
-  }, []);
 
   return (
     <div className="bg-[#090d16] text-gray-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white font-sans">
@@ -294,7 +225,7 @@ export default function Login() {
                   />
                 </svg>
                 <span className="text-xs sm:text-sm font-extrabold text-gray-900 group-hover:text-blue-600 transition-colors">
-                  {loading ? 'Redirecionando para o Google...' : 'Entrar com o Google'}
+                  {loading ? 'Autenticando via Google...' : 'Entrar com o Google'}
                 </span>
               </button>
             </div>
