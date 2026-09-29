@@ -36,7 +36,7 @@ export default function Admin() {
   const { t } = useLanguage();
 
   // Logged-in User Session & Role
-  const sessionUser = JSON.parse(localStorage.getItem('usuario') || '{"nome":"Tércio Grassi","tipo":"admin"}');
+  const sessionUser = JSON.parse(localStorage.getItem('usuario') || '{"nome":"Public Arte Admin","email":"publicarte09@gmail.com","tipo":"admin"}');
   const isSuperAdmin = sessionUser.tipo === 'superadmin' || sessionUser.email === 'helpus.ecommerce@gmail.com' || sessionUser.superAdminAccess;
   const isActualAdmin = sessionUser.tipo === 'admin' || isSuperAdmin;
   const [activeRole, setActiveRole] = useState(isSuperAdmin ? 'superadmin' : (sessionUser.tipo || 'admin')); // Allow Admin to toggle view to 'vendedor'
