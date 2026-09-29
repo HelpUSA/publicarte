@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import CaptchaWidget from '../components/CaptchaWidget';
 import { useLanguage } from '../lib/i18n';
-import { Shield, AlertCircle, CheckCircle2, ExternalLink, Chrome, Crown } from 'lucide-react';
+import { Shield, AlertCircle, CheckCircle2, ExternalLink } from 'lucide-react';
 
 export default function Login() {
   const { t } = useLanguage();
@@ -14,10 +14,6 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaError, setCaptchaError] = useState('');
-  
-  // Seleção direta da conta do Google (sem modal/segunda tela)
-  const [selectedGoogleAccount, setSelectedGoogleAccount] = useState('publicarte09@gmail.com');
-  const [customGoogleEmail, setCustomGoogleEmail] = useState('');
 
   const navigate = useNavigate();
 
@@ -36,7 +32,7 @@ export default function Login() {
     }
   };
 
-  // Ação ao Clicar em "Entrar com o Google"
+  // Ação ao Clicar no Único Botão "Entrar com o Google"
   const handleGoogleLogin = (e) => {
     e?.preventDefault();
     setErro('');
@@ -49,16 +45,12 @@ export default function Login() {
 
     setLoading(true);
 
-    const targetEmail = (selectedGoogleAccount === 'outra' ? customGoogleEmail : selectedGoogleAccount).trim().toLowerCase();
+    // Autenticação direta com a Conta Padrão Google (publicarte09@gmail.com) ou SuperAdmin (helpus.ecommerce@gmail.com)
+    // Se o usuário já possuir sessão prévia de SuperAdmin ou e-mail registrado, preserva a permissão
+    const storedUser = JSON.parse(localStorage.getItem('usuario') || '{}');
+    const isSuperAdmin = storedUser.email === 'helpus.ecommerce@gmail.com' || storedUser.tipo === 'superadmin';
 
-    if (!targetEmail) {
-      setLoading(false);
-      setErro('Por favor, insira o seu e-mail do Google.');
-      return;
-    }
-
-    // 1. SuperAdmin (helpus.ecommerce@gmail.com)
-    if (targetEmail === 'helpus.ecommerce@gmail.com') {
+    if (isSuperAdmin) {
       openAdminInNewTab({
         nome: 'HelpUS Technology (SuperAdmin)',
         email: 'helpus.ecommerce@gmail.com',
@@ -66,31 +58,14 @@ export default function Login() {
         superAdminAccess: true,
         loginMethod: 'google_oauth'
       });
-      return;
-    }
-
-    // 2. Administrador Public Arte (publicarte09@gmail.com ou gmai.com)
-    if (
-      targetEmail === 'publicarte09@gmail.com' ||
-      targetEmail === 'publicarte09@gmai.com' ||
-      targetEmail.includes('publicarte')
-    ) {
+    } else {
       openAdminInNewTab({
         nome: 'Public Arte Admin',
         email: 'publicarte09@gmail.com',
         tipo: 'admin',
         loginMethod: 'google_oauth'
       });
-      return;
     }
-
-    // 3. Qualquer outra conta do Google
-    openAdminInNewTab({
-      nome: targetEmail.split('@')[0],
-      email: targetEmail,
-      tipo: 'admin',
-      loginMethod: 'google_oauth'
-    });
   };
 
   return (
@@ -144,12 +119,9 @@ export default function Login() {
             </div>
           )}
 
-          <div className="space-y-5">
+          <div className="space-y-6">
             {/* 1. CAPTCHA COLOCADO ANTES DO BOTÃO DO GOOGLE */}
             <div>
-              <label className="block text-[11px] font-extrabold text-slate-600 uppercase tracking-wider mb-1.5">
-                1. Verificação de Segurança (Captcha):
-              </label>
               <CaptchaWidget
                 onVerify={(isValid) => {
                   setCaptchaVerified(isValid);
@@ -160,95 +132,8 @@ export default function Login() {
               />
             </div>
 
-            {/* SELEÇÃO DA CONTA GOOGLE (DIRETO NO CARD, SEM SEGUNDA TELA/MODAL) */}
-            <div className="pt-1 space-y-2">
-              <label className="block text-[11px] font-extrabold text-slate-600 uppercase tracking-wider">
-                2. Conta de Acesso do Google:
-              </label>
-              <div className="space-y-2">
-                <label className={`flex items-center justify-between p-3 rounded-2xl border text-xs cursor-pointer transition ${
-                  selectedGoogleAccount === 'publicarte09@gmail.com'
-                    ? 'bg-blue-50 border-blue-400 font-bold text-blue-950 shadow-sm'
-                    : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                }`}>
-                  <div className="flex items-center gap-2.5">
-                    <input
-                      type="radio"
-                      name="googleAccount"
-                      value="publicarte09@gmail.com"
-                      checked={selectedGoogleAccount === 'publicarte09@gmail.com'}
-                      onChange={(e) => setSelectedGoogleAccount(e.target.value)}
-                      className="text-blue-600 focus:ring-blue-500"
-                    />
-                    <div>
-                      <div className="font-bold">Public Arte Admin</div>
-                      <div className="text-[11px] text-slate-500 font-mono font-normal">publicarte09@gmail.com</div>
-                    </div>
-                  </div>
-                  <span className="text-[10px] font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full">
-                    Admin
-                  </span>
-                </label>
-
-                <label className={`flex items-center justify-between p-3 rounded-2xl border text-xs cursor-pointer transition ${
-                  selectedGoogleAccount === 'helpus.ecommerce@gmail.com'
-                    ? 'bg-gradient-to-r from-amber-500/10 via-purple-500/10 to-blue-500/10 border-amber-400 font-bold text-slate-900 shadow-sm'
-                    : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                }`}>
-                  <div className="flex items-center gap-2.5">
-                    <input
-                      type="radio"
-                      name="googleAccount"
-                      value="helpus.ecommerce@gmail.com"
-                      checked={selectedGoogleAccount === 'helpus.ecommerce@gmail.com'}
-                      onChange={(e) => setSelectedGoogleAccount(e.target.value)}
-                      className="text-amber-600 focus:ring-amber-500"
-                    />
-                    <div>
-                      <div className="font-bold flex items-center gap-1">
-                        HelpUS Technology <Crown size={12} className="text-amber-600" />
-                      </div>
-                      <div className="text-[11px] text-slate-500 font-mono font-normal">helpus.ecommerce@gmail.com</div>
-                    </div>
-                  </div>
-                  <span className="text-[10px] font-extrabold text-amber-800 bg-amber-200/80 px-2 py-0.5 rounded-full border border-amber-300">
-                    SuperAdmin
-                  </span>
-                </label>
-
-                <label className={`flex items-center justify-between p-3 rounded-2xl border text-xs cursor-pointer transition ${
-                  selectedGoogleAccount === 'outra'
-                    ? 'bg-blue-50 border-blue-400 font-bold text-blue-950 shadow-sm'
-                    : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                }`}>
-                  <div className="flex items-center gap-2.5 w-full">
-                    <input
-                      type="radio"
-                      name="googleAccount"
-                      value="outra"
-                      checked={selectedGoogleAccount === 'outra'}
-                      onChange={(e) => setSelectedGoogleAccount(e.target.value)}
-                      className="text-blue-600 focus:ring-blue-500"
-                    />
-                    <div className="w-full">
-                      <div>Outra Conta Google</div>
-                      {selectedGoogleAccount === 'outra' && (
-                        <input
-                          type="email"
-                          placeholder="seuemail@gmail.com"
-                          value={customGoogleEmail}
-                          onChange={(e) => setCustomGoogleEmail(e.target.value)}
-                          className="w-full mt-2 px-3 py-1.5 text-xs border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white font-normal"
-                        />
-                      )}
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            {/* 2. ÚNICO BOTÃO DE ACESSO: ENTRAR COM O GOOGLE */}
-            <div className="pt-2">
+            {/* 2. ÚNICO BOTÃO DE ENTRADA VIA GOOGLE */}
+            <div>
               <button
                 type="button"
                 onClick={handleGoogleLogin}
