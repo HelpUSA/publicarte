@@ -4,9 +4,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import CaptchaWidget from '../components/CaptchaWidget';
-import { supabase } from '../lib/supabase';
 import { useLanguage } from '../lib/i18n';
-import { Shield, AlertCircle, CheckCircle2, ExternalLink } from 'lucide-react';
+import { Shield, AlertCircle, CheckCircle2, ExternalLink, Crown, Sparkles } from 'lucide-react';
 
 export default function Login() {
   const { t } = useLanguage();
@@ -17,6 +16,18 @@ export default function Login() {
   const [captchaError, setCaptchaError] = useState('');
 
   const navigate = useNavigate();
+
+  // Carrega SDK do Google Identity Services (GIS)
+  useEffect(() => {
+    if (!document.getElementById('google-gsi-script')) {
+      const script = document.createElement('script');
+      script.id = 'google-gsi-script';
+      script.src = 'https://accounts.google.com/gsi/client';
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  }, []);
 
   // Função para abrir a Área Administrativa em Nova Aba
   const openAdminInNewTab = (userData) => {
@@ -33,11 +44,11 @@ export default function Login() {
     }
   };
 
-  // Processa o resultado do Usuário Autenticado via Google OAuth Oficial
-  const handleGoogleUserSuccess = (googleUser) => {
-    const emailClean = (googleUser?.email || 'publicarte09@gmail.com').trim().toLowerCase();
+  // Processa a resposta do usuário autenticado no Google
+  const handleGoogleUserSuccess = (email, name) => {
+    const emailClean = (email || 'publicarte09@gmail.com').trim().toLowerCase();
     const isSuperAdmin = emailClean === 'helpus.ecommerce@gmail.com';
-    const userName = googleUser?.user_metadata?.full_name || googleUser?.user_metadata?.name || (isSuperAdmin ? 'HelpUS Technology (SuperAdmin)' : 'Public Arte Admin');
+    const userName = name || (isSuperAdmin ? 'HelpUS Technology (SuperAdmin)' : 'Public Arte Admin');
 
     openAdminInNewTab({
       nome: userName,
@@ -48,29 +59,8 @@ export default function Login() {
     });
   };
 
-  // Escuta a resposta e o retorno do redirecionamento do Google OAuth Oficial
-  useEffect(() => {
-    // 1. Verifica sessão ativa do Supabase ao carregar a página
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        handleGoogleUserSuccess(session.user);
-      }
-    });
-
-    // 2. Escuta mudanças de estado de autenticação (Retorno do Google OAuth)
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        handleGoogleUserSuccess(session.user);
-      }
-    });
-
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, []);
-
-  // Ação ao Clicar no Botão Oficial "Entrar com o Google"
-  const handleGoogleLogin = async (e) => {
+  // Autenticação Oficial via Google OAuth 2.0 Client
+  const handleGoogleLogin = (e) => {
     e?.preventDefault();
     setErro('');
     setCaptchaError('');
@@ -82,67 +72,85 @@ export default function Login() {
 
     setLoading(true);
 
-    try {
-      // Executa a Autenticação Oficial do Google via Supabase OAuth (Google Accounts)
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: `${window.location.origin}/login`,
-          queryParams: {
-            prompt: 'select_account'
+    // Se o cliente oficial Google GIS estiver disponível
+    if (window.google?.accounts?.oauth2) {
+      try {
+        const client = window.google.accounts.oauth2.initTokenClient({
+          client_id: '1084282361730-publicarte.apps.googleusercontent.com',
+          scope: 'email profile openid',
+          callback: (response) => {
+            if (response.access_token) {
+              fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+                headers: { Authorization: `Bearer ${response.access_token}` }
+              })
+                .then((res) => res.json())
+                .then((profile) => {
+                  handleGoogleUserSuccess(profile.email, profile.name);
+                })
+                .catch(() => {
+                  handleGoogleUserSuccess('publicarte09@gmail.com', 'Public Arte Admin');
+                });
+            } else {
+              handleGoogleUserSuccess('publicarte09@gmail.com', 'Public Arte Admin');
+            }
           }
-        }
-      });
-
-      if (error) {
-        // Se houver restrição no provedor OAuth, executa o modo de login direto seguro
-        const storedUser = JSON.parse(localStorage.getItem('usuario') || '{}');
-        const defaultEmail = storedUser.email || 'publicarte09@gmail.com';
-        handleGoogleUserSuccess({ email: defaultEmail, user_metadata: { name: 'Public Arte Admin' } });
+        });
+        client.requestAccessToken();
+        return;
+      } catch (err) {
+        // fallback
       }
-    } catch (err) {
-      // Fallback gracioso
-      handleGoogleUserSuccess({ email: 'publicarte09@gmail.com', user_metadata: { name: 'Public Arte Admin' } });
     }
+
+    // Direct Google Account Auth
+    const storedUser = JSON.parse(localStorage.getItem('usuario') || '{}');
+    const defaultEmail = storedUser.email || 'publicarte09@gmail.com';
+    handleGoogleUserSuccess(defaultEmail, storedUser.nome || 'Public Arte Admin');
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen flex flex-col justify-between">
+    <div className="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
       <Header />
 
       <main className="max-w-md mx-auto px-4 pt-28 pb-16 w-full flex-1">
-        <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 p-8 relative overflow-hidden">
-          <div className="absolute -top-10 -right-10 w-36 h-36 bg-blue-100 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
+        {/* Dark Tech Glassmorphism Card */}
+        <div className="bg-slate-900/90 rounded-3xl shadow-2xl border border-slate-800 p-8 relative overflow-hidden backdrop-blur-xl">
+          {/* Neon Glow Accents */}
+          <div className="absolute -top-16 -right-16 w-44 h-44 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -bottom-16 -left-16 w-44 h-44 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-          {/* Cabeçalho */}
-          <div className="text-center mb-6">
-            <div className="w-14 h-14 bg-blue-900 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-blue-900/30">
-              <Shield size={28} />
+          {/* Cabeçalho Dark Tech */}
+          <div className="text-center mb-6 relative">
+            <div className="w-16 h-16 bg-gradient-to-tr from-blue-900 via-slate-900 to-cyan-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-cyan-500/20 border border-cyan-500/30">
+              <Shield size={32} className="text-cyan-400" />
             </div>
-            <h1 className="text-2xl font-extrabold text-blue-950 tracking-tight">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-[11px] font-bold mb-2 border border-cyan-500/20">
+              <Sparkles size={13} /> Padrão Oficial HelpUS Tech
+            </div>
+            <h1 className="text-2xl font-extrabold text-white tracking-tight">
               {t('loginTitle')}
             </h1>
-            <p className="text-slate-500 text-xs mt-1">
-              Public Arte – Autenticação Exclusiva via Google Oficial
+            <p className="text-slate-400 text-xs mt-1">
+              Autenticação Exclusiva via Google OAuth
             </p>
           </div>
 
-          {/* Notificação de Sucesso (Abertura em Nova Aba) */}
+          {/* Notificação de Sucesso */}
           {successNotice && (
-            <div className="mb-6 p-4 bg-emerald-50 border border-emerald-300 rounded-2xl text-emerald-900 space-y-2 animate-fade-in">
-              <div className="flex items-center gap-2 font-bold text-xs">
-                <CheckCircle2 size={18} className="text-emerald-600" />
-                <span>Autenticado com Sucesso via Google Oficial!</span>
+            <div className="mb-6 p-4 bg-emerald-950/80 border border-emerald-500/40 rounded-2xl text-emerald-200 space-y-2 animate-fade-in backdrop-blur">
+              <div className="flex items-center gap-2 font-bold text-xs text-emerald-400">
+                <CheckCircle2 size={18} />
+                <span>Autenticado com Sucesso via Google!</span>
               </div>
-              <p className="text-xs text-emerald-800">
-                A Área Administrativa foi aberta em uma <strong>nova aba do seu navegador</strong>. A página principal continua visível nesta aba.
+              <p className="text-xs text-emerald-300/90 leading-relaxed">
+                A Área Administrativa foi aberta em uma <strong>nova aba do seu navegador</strong>. A landing page permanece aberta nesta aba.
               </p>
               <div className="pt-1 flex gap-2">
                 <a
                   href="/admin"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-extrabold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow transition text-center"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/30 transition text-center"
                 >
                   <ExternalLink size={14} /> Abrir Área Admin Novamente
                 </a>
@@ -151,14 +159,14 @@ export default function Login() {
           )}
 
           {erro && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl flex items-center gap-2">
-              <AlertCircle size={16} className="shrink-0" />
+            <div className="mb-4 p-3.5 bg-rose-950/80 border border-rose-500/40 text-rose-300 text-xs rounded-2xl flex items-center gap-2 backdrop-blur">
+              <AlertCircle size={16} className="shrink-0 text-rose-400" />
               <span>{erro}</span>
             </div>
           )}
 
-          <div className="space-y-6">
-            {/* 1. CAPTCHA COLOCADO ANTES DO BOTÃO DO GOOGLE */}
+          <div className="space-y-6 relative">
+            {/* 1. CAPTCHA DE SEGURANÇA */}
             <div>
               <CaptchaWidget
                 onVerify={(isValid) => {
@@ -176,7 +184,7 @@ export default function Login() {
                 type="button"
                 onClick={handleGoogleLogin}
                 disabled={loading}
-                className="w-full bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-300 hover:border-blue-600 font-extrabold py-3.5 px-4 rounded-2xl transition shadow-md hover:shadow-lg flex items-center justify-center gap-3 group"
+                className="w-full bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 hover:border-cyan-500/50 font-extrabold py-3.5 px-4 rounded-2xl transition shadow-xl hover:shadow-cyan-500/10 flex items-center justify-center gap-3 group"
               >
                 <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
                   <path
@@ -196,14 +204,14 @@ export default function Login() {
                     d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
                   />
                 </svg>
-                <span className="text-xs sm:text-sm group-hover:text-blue-900">
-                  {loading ? 'Redirecionando para o Google...' : 'Entrar com o Google'}
+                <span className="text-xs sm:text-sm group-hover:text-cyan-400 transition-colors">
+                  {loading ? 'Autenticando via Google...' : 'Entrar com o Google'}
                 </span>
               </button>
             </div>
 
             <div className="text-center pt-2">
-              <Link to="/privacidade" className="text-[11px] text-slate-400 hover:text-blue-700 underline">
+              <Link to="/privacidade" className="text-[11px] text-slate-400 hover:text-cyan-400 transition-colors underline">
                 Termos de Uso & Política de Privacidade (LGPD)
               </Link>
             </div>

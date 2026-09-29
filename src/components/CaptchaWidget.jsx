@@ -42,47 +42,47 @@ export default function CaptchaWidget({ onVerify, verified, errorMsg }) {
   };
 
   return (
-    <div className="w-full bg-slate-50 border border-slate-300 rounded-2xl p-4 shadow-sm space-y-3">
+    <div className="w-full bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-lg space-y-3 backdrop-blur-md">
       
-      {/* Botão Checkbox Estilo ReCAPTCHA */}
+      {/* Botão Checkbox Estilo ReCAPTCHA Dark Tech */}
       <div className="flex items-center justify-between">
         <div
           onClick={handleCheckboxClick}
           className={`flex items-center gap-3 cursor-pointer select-none py-1.5 px-2 rounded-xl transition ${
-            internalVerified ? 'opacity-90' : 'hover:bg-slate-200/60'
+            internalVerified ? 'opacity-90' : 'hover:bg-slate-800/80'
           }`}
         >
           <div
             className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-all ${
               internalVerified
-                ? 'bg-emerald-600 border-emerald-600 text-white shadow-md shadow-emerald-600/30'
-                : 'border-slate-400 bg-white hover:border-blue-600'
+                ? 'bg-emerald-500 border-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20'
+                : 'border-slate-600 bg-slate-950 hover:border-cyan-400'
             }`}
           >
-            {internalVerified && <CheckCircle2 size={18} />}
+            {internalVerified && <CheckCircle2 size={18} className="font-extrabold" />}
           </div>
-          <span className="text-xs font-bold text-slate-700">
+          <span className="text-xs font-bold text-slate-200">
             {internalVerified ? 'Verificação de Segurança Concluída' : 'Não sou um robô (Captcha)'}
           </span>
         </div>
 
-        <div className="flex items-center gap-1 text-[10px] text-slate-400 font-semibold uppercase tracking-wider">
-          <ShieldCheck size={16} className={internalVerified ? 'text-emerald-500' : 'text-slate-400'} />
-          <span>HelpUS Guard</span>
+        <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
+          <ShieldCheck size={16} className={internalVerified ? 'text-emerald-400' : 'text-slate-500'} />
+          <span className="text-slate-400">HelpUS Guard</span>
         </div>
       </div>
 
-      {/* Caixa de Desafio se ainda não verificado */}
+      {/* Caixa de Desafio Antirobô Dark Tech */}
       {showChallenge && !internalVerified && (
-        <div className="bg-white border border-blue-200 p-3.5 rounded-xl shadow-inner space-y-2.5 animate-fade-in">
-          <div className="flex items-center justify-between text-xs text-blue-950 font-bold">
+        <div className="bg-slate-950 border border-cyan-500/30 p-3.5 rounded-xl shadow-inner space-y-2.5 animate-fade-in">
+          <div className="flex items-center justify-between text-xs text-cyan-300 font-bold">
             <span className="flex items-center gap-1.5">
-              <Lock size={14} className="text-blue-600" /> Desafio Antirobô:
+              <Lock size={14} className="text-cyan-400" /> Desafio Antirobô:
             </span>
             <button
               type="button"
               onClick={generateChallenge}
-              className="text-slate-400 hover:text-blue-600 p-1 transition"
+              className="text-slate-400 hover:text-cyan-400 p-1 transition"
               title="Gerar nova conta"
             >
               <RotateCw size={14} />
@@ -90,7 +90,7 @@ export default function CaptchaWidget({ onVerify, verified, errorMsg }) {
           </div>
 
           <div className="flex items-center gap-2">
-            <div className="bg-slate-100 px-3 py-2 rounded-lg font-mono font-bold text-sm text-slate-800 border border-slate-300">
+            <div className="bg-slate-900 px-3.5 py-2 rounded-lg font-mono font-extrabold text-sm text-cyan-400 border border-slate-800">
               {num1} + {num2} = ?
             </div>
 
@@ -99,7 +99,7 @@ export default function CaptchaWidget({ onVerify, verified, errorMsg }) {
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
               placeholder="Resultado"
-              className="w-24 px-3 py-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white font-bold"
+              className="w-24 px-3 py-2 text-sm border border-slate-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none bg-slate-900 text-white font-bold font-mono"
               onKeyDown={(e) => {
                 if (e.key === 'Enter') handleValidate(e);
               }}
@@ -108,14 +108,14 @@ export default function CaptchaWidget({ onVerify, verified, errorMsg }) {
             <button
               type="button"
               onClick={handleValidate}
-              className="px-3.5 py-2 bg-blue-900 hover:bg-blue-950 text-white text-xs font-extrabold rounded-lg transition shadow"
+              className="px-3.5 py-2 bg-cyan-600 hover:bg-cyan-500 text-slate-950 text-xs font-extrabold rounded-lg transition shadow-md shadow-cyan-600/20"
             >
               Validar
             </button>
           </div>
 
           {captchaError && (
-            <div className="text-[11px] font-semibold text-red-600 flex items-center gap-1">
+            <div className="text-[11px] font-semibold text-rose-400 flex items-center gap-1">
               <AlertCircle size={13} /> {captchaError}
             </div>
           )}
@@ -123,8 +123,8 @@ export default function CaptchaWidget({ onVerify, verified, errorMsg }) {
       )}
 
       {errorMsg && !internalVerified && (
-        <div className="text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 p-2 rounded-xl flex items-center gap-1.5">
-          <AlertCircle size={14} /> {errorMsg}
+        <div className="text-xs font-semibold text-amber-300 bg-amber-950/60 border border-amber-500/30 p-2.5 rounded-xl flex items-center gap-1.5 backdrop-blur">
+          <AlertCircle size={14} className="text-amber-400" /> {errorMsg}
         </div>
       )}
 
