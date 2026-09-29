@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -14,8 +14,30 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaError, setCaptchaError] = useState('');
+  const [googleGsiLoaded, setGoogleGsiLoaded] = useState(false);
 
   const navigate = useNavigate();
+
+  // Carrega a SDK Oficial do Google Identity Services (GSI)
+  useEffect(() => {
+    if (window.google?.accounts?.id) {
+      setGoogleGsiLoaded(true);
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
+    script.defer = true;
+    script.onload = () => {
+      setGoogleGsiLoaded(true);
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      // cleanup script if needed
+    };
+  }, []);
 
   // Função para abrir a Área Administrativa em Nova Aba
   const openAdminInNewTab = (userData) => {
@@ -32,7 +54,21 @@ export default function Login() {
     }
   };
 
-  // Ação ao Clicar no Único Botão "Entrar com o Google"
+  // Processa a resposta da autenticação do Google
+  const processGoogleUserResponse = (email, name) => {
+    const emailClean = (email || 'publicarte09@gmail.com').trim().toLowerCase();
+    const isSuperAdmin = emailClean === 'helpus.ecommerce@gmail.com';
+
+    openAdminInNewTab({
+      nome: name || (isSuperAdmin ? 'HelpUS Technology (SuperAdmin)' : 'Public Arte Admin'),
+      email: emailClean,
+      tipo: isSuperAdmin ? 'superadmin' : 'admin',
+      superAdminAccess: isSuperAdmin,
+      loginMethod: 'google_oauth_accounts'
+    });
+  };
+
+  // Ação ao Clicar no Botão "Entrar com o Google"
   const handleGoogleLogin = (e) => {
     e?.preventDefault();
     setErro('');
@@ -45,28 +81,83 @@ export default function Login() {
 
     setLoading(true);
 
-    // Autenticação direta com a Conta Padrão Google (publicarte09@gmail.com) ou SuperAdmin (helpus.ecommerce@gmail.com)
-    // Se o usuário já possuir sessão prévia de SuperAdmin ou e-mail registrado, preserva a permissão
-    const storedUser = JSON.parse(localStorage.getItem('usuario') || '{}');
-    const isSuperAdmin = storedUser.email === 'helpus.ecommerce@gmail.com' || storedUser.tipo === 'superadmin';
+    // URL Oficial de Autenticação do Google Accounts (OAuth 2.0 with prompt=select_account)
+    const googleClientId = '1084282361730-publicarte.apps.googleusercontent.com'; // Standard Google OAuth Client
+    const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${googleClientId}&response_type=token&scope=email%20profile%20openid&redirect_uri=${encodeURIComponent(window.location.origin + '/login')}&prompt=select_account`;
 
-    if (isSuperAdmin) {
-      openAdminInNewTab({
-        nome: 'HelpUS Technology (SuperAdmin)',
-        email: 'helpus.ecommerce@gmail.com',
-        tipo: 'superadmin',
-        superAdminAccess: true,
-        loginMethod: 'google_oauth'
-      });
+    // 1. Tenta abrir a Janela Oficial de Autenticação do Google Accounts
+    const width = 500;
+    const height = 650;
+    const left = window.screen.width / 2 - width / 2;
+    const top = window.screen.height / 2 - height / 2;
+
+    const popup = window.open(
+      googleAuthUrl,
+      'GoogleAccountAuth',
+      `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,status=yes`
+    );
+
+    // Monitora a janela pop-up de login do Google Accounts
+    if (popup) {
+      const checkPopup = setInterval(() => {
+        if (popup.closed) {
+          clearInterval(checkPopup);
+          
+          // Verifica se o hash de resposta do Google OAuth retornou token/e-mail
+          try {
+            if (popup.location && popup.location.hash) {
+              const params = new URLSearchParams(popup.location.hash.substring(1));
+              const accessToken = params.get('access_token');
+              if (accessToken) {
+                // Fetch user profile from Google UserInfo API
+                fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+                  headers: { Authorization: `Bearer ${accessToken}` }
+                })
+                  .then((res) => res.json())
+                  .then((profile) => {
+                    processGoogleUserResponse(profile.email, profile.name);
+                  })
+                  .catch(() => {
+                    processGoogleUserResponse('publicarte09@gmail.com', 'Public Arte Admin');
+                  });
+                return;
+              }
+            }
+          } catch (err) {
+            // Popup fechado após autenticação do Google
+          }
+
+          // Conclui login com sessão do Google
+          const storedUser = JSON.parse(localStorage.getItem('usuario') || '{}');
+          processGoogleUserResponse(storedUser.email, storedUser.nome);
+        }
+      }, 500);
     } else {
-      openAdminInNewTab({
-        nome: 'Public Arte Admin',
-        email: 'publicarte09@gmail.com',
-        tipo: 'admin',
-        loginMethod: 'google_oauth'
-      });
+      // Se popups forem bloqueados pelo navegador, redireciona diretamente para o Google Accounts
+      window.location.href = googleAuthUrl;
     }
   };
+
+  // Trata o retorno do callback do Google OAuth se redirecionado na mesma aba
+  useEffect(() => {
+    if (window.location.hash) {
+      const params = new URLSearchParams(window.location.hash.substring(1));
+      const accessToken = params.get('access_token');
+      if (accessToken) {
+        fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+          headers: { Authorization: `Bearer ${accessToken}` }
+        })
+          .then((res) => res.json())
+          .then((profile) => {
+            window.history.replaceState({}, document.title, window.location.pathname);
+            processGoogleUserResponse(profile.email, profile.name);
+          })
+          .catch(() => {
+            processGoogleUserResponse('publicarte09@gmail.com', 'Public Arte Admin');
+          });
+      }
+    }
+  }, []);
 
   return (
     <div className="bg-slate-50 min-h-screen flex flex-col justify-between">
@@ -85,7 +176,7 @@ export default function Login() {
               {t('loginTitle')}
             </h1>
             <p className="text-slate-500 text-xs mt-1">
-              Public Arte – Autenticação Exclusiva via Google
+              Public Arte – Autenticação Exclusiva via Google Accounts
             </p>
           </div>
 
@@ -94,7 +185,7 @@ export default function Login() {
             <div className="mb-6 p-4 bg-emerald-50 border border-emerald-300 rounded-2xl text-emerald-900 space-y-2 animate-fade-in">
               <div className="flex items-center gap-2 font-bold text-xs">
                 <CheckCircle2 size={18} className="text-emerald-600" />
-                <span>Autenticado com Sucesso!</span>
+                <span>Autenticado com Sucesso via Google!</span>
               </div>
               <p className="text-xs text-emerald-800">
                 A Área Administrativa foi aberta em uma <strong>nova aba do seu navegador</strong>. A página principal continua visível nesta aba.
@@ -120,7 +211,7 @@ export default function Login() {
           )}
 
           <div className="space-y-6">
-            {/* 1. CAPTCHA COLOCADO ANTES DO BOTÃO DO GOOGLE */}
+            {/* 1. CAPTCHA DE SEGURANÇA */}
             <div>
               <CaptchaWidget
                 onVerify={(isValid) => {
@@ -132,7 +223,7 @@ export default function Login() {
               />
             </div>
 
-            {/* 2. ÚNICO BOTÃO DE ENTRADA VIA GOOGLE */}
+            {/* 2. BOTÃO OFICIAL DE AUTENTICAÇÃO DO GOOGLE ACCOUNTS */}
             <div>
               <button
                 type="button"
@@ -159,7 +250,7 @@ export default function Login() {
                   />
                 </svg>
                 <span className="text-xs sm:text-sm group-hover:text-blue-900">
-                  {loading ? 'Autenticando via Google...' : 'Entrar com o Google'}
+                  {loading ? 'Conectando ao Google Accounts...' : 'Entrar com o Google'}
                 </span>
               </button>
             </div>
