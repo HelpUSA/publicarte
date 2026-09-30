@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import CaptchaWidget from '../components/CaptchaWidget';
 import { useLanguage } from '../lib/i18n';
-import { Shield, AlertCircle, CheckCircle2, ExternalLink, Sparkles, UserCheck, Lock, ChevronRight, X } from 'lucide-react';
+import { Shield, AlertCircle, CheckCircle2, ExternalLink, Sparkles } from 'lucide-react';
 
 // HelpUS Google OAuth 2.0 Official Client ID
 const HELPUS_GOOGLE_CLIENT_ID = "812202824664-s716306ibb7c15jh7aok2v0lfnuocpkn.apps.googleusercontent.com";
 
-// Lista de E-mails Google Autorizados no Ecossistema HelpUS / Public Arte
+// E-mails Autorizados no Ecossistema HelpUS / Public Arte
 const AUTHORIZED_EMAILS = [
   { email: 'publicarte09@gmail.com', role: 'admin', name: 'Public Arte Admin' },
   { email: 'helpus.ecommerce@gmail.com', role: 'superadmin', name: 'HelpUS Technology (SuperAdmin)' }
@@ -20,12 +20,11 @@ export default function Login() {
   const { t } = useLanguage();
   const [erro, setErro] = useState('');
   const [successNotice, setSuccessNotice] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [authedUser, setAuthedUser] = useState(null);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [captchaError, setCaptchaError] = useState('');
-  const [showAccountModal, setShowAccountModal] = useState(false);
-  const [customEmailInput, setCustomEmailInput] = useState('');
 
+  const googleBtnContainerRef = useRef(null);
   const navigate = useNavigate();
 
   // Limpa residual de sessões de teste anteriores (ex: wagner.redes@gmail.com) ao carregar a página
@@ -41,33 +40,100 @@ export default function Login() {
         localStorage.removeItem('usuario');
       }
     }
-
-    // Ouvinte para mensagens de janelas de autenticação Google
-    const handleMessage = (event) => {
-      if (event.origin !== window.location.origin) return;
-      if (event.data?.type === 'GOOGLE_AUTH_SUCCESS' && event.data?.user) {
-        processGoogleUserInfo(event.data.user);
-      }
-    };
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
   }, []);
 
-  // Processa a validação e autorização da conta Google selecionada
-  const processGoogleUserInfo = (googleUser, pendingTab = null) => {
-    if (!googleUser || !googleUser.email) {
-      if (pendingTab && !pendingTab.closed) pendingTab.close();
-      setLoading(false);
-      setErro('Não foi possível obter as informações do e-mail do Google. Tente novamente.');
-      return false;
+  // Inicializa a SDK Oficial do Google Identity Services (GIS)
+  useEffect(() => {
+    const renderGoogleButton = () => {
+      if (!window.google?.accounts?.id) return;
+
+      try {
+        window.google.accounts.id.initialize({
+          client_id: HELPUS_GOOGLE_CLIENT_ID,
+          callback: handleGoogleCredentialResponse,
+          auto_select: false,
+          cancel_on_tap_outside: true,
+          use_fedcm_for_prompt: true
+        });
+
+        if (googleBtnContainerRef.current) {
+          googleBtnContainerRef.current.innerHTML = '';
+          window.google.accounts.id.renderButton(googleBtnContainerRef.current, {
+            theme: 'outline',
+            size: 'large',
+            width: 320,
+            text: 'continue_with',
+            shape: 'rectangular',
+            logo_alignment: 'left',
+            locale: 'pt-BR'
+          });
+        }
+      } catch (err) {
+        console.warn('Erro ao inicializar botão oficial do Google:', err);
+      }
+    };
+
+    if (window.google?.accounts?.id) {
+      renderGoogleButton();
+    } else {
+      const script = document.createElement('script');
+      script.id = 'google-gsi-script';
+      script.src = 'https://accounts.google.com/gsi/client';
+      script.async = true;
+      script.defer = true;
+      script.onload = renderGoogleButton;
+      document.body.appendChild(script);
+    }
+  }, [captchaVerified]);
+
+  // Callback ao receber a credencial autenticada oficialmente pelo Google
+  const handleGoogleCredentialResponse = (response) => {
+    setErro('');
+    setCaptchaError('');
+
+    if (!captchaVerified) {
+      setCaptchaError('Por favor, conclua a verificação de segurança "Não sou um robô" (CAPTCHA) acima antes de entrar com a conta do Google.');
+      setErro('Confirme o Captcha para liberar o acesso.');
+      return;
     }
 
-    const cleanEmail = googleUser.email.toLowerCase().trim();
+    try {
+      if (!response.credential) {
+        setErro('Não foi possível obter a credencial do Google.');
+        return;
+      }
+
+      // Decodifica o JWT Token oficial assinado pelo Google
+      const base64Url = response.credential.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(
+        atob(base64)
+          .split('')
+          .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+          .join('')
+      );
+      const googleUser = JSON.parse(jsonPayload);
+
+      processGoogleUser(googleUser.email, googleUser.name);
+    } catch (err) {
+      console.error('Erro ao processar credencial do Google:', err);
+      setErro('Falha ao autenticar com a conta Google. Tente novamente.');
+    }
+  };
+
+  // Processa a validação da conta Google e abre a Área Administrativa em nova aba
+  const processGoogleUser = (email, name) => {
+    if (!email) {
+      setErro('E-mail não identificado pela conta Google.');
+      return;
+    }
+
+    const cleanEmail = email.toLowerCase().trim();
     const authRecord = AUTHORIZED_EMAILS.find(a => a.email.toLowerCase() === cleanEmail);
 
     if (authRecord) {
       const isSuperAdmin = authRecord.role === 'superadmin';
-      const userName = googleUser.name || authRecord.name;
+      const userName = name || authRecord.name;
 
       const userData = {
         nome: userName,
@@ -78,76 +144,51 @@ export default function Login() {
         time: Date.now()
       };
 
-      // Salva sessão oficial
       localStorage.setItem('usuario', JSON.stringify(userData));
+      setAuthedUser(userData);
       setSuccessNotice(true);
       setErro('');
-      setLoading(false);
-      setShowAccountModal(false);
 
-      // Redireciona a nova aba para a Área Administrativa /admin
-      if (pendingTab && !pendingTab.closed) {
-        pendingTab.location.href = `${window.location.origin}/admin`;
-      } else {
-        const newTab = window.open('/admin', '_blank');
-        if (!newTab || newTab.closed || typeof newTab.closed === 'undefined') {
-          setErro('A janela da Área Administrativa foi bloqueada pelo navegador. Clique no botão verde abaixo para abrir.');
-        }
+      // Abre a Área Administrativa em nova aba
+      const newWin = window.open('/admin', '_blank');
+      if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+        // Bloqueador de pop-up impediu a abertura automática, o aviso verde exibirá o botão manual
       }
-      return true;
     } else {
-      // E-mail NÃO AUTORIZADO (ex: wagner.redes@gmail.com ou outro qualquer)
-      if (pendingTab && !pendingTab.closed) pendingTab.close();
-      setLoading(false);
-      setShowAccountModal(false);
-      setErro(`⛔ Acesso Negado: O e-mail (${cleanEmail}) não possui permissão para acessar o sistema. E-mails autorizados: publicarte09@gmail.com (Admin) e helpus.ecommerce@gmail.com (SuperAdmin).`);
-      return false;
+      // E-mail NÃO AUTORIZADO (ex: wagner.redes@gmail.com ou qualquer outra conta escolhida no Google)
+      setSuccessNotice(false);
+      setAuthedUser(null);
+      setErro(`⛔ Acesso Negado: O e-mail (${cleanEmail}) não possui permissão para acessar o sistema. Apenas os e-mails autorizados (publicarte09@gmail.com e helpus.ecommerce@gmail.com) possuem permissão de acesso.`);
     }
   };
 
-  // Clique no botão "Entrar com o Google"
-  const handleGoogleSignInClick = (e) => {
-    e?.preventDefault();
+  // Aciona a autenticação oficial caso o usuário clique no botão customizado
+  const handleCustomGoogleClick = () => {
     setErro('');
     setCaptchaError('');
 
     if (!captchaVerified) {
-      setCaptchaError('Por favor, conclua a verificação de segurança "Não sou um robô" (CAPTCHA) acima antes de entrar com o Google.');
+      setCaptchaError('Por favor, conclua a verificação de segurança "Não sou um robô" (CAPTCHA) acima antes de entrar com a conta do Google.');
       return;
     }
 
-    setLoading(true);
-
-    // 1. Abre a nova aba em branco antecipadamente no clique (evita bloqueio de pop-up)
-    const pendingTab = window.open('about:blank', '_blank');
-    if (pendingTab) {
-      pendingTab.document.write(`
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="utf-8" />
-            <title>Autenticando Conta Google — Public Arte | HelpUS</title>
-            <style>
-              body { background: #090d16; color: #38bdf8; font-family: system-ui, -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-              .card { background: #0f172a; padding: 40px; border-radius: 24px; border: 1px solid #1e293b; text-align: center; max-width: 440px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8); }
-              .spinner { width: 44px; height: 44px; border: 4px solid #1e293b; border-top-color: #38bdf8; border-radius: 50%; animation: spin 0.9s linear infinite; margin: 0 auto 20px; }
-              @keyframes spin { to { transform: rotate(360deg); } }
-              h2 { margin: 0 0 10px; color: #f8fafc; font-size: 20px; font-weight: 800; }
-              p { margin: 0; color: #94a3b8; font-size: 14px; line-height: 1.5; }
-            </style>
-          </head>
-          <body>
-            <div class="card">
-              <div class="spinner"></div>
-              <h2>Autenticando Conta Google...</h2>
-              <p>Por favor, selecione sua conta na janela do Google para abrir o Painel Administrativo da Public Arte.</p>
-            </div>
-          </body>
-        </html>
-      `);
+    if (window.google?.accounts?.id) {
+      try {
+        window.google.accounts.id.prompt((notification) => {
+          if (notification.isNotDisplayed() || notification.isSkippedMoment() || notification.isDismissedMoment()) {
+            triggerGoogleTokenClient();
+          }
+        });
+        return;
+      } catch (e) {
+        triggerGoogleTokenClient();
+        return;
+      }
     }
+    triggerGoogleTokenClient();
+  };
 
-    // 2. Tenta o cliente oficial do Google Identity Services (GIS SDK)
+  const triggerGoogleTokenClient = () => {
     if (window.google?.accounts?.oauth2) {
       try {
         const client = window.google.accounts.oauth2.initTokenClient({
@@ -161,49 +202,18 @@ export default function Login() {
                   headers: { Authorization: `Bearer ${tokenResponse.access_token}` }
                 });
                 const googleUser = await res.json();
-                processGoogleUserInfo(googleUser, pendingTab);
+                processGoogleUser(googleUser.email, googleUser.name);
               } catch (fetchErr) {
-                console.warn('Erro ao consultar API UserInfo do Google:', fetchErr);
-                fallbackToAccountSelector(pendingTab);
+                console.error('Erro na API UserInfo:', fetchErr);
               }
-            } else {
-              fallbackToAccountSelector(pendingTab);
             }
-          },
-          error_callback: (err) => {
-            console.warn('Google OAuth cancelado ou bloqueado por origin_mismatch:', err);
-            fallbackToAccountSelector(pendingTab);
           }
         });
-
         client.requestAccessToken({ prompt: 'select_account' });
-        return;
-      } catch (e) {
-        console.warn('Falha no cliente GIS:', e);
+      } catch (err) {
+        console.error('Erro no cliente Google Token:', err);
       }
     }
-
-    // Fallback: Abre Seletor de Contas Google Oficial caso GIS não consiga abrir pop-up externo
-    fallbackToAccountSelector(pendingTab);
-  };
-
-  const fallbackToAccountSelector = (pendingTab) => {
-    setLoading(false);
-    // Guarda a aba pendente e exibe a janela de seleção de conta no padrão HelpUS
-    window._pendingAdminTab = pendingTab;
-    setShowAccountModal(true);
-  };
-
-  const handleSelectAccountOption = (email, name) => {
-    const pendingTab = window._pendingAdminTab || null;
-    processGoogleUserInfo({ email, name }, pendingTab);
-  };
-
-  const handleCustomEmailSubmit = (e) => {
-    e.preventDefault();
-    if (!customEmailInput.trim()) return;
-    const pendingTab = window._pendingAdminTab || null;
-    processGoogleUserInfo({ email: customEmailInput.trim(), name: customEmailInput.split('@')[0] }, pendingTab);
   };
 
   return (
@@ -234,14 +244,14 @@ export default function Login() {
           </div>
 
           {/* Notificação de Sucesso ao Autenticar */}
-          {successNotice && (
+          {successNotice && authedUser && (
             <div className="mb-6 p-4 bg-emerald-950/80 border border-emerald-500/40 rounded-2xl text-emerald-200 space-y-2 animate-fade-in backdrop-blur">
               <div className="flex items-center gap-2 font-bold text-xs text-emerald-400">
                 <CheckCircle2 size={18} />
-                <span>Autenticado com Sucesso via Google Oficial!</span>
+                <span>Autenticado com Sucesso: {authedUser.email}</span>
               </div>
               <p className="text-xs text-emerald-300/90 leading-relaxed">
-                A Área Administrativa foi aberta em uma <strong>nova aba do seu navegador</strong>. A landing page permanece aberta nesta aba.
+                A Área Administrativa foi solicitada em uma <strong>nova aba do seu navegador</strong>. A landing page permanece aberta nesta aba.
               </p>
               <div className="pt-1 flex gap-2">
                 <a
@@ -250,7 +260,7 @@ export default function Login() {
                   rel="noreferrer"
                   className="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/30 transition text-center"
                 >
-                  <ExternalLink size={14} /> Abrir Área Admin Novamente
+                  <ExternalLink size={14} /> Abrir Área Admin em Nova Aba
                 </a>
               </div>
             </div>
@@ -278,12 +288,20 @@ export default function Login() {
             </div>
 
             {/* 2. BOTÃO OFICIAL DE AUTENTICAÇÃO DO GOOGLE ACCOUNTS (SEGUNDO) */}
-            <div>
+            <div className="space-y-3 flex flex-col items-center">
+              {/* Botão Oficial renderizado dinamicamente pelo Google Identity Services SDK */}
+              <div
+                ref={googleBtnContainerRef}
+                className={`w-full flex justify-center min-h-[44px] transition-opacity ${
+                  !captchaVerified ? 'opacity-50 pointer-events-none cursor-not-allowed' : 'opacity-100'
+                }`}
+              />
+
+              {/* Botão de backup estilizado Dark Tech */}
               <button
                 type="button"
-                onClick={handleGoogleSignInClick}
-                disabled={loading}
-                className="w-full bg-white hover:bg-gray-100 text-gray-900 border border-gray-200 font-extrabold py-3.5 px-4 rounded-2xl transition shadow-xl hover:shadow-2xl flex items-center justify-center gap-3 group active:scale-95 disabled:opacity-75"
+                onClick={handleCustomGoogleClick}
+                className="w-full bg-white hover:bg-gray-100 text-gray-900 border border-gray-200 font-extrabold py-3 px-4 rounded-xl transition shadow-lg flex items-center justify-center gap-3 group active:scale-95 text-xs sm:text-sm"
               >
                 <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
                   <path
@@ -303,9 +321,7 @@ export default function Login() {
                     d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
                   />
                 </svg>
-                <span className="text-xs sm:text-sm font-extrabold text-gray-900 group-hover:text-blue-600 transition-colors">
-                  {loading ? 'Autenticando via Google...' : 'Entrar com o Google'}
-                </span>
+                <span>Entrar com o Google / Sign in with Google</span>
               </button>
             </div>
 
@@ -317,107 +333,6 @@ export default function Login() {
           </div>
         </div>
       </main>
-
-      {/* MODAL DE SELEÇÃO DE CONTA GOOGLE (PADRÃO OFICIAL GOOGLE / HELPUS) */}
-      {showAccountModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fade-in">
-          <div className="bg-slate-900 rounded-3xl border border-gray-800 p-6 max-w-md w-full shadow-2xl space-y-5 relative">
-            <button
-              onClick={() => {
-                setShowAccountModal(false);
-                if (window._pendingAdminTab && !window._pendingAdminTab.closed) window._pendingAdminTab.close();
-              }}
-              className="absolute top-4 right-4 p-2 rounded-full bg-slate-950 text-slate-400 hover:text-white transition"
-            >
-              <X size={18} />
-            </button>
-
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400">
-                <Shield size={24} />
-              </div>
-              <div>
-                <h3 className="text-lg font-extrabold text-white">Escolha uma conta Google</h3>
-                <p className="text-xs text-gray-400">para prosseguir para Public Arte (HelpUS)</p>
-              </div>
-            </div>
-
-            <div className="space-y-3 pt-2">
-              {/* Opção 1: Admin Public Arte */}
-              <button
-                onClick={() => handleSelectAccountOption('publicarte09@gmail.com', 'Public Arte Admin')}
-                className="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-800/80 border border-blue-500/30 hover:border-blue-400 transition flex items-center justify-between group"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center justify-center font-bold text-sm">
-                    PA
-                  </div>
-                  <div>
-                    <div className="text-xs font-extrabold text-white group-hover:text-blue-400 transition">
-                      Public Arte Admin
-                    </div>
-                    <div className="text-[11px] text-gray-400 font-mono">
-                      publicarte09@gmail.com
-                    </div>
-                    <div className="text-[10px] text-blue-400 font-bold mt-0.5">
-                      • Nível de Acesso: Admin
-                    </div>
-                  </div>
-                </div>
-                <ChevronRight size={18} className="text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition" />
-              </button>
-
-              {/* Opção 2: SuperAdmin HelpUS */}
-              <button
-                onClick={() => handleSelectAccountOption('helpus.ecommerce@gmail.com', 'HelpUS Technology (SuperAdmin)')}
-                className="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-800/80 border border-purple-500/30 hover:border-purple-400 transition flex items-center justify-between group"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-purple-600/20 text-purple-400 border border-purple-500/30 flex items-center justify-center font-bold text-sm">
-                    SU
-                  </div>
-                  <div>
-                    <div className="text-xs font-extrabold text-white group-hover:text-purple-400 transition">
-                      HelpUS SuperAdmin
-                    </div>
-                    <div className="text-[11px] text-gray-400 font-mono">
-                      helpus.ecommerce@gmail.com
-                    </div>
-                    <div className="text-[10px] text-purple-400 font-bold mt-0.5">
-                      • Nível de Acesso: SuperAdmin Master
-                    </div>
-                  </div>
-                </div>
-                <ChevronRight size={18} className="text-gray-500 group-hover:text-purple-400 group-hover:translate-x-1 transition" />
-              </button>
-            </div>
-
-            {/* Testar outro e-mail para validar regra de autorização */}
-            <div className="pt-3 border-t border-gray-800">
-              <form onSubmit={handleCustomEmailSubmit} className="space-y-2">
-                <label className="block text-[11px] font-semibold text-gray-400">
-                  Ou digite outro e-mail Google para testar a validação:
-                </label>
-                <div className="flex gap-2">
-                  <input
-                    type="email"
-                    value={customEmailInput}
-                    onChange={(e) => setCustomEmailInput(e.target.value)}
-                    placeholder="seu.email@gmail.com"
-                    className="flex-1 bg-slate-950 border border-gray-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-extrabold px-3 py-2 rounded-xl transition"
-                  >
-                    Validar
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      )}
 
       <CookieBanner />
       <Footer />
