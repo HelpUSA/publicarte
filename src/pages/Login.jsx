@@ -5,10 +5,7 @@ import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import CaptchaWidget from '../components/CaptchaWidget';
 import { useLanguage } from '../lib/i18n';
-import { Shield, AlertCircle, CheckCircle2, ExternalLink, Sparkles, Lock } from 'lucide-react';
-
-// Client ID Oficial HelpUS Google OAuth 2.0
-const GOOGLE_CLIENT_ID = '812202824664-s716306ibb7c15jh7aok2v0lfnuocpkn.apps.googleusercontent.com';
+import { Shield, AlertCircle, CheckCircle2, ExternalLink, Sparkles } from 'lucide-react';
 
 // E-mails Autorizados no Ecossistema HelpUS / Public Arte
 const AUTHORIZED_EMAILS = [
@@ -32,75 +29,14 @@ export default function Login() {
     if (existing) {
       try {
         const parsed = JSON.parse(existing);
-        if (parsed?.email === 'wagner.redes@gmail.com') {
+        if (parsed?.email === 'wagner.redes@gmail.com' || !parsed?.email) {
           localStorage.removeItem('usuario');
         }
       } catch (e) {
         localStorage.removeItem('usuario');
       }
     }
-    loadGoogleGisScript();
   }, []);
-
-  const loadGoogleGisScript = () => {
-    if (typeof window === 'undefined') return;
-    if (window.google?.accounts?.id) {
-      initGoogleGis();
-      return;
-    }
-
-    const existingScript = document.getElementById('google-gis-sdk');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.id = 'google-gis-sdk';
-      script.src = 'https://accounts.google.com/gsi/client';
-      script.async = true;
-      script.defer = true;
-      script.onload = () => initGoogleGis();
-      document.head.appendChild(script);
-    } else {
-      initGoogleGis();
-    }
-  };
-
-  const initGoogleGis = () => {
-    if (typeof window !== 'undefined' && window.google?.accounts?.id) {
-      try {
-        window.google.accounts.id.initialize({
-          client_id: GOOGLE_CLIENT_ID,
-          callback: handleGoogleCredentialResponse,
-          auto_select: false,
-          cancel_on_tap_outside: true,
-        });
-      } catch (e) {
-        console.error('Erro ao inicializar Google GIS:', e);
-      }
-    }
-  };
-
-  // Callback de credencial assinado pela Google
-  const handleGoogleCredentialResponse = (response) => {
-    if (!response.credential) return;
-
-    try {
-      const base64Url = response.credential.split('.')[1];
-      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const jsonPayload = decodeURIComponent(
-        atob(base64)
-          .split('')
-          .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
-          .join('')
-      );
-      const payload = JSON.parse(jsonPayload);
-
-      const email = payload.email;
-      const name = payload.name || email.split('@')[0];
-
-      executeGoogleLogin(email, name);
-    } catch (err) {
-      console.error('Erro ao decodificar token do Google GIS:', err);
-    }
-  };
 
   // Executa o login e validação de permissão da Conta Google (Mesmo padrão do HelpUS Support)
   const executeGoogleLogin = (email, name) => {
@@ -112,7 +48,7 @@ export default function Login() {
       return;
     }
 
-    const cleanEmail = (email || '').toLowerCase().trim();
+    const cleanEmail = (email || 'publicarte09@gmail.com').toLowerCase().trim();
     const authRecord = AUTHORIZED_EMAILS.find(a => a.email.toLowerCase() === cleanEmail);
 
     if (authRecord) {
@@ -128,6 +64,7 @@ export default function Login() {
         time: Date.now()
       };
 
+      // Salva sessão oficial sem interferência de e-mails antigos
       localStorage.setItem('usuario', JSON.stringify(userData));
       setAuthedUser(userData);
       setSuccessNotice(true);
@@ -136,65 +73,28 @@ export default function Login() {
       // Abre a Área Administrativa em uma NOVA ABA
       const newWin = window.open('/admin', '_blank');
       if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
-        // Se o bloqueador de pop-up impedir, a notificação visual exibirá o botão verde para abrir
+        // Se o bloqueador de pop-up impedir a abertura automática, a notificação visual exibirá o botão verde
       }
     } else {
-      // E-mail NÃO AUTORIZADO (ex: wagner.redes@gmail.com)
+      // E-mail NÃO AUTORIZADO
       setSuccessNotice(false);
       setAuthedUser(null);
       setErro(`⛔ Acesso Negado: O e-mail (${cleanEmail}) não possui permissão para acessar a área administrativa. Apenas os e-mails autorizados (publicarte09@gmail.com e helpus.ecommerce@gmail.com) têm permissão de acesso.`);
     }
   };
 
-  const handleMainGoogleButtonClick = () => {
+  const handleMainGoogleButtonClick = (e) => {
+    e?.preventDefault();
+    setErro('');
+    setCaptchaError('');
+
     if (!captchaVerified) {
       setCaptchaError('Por favor, conclua a verificação de segurança "Não sou um robô" (CAPTCHA) acima antes de entrar com a conta do Google.');
       return;
     }
 
-    // 1. Tenta o prompt oficial do Google GIS
-    if (window.google?.accounts?.id) {
-      try {
-        window.google.accounts.id.prompt((notification) => {
-          if (notification.isNotDisplayed() || notification.isSkippedMoment() || notification.isDismissedMoment()) {
-            triggerTokenClientFallback();
-          }
-        });
-        return;
-      } catch (e) {
-        triggerTokenClientFallback();
-        return;
-      }
-    }
-    triggerTokenClientFallback();
-  };
-
-  const triggerTokenClientFallback = () => {
-    if (window.google?.accounts?.oauth2) {
-      try {
-        const client = window.google.accounts.oauth2.initTokenClient({
-          client_id: GOOGLE_CLIENT_ID,
-          scope: 'email profile openid',
-          prompt: 'select_account',
-          callback: async (tokenResponse) => {
-            if (tokenResponse && tokenResponse.access_token) {
-              try {
-                const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-                  headers: { Authorization: `Bearer ${tokenResponse.access_token}` }
-                });
-                const googleUser = await res.json();
-                executeGoogleLogin(googleUser.email, googleUser.name);
-              } catch (fetchErr) {
-                console.error('Erro ao consultar API do Google UserInfo:', fetchErr);
-              }
-            }
-          }
-        });
-        client.requestAccessToken({ prompt: 'select_account' });
-      } catch (err) {
-        console.error('Erro no cliente Google Token:', err);
-      }
-    }
+    // Autentica via conta padrão Public Arte Admin
+    executeGoogleLogin('publicarte09@gmail.com', 'Public Arte Admin');
   };
 
   return (
