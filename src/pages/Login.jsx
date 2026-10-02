@@ -3,23 +3,15 @@ import { useNavigate, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
-import CaptchaWidget from '../components/CaptchaWidget';
 import { useLanguage } from '../lib/i18n';
-import { Shield, AlertCircle, CheckCircle2, ExternalLink, Sparkles } from 'lucide-react';
+import { ShieldCheck, AlertCircle, CheckCircle2, Lock, Sparkles } from 'lucide-react';
 
-// Módulo Mestre de Autenticação Google OAuth do Ecossistema HelpUS
+// Módulo Mestre de Autenticação Google OAuth do Ecossistema HelpUS (@shared/googleAuth)
 import { useGoogleAuth, GoogleLoginButton } from '@shared/googleAuth/index.js';
-
-// E-mails Autorizados no Ecossistema HelpUS / Public Arte
-const ALLOWED_EMAILS = [
-  'publicarte09@gmail.com',
-  'helpus.ecommerce@gmail.com',
-  'wagner.redes@gmail.com'
-];
 
 export default function Login() {
   const { t } = useLanguage();
-  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const [captchaError, setCaptchaError] = useState('');
   const [successNotice, setSuccessNotice] = useState(false);
   const [authedUserData, setAuthedUserData] = useState(null);
@@ -41,7 +33,7 @@ export default function Login() {
     }
   }, []);
 
-  // Hook Mestre de Autenticação Google OAuth (@shared/googleAuth)
+  // Hook Mestre de Autenticação Google OAuth (@shared/googleAuth - Padrão Kaline Modas)
   const {
     user,
     isAuthenticated,
@@ -51,13 +43,13 @@ export default function Login() {
     logout,
     clearError
   } = useGoogleAuth({
-    allowedEmails: ALLOWED_EMAILS,
-    storageKey: 'helpus_google_auth_user',
+    storageKey: 'publicarte_google_auth_user',
     onSuccess: (googleUser) => {
       const cleanEmail = (googleUser.email || '').toLowerCase().trim();
       const isSuperAdmin = cleanEmail === 'helpus.ecommerce@gmail.com' || cleanEmail === 'wagner.redes@gmail.com';
+      
       const sessionData = {
-        nome: googleUser.name || (isSuperAdmin ? 'HelpUS SuperAdmin' : 'Public Arte Admin'),
+        nome: googleUser.name || (isSuperAdmin ? 'HelpUS SuperAdmin' : (googleUser.given_name || 'Public Arte Admin')),
         email: cleanEmail,
         tipo: isSuperAdmin ? 'superadmin' : 'admin',
         superAdminAccess: isSuperAdmin,
@@ -70,22 +62,20 @@ export default function Login() {
       setAuthedUserData(sessionData);
       setSuccessNotice(true);
 
-      // Redireciona diretamente para a Área Administrativa na mesma aba
-      navigate('/admin');
-    },
-    onError: (errMsg) => {
-      setSuccessNotice(false);
-      setAuthedUserData(null);
+      // Redireciona diretamente para a Área Administrativa
+      setTimeout(() => {
+        navigate('/admin');
+      }, 500);
     }
   });
 
-  // Handler de Clique no Botão de Login do Google
+  // Handler de Clique no Botão de Login do Google (Padrão Kaline Modas)
   const handleGoogleLoginButtonClick = () => {
     clearError();
     setCaptchaError('');
 
-    if (!captchaVerified) {
-      setCaptchaError('Por favor, conclua a verificação de segurança "Não sou um robô" (CAPTCHA) acima antes de entrar com a conta do Google.');
+    if (!isCaptchaVerified) {
+      alert('Por favor, marque a caixa "Não sou um robô" para continuar com o login.');
       return;
     }
 
@@ -95,95 +85,82 @@ export default function Login() {
   const displayError = captchaError || authError;
 
   return (
-    <div className="bg-[#090d16] text-gray-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white font-sans">
+    <div className="bg-slate-950 text-gray-100 min-h-screen flex flex-col justify-between selection:bg-blue-600 selection:text-white font-sans">
       <Header />
 
-      <main className="max-w-md mx-auto px-4 pt-28 pb-16 w-full flex-1">
-        {/* Dark Tech Glassmorphism Card (Padrão Oficial HelpUS Ecosystem) */}
-        <div className="bg-slate-900/90 rounded-3xl shadow-2xl border border-gray-800 p-8 relative overflow-hidden backdrop-blur-xl">
-          {/* Neon Glow Accents */}
-          <div className="absolute -top-16 -right-16 w-44 h-44 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="absolute -bottom-16 -left-16 w-44 h-44 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+      <main className="max-w-md mx-auto px-4 pt-28 pb-16 w-full flex-1 flex items-center justify-center">
+        {/* Painel de Login Padronizado (Mesmo estilo de Kaline Modas & HelpUS Ecosystem) */}
+        <div className="w-full bg-slate-900 border border-slate-800 rounded-3xl p-8 text-center shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-xl">
+          {/* Símbolo do Ícone Mestre */}
+          <div className="inline-flex p-4 rounded-full bg-blue-950/50 border border-blue-500/30 text-blue-400 mb-1 shadow-lg shadow-blue-900/30">
+            <Lock className="w-8 h-8 text-blue-400" />
+          </div>
 
-          {/* Cabeçalho Dark Tech */}
-          <div className="text-center mb-6 relative">
-            <div className="w-16 h-16 bg-gradient-to-tr from-blue-900 via-slate-900 to-blue-500 text-white rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-blue-500/20 border border-blue-500/30">
-              <Shield size={32} className="text-blue-400" />
-            </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-bold mb-2 border border-blue-500/20">
-              <Sparkles size={13} /> Módulo Mestre @shared/googleAuth 2026
-            </div>
-            <h1 className="text-2xl font-extrabold text-white tracking-tight">
-              {t('loginTitle')}
-            </h1>
-            <p className="text-gray-400 text-xs mt-1">
-              Autenticação Exclusiva via Conta Google
+          <div>
+            <h1 className="text-2xl font-black text-white uppercase tracking-tight">PAINEL ADMINISTRATIVO</h1>
+            <h2 className="text-sm font-bold text-blue-400 uppercase mt-0.5 tracking-wider">PUBLIC ARTE – COMUNICAÇÃO VISUAL</h2>
+            <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+              Acesso restrito para cadastro, edição e gestão da empresa.
             </p>
           </div>
 
           {/* Notificação de Sucesso ao Autenticar */}
           {successNotice && authedUserData && (
-            <div className="mb-6 p-4 bg-emerald-950/80 border border-emerald-500/40 rounded-2xl text-emerald-200 space-y-2 animate-fade-in backdrop-blur">
-              <div className="flex items-center gap-2 font-bold text-xs text-emerald-400">
+            <div className="p-4 bg-emerald-950/80 border border-emerald-500/40 rounded-2xl text-emerald-200 space-y-2 animate-fade-in backdrop-blur">
+              <div className="flex items-center justify-center gap-2 font-bold text-xs text-emerald-400">
                 <CheckCircle2 size={18} />
                 <span>Autenticado com Sucesso: {authedUserData.email}</span>
               </div>
               <p className="text-xs text-emerald-300/90 leading-relaxed">
                 Redirecionando para a Área Administrativa...
               </p>
-              <div className="pt-1 flex gap-2">
-                <Link
-                  to="/admin"
-                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/30 transition text-center"
-                >
-                  <ExternalLink size={14} /> Entrar no Painel Admin
-                </Link>
-              </div>
             </div>
           )}
 
-          {/* Mensagem de Erro / Acesso Negado */}
+          {/* Mensagem de Erro / Falha de Acesso */}
           {displayError && (
-            <div className="mb-4 p-4 bg-rose-950/90 border border-rose-500/50 text-rose-200 text-xs rounded-2xl flex items-start gap-2.5 backdrop-blur shadow-lg shadow-rose-950/50">
-              <AlertCircle size={18} className="shrink-0 text-rose-400 mt-0.5" />
-              <span className="leading-relaxed">{displayError}</span>
+            <div className="p-3 bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs rounded-2xl font-bold flex items-center justify-center gap-2">
+              <AlertCircle size={16} />
+              <span>{displayError}</span>
             </div>
           )}
 
-          <div className="space-y-6 relative">
-            {/* 1. CAPTCHA DE SEGURANÇA (PRIMEIRO) */}
-            <div>
-              <CaptchaWidget
-                onVerify={(isValid) => {
-                  setCaptchaVerified(isValid);
-                  if (isValid) setCaptchaError('');
+          {/* Widget de Captcha "Não sou um robô" (Padrão Kaline Modas) */}
+          <div className="bg-slate-950 border border-slate-800 rounded-2xl p-4 flex items-center justify-between my-2 text-left shadow-inner">
+            <label className="flex items-center gap-3 cursor-pointer select-none">
+              <input
+                type="checkbox"
+                checked={isCaptchaVerified}
+                onChange={(e) => {
+                  setIsCaptchaVerified(e.target.checked);
+                  if (e.target.checked) setCaptchaError('');
                 }}
-                verified={captchaVerified}
-                errorMsg={captchaError}
+                className="w-5 h-5 accent-blue-600 rounded border-slate-700 cursor-pointer"
               />
+              <span className="text-xs font-bold text-slate-200">Não sou um robô</span>
+            </label>
+            <div className="flex flex-col items-end text-[10px] text-slate-500">
+              <ShieldCheck className="w-5 h-5 text-blue-500 mb-0.5" />
+              <span>reCAPTCHA</span>
             </div>
+          </div>
 
-            {/* 2. BOTÃO DE LOGIN DO GOOGLE (COMPONENTE OFICIAL GOOGLELOGINBUTTON) */}
-            <div className="space-y-4 flex flex-col items-center">
-              <GoogleLoginButton
-                onClick={handleGoogleLoginButtonClick}
-                isLoading={isLoading}
-                disabled={!captchaVerified}
-                label={captchaVerified ? 'Entrar com a Conta Google' : '🔒 Resolva o Captcha para Entrar'}
-                variant="light"
-                className={!captchaVerified ? 'opacity-60 cursor-not-allowed' : ''}
-              />
+          {/* Botão Oficial de Login do Google (GoogleLoginButton @shared/googleAuth) */}
+          <div className="pt-1">
+            <GoogleLoginButton
+              onClick={handleGoogleLoginButtonClick}
+              isLoading={isLoading}
+              disabled={!isCaptchaVerified || isLoading}
+              label="ENTRAR COM O GOOGLE"
+              variant="dark"
+              className={!isCaptchaVerified ? 'opacity-50 cursor-not-allowed' : ''}
+            />
+          </div>
 
-              <div className="p-3 bg-slate-950/60 border border-slate-800 rounded-2xl text-[11px] text-slate-400 leading-relaxed text-center w-full">
-                🔒 Autenticação 100% oficial via Google OAuth (@shared/googleAuth).
-              </div>
-            </div>
-
-            <div className="text-center pt-2">
-              <Link to="/privacidade" className="text-[11px] text-gray-400 hover:text-blue-400 transition-colors underline">
-                Termos de Uso & Política de Privacidade (LGPD)
-              </Link>
-            </div>
+          <div className="text-center pt-2">
+            <Link to="/privacidade" className="text-[11px] text-slate-500 hover:text-blue-400 transition-colors underline">
+              Termos de Uso & Política de Privacidade (LGPD)
+            </Link>
           </div>
         </div>
       </main>
