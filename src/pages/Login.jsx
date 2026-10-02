@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import { useLanguage } from '../lib/i18n';
-import { ShieldCheck, AlertCircle, CheckCircle2, Lock, Sparkles, UserCheck } from 'lucide-react';
+import { ShieldCheck, AlertCircle, CheckCircle2, Lock } from 'lucide-react';
 
 // Módulo Mestre de Autenticação Google OAuth do Ecossistema HelpUS (@shared/googleAuth)
 import { useGoogleAuth, GoogleLoginButton } from '@shared/googleAuth/index.js';
@@ -33,7 +33,7 @@ export default function Login() {
     }
   }, []);
 
-  // Hook Mestre de Autenticação Google OAuth (@shared/googleAuth - Padrão Kaline Modas)
+  // Hook Mestre de Autenticação Google OAuth (@shared/googleAuth - Padrão Kaline Modas & Ecossistema HelpUS)
   const {
     user,
     isAuthenticated,
@@ -82,32 +82,6 @@ export default function Login() {
     login();
   };
 
-  // Handler de Login Direto do Gestor / Admin
-  const handleDirectAdminLogin = () => {
-    if (!isCaptchaVerified) {
-      alert('Por favor, marque a caixa "Não sou um robô" para continuar.');
-      return;
-    }
-
-    const sessionData = {
-      nome: 'Public Arte Admin',
-      email: 'publicarte09@gmail.com',
-      tipo: 'admin',
-      superAdminAccess: false,
-      picture: '',
-      loginMethod: 'direct_admin_auth',
-      time: Date.now()
-    };
-
-    localStorage.setItem('usuario', JSON.stringify(sessionData));
-    setAuthedUserData(sessionData);
-    setSuccessNotice(true);
-
-    setTimeout(() => {
-      navigate('/admin');
-    }, 400);
-  };
-
   const displayError = captchaError || authError;
 
   return (
@@ -115,7 +89,7 @@ export default function Login() {
       <Header />
 
       <main className="max-w-md mx-auto px-4 pt-28 pb-16 w-full flex-1 flex items-center justify-center">
-        {/* Painel de Login Padronizado (Mesmo estilo de Kaline Modas & HelpUS Ecosystem) */}
+        {/* Painel de Login Padronizado (Mesmo estilo e tela de Kaline Modas & HelpUS Ecosystem) */}
         <div className="w-full bg-slate-900 border border-slate-800 rounded-3xl p-8 text-center shadow-2xl space-y-6 relative overflow-hidden backdrop-blur-xl">
           {/* Símbolo do Ícone Mestre */}
           <div className="inline-flex p-4 rounded-full bg-blue-950/50 border border-blue-500/30 text-blue-400 mb-1 shadow-lg shadow-blue-900/30">
@@ -171,9 +145,8 @@ export default function Login() {
             </div>
           </div>
 
-          {/* Botões de Autenticação */}
-          <div className="pt-1 space-y-3">
-            {/* Google Login Button */}
+          {/* Botão Oficial de Login do Google (Padrão Exclusivo Kaline Modas & HelpUS Ecosystem) */}
+          <div className="pt-1">
             <GoogleLoginButton
               onClick={handleGoogleLoginButtonClick}
               isLoading={isLoading}
@@ -182,17 +155,6 @@ export default function Login() {
               variant="dark"
               className={!isCaptchaVerified ? 'opacity-50 cursor-not-allowed' : ''}
             />
-
-            {/* Direct Admin Login Button */}
-            <button
-              type="button"
-              onClick={handleDirectAdminLogin}
-              disabled={!isCaptchaVerified || isLoading}
-              className={`w-full py-3 px-4 rounded-xl font-bold text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center justify-center gap-2 shadow-sm ${!isCaptchaVerified ? 'opacity-50 cursor-not-allowed' : ''}`}
-            >
-              <UserCheck size={16} className="text-blue-400" />
-              <span>Entrar como Gestor Public Arte</span>
-            </button>
           </div>
 
           <div className="text-center pt-2">
