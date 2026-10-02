@@ -42,22 +42,22 @@ export default function Header({
         {/* Logo & Name */}
         <Link
           to="/"
-          className="flex items-center gap-3 hover:scale-105 transition-transform duration-300"
+          className="flex items-center gap-2 sm:gap-3 hover:scale-105 transition-transform duration-300 shrink-0"
         >
           <img
             src={logo}
             alt={nomeEmpresa}
-            className="h-10 w-auto max-h-12 object-contain bg-white p-1 rounded-lg shadow-sm border border-gray-100"
+            className="h-9 sm:h-10 w-auto max-h-12 object-contain bg-white p-1 rounded-lg shadow-sm border border-gray-100 shrink-0"
             onError={(e) => {
               // Fallback se a imagem não carregar por algum motivo
               e.target.style.display = 'none';
             }}
           />
-          <div className="flex flex-col">
-            <span className="text-lg font-extrabold text-blue-950 tracking-tight leading-tight">
+          <div className="hidden min-[480px]:flex flex-col shrink-0">
+            <span className="text-base sm:text-lg font-extrabold text-blue-950 tracking-tight leading-tight">
               PUBLIC ARTE
             </span>
-            <span className="text-[10px] text-blue-800 font-bold tracking-wider uppercase">
+            <span className="text-[9px] sm:text-[10px] text-blue-800 font-bold tracking-wider uppercase">
               Comunicação Visual
             </span>
           </div>
@@ -102,12 +102,12 @@ export default function Header({
         </nav>
 
         {/* Right Section: Cart + Language + User Icon + Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {/* Shopping Cart Button (Padrão Queijeira 504) */}
           {onOpenCart && (
             <button
               onClick={onOpenCart}
-              className="relative p-2 text-slate-700 hover:text-blue-900 bg-slate-100 hover:bg-slate-200 rounded-xl border border-slate-200 transition flex items-center gap-1.5"
+              className="relative p-1.5 sm:p-2 text-slate-700 hover:text-blue-900 bg-slate-100 hover:bg-slate-200 rounded-xl border border-slate-200 transition flex items-center gap-1.5 shrink-0"
               title="Abrir Sacola de Compras"
             >
               <ShoppingBag size={18} className="text-blue-900" />
@@ -121,13 +121,13 @@ export default function Header({
           )}
 
           {/* Language Selector */}
-          <div className="relative">
+          <div className="relative shrink-0">
             <button
               onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className="flex items-center gap-1.5 text-xs font-medium text-gray-700 hover:text-blue-800 bg-gray-100 px-2.5 py-1.5 rounded-md border border-gray-200"
+              className="flex items-center gap-1 text-[11px] sm:text-xs font-medium text-gray-700 hover:text-blue-800 bg-gray-100 px-2 py-1.5 sm:px-2.5 rounded-md border border-gray-200 shrink-0"
             >
-              <Globe size={14} />
-              <span>{activeLangObj.flag} {activeLangObj.code.toUpperCase()}</span>
+              <Globe size={13} />
+              <span>{activeLangObj.flag} <span className="hidden min-[380px]:inline">{activeLangObj.code.toUpperCase()}</span></span>
               <ChevronDown size={12} />
             </button>
 
