@@ -30,8 +30,11 @@ const ProductCard = ({ product, formatarPreco, onSelect }) => {
         <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
           <div>
             <span className="text-[10px] text-gray-400 font-semibold block uppercase">Preço a partir de:</span>
-            <div className="text-emerald-600 text-lg font-black">
-              {formatarPreco(product.price || product.preco)}
+            <div className="text-emerald-600 text-lg font-black flex items-baseline gap-1.5 flex-wrap">
+              <span>{formatarPreco(product.price || product.preco)}</span>
+              <span className="text-[10px] text-emerald-800 font-bold bg-emerald-50 px-1.5 py-0.5 rounded-md border border-emerald-200 uppercase">
+                / {product.unidade || 'm²'}
+              </span>
             </div>
           </div>
 
