@@ -179,26 +179,61 @@ export default function Home() {
     }
   ];
 
-  // Carrega produtos do localStorage e do Supabase
+  // Carrega e enriquece produtos garantindo fotos reais do Instagram do Tércio Grassi
   useEffect(() => {
+    const defaultIgImages = [
+      '/instagram/ig_18331346713195531.jpg',
+      '/instagram/ig_17946900017864550.jpg',
+      '/instagram/ig_17884342929149903.jpg',
+      '/instagram/ig_17962347830819280.jpg',
+      '/instagram/ig_17876414721565695.jpg',
+      '/instagram/ig_18054294236343666.jpg',
+      '/instagram/ig_17892730401385549.jpg',
+      '/instagram/ig_17983595972930658.jpg',
+      '/instagram/ig_18318898819220395.jpg',
+      '/instagram/ig_18081912410146324.jpg',
+      '/instagram/ig_17972466296964894.jpg',
+      '/instagram/ig_18142952848454778.jpg',
+      '/instagram/ig_18136978291470795.jpg',
+      '/instagram/ig_18555153241074750.jpg',
+      '/instagram/ig_18094498808400316.jpg',
+      '/instagram/ig_18124924180863297.jpg'
+    ];
+
+    const enrichItem = (p, idx) => {
+      let img = p.imagem_url || p.foto || p.imageUrl;
+      if (!img || img.includes('unsplash.com') || img.startsWith('http://') || img.startsWith('https://')) {
+        img = defaultIgImages[idx % defaultIgImages.length];
+      }
+      return {
+        ...p,
+        imagem_url: img,
+        foto: img,
+        imageUrl: img,
+        marca: p.categoria || p.marca || 'Comunicação Visual'
+      };
+    };
+
     const fetchProdutos = async () => {
-      // 1. Tenta carregar do localStorage (sincronizado com Admin.jsx)
+      let baseList = produtosPadrao.map((p, idx) => enrichItem(p, idx));
+
+      // 1. Tenta carregar do localStorage
       const local = localStorage.getItem('publicarte_produtos');
-      if (local && !local.includes('unsplash.com')) {
+      if (local) {
         try {
           const parsed = JSON.parse(local);
           if (Array.isArray(parsed) && parsed.length > 0) {
-            setProdutos(parsed.map(p => ({
-              ...p,
-              imagem_url: p.foto || p.imagem_url,
-              marca: p.categoria || p.marca
-            })));
-            return;
+            const existingNames = new Set(baseList.map(item => item.nome.toLowerCase()));
+            parsed.forEach((lp, idx) => {
+              if (lp.nome && !existingNames.has(lp.nome.toLowerCase())) {
+                baseList.push(enrichItem(lp, baseList.length + idx));
+              }
+            });
           }
         } catch (e) {}
       }
 
-      // 2. Se não houver no local, consulta Supabase ou usa o catálogo mestre
+      // 2. Consulta Supabase e mescla novos produtos
       try {
         const { data, error } = await supabase
           .from('products')
@@ -206,13 +241,20 @@ export default function Home() {
           .order('created_at', { ascending: false });
 
         if (!error && data && data.length > 0) {
-          setProdutos(data);
-        } else {
-          setProdutos(produtosPadrao);
+          const existingNames = new Set(baseList.map(item => item.nome.toLowerCase()));
+          data.forEach((sp, idx) => {
+            if (sp.nome && !existingNames.has(sp.nome.toLowerCase())) {
+              baseList.push(enrichItem(sp, baseList.length + idx));
+            }
+          });
         }
-      } catch (err) {
-        setProdutos(produtosPadrao);
-      }
+      } catch (err) {}
+
+      // Atualiza o estado principal
+      setProdutos(baseList);
+      try {
+        localStorage.setItem('publicarte_produtos', JSON.stringify(baseList));
+      } catch (e) {}
     };
 
     fetchProdutos();
