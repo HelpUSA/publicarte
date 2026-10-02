@@ -1,9 +1,9 @@
 [
   {
     "id": "tck-1790934711474",
-    "tenantId": "publicarte",
-    "tenantName": "Public Arte",
-    "code": "PUB-101",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-101",
     "title": "Ajuste formatação",
     "description": "Na página de edição de laudo reduzir o tamanho do campo do CPF do paciente e aumentar o tamanho do campo do médico solicitante",
     "category": "support",
@@ -12,7 +12,7 @@
     "createdByEmail": "eduardojcmagalhaes@gmail.com",
     "createdByName": "Eduardo Magalhães (Neuro)",
     "contextData": {
-      "url": "https://support.helpusbr.com/portal",
+      "url": "https://neuro.eduardomagalhaes.helpusbr.com",
       "userEmail": "eduardojcmagalhaes@gmail.com",
       "userName": "Eduardo Magalhães (Neuro)",
       "os": "Windows 11 (Chrome 128)"
@@ -47,7 +47,7 @@
         "senderName": "Pipeline de Produção Vercel",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Dr. Eduardo Magalhães Neurologista). Acompanhe o progresso da compilação e verificação de deploy...",
         "createdAt": "2026-10-02T09:52:23.167Z"
       },
       {
