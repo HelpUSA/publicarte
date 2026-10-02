@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1790944637381",
+    "tenantId": "publicarte",
+    "tenantName": "Public Arte",
+    "code": "PUB-102",
+    "title": "Retirar a lista de usuários da tela de login",
+    "description": "O login com conta google deu certo agora retire a lista de usuários da tela de login",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1790944637381",
+        "ticketId": "tck-1790944637381",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "O login com conta google deu certo agora retire a lista de usuários da tela de login",
+        "attachments": [],
+        "createdAt": "2026-10-02T12:37:17.381Z"
+      }
+    ],
+    "createdAt": "2026-10-02T12:37:17.381Z",
+    "updatedAt": "2026-10-02T12:37:17.381Z"
+  },
+  {
     "id": "tck-1790934711474",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
