@@ -125,13 +125,30 @@ export default function Admin() {
     return local
       ? JSON.parse(local)
       : [
-          { id: 1, nome: 'Tércio Grassi', cargo: 'Proprietário / Gestor', celular: '(83) 98610-4153', usuario: 'tercio', nivel: 'Admin' },
-          { id: 2, nome: 'Lucas Atendente', cargo: 'Vendedor / Balcão', celular: '(83) 99123-4567', usuario: 'vendedor', nivel: 'Vendedor' }
+          { id: 1, nome: 'Tércio Grassi', email: 'publicarte09@gmail.com', cargo: 'Proprietário / Gestor', celular: '(83) 98610-4153', usuario: 'tercio', nivel: 'Admin', metodoLogin: 'Google OAuth 2.0' }
         ];
   });
 
-  const [novoFuncionario, setNovoFuncionario] = useState({ nome: '', cargo: '', celular: '', usuario: '', nivel: 'Vendedor' });
+  const [novoFuncionario, setNovoFuncionario] = useState({ nome: '', email: '', cargo: '', celular: '', usuario: '', nivel: 'Vendedor' });
   const [funcionarioEditando, setFuncionarioEditando] = useState(null);
+
+  // State: Usuários do Sistema (Gerenciamento do SuperAdmin)
+  const [usuariosSistema, setUsuariosSistema] = useState(() => {
+    const local = localStorage.getItem('publicarte_usuarios_sistema');
+    return local
+      ? JSON.parse(local)
+      : [
+          { id: 1, nome: 'HelpUS Tech Control', email: 'helpus.ecommerce@gmail.com', nivel: 'SuperAdmin', metodoLogin: 'Google OAuth 2.0', status: 'Ativo' },
+          { id: 2, nome: 'Tércio Grassi', email: 'publicarte09@gmail.com', nivel: 'Admin (Public Arte)', metodoLogin: 'Google OAuth 2.0', status: 'Ativo' }
+        ];
+  });
+
+  const [novoUsuarioSuperAdmin, setNovoUsuarioSuperAdmin] = useState({
+    nome: '',
+    email: '',
+    nivel: 'Admin (Public Arte)',
+    metodoLogin: 'Google OAuth 2.0'
+  });
 
   // State: Produtos e Serviços
   const [produtos, setProdutos] = useState(() => {
@@ -421,6 +438,81 @@ export default function Admin() {
   useEffect(() => {
     localStorage.setItem('publicarte_orcamentos', JSON.stringify(orcamentos));
   }, [orcamentos]);
+  useEffect(() => {
+    localStorage.setItem('publicarte_usuarios_sistema', JSON.stringify(usuariosSistema));
+  }, [usuariosSistema]);
+
+  // Handlers de Gerenciamento de Usuários do SuperAdmin
+  const handleAdicionarUsuarioSuperAdmin = (e) => {
+    e.preventDefault();
+    if (!novoUsuarioSuperAdmin.email || !novoUsuarioSuperAdmin.nome) return;
+
+    const emailClean = novoUsuarioSuperAdmin.email.trim().toLowerCase();
+
+    if (usuariosSistema.some(u => u.email.toLowerCase() === emailClean)) {
+      alert('Este e-mail já está cadastrado no sistema.');
+      return;
+    }
+
+    const usuarioCriado = {
+      id: Date.now(),
+      nome: novoUsuarioSuperAdmin.nome.trim(),
+      email: emailClean,
+      nivel: novoUsuarioSuperAdmin.nivel,
+      metodoLogin: 'Google OAuth 2.0',
+      status: 'Ativo',
+      criadoEm: new Date().toLocaleDateString('pt-BR')
+    };
+
+    setUsuariosSistema(prev => [...prev, usuarioCriado]);
+
+    const nivelFunc = novoUsuarioSuperAdmin.nivel.includes('Admin') ? 'Admin' : 'Vendedor';
+    setFuncionarios(prev => [
+      ...prev,
+      {
+        id: usuarioCriado.id,
+        nome: usuarioCriado.nome,
+        email: usuarioCriado.email,
+        cargo: novoUsuarioSuperAdmin.nivel,
+        celular: '(83) 98610-4153',
+        usuario: usuarioCriado.email.split('@')[0],
+        nivel: nivelFunc,
+        metodoLogin: 'Google OAuth 2.0'
+      }
+    ]);
+
+    setNovoUsuarioSuperAdmin({ nome: '', email: '', nivel: 'Admin (Public Arte)', metodoLogin: 'Google OAuth 2.0' });
+    alert(`Usuário ${usuarioCriado.email} autorizado com sucesso via Google OAuth 2.0!`);
+  };
+
+  const handleExcluirUsuarioSuperAdmin = (id, email) => {
+    if (email === 'helpus.ecommerce@gmail.com') {
+      alert('Não é possível excluir a conta mestre do SuperAdmin!');
+      return;
+    }
+    if (email === 'publicarte09@gmail.com') {
+      alert('Não é possível excluir a conta do Gestor Principal (Tércio Grassi)!');
+      return;
+    }
+
+    if (window.confirm(`Tem certeza que deseja remover o acesso do usuário ${email}?`)) {
+      setUsuariosSistema(prev => prev.filter(u => u.id !== id && u.email !== email));
+      setFuncionarios(prev => prev.filter(f => f.email !== email && f.id !== id));
+    }
+  };
+
+  const handleDeletarFuncionario = (id, email) => {
+    if (email === 'helpus.ecommerce@gmail.com' || email === 'publicarte09@gmail.com') {
+      alert('Contas de administradores principais não podem ser excluídas por esta lista!');
+      return;
+    }
+    if (window.confirm('Tem certeza que deseja excluir este funcionário?')) {
+      setFuncionarios(prev => prev.filter(f => f.id !== id));
+      if (email) {
+        setUsuariosSistema(prev => prev.filter(u => u.email !== email));
+      }
+    }
+  };
 
   // Calculations
   const pdvSubtotal = pdvCarrinho.reduce((acc, item) => acc + (Number(item.total) || 0), 0);
@@ -1459,21 +1551,34 @@ export default function Admin() {
                       <thead className="bg-gray-50 text-gray-600 font-bold border-b">
                         <tr>
                           <th className="p-3">Nome</th>
-                          <th className="p-3">Cargo</th>
-                          <th className="p-3">Usuário Login</th>
+                          <th className="p-3">Cargo / E-mail</th>
+                          <th className="p-3">Método Login</th>
                           <th className="p-3">Nível Acesso</th>
+                          <th className="p-3 text-right">Ações</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-gray-100">
                         {funcionarios.map((f) => (
                           <tr key={f.id} className="hover:bg-gray-50 transition">
                             <td className="p-3 font-bold text-gray-900">{f.nome}</td>
-                            <td className="p-3 text-gray-600">{f.cargo}</td>
-                            <td className="p-3 font-mono font-bold text-blue-900">{f.usuario}</td>
+                            <td className="p-3 text-gray-600 font-mono text-[11px]">{f.email || f.cargo || f.usuario}</td>
+                            <td className="p-3 font-semibold text-blue-900">{f.metodoLogin || 'Google OAuth 2.0'}</td>
                             <td className="p-3">
                               <span className={`px-2.5 py-1 rounded-full text-[10px] font-extrabold ${f.nivel === 'Admin' ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-blue-100 text-blue-900 border border-blue-300'}`}>
                                 {f.nivel === 'Admin' ? 'Admin Total' : 'Vendedor Restrito'}
                               </span>
+                            </td>
+                            <td className="p-3 text-right">
+                              {f.email !== 'publicarte09@gmail.com' && f.email !== 'helpus.ecommerce@gmail.com' && (
+                                <button
+                                  type="button"
+                                  onClick={() => handleDeletarFuncionario(f.id, f.email)}
+                                  className="text-red-500 hover:text-red-700 p-1 font-bold text-xs flex items-center gap-1 ml-auto"
+                                  title="Excluir Usuário"
+                                >
+                                  <Trash2 size={16} /> Excluir
+                                </button>
+                              )}
                             </td>
                           </tr>
                         ))}
@@ -1762,8 +1867,131 @@ export default function Admin() {
                 <div className="bg-white/10 backdrop-blur p-4 rounded-2xl border border-white/10 space-y-1">
                   <span className="text-[11px] font-bold text-amber-300 uppercase tracking-wider block">Autenticação Ativa</span>
                   <div className="text-xs font-bold text-white flex items-center gap-1">
-                    <Shield size={14} className="text-emerald-400" /> Google OAuth 2.0 & Credenciais
+                    <Shield size={14} className="text-emerald-400" /> Google OAuth 2.0 (Exclusivo)
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SEÇÃO DE GERENCIAMENTO DE USUÁRIOS E ACESSOS DO SUPERADMIN */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* FORMULÁRIO DE ADIÇÃO DE NOVO USUÁRIO */}
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 h-fit space-y-4">
+                <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-2 border-b pb-3">
+                  <UserIcon className="text-blue-600" size={18} /> Adicionar Novo Usuário Autorizado
+                </h3>
+                <form onSubmit={handleAdicionarUsuarioSuperAdmin} className="space-y-3 text-xs">
+                  <div>
+                    <label className="block font-bold text-slate-700 uppercase mb-1">Nome Completo *</label>
+                    <input
+                      type="text"
+                      required
+                      value={novoUsuarioSuperAdmin.nome}
+                      onChange={(e) => setNovoUsuarioSuperAdmin({ ...novoUsuarioSuperAdmin, nome: e.target.value })}
+                      placeholder="Ex: Carlos Oliveira"
+                      className="w-full p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-bold text-slate-700 uppercase mb-1">E-mail Autorizado Google *</label>
+                    <input
+                      type="email"
+                      required
+                      value={novoUsuarioSuperAdmin.email}
+                      onChange={(e) => setNovoUsuarioSuperAdmin({ ...novoUsuarioSuperAdmin, email: e.target.value })}
+                      placeholder="usuario@gmail.com"
+                      className="w-full p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-600 focus:outline-none font-mono"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-bold text-slate-700 uppercase mb-1">Nível de Permissão / Acesso *</label>
+                    <select
+                      value={novoUsuarioSuperAdmin.nivel}
+                      onChange={(e) => setNovoUsuarioSuperAdmin({ ...novoUsuarioSuperAdmin, nivel: e.target.value })}
+                      className="w-full p-2.5 border border-slate-300 rounded-xl bg-white font-bold text-blue-900"
+                    >
+                      <option value="Admin (Public Arte)">Admin (Public Arte - Total)</option>
+                      <option value="Vendedor / Balcão">Vendedor / Balcão (Restrito)</option>
+                      <option value="SuperAdmin">SuperAdmin (HelpUS Control)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block font-bold text-slate-700 uppercase mb-1">Método de Login</label>
+                    <input
+                      type="text"
+                      disabled
+                      value="Google OAuth 2.0"
+                      className="w-full p-2.5 border border-slate-200 bg-slate-100 text-slate-500 rounded-xl font-bold font-mono"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-blue-900 hover:bg-blue-950 text-white font-bold py-3 rounded-xl transition shadow flex items-center justify-center gap-2 mt-2"
+                  >
+                    <Plus size={16} /> Cadastrar / Autorizar Usuário
+                  </button>
+                </form>
+              </div>
+
+              {/* TABELA DE USUÁRIOS AUTORIZADOS COM BOTÃO DE EXCLUSÃO */}
+              <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+                <div className="flex items-center justify-between border-b pb-3">
+                  <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                    <Users className="text-blue-600" size={18} /> Usuários Ativos no Sistema ({usuariosSistema.length})
+                  </h3>
+                  <span className="text-[11px] font-bold text-slate-500">Google OAuth 2.0 Ativo</span>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-xs">
+                    <thead className="bg-slate-100 text-slate-700 font-bold uppercase">
+                      <tr>
+                        <th className="p-3">Nome / E-mail</th>
+                        <th className="p-3">Nível de Permissão</th>
+                        <th className="p-3">Método Login</th>
+                        <th className="p-3">Status</th>
+                        <th className="p-3 text-right">Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 text-[11px]">
+                      {usuariosSistema.map((u) => (
+                        <tr key={u.id} className="hover:bg-slate-50 transition">
+                          <td className="p-3">
+                            <div className="font-bold text-slate-900">{u.nome}</div>
+                            <div className="font-mono text-slate-500 text-[10px]">{u.email}</div>
+                          </td>
+                          <td className="p-3">
+                            <span
+                              className={`px-2.5 py-1 rounded-full text-[10px] font-extrabold ${
+                                u.nivel.includes('SuperAdmin')
+                                  ? 'bg-purple-100 text-purple-900 border border-purple-300'
+                                  : u.nivel.includes('Admin')
+                                  ? 'bg-amber-100 text-amber-900 border border-amber-300'
+                                  : 'bg-blue-100 text-blue-900 border border-blue-300'
+                              }`}
+                            >
+                              {u.nivel}
+                            </span>
+                          </td>
+                          <td className="p-3 font-semibold text-blue-900">{u.metodoLogin || 'Google OAuth 2.0'}</td>
+                          <td className="p-3 font-bold text-emerald-600">Ativo 🟢</td>
+                          <td className="p-3 text-right">
+                            {u.email !== 'helpus.ecommerce@gmail.com' && u.email !== 'publicarte09@gmail.com' ? (
+                              <button
+                                type="button"
+                                onClick={() => handleExcluirUsuarioSuperAdmin(u.id, u.email)}
+                                className="text-red-500 hover:text-red-700 font-bold p-1 flex items-center gap-1 ml-auto transition"
+                                title="Excluir Usuário"
+                              >
+                                <Trash2 size={16} /> Excluir
+                              </button>
+                            ) : (
+                              <span className="text-[10px] text-slate-400 font-bold uppercase">Protegido</span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -1796,14 +2024,7 @@ export default function Admin() {
                       <td className="p-3">{new Date(Date.now() - 3600000).toLocaleString('pt-BR')}</td>
                       <td className="p-3 font-bold text-slate-900">publicarte09@gmail.com</td>
                       <td className="p-3 font-bold text-blue-800">Admin (Public Arte)</td>
-                      <td className="p-3 text-blue-700">Google OAuth / Credenciais</td>
-                      <td className="p-3 text-right font-bold text-slate-500">Concluído ✅</td>
-                    </tr>
-                    <tr>
-                      <td className="p-3">{new Date(Date.now() - 86400000).toLocaleString('pt-BR')}</td>
-                      <td className="p-3 font-bold text-slate-900">vendas@publicarte.com.br</td>
-                      <td className="p-3 font-bold text-slate-600">Vendedor / Balcão</td>
-                      <td className="p-3 text-slate-600">Senha Padrão</td>
+                      <td className="p-3 text-blue-700">Google OAuth 2.0</td>
                       <td className="p-3 text-right font-bold text-slate-500">Concluído ✅</td>
                     </tr>
                   </tbody>
