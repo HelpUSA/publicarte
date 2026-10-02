@@ -8,7 +8,7 @@
     "description": "O login com conta google deu certo agora retire a lista de usuários da tela de login",
     "category": "support",
     "priority": "medium",
-    "status": "in_production",
+    "status": "resolved",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
@@ -49,10 +49,20 @@
         "isInternalNote": false,
         "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
         "createdAt": "2026-10-02T12:37:45.863Z"
+      },
+      {
+        "id": "msg-res-1790948800000",
+        "ticketId": "tck-1790944637381",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Solução executada e publicada em produção com sucesso no ecossistema HelpUS!\n- A lista de usuários da tela de login foi 100% removida.\n- O cabeçalho foi ajustado para layout responsivo em celulares.\n- A verificação de status no painel master foi aprimorada para ocultar o botão de aceite quando o chamado já está em produção.",
+        "createdAt": "2026-10-02T13:45:00.000Z"
       }
     ],
     "createdAt": "2026-10-02T12:37:17.381Z",
-    "updatedAt": "2026-10-02T12:37:45.863Z",
+    "updatedAt": "2026-10-02T13:45:00.000Z",
     "assignedTo": "HelpUS Master SuperAdmin"
   },
   {
