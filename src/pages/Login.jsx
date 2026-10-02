@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import { useLanguage } from '../lib/i18n';
-import { ShieldCheck, AlertCircle, CheckCircle2, Lock, Sparkles } from 'lucide-react';
+import { ShieldCheck, AlertCircle, CheckCircle2, Lock, Sparkles, UserCheck } from 'lucide-react';
 
 // Módulo Mestre de Autenticação Google OAuth do Ecossistema HelpUS (@shared/googleAuth)
 import { useGoogleAuth, GoogleLoginButton } from '@shared/googleAuth/index.js';
@@ -82,6 +82,32 @@ export default function Login() {
     login();
   };
 
+  // Handler de Login Direto do Gestor / Admin
+  const handleDirectAdminLogin = () => {
+    if (!isCaptchaVerified) {
+      alert('Por favor, marque a caixa "Não sou um robô" para continuar.');
+      return;
+    }
+
+    const sessionData = {
+      nome: 'Public Arte Admin',
+      email: 'publicarte09@gmail.com',
+      tipo: 'admin',
+      superAdminAccess: false,
+      picture: '',
+      loginMethod: 'direct_admin_auth',
+      time: Date.now()
+    };
+
+    localStorage.setItem('usuario', JSON.stringify(sessionData));
+    setAuthedUserData(sessionData);
+    setSuccessNotice(true);
+
+    setTimeout(() => {
+      navigate('/admin');
+    }, 400);
+  };
+
   const displayError = captchaError || authError;
 
   return (
@@ -145,8 +171,9 @@ export default function Login() {
             </div>
           </div>
 
-          {/* Botão Oficial de Login do Google (GoogleLoginButton @shared/googleAuth) */}
-          <div className="pt-1">
+          {/* Botões de Autenticação */}
+          <div className="pt-1 space-y-3">
+            {/* Google Login Button */}
             <GoogleLoginButton
               onClick={handleGoogleLoginButtonClick}
               isLoading={isLoading}
@@ -155,6 +182,17 @@ export default function Login() {
               variant="dark"
               className={!isCaptchaVerified ? 'opacity-50 cursor-not-allowed' : ''}
             />
+
+            {/* Direct Admin Login Button */}
+            <button
+              type="button"
+              onClick={handleDirectAdminLogin}
+              disabled={!isCaptchaVerified || isLoading}
+              className={`w-full py-3 px-4 rounded-xl font-bold text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center justify-center gap-2 shadow-sm ${!isCaptchaVerified ? 'opacity-50 cursor-not-allowed' : ''}`}
+            >
+              <UserCheck size={16} className="text-blue-400" />
+              <span>Entrar como Gestor Public Arte</span>
+            </button>
           </div>
 
           <div className="text-center pt-2">
