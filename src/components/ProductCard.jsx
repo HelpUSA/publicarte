@@ -7,7 +7,7 @@ const ProductCard = ({ product, formatarPreco, onSelect }) => {
       {/* Imagem */}
       <div className="w-full h-52 bg-slate-900 relative flex items-center justify-center overflow-hidden">
         <img
-          src={product.imageUrl || product.foto}
+          src={product.imagem_url || product.imageUrl || product.foto}
           alt={product.name || product.nome}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

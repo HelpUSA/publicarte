@@ -32,7 +32,7 @@ export default function Home() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedProductForModal, setSelectedProductForModal] = useState(null);
 
-  // Catalogo inicial padronizado de Comunicação Visual do Tércio Grassi (Public Arte)
+  // Catalogo inicial padronizado de Comunicação Visual do Tércio Grassi (Public Arte) com imagens reais do Instagram
   const produtosPadrao = [
     {
       id: 1,
@@ -42,7 +42,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Banners & Lonas',
       categoria: 'Banners & Lonas',
-      imagem_url: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_18331346713195531.jpg',
       observacao: 'Ilhós reforçado e acabamento dobrado nas pontas'
     },
     {
@@ -53,7 +53,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Adesivos & Rótulos',
       categoria: 'Adesivos & Rótulos',
-      imagem_url: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_17946900017864550.jpg',
       observacao: 'Vinil calandrado atóxico de alta durabilidade'
     },
     {
@@ -64,7 +64,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Adesivos & Rótulos',
       categoria: 'Adesivos & Rótulos',
-      imagem_url: 'https://images.unsplash.com/photo-1542744094-3a3172720449?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_17884342929149903.jpg',
       observacao: 'Visibilidade 50/50 com película protetora UV'
     },
     {
@@ -75,7 +75,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Placas & Fachadas',
       categoria: 'Placas & Fachadas',
-      imagem_url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_17962347830819280.jpg',
       observacao: 'Estrutura em tubo galvanizado anticorrosivo'
     },
     {
@@ -86,7 +86,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Placas & Fachadas',
       categoria: 'Placas & Fachadas',
-      imagem_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_17876414721565695.jpg',
       observacao: 'Painel de Alumínio Composto para alta elegância'
     },
     {
@@ -97,7 +97,7 @@ export default function Home() {
       unidade: 'unidade',
       marca: 'Placas & Fachadas',
       categoria: 'Placas & Fachadas',
-      imagem_url: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_18054294236343666.jpg',
       observacao: 'Opção com ou sem iluminação interna em LED'
     },
     {
@@ -108,7 +108,7 @@ export default function Home() {
       unidade: 'pacote',
       marca: 'Gráfica Rápida',
       categoria: 'Gráfica Rápida',
-      imagem_url: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_17892730401385549.jpg',
       observacao: 'Verniz localizado UV com acabamento especial'
     },
     {
@@ -119,7 +119,7 @@ export default function Home() {
       unidade: 'pacote',
       marca: 'Gráfica Rápida',
       categoria: 'Gráfica Rápida',
-      imagem_url: 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_17983595972930658.jpg',
       observacao: 'Papel couchê 115g com impressão offset vibrante'
     },
     {
@@ -130,7 +130,7 @@ export default function Home() {
       unidade: 'unidade',
       marca: 'Serigrafia & DTF',
       categoria: 'Serigrafia & DTF',
-      imagem_url: 'https://images.unsplash.com/photo-1622445268465-8438165a2683?w=500&auto=format&fit=crop&q=60',
+      imagem_url: '/instagram/ig_18318898819220395.jpg',
       observacao: 'Estampa em alta resolução e resistência à lavagem'
     },
     {
@@ -141,8 +141,41 @@ export default function Home() {
       unidade: 'unidade',
       marca: 'Brindes Promocionais',
       categoria: 'Brindes Promocionais',
-      imagem_url: '/estoque_nova.jpg',
+      imagem_url: '/instagram/ig_18081912410146324.jpg',
       observacao: 'Porcelana resinada própria para sublimação'
+    },
+    {
+      id: 11,
+      codigo: 'PRD-011',
+      nome: 'Totem Comercial em ACM & Leds',
+      preco: 750.0,
+      unidade: 'unidade',
+      marca: 'Placas & Fachadas',
+      categoria: 'Placas & Fachadas',
+      imagem_url: '/instagram/ig_17972466296964894.jpg',
+      observacao: 'Sinalização vertical de alto impacto para calçadas'
+    },
+    {
+      id: 12,
+      codigo: 'PRD-012',
+      nome: 'Envelopamento de Frotas e Veículos',
+      preco: 250.0,
+      unidade: 'm²',
+      marca: 'Adesivos & Rótulos',
+      categoria: 'Adesivos & Rótulos',
+      imagem_url: '/instagram/ig_18142952848454778.jpg',
+      observacao: 'Adesivo cast automotivo de altíssima durabilidade'
+    },
+    {
+      id: 13,
+      codigo: 'PRD-013',
+      nome: 'Brindes Corporativos Personalizados',
+      preco: 18.0,
+      unidade: 'unidade',
+      marca: 'Brindes Promocionais',
+      categoria: 'Brindes Promocionais',
+      imagem_url: '/instagram/ig_18136978291470795.jpg',
+      observacao: 'Canetas, chaveiros e kits personalizados para empresas'
     }
   ];
 
@@ -151,7 +184,7 @@ export default function Home() {
     const fetchProdutos = async () => {
       // 1. Tenta carregar do localStorage (sincronizado com Admin.jsx)
       const local = localStorage.getItem('publicarte_produtos');
-      if (local) {
+      if (local && !local.includes('unsplash.com')) {
         try {
           const parsed = JSON.parse(local);
           if (Array.isArray(parsed) && parsed.length > 0) {

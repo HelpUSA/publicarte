@@ -136,7 +136,7 @@ export default function Admin() {
   // State: Produtos e Serviços
   const [produtos, setProdutos] = useState(() => {
     const local = localStorage.getItem('publicarte_produtos');
-    return local
+    return (local && !local.includes('unsplash.com'))
       ? JSON.parse(local)
       : [
           {
@@ -149,7 +149,8 @@ export default function Admin() {
             estoque: 50,
             min: 5,
             categoria: 'Banners & Lonas',
-            foto: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_18331346713195531.jpg',
+            imagem_url: '/instagram/ig_18331346713195531.jpg',
             observacao: 'Ilhós reforçado e acabamento dobrado'
           },
           {
@@ -162,7 +163,8 @@ export default function Admin() {
             estoque: 60,
             min: 10,
             categoria: 'Adesivos & Rótulos',
-            foto: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_17946900017864550.jpg',
+            imagem_url: '/instagram/ig_17946900017864550.jpg',
             observacao: 'Vinil calandrado alta durabilidade'
           },
           {
@@ -175,7 +177,8 @@ export default function Admin() {
             estoque: 30,
             min: 5,
             categoria: 'Adesivos & Rótulos',
-            foto: 'https://images.unsplash.com/photo-1542744094-3a3172720449?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_17884342929149903.jpg',
+            imagem_url: '/instagram/ig_17884342929149903.jpg',
             observacao: 'Visibilidade 50/50 com película protetora'
           },
           {
@@ -188,7 +191,8 @@ export default function Admin() {
             estoque: 15,
             min: 2,
             categoria: 'Placas & Fachadas',
-            foto: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_17962347830819280.jpg',
+            imagem_url: '/instagram/ig_17962347830819280.jpg',
             observacao: 'Estrutura em tubo galvanizado antioxidante'
           },
           {
@@ -201,7 +205,8 @@ export default function Admin() {
             estoque: 10,
             min: 1,
             categoria: 'Placas & Fachadas',
-            foto: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_17876414721565695.jpg',
+            imagem_url: '/instagram/ig_17876414721565695.jpg',
             observacao: 'Painel em Alumínio Composto de alta resistência'
           },
           {
@@ -214,7 +219,8 @@ export default function Admin() {
             estoque: 20,
             min: 2,
             categoria: 'Placas & Fachadas',
-            foto: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_18054294236343666.jpg',
+            imagem_url: '/instagram/ig_18054294236343666.jpg',
             observacao: 'Com ou sem iluminação em LED'
           },
           {
@@ -227,7 +233,8 @@ export default function Admin() {
             estoque: 25,
             min: 3,
             categoria: 'Gráfica Rápida',
-            foto: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_17892730401385549.jpg',
+            imagem_url: '/instagram/ig_17892730401385549.jpg',
             observacao: 'Verniz localizado UV com acabamento premium'
           },
           {
@@ -240,7 +247,8 @@ export default function Admin() {
             estoque: 20,
             min: 2,
             categoria: 'Gráfica Rápida',
-            foto: 'https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_17983595972930658.jpg',
+            imagem_url: '/instagram/ig_17983595972930658.jpg',
             observacao: 'Papel couchê 115g impressão offset colorida'
           },
           {
@@ -253,7 +261,8 @@ export default function Admin() {
             estoque: 100,
             min: 10,
             categoria: 'Serigrafia & DTF',
-            foto: 'https://images.unsplash.com/photo-1622445268465-8438165a2683?w=500&auto=format&fit=crop&q=60',
+            foto: '/instagram/ig_18318898819220395.jpg',
+            imagem_url: '/instagram/ig_18318898819220395.jpg',
             observacao: 'Estampa em alta resolução e durabilidade'
           },
           {
@@ -266,8 +275,51 @@ export default function Admin() {
             estoque: 40,
             min: 5,
             categoria: 'Brindes Promocionais',
-            foto: '/estoque_nova.jpg',
+            foto: '/instagram/ig_18081912410146324.jpg',
+            imagem_url: '/instagram/ig_18081912410146324.jpg',
             observacao: 'Resinada própria para sublimação'
+          },
+          {
+            id: 11,
+            codigo: 'PRD-011',
+            nome: 'Totem Comercial em ACM & Leds',
+            custo: 350.0,
+            preco: 750.0,
+            unidade: 'unidade',
+            estoque: 5,
+            min: 1,
+            categoria: 'Placas & Fachadas',
+            foto: '/instagram/ig_17972466296964894.jpg',
+            imagem_url: '/instagram/ig_17972466296964894.jpg',
+            observacao: 'Sinalização vertical de alto impacto'
+          },
+          {
+            id: 12,
+            codigo: 'PRD-012',
+            nome: 'Envelopamento de Frotas e Veículos',
+            custo: 120.0,
+            preco: 250.0,
+            unidade: 'm²',
+            estoque: 30,
+            min: 5,
+            categoria: 'Adesivos & Rótulos',
+            foto: '/instagram/ig_18142952848454778.jpg',
+            imagem_url: '/instagram/ig_18142952848454778.jpg',
+            observacao: 'Adesivo cast automotivo de alta durabilidade'
+          },
+          {
+            id: 13,
+            codigo: 'PRD-013',
+            nome: 'Brindes Corporativos Personalizados',
+            custo: 8.0,
+            preco: 18.0,
+            unidade: 'unidade',
+            estoque: 200,
+            min: 20,
+            categoria: 'Brindes Promocionais',
+            foto: '/instagram/ig_18136978291470795.jpg',
+            imagem_url: '/instagram/ig_18136978291470795.jpg',
+            observacao: 'Canetas, chaveiros e kits para corporativos'
           }
         ];
   });
