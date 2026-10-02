@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import UserIcon from './UserIcon';
 import { useLanguage } from '../lib/i18n';
-import { FileText, Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { FileText, Menu, X, Globe, ChevronDown, ShoppingBag } from 'lucide-react';
 
 export default function Header({
   logo = '/logo-publicarte.png',
-  nomeEmpresa = 'Public Arte – Comunicação Visual'
+  nomeEmpresa = 'Public Arte – Comunicação Visual',
+  cartCount = 0,
+  onOpenCart = null
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -99,8 +101,25 @@ export default function Header({
           </Link>
         </nav>
 
-        {/* Right Section: Language + User Icon + Mobile Toggle */}
-        <div className="flex items-center gap-4">
+        {/* Right Section: Cart + Language + User Icon + Mobile Toggle */}
+        <div className="flex items-center gap-3">
+          {/* Shopping Cart Button (Padrão Queijeira 504) */}
+          {onOpenCart && (
+            <button
+              onClick={onOpenCart}
+              className="relative p-2 text-slate-700 hover:text-blue-900 bg-slate-100 hover:bg-slate-200 rounded-xl border border-slate-200 transition flex items-center gap-1.5"
+              title="Abrir Sacola de Compras"
+            >
+              <ShoppingBag size={18} className="text-blue-900" />
+              <span className="hidden sm:inline text-xs font-extrabold text-blue-950">Sacola</span>
+              {cartCount > 0 && (
+                <span className="bg-emerald-500 text-white font-extrabold text-[10px] w-5 h-5 rounded-full flex items-center justify-center border border-white shadow-sm">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+          )}
+
           {/* Language Selector */}
           <div className="relative">
             <button
