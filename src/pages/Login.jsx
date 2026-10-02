@@ -8,7 +8,7 @@ import { useLanguage } from '../lib/i18n';
 import { Shield, AlertCircle, CheckCircle2, ExternalLink, Sparkles } from 'lucide-react';
 
 // Módulo Mestre de Autenticação Google OAuth do Ecossistema HelpUS
-import { useGoogleAuth, GoogleLoginButton } from '../../../shared/googleAuth/index.js';
+import { useGoogleAuth, GoogleLoginButton } from '@shared/googleAuth/index.js';
 
 // E-mails Autorizados no Ecossistema HelpUS / Public Arte
 const ALLOWED_EMAILS = [
