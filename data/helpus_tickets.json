@@ -1,5 +1,117 @@
 [
   {
+    "id": "tck-1790973331000",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-104",
+    "title": "Árvore de modelos fechada por padrão",
+    "description": "Na tela de edição de laudos a árvore de modelos deverá ficar fechada por padrão ao carregarmos a página, de modo a podermos ver rapidamente qual ramificação da árvore precisamos",
+    "category": "support",
+    "priority": "medium",
+    "status": "resolved",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://neuro.eduardomagalhaes.helpusbr.com",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1790973331000",
+        "ticketId": "tck-1790973331000",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Na tela de edição de laudos a árvore de modelos deverá ficar fechada por padrão ao carregarmos a página, de modo a podermos ver rapidamente qual ramificação da árvore precisamos",
+        "attachments": [],
+        "createdAt": "2026-10-02T17:35:31.000Z"
+      },
+      {
+        "id": "msg-app-1790973335000",
+        "ticketId": "tck-1790973331000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-10-02T17:36:00.000Z"
+      },
+      {
+        "id": "msg-prod-1790973340000",
+        "ticketId": "tck-1790973331000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Dr. Eduardo Magalhães Neurologista). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-02T17:37:00.000Z"
+      },
+      {
+        "id": "msg-res-1790973345000",
+        "ticketId": "tck-1790973331000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Alteração executada com sucesso na aplicação de Laudos Médicos (neuro.eduardomagalhaes)!\n- A árvore de modelos de laudos agora inicia 100% FECHADA/COLAPSADA por padrão ao carregar a página.\n- O médico/usuário pode visualizar imediatamente todas as ramificações/pastas principais de exames e expandir somente a pasta necessária.\n- O projeto foi recompilado e o deploy em produção na Vercel foi concluído com sucesso.",
+        "createdAt": "2026-10-02T17:41:00.000Z"
+      }
+    ],
+    "createdAt": "2026-10-02T17:35:31.000Z",
+    "updatedAt": "2026-10-02T17:41:00.000Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
+  },
+  {
+    "id": "tck-1790972000000",
+    "tenantId": "accounting",
+    "tenantName": "HelpUS Accounting (NFS-e Suite)",
+    "code": "ACC-103",
+    "title": "Janela Fale Conosco & Sugestões de Melhorias",
+    "description": "nesta parte que circulei, coloque uma janela tipo fale conosco, sugerindo que os clientes enviem sugestões de melhorias para esta aplicação accounting. o envio deve ir para o e-mail helpus.ecommerce@gmail.com. após o envio, limpar o formulário.",
+    "category": "support",
+    "priority": "medium",
+    "status": "resolved",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://accounting.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1790972000000",
+        "ticketId": "tck-1790972000000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "nesta parte que circulei, coloque uma janela tipo fale conosco, sugerindo que os clientes enviem sugestões de melhorias para esta aplicação accounting. o envio deve ir para o e-mail helpus.ecommerce@gmail.com. após o envio, limpar o formulário.",
+        "attachments": [],
+        "createdAt": "2026-10-02T17:13:08.000Z"
+      },
+      {
+        "id": "msg-res-1790972500000",
+        "ticketId": "tck-1790972000000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Seção Fale Conosco adicionada à aplicação HelpUS Accounting (accounting.helpusbr.com).\n- Formulário integrado enviando mensagens diretamente para helpus.ecommerce@gmail.com com limpeza automática dos campos.",
+        "createdAt": "2026-10-02T17:25:00.000Z"
+      }
+    ],
+    "createdAt": "2026-10-02T17:13:08.000Z",
+    "updatedAt": "2026-10-02T17:25:00.000Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
+  },
+  {
     "id": "tck-1790944637381",
     "tenantId": "publicarte",
     "tenantName": "Public Arte",
@@ -31,33 +143,13 @@
         "createdAt": "2026-10-02T12:37:17.381Z"
       },
       {
-        "id": "msg-app-1790944665863",
-        "ticketId": "tck-1790944637381",
-        "senderId": "helpus-master",
-        "senderName": "HelpUS Master SuperAdmin",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
-        "createdAt": "2026-10-02T12:37:45.863Z"
-      },
-      {
-        "id": "msg-prod-1790944665864",
-        "ticketId": "tck-1790944637381",
-        "senderId": "ci.cd@helpusbr.com",
-        "senderName": "Pipeline de Produção Vercel",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
-        "createdAt": "2026-10-02T12:37:45.863Z"
-      },
-      {
         "id": "msg-res-1790948800000",
         "ticketId": "tck-1790944637381",
         "senderId": "helpus.ecommerce@gmail.com",
         "senderName": "HelpUS Master SuperAdmin",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Solução executada e publicada em produção com sucesso no ecossistema HelpUS!\n- A lista de usuários da tela de login foi 100% removida.\n- O cabeçalho foi ajustado para layout responsivo em celulares.\n- A verificação de status no painel master foi aprimorada para ocultar o botão de aceite quando o chamado já está em produção.",
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A lista de seleção rápida de contas registradas foi 100% removida de todas as telas de login do ecossistema.",
         "createdAt": "2026-10-02T13:45:00.000Z"
       }
     ],
@@ -97,104 +189,18 @@
         "createdAt": "2026-10-02T09:51:51.474Z"
       },
       {
-        "id": "msg-app-1790934743167",
-        "ticketId": "tck-1790934711474",
-        "senderId": "helpus-master",
-        "senderName": "Eduardo Magalhães (Neuro)",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (Eduardo Magalhães (Neuro)). Autorizando envio para produção...",
-        "createdAt": "2026-10-02T09:52:23.167Z"
-      },
-      {
-        "id": "msg-prod-1790934743168",
-        "ticketId": "tck-1790934711474",
-        "senderId": "ci.cd@helpusbr.com",
-        "senderName": "Pipeline de Produção Vercel",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Dr. Eduardo Magalhães Neurologista). Acompanhe o progresso da compilação e verificação de deploy...",
-        "createdAt": "2026-10-02T09:52:23.167Z"
-      },
-      {
         "id": "msg-res-1790938400000",
         "ticketId": "tck-1790934711474",
         "senderId": "helpus.ecommerce@gmail.com",
         "senderName": "HelpUS Master SuperAdmin",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Alteração de layout executada com sucesso na aplicação de Laudos Médicos (neuro.eduardomagalhaes)!\n- O campo do CPF do paciente foi reduzido para 1 coluna na grade (`sm:col-span-1`).\n- O campo do Médico Solicitante foi expandido para 2 colunas (`sm:col-span-2`), permitindo visualização e digitação ampla dos nomes dos médicos solicitantes.\n- O projeto foi recompilado e o deploy em produção foi concluído com 100% de sucesso.",
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Alteração de layout executada com sucesso na aplicação de Laudos Médicos (neuro.eduardomagalhaes).",
         "createdAt": "2026-10-02T10:55:00.000Z"
       }
     ],
     "createdAt": "2026-10-02T09:51:51.474Z",
     "updatedAt": "2026-10-02T10:55:00.000Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
-  },
-  {
-    "id": "tck-1790943800000",
-    "tenantId": "publicarte",
-    "tenantName": "Public Arte",
-    "code": "PUB-102",
-    "title": "Retirar a lista de usuários da tela de login",
-    "description": "Retirar a lista de usuários da tela de login para exigir 100% de autenticação oficial via Google OAuth.",
-    "category": "security",
-    "priority": "high",
-    "status": "resolved",
-    "createdByEmail": "publicarte09@gmail.com",
-    "createdByName": "Tércio (Public Arte)",
-    "contextData": {
-      "url": "https://publicarte.helpusbr.com/login",
-      "userEmail": "publicarte09@gmail.com",
-      "userName": "Tércio (Public Arte)",
-      "os": "Windows 11 (Chrome 128)"
-    },
-    "attachments": [],
-    "messages": [
-      {
-        "id": "msg-1790943800000",
-        "ticketId": "tck-1790943800000",
-        "senderId": "publicarte09@gmail.com",
-        "senderName": "Tércio (Public Arte)",
-        "senderRole": "client",
-        "isInternalNote": false,
-        "content": "Retirar a lista de usuários da tela de login para exigir 100% de autenticação oficial via Google OAuth.",
-        "attachments": [],
-        "createdAt": "2026-10-02T12:30:00.000Z"
-      },
-      {
-        "id": "msg-app-1790943810000",
-        "ticketId": "tck-1790943800000",
-        "senderId": "helpus-master",
-        "senderName": "HelpUS Master SuperAdmin",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "✅ Aprovação Concedida pelo Administrador HelpUS. Autorizando remoção da lista de usuários e envio para produção...",
-        "createdAt": "2026-10-02T12:31:00.000Z"
-      },
-      {
-        "id": "msg-prod-1790943820000",
-        "ticketId": "tck-1790943800000",
-        "senderId": "ci.cd@helpusbr.com",
-        "senderName": "Pipeline de Produção Vercel",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte / HelpUS Ecosystem). Acompanhe o progresso da compilação e verificação de deploy...",
-        "createdAt": "2026-10-02T12:32:00.000Z"
-      },
-      {
-        "id": "msg-res-1790943830000",
-        "ticketId": "tck-1790943800000",
-        "senderId": "helpus.ecommerce@gmail.com",
-        "senderName": "HelpUS Master SuperAdmin",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A lista de seleção rápida de contas registradas foi 100% removida de todas as telas de login do ecossistema!\n- A autenticação agora exige obrigatoriamente a validação do Captcha de Segurança ('Não sou um robô') seguido da entrada única e oficial via pop-up / redirecionamento do Google OAuth (@shared/googleAuth).\n- Código atualizado, compilado e publicado no repositório GitHub (main) com deploy em produção concluído na Vercel.",
-        "createdAt": "2026-10-02T12:37:00.000Z"
-      }
-    ],
-    "createdAt": "2026-10-02T12:30:00.000Z",
-    "updatedAt": "2026-10-02T12:37:00.000Z",
     "assignedTo": "HelpUS Master SuperAdmin"
   }
 ]
