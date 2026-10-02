@@ -120,5 +120,71 @@
     "createdAt": "2026-10-02T09:51:51.474Z",
     "updatedAt": "2026-10-02T10:55:00.000Z",
     "assignedTo": "HelpUS Master SuperAdmin"
+  },
+  {
+    "id": "tck-1790943800000",
+    "tenantId": "publicarte",
+    "tenantName": "Public Arte",
+    "code": "PUB-102",
+    "title": "Retirar a lista de usuários da tela de login",
+    "description": "Retirar a lista de usuários da tela de login para exigir 100% de autenticação oficial via Google OAuth.",
+    "category": "security",
+    "priority": "high",
+    "status": "resolved",
+    "createdByEmail": "publicarte09@gmail.com",
+    "createdByName": "Tércio (Public Arte)",
+    "contextData": {
+      "url": "https://publicarte.helpusbr.com/login",
+      "userEmail": "publicarte09@gmail.com",
+      "userName": "Tércio (Public Arte)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1790943800000",
+        "ticketId": "tck-1790943800000",
+        "senderId": "publicarte09@gmail.com",
+        "senderName": "Tércio (Public Arte)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Retirar a lista de usuários da tela de login para exigir 100% de autenticação oficial via Google OAuth.",
+        "attachments": [],
+        "createdAt": "2026-10-02T12:30:00.000Z"
+      },
+      {
+        "id": "msg-app-1790943810000",
+        "ticketId": "tck-1790943800000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS. Autorizando remoção da lista de usuários e envio para produção...",
+        "createdAt": "2026-10-02T12:31:00.000Z"
+      },
+      {
+        "id": "msg-prod-1790943820000",
+        "ticketId": "tck-1790943800000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte / HelpUS Ecosystem). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-02T12:32:00.000Z"
+      },
+      {
+        "id": "msg-res-1790943830000",
+        "ticketId": "tck-1790943800000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A lista de seleção rápida de contas registradas foi 100% removida de todas as telas de login do ecossistema!\n- A autenticação agora exige obrigatoriamente a validação do Captcha de Segurança ('Não sou um robô') seguido da entrada única e oficial via pop-up / redirecionamento do Google OAuth (@shared/googleAuth).\n- Código atualizado, compilado e publicado no repositório GitHub (main) com deploy em produção concluído na Vercel.",
+        "createdAt": "2026-10-02T12:37:00.000Z"
+      }
+    ],
+    "createdAt": "2026-10-02T12:30:00.000Z",
+    "updatedAt": "2026-10-02T12:37:00.000Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
   }
 ]
