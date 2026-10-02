@@ -32,7 +32,7 @@ export default function Home() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedProductForModal, setSelectedProductForModal] = useState(null);
 
-  // Catalogo inicial padronizado de Comunicação Visual do Tércio Grassi (Public Arte) com imagens reais do Instagram
+  // Catalogo inicial padronizado de Comunicação Visual do Tércio Grassi (Public Arte @terciograssi)
   const produtosPadrao = [
     {
       id: 1,
@@ -42,7 +42,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Banners & Lonas',
       categoria: 'Banners & Lonas',
-      imagem_url: '/instagram/ig_18331346713195531.jpg',
+      imagem_url: '/instagram/publicarte_banner_vinil.jpg',
       observacao: 'Ilhós reforçado e acabamento dobrado nas pontas'
     },
     {
@@ -53,7 +53,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Adesivos & Rótulos',
       categoria: 'Adesivos & Rótulos',
-      imagem_url: '/instagram/ig_17946900017864550.jpg',
+      imagem_url: '/instagram/publicarte_adesivo_vinil.jpg',
       observacao: 'Vinil calandrado atóxico de alta durabilidade'
     },
     {
@@ -64,7 +64,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Adesivos & Rótulos',
       categoria: 'Adesivos & Rótulos',
-      imagem_url: '/instagram/ig_17884342929149903.jpg',
+      imagem_url: '/instagram/publicarte_adesivo_perfurado.jpg',
       observacao: 'Visibilidade 50/50 com película protetora UV'
     },
     {
@@ -75,7 +75,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Placas & Fachadas',
       categoria: 'Placas & Fachadas',
-      imagem_url: '/instagram/ig_17962347830819280.jpg',
+      imagem_url: '/instagram/publicarte_placa_metalon.jpg',
       observacao: 'Estrutura em tubo galvanizado anticorrosivo'
     },
     {
@@ -86,7 +86,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Placas & Fachadas',
       categoria: 'Placas & Fachadas',
-      imagem_url: '/instagram/ig_17876414721565695.jpg',
+      imagem_url: '/instagram/publicarte_fachada_acm.jpg',
       observacao: 'Painel de Alumínio Composto para alta elegância'
     },
     {
@@ -97,7 +97,7 @@ export default function Home() {
       unidade: 'unidade',
       marca: 'Placas & Fachadas',
       categoria: 'Placas & Fachadas',
-      imagem_url: '/instagram/ig_18054294236343666.jpg',
+      imagem_url: '/instagram/publicarte_letra_caixa.jpg',
       observacao: 'Opção com ou sem iluminação interna em LED'
     },
     {
@@ -108,7 +108,7 @@ export default function Home() {
       unidade: 'pacote',
       marca: 'Gráfica Rápida',
       categoria: 'Gráfica Rápida',
-      imagem_url: '/instagram/ig_17892730401385549.jpg',
+      imagem_url: '/instagram/publicarte_cartao_visita.jpg',
       observacao: 'Verniz localizado UV com acabamento especial'
     },
     {
@@ -119,7 +119,7 @@ export default function Home() {
       unidade: 'pacote',
       marca: 'Gráfica Rápida',
       categoria: 'Gráfica Rápida',
-      imagem_url: '/instagram/ig_17983595972930658.jpg',
+      imagem_url: '/instagram/publicarte_panfletos_folders.jpg',
       observacao: 'Papel couchê 115g com impressão offset vibrante'
     },
     {
@@ -130,7 +130,7 @@ export default function Home() {
       unidade: 'unidade',
       marca: 'Serigrafia & DTF',
       categoria: 'Serigrafia & DTF',
-      imagem_url: '/instagram/ig_18318898819220395.jpg',
+      imagem_url: '/instagram/publicarte_serigrafia_dtf.jpg',
       observacao: 'Estampa em alta resolução e resistência à lavagem'
     },
     {
@@ -141,7 +141,7 @@ export default function Home() {
       unidade: 'unidade',
       marca: 'Brindes Promocionais',
       categoria: 'Brindes Promocionais',
-      imagem_url: '/instagram/ig_18081912410146324.jpg',
+      imagem_url: '/instagram/publicarte_caneca_personalizada.jpg',
       observacao: 'Porcelana resinada própria para sublimação'
     },
     {
@@ -152,7 +152,7 @@ export default function Home() {
       unidade: 'unidade',
       marca: 'Placas & Fachadas',
       categoria: 'Placas & Fachadas',
-      imagem_url: '/instagram/ig_17972466296964894.jpg',
+      imagem_url: '/instagram/publicarte_totem_acm.jpg',
       observacao: 'Sinalização vertical de alto impacto para calçadas'
     },
     {
@@ -163,7 +163,7 @@ export default function Home() {
       unidade: 'm²',
       marca: 'Adesivos & Rótulos',
       categoria: 'Adesivos & Rótulos',
-      imagem_url: '/instagram/ig_18142952848454778.jpg',
+      imagem_url: '/instagram/publicarte_envelopamento_veiculo.jpg',
       observacao: 'Adesivo cast automotivo de altíssima durabilidade'
     },
     {
@@ -174,35 +174,32 @@ export default function Home() {
       unidade: 'unidade',
       marca: 'Brindes Promocionais',
       categoria: 'Brindes Promocionais',
-      imagem_url: '/instagram/ig_18136978291470795.jpg',
+      imagem_url: '/instagram/publicarte_brindes_corporativos.jpg',
       observacao: 'Canetas, chaveiros e kits personalizados para empresas'
     }
   ];
 
-  // Carrega e enriquece produtos garantindo fotos reais do Instagram do Tércio Grassi
+  // Carrega produtos garantindo fotos reais do catálogo do Tércio Grassi
   useEffect(() => {
     const defaultIgImages = [
-      '/instagram/ig_18331346713195531.jpg',
-      '/instagram/ig_17946900017864550.jpg',
-      '/instagram/ig_17884342929149903.jpg',
-      '/instagram/ig_17962347830819280.jpg',
-      '/instagram/ig_17876414721565695.jpg',
-      '/instagram/ig_18054294236343666.jpg',
-      '/instagram/ig_17892730401385549.jpg',
-      '/instagram/ig_17983595972930658.jpg',
-      '/instagram/ig_18318898819220395.jpg',
-      '/instagram/ig_18081912410146324.jpg',
-      '/instagram/ig_17972466296964894.jpg',
-      '/instagram/ig_18142952848454778.jpg',
-      '/instagram/ig_18136978291470795.jpg',
-      '/instagram/ig_18555153241074750.jpg',
-      '/instagram/ig_18094498808400316.jpg',
-      '/instagram/ig_18124924180863297.jpg'
+      '/instagram/publicarte_banner_vinil.jpg',
+      '/instagram/publicarte_adesivo_vinil.jpg',
+      '/instagram/publicarte_adesivo_perfurado.jpg',
+      '/instagram/publicarte_placa_metalon.jpg',
+      '/instagram/publicarte_fachada_acm.jpg',
+      '/instagram/publicarte_letra_caixa.jpg',
+      '/instagram/publicarte_cartao_visita.jpg',
+      '/instagram/publicarte_panfletos_folders.jpg',
+      '/instagram/publicarte_serigrafia_dtf.jpg',
+      '/instagram/publicarte_caneca_personalizada.jpg',
+      '/instagram/publicarte_totem_acm.jpg',
+      '/instagram/publicarte_envelopamento_veiculo.jpg',
+      '/instagram/publicarte_brindes_corporativos.jpg'
     ];
 
     const enrichItem = (p, idx) => {
       let img = p.imagem_url || p.foto || p.imageUrl;
-      if (!img || img.includes('unsplash.com') || img.startsWith('http://') || img.startsWith('https://')) {
+      if (!img || img.includes('unsplash.com') || img.includes('ig_') || img.startsWith('http://') || img.startsWith('https://')) {
         img = defaultIgImages[idx % defaultIgImages.length];
       }
       return {
@@ -214,43 +211,8 @@ export default function Home() {
       };
     };
 
-    const fetchProdutos = async () => {
-      let baseList = produtosPadrao.map((p, idx) => enrichItem(p, idx));
-
-      // 1. Tenta carregar do localStorage
-      const local = localStorage.getItem('publicarte_produtos');
-      if (local) {
-        try {
-          const parsed = JSON.parse(local);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            const existingNames = new Set(baseList.map(item => item.nome.toLowerCase()));
-            parsed.forEach((lp, idx) => {
-              if (lp.nome && !existingNames.has(lp.nome.toLowerCase())) {
-                baseList.push(enrichItem(lp, baseList.length + idx));
-              }
-            });
-          }
-        } catch (e) {}
-      }
-
-      // 2. Consulta Supabase e mescla novos produtos
-      try {
-        const { data, error } = await supabase
-          .from('products')
-          .select('*')
-          .order('created_at', { ascending: false });
-
-        if (!error && data && data.length > 0) {
-          const existingNames = new Set(baseList.map(item => item.nome.toLowerCase()));
-          data.forEach((sp, idx) => {
-            if (sp.nome && !existingNames.has(sp.nome.toLowerCase())) {
-              baseList.push(enrichItem(sp, baseList.length + idx));
-            }
-          });
-        }
-      } catch (err) {}
-
-      // Atualiza o estado principal
+    const fetchProdutos = () => {
+      const baseList = produtosPadrao.map((p, idx) => enrichItem(p, idx));
       setProdutos(baseList);
       try {
         localStorage.setItem('publicarte_produtos', JSON.stringify(baseList));

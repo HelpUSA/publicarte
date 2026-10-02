@@ -136,7 +136,7 @@ export default function Admin() {
   // State: Produtos e Serviços
   const [produtos, setProdutos] = useState(() => {
     const local = localStorage.getItem('publicarte_produtos');
-    return (local && !local.includes('unsplash.com'))
+    return (local && local.includes('publicarte_'))
       ? JSON.parse(local)
       : [
           {
@@ -149,8 +149,8 @@ export default function Admin() {
             estoque: 50,
             min: 5,
             categoria: 'Banners & Lonas',
-            foto: '/instagram/ig_18331346713195531.jpg',
-            imagem_url: '/instagram/ig_18331346713195531.jpg',
+            foto: '/instagram/publicarte_banner_vinil.jpg',
+            imagem_url: '/instagram/publicarte_banner_vinil.jpg',
             observacao: 'Ilhós reforçado e acabamento dobrado'
           },
           {
@@ -163,8 +163,8 @@ export default function Admin() {
             estoque: 60,
             min: 10,
             categoria: 'Adesivos & Rótulos',
-            foto: '/instagram/ig_17946900017864550.jpg',
-            imagem_url: '/instagram/ig_17946900017864550.jpg',
+            foto: '/instagram/publicarte_adesivo_vinil.jpg',
+            imagem_url: '/instagram/publicarte_adesivo_vinil.jpg',
             observacao: 'Vinil calandrado alta durabilidade'
           },
           {
@@ -177,8 +177,8 @@ export default function Admin() {
             estoque: 30,
             min: 5,
             categoria: 'Adesivos & Rótulos',
-            foto: '/instagram/ig_17884342929149903.jpg',
-            imagem_url: '/instagram/ig_17884342929149903.jpg',
+            foto: '/instagram/publicarte_adesivo_perfurado.jpg',
+            imagem_url: '/instagram/publicarte_adesivo_perfurado.jpg',
             observacao: 'Visibilidade 50/50 com película protetora'
           },
           {
@@ -191,8 +191,8 @@ export default function Admin() {
             estoque: 15,
             min: 2,
             categoria: 'Placas & Fachadas',
-            foto: '/instagram/ig_17962347830819280.jpg',
-            imagem_url: '/instagram/ig_17962347830819280.jpg',
+            foto: '/instagram/publicarte_placa_metalon.jpg',
+            imagem_url: '/instagram/publicarte_placa_metalon.jpg',
             observacao: 'Estrutura em tubo galvanizado antioxidante'
           },
           {
@@ -205,8 +205,8 @@ export default function Admin() {
             estoque: 10,
             min: 1,
             categoria: 'Placas & Fachadas',
-            foto: '/instagram/ig_17876414721565695.jpg',
-            imagem_url: '/instagram/ig_17876414721565695.jpg',
+            foto: '/instagram/publicarte_fachada_acm.jpg',
+            imagem_url: '/instagram/publicarte_fachada_acm.jpg',
             observacao: 'Painel em Alumínio Composto de alta resistência'
           },
           {
@@ -219,8 +219,8 @@ export default function Admin() {
             estoque: 20,
             min: 2,
             categoria: 'Placas & Fachadas',
-            foto: '/instagram/ig_18054294236343666.jpg',
-            imagem_url: '/instagram/ig_18054294236343666.jpg',
+            foto: '/instagram/publicarte_letra_caixa.jpg',
+            imagem_url: '/instagram/publicarte_letra_caixa.jpg',
             observacao: 'Com ou sem iluminação em LED'
           },
           {
@@ -233,8 +233,8 @@ export default function Admin() {
             estoque: 25,
             min: 3,
             categoria: 'Gráfica Rápida',
-            foto: '/instagram/ig_17892730401385549.jpg',
-            imagem_url: '/instagram/ig_17892730401385549.jpg',
+            foto: '/instagram/publicarte_cartao_visita.jpg',
+            imagem_url: '/instagram/publicarte_cartao_visita.jpg',
             observacao: 'Verniz localizado UV com acabamento premium'
           },
           {
@@ -247,8 +247,8 @@ export default function Admin() {
             estoque: 20,
             min: 2,
             categoria: 'Gráfica Rápida',
-            foto: '/instagram/ig_17983595972930658.jpg',
-            imagem_url: '/instagram/ig_17983595972930658.jpg',
+            foto: '/instagram/publicarte_panfletos_folders.jpg',
+            imagem_url: '/instagram/publicarte_panfletos_folders.jpg',
             observacao: 'Papel couchê 115g impressão offset colorida'
           },
           {
@@ -261,8 +261,8 @@ export default function Admin() {
             estoque: 100,
             min: 10,
             categoria: 'Serigrafia & DTF',
-            foto: '/instagram/ig_18318898819220395.jpg',
-            imagem_url: '/instagram/ig_18318898819220395.jpg',
+            foto: '/instagram/publicarte_serigrafia_dtf.jpg',
+            imagem_url: '/instagram/publicarte_serigrafia_dtf.jpg',
             observacao: 'Estampa em alta resolução e durabilidade'
           },
           {
@@ -275,8 +275,8 @@ export default function Admin() {
             estoque: 40,
             min: 5,
             categoria: 'Brindes Promocionais',
-            foto: '/instagram/ig_18081912410146324.jpg',
-            imagem_url: '/instagram/ig_18081912410146324.jpg',
+            foto: '/instagram/publicarte_caneca_personalizada.jpg',
+            imagem_url: '/instagram/publicarte_caneca_personalizada.jpg',
             observacao: 'Resinada própria para sublimação'
           },
           {
@@ -289,8 +289,8 @@ export default function Admin() {
             estoque: 5,
             min: 1,
             categoria: 'Placas & Fachadas',
-            foto: '/instagram/ig_17972466296964894.jpg',
-            imagem_url: '/instagram/ig_17972466296964894.jpg',
+            foto: '/instagram/publicarte_totem_acm.jpg',
+            imagem_url: '/instagram/publicarte_totem_acm.jpg',
             observacao: 'Sinalização vertical de alto impacto'
           },
           {
@@ -303,8 +303,8 @@ export default function Admin() {
             estoque: 30,
             min: 5,
             categoria: 'Adesivos & Rótulos',
-            foto: '/instagram/ig_18142952848454778.jpg',
-            imagem_url: '/instagram/ig_18142952848454778.jpg',
+            foto: '/instagram/publicarte_envelopamento_veiculo.jpg',
+            imagem_url: '/instagram/publicarte_envelopamento_veiculo.jpg',
             observacao: 'Adesivo cast automotivo de alta durabilidade'
           },
           {
@@ -317,8 +317,8 @@ export default function Admin() {
             estoque: 200,
             min: 20,
             categoria: 'Brindes Promocionais',
-            foto: '/instagram/ig_18136978291470795.jpg',
-            imagem_url: '/instagram/ig_18136978291470795.jpg',
+            foto: '/instagram/publicarte_brindes_corporativos.jpg',
+            imagem_url: '/instagram/publicarte_brindes_corporativos.jpg',
             observacao: 'Canetas, chaveiros e kits para corporativos'
           }
         ];
