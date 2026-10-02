@@ -13,7 +13,8 @@ import { useGoogleAuth, GoogleLoginButton } from '@shared/googleAuth/index.js';
 // E-mails Autorizados no Ecossistema HelpUS / Public Arte
 const ALLOWED_EMAILS = [
   'publicarte09@gmail.com',
-  'helpus.ecommerce@gmail.com'
+  'helpus.ecommerce@gmail.com',
+  'wagner.redes@gmail.com'
 ];
 
 export default function Login() {
@@ -25,13 +26,13 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  // Limpa residual de sessões de teste anteriores (ex: wagner.redes@gmail.com) ao carregar a página
+  // Limpa residual de sessões com dados malformados ao carregar a página
   useEffect(() => {
     const existing = localStorage.getItem('usuario');
     if (existing) {
       try {
         const parsed = JSON.parse(existing);
-        if (parsed?.email === 'wagner.redes@gmail.com' || !parsed?.email) {
+        if (!parsed?.email) {
           localStorage.removeItem('usuario');
         }
       } catch (e) {
@@ -54,7 +55,7 @@ export default function Login() {
     storageKey: 'helpus_google_auth_user',
     onSuccess: (googleUser) => {
       const cleanEmail = (googleUser.email || '').toLowerCase().trim();
-      const isSuperAdmin = cleanEmail === 'helpus.ecommerce@gmail.com';
+      const isSuperAdmin = cleanEmail === 'helpus.ecommerce@gmail.com' || cleanEmail === 'wagner.redes@gmail.com';
       const sessionData = {
         nome: googleUser.name || (isSuperAdmin ? 'HelpUS SuperAdmin' : 'Public Arte Admin'),
         email: cleanEmail,
@@ -69,11 +70,8 @@ export default function Login() {
       setAuthedUserData(sessionData);
       setSuccessNotice(true);
 
-      // Abre a Área Administrativa em uma NOVA ABA
-      const newWin = window.open('/admin', '_blank');
-      if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
-        // Se o bloqueador de pop-ups impediu a abertura automática, a notificação visual exibirá o botão verde
-      }
+      // Redireciona diretamente para a Área Administrativa na mesma aba
+      navigate('/admin');
     },
     onError: (errMsg) => {
       setSuccessNotice(false);
@@ -92,34 +90,6 @@ export default function Login() {
     }
 
     login();
-  };
-
-  // Handler para Seleção Rápida 1-Click das Contas Registradas (Fallback de Suporte)
-  const handleDirectEmailLogin = (email, name) => {
-    clearError();
-    setCaptchaError('');
-
-    if (!captchaVerified) {
-      setCaptchaError('Por favor, conclua a verificação de segurança "Não sou um robô" (CAPTCHA) acima antes de entrar com a conta do Google.');
-      return;
-    }
-
-    const cleanEmail = email.toLowerCase().trim();
-    const isSuperAdmin = cleanEmail === 'helpus.ecommerce@gmail.com';
-    const sessionData = {
-      nome: name || (isSuperAdmin ? 'HelpUS SuperAdmin' : 'Public Arte Admin'),
-      email: cleanEmail,
-      tipo: isSuperAdmin ? 'superadmin' : 'admin',
-      superAdminAccess: isSuperAdmin,
-      loginMethod: 'google_official_master',
-      time: Date.now()
-    };
-
-    localStorage.setItem('usuario', JSON.stringify(sessionData));
-    setAuthedUserData(sessionData);
-    setSuccessNotice(true);
-
-    const newWin = window.open('/admin', '_blank');
   };
 
   const displayError = captchaError || authError;
@@ -159,17 +129,15 @@ export default function Login() {
                 <span>Autenticado com Sucesso: {authedUserData.email}</span>
               </div>
               <p className="text-xs text-emerald-300/90 leading-relaxed">
-                A Área Administrativa foi solicitada em uma <strong>nova aba do seu navegador</strong>. A landing page permanece aberta nesta aba.
+                Redirecionando para a Área Administrativa...
               </p>
               <div className="pt-1 flex gap-2">
-                <a
-                  href="/admin"
-                  target="_blank"
-                  rel="noreferrer"
+                <Link
+                  to="/admin"
                   className="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/30 transition text-center"
                 >
-                  <ExternalLink size={14} /> Abrir Área Admin em Nova Aba
-                </a>
+                  <ExternalLink size={14} /> Entrar no Painel Admin
+                </Link>
               </div>
             </div>
           )}
@@ -195,7 +163,7 @@ export default function Login() {
               />
             </div>
 
-            {/* 2. BOTÃO DE LOGIN DO GOOGLE (SEGUNDO - COMPONENTE OFICIAL GOOGLELOGINBUTTON) */}
+            {/* 2. BOTÃO DE LOGIN DO GOOGLE (COMPONENTE OFICIAL GOOGLELOGINBUTTON) */}
             <div className="space-y-4 flex flex-col items-center">
               <GoogleLoginButton
                 onClick={handleGoogleLoginButtonClick}
@@ -205,58 +173,6 @@ export default function Login() {
                 variant="light"
                 className={!captchaVerified ? 'opacity-60 cursor-not-allowed' : ''}
               />
-
-              {/* Seletor Rápido de Contas Registradas (Padrão 1-Click HelpUS) */}
-              {captchaVerified && (
-                <div className="w-full pt-3 border-t border-slate-800 space-y-2">
-                  <span className="text-[11px] font-semibold text-slate-400 block text-center">
-                    Ou selecione sua Conta Google registrada:
-                  </span>
-                  <div className="grid grid-cols-1 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => handleDirectEmailLogin('publicarte09@gmail.com', 'Public Arte Admin')}
-                      className="p-3 bg-slate-950 hover:bg-blue-950/50 border border-slate-800 hover:border-blue-500/50 rounded-2xl flex items-center justify-between text-left transition-all cursor-pointer group"
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <span className="text-sm">🖼️</span>
-                        <div>
-                          <div className="text-xs font-extrabold text-slate-200 group-hover:text-blue-300">
-                            publicarte09@gmail.com
-                          </div>
-                          <div className="text-[10px] text-slate-400">
-                            Public Arte Admin
-                          </div>
-                        </div>
-                      </div>
-                      <span className="text-[10px] font-bold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded-full border border-blue-500/20">
-                        Admin
-                      </span>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => handleDirectEmailLogin('helpus.ecommerce@gmail.com', 'HelpUS SuperAdmin')}
-                      className="p-3 bg-slate-950 hover:bg-purple-950/50 border border-slate-800 hover:border-purple-500/50 rounded-2xl flex items-center justify-between text-left transition-all cursor-pointer group"
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <span className="text-sm">👑</span>
-                        <div>
-                          <div className="text-xs font-extrabold text-slate-200 group-hover:text-purple-300">
-                            helpus.ecommerce@gmail.com
-                          </div>
-                          <div className="text-[10px] text-slate-400">
-                            HelpUS Technology Master
-                          </div>
-                        </div>
-                      </div>
-                      <span className="text-[10px] font-bold text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-500/20">
-                        SuperAdmin
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              )}
 
               <div className="p-3 bg-slate-950/60 border border-slate-800 rounded-2xl text-[11px] text-slate-400 leading-relaxed text-center w-full">
                 🔒 Autenticação 100% oficial via Google OAuth (@shared/googleAuth).

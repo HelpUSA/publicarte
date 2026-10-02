@@ -173,41 +173,6 @@ export function useGoogleAuth(options = {}) {
     setError('');
     setIsLoading(true);
 
-    let pendingTab = null;
-
-    // Criar aba de transição visual limpa
-    try {
-      pendingTab = window.open('about:blank', '_blank');
-      if (pendingTab) {
-        pendingTab.document.write(`
-          <!DOCTYPE html>
-          <html>
-            <head>
-              <meta charset="utf-8" />
-              <title>Conectando ao Google...</title>
-              <style>
-                body { background: #0f172a; color: #38bdf8; font-family: system-ui, -apple-system, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-                .card { background: #1e293b; padding: 32px; border-radius: 20px; border: 1px solid #334155; text-align: center; max-width: 400px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); }
-                .spinner { width: 40px; height: 40px; border: 4px solid #334155; border-top-color: #38bdf8; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
-                @keyframes spin { to { transform: rotate(360deg); } }
-                h2 { margin: 0 0 8px; color: #f8fafc; font-size: 18px; font-weight: 700; }
-                p { margin: 0; color: #94a3b8; font-size: 13px; line-height: 1.5; }
-              </style>
-            </head>
-            <body>
-              <div class="card">
-                <div class="spinner"></div>
-                <h2>Autenticando Conta Google</h2>
-                <p>Por favor, selecione sua conta na janela do Google para autorizar o acesso.</p>
-              </div>
-            </body>
-          </html>
-        `);
-      }
-    } catch (e) {
-      console.warn('[googleAuth] Não foi possível abrir aba temporária:', e);
-    }
-
     // A. Método Primário: Official Google Identity Services SDK Client
     if (window.google?.accounts?.oauth2) {
       try {
@@ -222,21 +187,18 @@ export function useGoogleAuth(options = {}) {
                   headers: { Authorization: `Bearer ${tokenResponse.access_token}` }
                 });
                 const googleUser = await res.json();
-                processGoogleUserInfo(googleUser, pendingTab);
+                processGoogleUserInfo(googleUser);
               } catch (fetchErr) {
                 console.error('[googleAuth] Erro ao consultar UserInfo do Google:', fetchErr);
-                if (pendingTab && !pendingTab.closed) pendingTab.close();
                 setIsLoading(false);
                 setError('Erro de comunicação com o servidor do Google.');
               }
             } else {
-              if (pendingTab && !pendingTab.closed) pendingTab.close();
               setIsLoading(false);
             }
           },
           error_callback: (err) => {
             console.warn('[googleAuth] Popup do Google fechado ou cancelado:', err);
-            if (pendingTab && !pendingTab.closed) pendingTab.close();
             setIsLoading(false);
           }
         });
@@ -266,7 +228,6 @@ export function useGoogleAuth(options = {}) {
     if (popup) {
       popup.focus();
     } else {
-      if (pendingTab && !pendingTab.closed) pendingTab.close();
       setIsLoading(false);
       setError('O navegador bloqueou a abertura da janela de login. Por favor, permita popups.');
     }
