@@ -8,7 +8,7 @@
     "description": "O login com conta google deu certo agora retire a lista de usuários da tela de login",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
@@ -29,10 +29,31 @@
         "content": "O login com conta google deu certo agora retire a lista de usuários da tela de login",
         "attachments": [],
         "createdAt": "2026-10-02T12:37:17.381Z"
+      },
+      {
+        "id": "msg-app-1790944665863",
+        "ticketId": "tck-1790944637381",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-10-02T12:37:45.863Z"
+      },
+      {
+        "id": "msg-prod-1790944665864",
+        "ticketId": "tck-1790944637381",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Public Arte). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-02T12:37:45.863Z"
       }
     ],
     "createdAt": "2026-10-02T12:37:17.381Z",
-    "updatedAt": "2026-10-02T12:37:17.381Z"
+    "updatedAt": "2026-10-02T12:37:45.863Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
   },
   {
     "id": "tck-1790934711474",
