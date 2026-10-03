@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1791048000000",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-107",
+    "title": "Ajuste e Verificação de Sistema",
+    "description": "Solicitação de verificação e ajustes para continuidade dos testes na aplicação Dr. Eduardo Magalhães Neurologista (Neuro).",
+    "category": "support",
+    "priority": "high",
+    "status": "pending_approval",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://neuro.eduardomagalhaes.helpusbr.com",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791048000000",
+        "ticketId": "tck-1791048000000",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Solicitação de verificação e ajustes para continuidade dos testes na aplicação Dr. Eduardo Magalhães Neurologista (Neuro).",
+        "attachments": [],
+        "createdAt": "2026-10-03T18:00:00.000Z"
+      }
+    ],
+    "createdAt": "2026-10-03T18:00:00.000Z",
+    "updatedAt": "2026-10-03T18:00:00.000Z"
+  },
+  {
     "id": "tck-1791041805230",
     "tenantId": "publicarte",
     "tenantName": "Public Arte",
