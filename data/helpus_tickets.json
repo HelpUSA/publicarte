@@ -1,5 +1,51 @@
 [
   {
+    "id": "tck-1791041805230",
+    "tenantId": "publicarte",
+    "tenantName": "Public Arte",
+    "code": "PUB-106",
+    "title": "atualização de produtos e categorias",
+    "description": "analise esses tres pdfs com imagens de publicações da publicarte. pegue as categorias, as imagens, etc e monte a base de dados de produtos reais que a publicarte tem.",
+    "category": "support",
+    "priority": "medium",
+    "status": "resolved",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://publicarte.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791041805230",
+        "ticketId": "tck-1791041805230",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "analise esses tres pdfs com imagens de publicações da publicarte. pegue as categorias, as imagens, etc e monte a base de dados de produtos reais que a publicarte tem.",
+        "attachments": [],
+        "createdAt": "2026-10-03T12:36:45.523Z"
+      },
+      {
+        "id": "msg-res-1791041805230",
+        "ticketId": "tck-1791041805230",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A base de dados de produtos da Public Arte foi atualizada com sucesso a partir da análise detalhada das publicações dos 3 catálogos PDF. Foram catalogados 21 produtos reais completos organizados por categorias (Banners & Lonas, Flybanners, Placas & Fachadas, Adesivos Vinílicos, Gráfica Rápida, Serigrafia & DTF e Brindes Promocionais), com fotos reais, unidades de medida e valores comercializados em produção.",
+        "createdAt": "2026-10-03T17:10:00.000Z"
+      }
+    ],
+    "createdAt": "2026-10-03T12:36:45.523Z",
+    "updatedAt": "2026-10-03T17:10:00.000Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
+  },
+  {
     "id": "tck-1791038803000",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",

@@ -23,8 +23,8 @@
     "unidade": "m²",
     "estoque": 60,
     "min": 10,
-    "marca": "Adesivos & Rótulos",
-    "categoria": "Adesivos & Rótulos",
+    "marca": "Adesivos Vinílicos",
+    "categoria": "Adesivos Vinílicos",
     "imagem_url": "/instagram/publicarte_adesivo_vinil.jpg",
     "foto": "/instagram/publicarte_adesivo_vinil.jpg",
     "observacao": "Vinil calandrado atóxico de alta durabilidade"
@@ -38,11 +38,11 @@
     "unidade": "m²",
     "estoque": 30,
     "min": 5,
-    "marca": "Adesivos & Rótulos",
-    "categoria": "Adesivos & Rótulos",
+    "marca": "Adesivos Vinílicos",
+    "categoria": "Adesivos Vinílicos",
     "imagem_url": "/instagram/publicarte_adesivo_perfurado.jpg",
     "foto": "/instagram/publicarte_adesivo_perfurado.jpg",
-    "observacao": "Visibilidade 50/50 com película protetora UV"
+    "observacao": "Visibilidade 50/50 com película protetora UV para vidros e portas"
   },
   {
     "id": 4,
@@ -57,12 +57,12 @@
     "categoria": "Placas & Fachadas",
     "imagem_url": "/instagram/publicarte_placa_metalon.jpg",
     "foto": "/instagram/publicarte_placa_metalon.jpg",
-    "observacao": "Estrutura em tubo galvanizado anticorrosivo"
+    "observacao": "Estrutura em tubo galvanizado anticorrosivo para imobiliárias e comércio"
   },
   {
     "id": 5,
     "codigo": "PRD-005",
-    "nome": "Fachada Comercial em ACM",
+    "nome": "Fachada Comercial em ACM & Letra 3D",
     "custo": 210,
     "preco": 420,
     "unidade": "m²",
@@ -72,7 +72,7 @@
     "categoria": "Placas & Fachadas",
     "imagem_url": "/instagram/publicarte_fachada_acm.jpg",
     "foto": "/instagram/publicarte_fachada_acm.jpg",
-    "observacao": "Painel de Alumínio Composto para alta elegância"
+    "observacao": "Painel de Alumínio Composto de alto acabamento para lojas e empresas"
   },
   {
     "id": 6,
@@ -92,7 +92,7 @@
   {
     "id": 7,
     "codigo": "PRD-007",
-    "nome": "Cartão de Visita 250g (1.000 un)",
+    "nome": "Cartão de Visita 250g / 300g (1.000 un)",
     "custo": 45,
     "preco": 90,
     "unidade": "pacote",
@@ -122,7 +122,7 @@
   {
     "id": 9,
     "codigo": "PRD-009",
-    "nome": "Serigrafia & DTF em Camisetas",
+    "nome": "Camiseta 100% Algodão DTF / Sublimação",
     "custo": 12,
     "preco": 28,
     "unidade": "unidade",
@@ -132,12 +132,12 @@
     "categoria": "Serigrafia & DTF",
     "imagem_url": "/instagram/publicarte_serigrafia_dtf.jpg",
     "foto": "/instagram/publicarte_serigrafia_dtf.jpg",
-    "observacao": "Estampa em alta resolução e resistência à lavagem"
+    "observacao": "Estampa DTF em alta resolução e resistência a lavagens"
   },
   {
     "id": 10,
     "codigo": "PRD-010",
-    "nome": "Caneca Porcelana Personalizada",
+    "nome": "Caneca de Porcelana Personalizada",
     "custo": 14,
     "preco": 28,
     "unidade": "unidade",
@@ -147,7 +147,7 @@
     "categoria": "Brindes Promocionais",
     "imagem_url": "/instagram/publicarte_caneca_personalizada.jpg",
     "foto": "/instagram/publicarte_caneca_personalizada.jpg",
-    "observacao": "Porcelana resinada própria para sublimação"
+    "observacao": "Porcelana resinada brilhante própria para foto ou logotipo"
   },
   {
     "id": 11,
@@ -162,7 +162,7 @@
     "categoria": "Placas & Fachadas",
     "imagem_url": "/instagram/publicarte_totem_acm.jpg",
     "foto": "/instagram/publicarte_totem_acm.jpg",
-    "observacao": "Sinalização vertical de alto impacto para calçadas"
+    "observacao": "Sinalização vertical de alto impacto para calçadas e entradas"
   },
   {
     "id": 12,
@@ -173,8 +173,8 @@
     "unidade": "m²",
     "estoque": 30,
     "min": 5,
-    "marca": "Adesivos & Rótulos",
-    "categoria": "Adesivos & Rótulos",
+    "marca": "Adesivos Vinílicos",
+    "categoria": "Adesivos Vinílicos",
     "imagem_url": "/instagram/publicarte_envelopamento_veiculo.jpg",
     "foto": "/instagram/publicarte_envelopamento_veiculo.jpg",
     "observacao": "Adesivo cast automotivo de altíssima durabilidade"
@@ -182,7 +182,7 @@
   {
     "id": 13,
     "codigo": "PRD-013",
-    "nome": "Brindes Corporativos Personalizados",
+    "nome": "Sacolas Ecobag e Tecido Personalizadas",
     "custo": 8,
     "preco": 18,
     "unidade": "unidade",
@@ -192,6 +192,126 @@
     "categoria": "Brindes Promocionais",
     "imagem_url": "/instagram/publicarte_brindes_corporativos.jpg",
     "foto": "/instagram/publicarte_brindes_corporativos.jpg",
-    "observacao": "Canetas, chaveiros e kits personalizados para empresas"
+    "observacao": "Sacolas em tecido / algodão cru com silk ou estampa digital"
+  },
+  {
+    "id": 14,
+    "codigo": "PRD-014",
+    "nome": "Placa de Sinalização Condominial em PS 2mm",
+    "custo": 15,
+    "preco": 35,
+    "unidade": "unidade",
+    "estoque": 45,
+    "min": 5,
+    "marca": "Placas & Fachadas",
+    "categoria": "Placas & Fachadas",
+    "imagem_url": "/instagram/ig_18094498808400316.jpg",
+    "foto": "/instagram/ig_18094498808400316.jpg",
+    "observacao": "Sinalização para academia, elevador, piscina, churrasqueira e garagens"
+  },
+  {
+    "id": 15,
+    "codigo": "PRD-015",
+    "nome": "Flybanner / Windbanner de Calçada Completo",
+    "custo": 95,
+    "preco": 195,
+    "unidade": "unidade",
+    "estoque": 25,
+    "min": 1,
+    "marca": "Banners & Lonas",
+    "categoria": "Banners & Lonas",
+    "imagem_url": "/instagram/ig_17876414721565695.jpg",
+    "foto": "/instagram/ig_17876414721565695.jpg",
+    "observacao": "Formato pena ou gota com haste em fibra de vidro e base pesada"
+  },
+  {
+    "id": 16,
+    "codigo": "PRD-016",
+    "nome": "Carimbos Automáticos Personalizados",
+    "custo": 22,
+    "preco": 48,
+    "unidade": "unidade",
+    "estoque": 35,
+    "min": 1,
+    "marca": "Gráfica Rápida",
+    "categoria": "Gráfica Rápida",
+    "imagem_url": "/instagram/ig_18124924180863297.jpg",
+    "foto": "/instagram/ig_18124924180863297.jpg",
+    "observacao": "Carimbos para médicos, advogados, empresas e CNPJ (Modelo Trodat/Nykon 4911)"
+  },
+  {
+    "id": 17,
+    "codigo": "PRD-017",
+    "nome": "Blocos de Pedido, Recibo e Comandas",
+    "custo": 18,
+    "preco": 38,
+    "unidade": "bloco",
+    "estoque": 50,
+    "min": 5,
+    "marca": "Gráfica Rápida",
+    "categoria": "Gráfica Rápida",
+    "imagem_url": "/instagram/ig_17887298523476174.jpg",
+    "foto": "/instagram/ig_17887298523476174.jpg",
+    "observacao": "Blocos numerados e autocopiativos de 50x2 ou 100x1 vias"
+  },
+  {
+    "id": 18,
+    "codigo": "PRD-018",
+    "nome": "Adesivo Jateado para Vidros e Divisórias",
+    "custo": 30,
+    "preco": 65,
+    "unidade": "m²",
+    "estoque": 40,
+    "min": 2,
+    "marca": "Adesivos Vinílicos",
+    "categoria": "Adesivos Vinílicos",
+    "imagem_url": "/instagram/ig_18555153241074750.jpg",
+    "foto": "/instagram/ig_18555153241074750.jpg",
+    "observacao": "Efeito fosco translúcido para privacidade em consultórios e escritórios"
+  },
+  {
+    "id": 19,
+    "codigo": "PRD-019",
+    "nome": "Cardápio em PS 2mm Adesivado e Laminado",
+    "custo": 20,
+    "preco": 45,
+    "unidade": "unidade",
+    "estoque": 30,
+    "min": 2,
+    "marca": "Gráfica Rápida",
+    "categoria": "Gráfica Rápida",
+    "imagem_url": "/instagram/ig_18054294236343666.jpg",
+    "foto": "/instagram/ig_18054294236343666.jpg",
+    "observacao": "Resistente à água e lavável, ideal para lanchonetes e restaurantes"
+  },
+  {
+    "id": 20,
+    "codigo": "PRD-020",
+    "nome": "Camisa Polo e Manga Longa UV para Uniformes",
+    "custo": 25,
+    "preco": 55,
+    "unidade": "unidade",
+    "estoque": 60,
+    "min": 5,
+    "marca": "Serigrafia & DTF",
+    "categoria": "Serigrafia & DTF",
+    "imagem_url": "/instagram/ig_17983595972930658.jpg",
+    "foto": "/instagram/ig_17983595972930658.jpg",
+    "observacao": "Uniformes empresariais com bordado ou silk de alta durabilidade"
+  },
+  {
+    "id": 21,
+    "codigo": "PRD-021",
+    "nome": "Garrafa Térmica e Copo de Café Personalizados",
+    "custo": 25,
+    "preco": 58,
+    "unidade": "unidade",
+    "estoque": 35,
+    "min": 3,
+    "marca": "Brindes Promocionais",
+    "categoria": "Brindes Promocionais",
+    "imagem_url": "/instagram/ig_17892730401385549.jpg",
+    "foto": "/instagram/ig_17892730401385549.jpg",
+    "observacao": "Personalização de botijões, garrafas e copos para café corporativos"
   }
 ]
