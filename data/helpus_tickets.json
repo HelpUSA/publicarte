@@ -8,7 +8,7 @@
     "description": "Na tela de edição de laudos dos exames a data do exame está atualizando automaticamente enquanto a data da emissão assinatura do laudo permanece igual. Tem que ser o contrário",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "resolved",
     "createdByEmail": "eduardojcmagalhaes@gmail.com",
     "createdByName": "Eduardo Magalhães (Neuro)",
     "contextData": {
@@ -29,10 +29,20 @@
         "content": "Na tela de edição de laudos dos exames a data do exame está atualizando automaticamente enquanto a data da emissão assinatura do laudo permanece igual. Tem que ser o contrário",
         "attachments": [],
         "createdAt": "2026-10-03T09:06:43.000Z"
+      },
+      {
+        "id": "msg-res-1791038803000",
+        "ticketId": "tck-1791038803000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A data de Emissão/Assinatura do Laudo agora é atualizada dinamicamente para o dia de hoje (data atual), enquanto a Data do Exame permanece preservada do registro do exame.",
+        "createdAt": "2026-10-03T12:05:00.000Z"
       }
     ],
     "createdAt": "2026-10-03T09:06:43.000Z",
-    "updatedAt": "2026-10-03T09:06:43.000Z",
+    "updatedAt": "2026-10-03T12:05:00.000Z",
     "assignedTo": "HelpUS Master SuperAdmin"
   },
   {
