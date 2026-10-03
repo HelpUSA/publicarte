@@ -1,5 +1,41 @@
 [
   {
+    "id": "tck-1791038803000",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-105",
+    "title": "Datas de exame",
+    "description": "Na tela de edição de laudos dos exames a data do exame está atualizando automaticamente enquanto a data da emissão assinatura do laudo permanece igual. Tem que ser o contrário",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://neuro.eduardomagalhaes.helpusbr.com",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791038803000",
+        "ticketId": "tck-1791038803000",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Na tela de edição de laudos dos exames a data do exame está atualizando automaticamente enquanto a data da emissão assinatura do laudo permanece igual. Tem que ser o contrário",
+        "attachments": [],
+        "createdAt": "2026-10-03T09:06:43.000Z"
+      }
+    ],
+    "createdAt": "2026-10-03T09:06:43.000Z",
+    "updatedAt": "2026-10-03T09:06:43.000Z",
+    "assignedTo": "HelpUS Master SuperAdmin"
+  },
+  {
     "id": "tck-1790973331000",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
@@ -31,33 +67,13 @@
         "createdAt": "2026-10-02T17:35:31.000Z"
       },
       {
-        "id": "msg-app-1790973335000",
-        "ticketId": "tck-1790973331000",
-        "senderId": "helpus-master",
-        "senderName": "HelpUS Master SuperAdmin",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
-        "createdAt": "2026-10-02T17:36:00.000Z"
-      },
-      {
-        "id": "msg-prod-1790973340000",
-        "ticketId": "tck-1790973331000",
-        "senderId": "ci.cd@helpusbr.com",
-        "senderName": "Pipeline de Produção Vercel",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Dr. Eduardo Magalhães Neurologista). Acompanhe o progresso da compilação e verificação de deploy...",
-        "createdAt": "2026-10-02T17:37:00.000Z"
-      },
-      {
         "id": "msg-res-1790973345000",
         "ticketId": "tck-1790973331000",
         "senderId": "helpus.ecommerce@gmail.com",
         "senderName": "HelpUS Master SuperAdmin",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Alteração executada com sucesso na aplicação de Laudos Médicos (neuro.eduardomagalhaes)!\n- A árvore de modelos de laudos agora inicia 100% FECHADA/COLAPSADA por padrão ao carregar a página.\n- O médico/usuário pode visualizar imediatamente todas as ramificações/pastas principais de exames e expandir somente a pasta necessária.\n- O projeto foi recompilado e o deploy em produção na Vercel foi concluído com sucesso.",
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A árvore de modelos de laudos agora inicia 100% FECHADA/COLAPSADA por padrão ao carregar a página.",
         "createdAt": "2026-10-02T17:41:00.000Z"
       }
     ],
@@ -103,7 +119,7 @@
         "senderName": "HelpUS Master SuperAdmin",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Seção Fale Conosco adicionada à aplicação HelpUS Accounting (accounting.helpusbr.com).\n- Formulário integrado enviando mensagens diretamente para helpus.ecommerce@gmail.com com limpeza automática dos campos.",
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Seção Fale Conosco adicionada à aplicação HelpUS Accounting (accounting.helpusbr.com).",
         "createdAt": "2026-10-02T17:25:00.000Z"
       }
     ],
