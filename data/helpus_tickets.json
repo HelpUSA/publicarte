@@ -8,7 +8,7 @@
     "description": "ainda não vi as atualizações visando ficar com tela inicial parecida com a tela inicial do rayyan. se no git estiver privado pode por publico. veja se as configurações do vercel, square e cloudflare.",
     "category": "feature",
     "priority": "high",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
@@ -29,12 +29,33 @@
         "content": "ainda não vi as atualizações visando ficar com tela inicial parecida com a tela inicial do rayyan. se no git estiver privado pode por publico. veja se as configurações do vercel, square e cloudflare.",
         "attachments": [],
         "createdAt": "2026-10-04T16:58:35.000Z"
+      },
+      {
+        "id": "msg-app-1791158121324",
+        "ticketId": "tck-1791145115000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master). Autorizando envio para produção...",
+        "createdAt": "2026-10-04T23:55:21.324Z"
+      },
+      {
+        "id": "msg-prod-1791158121325",
+        "ticketId": "tck-1791145115000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Brayyan — Revisão Sistemática com IA). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-04T23:55:21.324Z"
       }
     ],
     "createdAt": "2026-10-04T16:58:35.000Z",
-    "updatedAt": "2026-10-04T23:31:58.766Z",
-    "assignedTo": "HelpUS Master SuperAdmin",
-    "progressPercentage": 0
+    "updatedAt": "2026-10-04T23:55:21.324Z",
+    "assignedTo": "HelpUS Master",
+    "progressPercentage": 0,
+    "progressStep": "⚡ Entrada em Produção autorizada. Robô autônomo aguardando execução..."
   },
   {
     "id": "tck-1791142000000",
