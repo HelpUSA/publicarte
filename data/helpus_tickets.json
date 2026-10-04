@@ -8,7 +8,7 @@
     "description": "ainda não vi as atualizações visando ficar com tela inicial parecida com a tela inicial do rayyan. se no git estiver privado pode por publico. veja se as configurações do vercel, square e cloudflare.",
     "category": "feature",
     "priority": "high",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
@@ -89,12 +89,33 @@
         "isInternalNote": false,
         "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A solicitação [BRA-110] foi processada com sucesso pelo Antigravity Watcher. A página principal da aplicação Brayyan — Revisão Sistemática com IA (brayyan.helpusbr.com) está 100% atualizada e publicada em produção na Vercel.",
         "createdAt": "2026-10-04T23:55:34.592Z"
+      },
+      {
+        "id": "msg-app-1791158381743",
+        "ticketId": "tck-1791145115000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-10-04T23:59:41.743Z"
+      },
+      {
+        "id": "msg-prod-1791158381744",
+        "ticketId": "tck-1791145115000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Brayyan — Revisão Sistemática com IA). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-04T23:59:41.743Z"
       }
     ],
     "createdAt": "2026-10-04T16:58:35.000Z",
-    "updatedAt": "2026-10-04T23:57:54.902Z",
-    "assignedTo": "HelpUS Master",
-    "progressPercentage": 0
+    "updatedAt": "2026-10-04T23:59:41.743Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressPercentage": 0,
+    "progressStep": "⚡ Entrada em Produção autorizada. Robô autônomo aguardando execução..."
   },
   {
     "id": "tck-1791142000000",
