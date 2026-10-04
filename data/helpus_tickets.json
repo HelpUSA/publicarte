@@ -8,7 +8,7 @@
     "description": "ainda não vi as atualizações visando ficar com tela inicial parecida com a tela inicial do rayyan. se no git estiver privado pode por publico. veja se as configurações do vercel, square e cloudflare.",
     "category": "feature",
     "priority": "high",
-    "status": "resolved",
+    "status": "pending_approval",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
@@ -92,10 +92,9 @@
       }
     ],
     "createdAt": "2026-10-04T16:58:35.000Z",
-    "updatedAt": "2026-10-04T23:55:21.324Z",
+    "updatedAt": "2026-10-04T23:57:34.527Z",
     "assignedTo": "HelpUS Master",
-    "progressPercentage": 100,
-    "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional."
+    "progressPercentage": 0
   },
   {
     "id": "tck-1791142000000",
