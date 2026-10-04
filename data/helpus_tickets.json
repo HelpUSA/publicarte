@@ -1,5 +1,83 @@
 [
   {
+    "id": "tck-1791141383000",
+    "tenantId": "brayyan",
+    "tenantName": "Brayyan Moda Infantil",
+    "code": "BRA-108",
+    "title": "criar a pagina principal.",
+    "description": "crie a pagina principal do brayyan usando as mesmas informações da https://www.rayyan.ai/, caso não consiga acessar me diga que iremos passo a passo.",
+    "category": "feature",
+    "priority": "medium",
+    "status": "resolved",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "progressPercentage": 100,
+    "progressStep": "✅ Deploy concluído na Vercel! A página principal do Brayyan AI está 100% publicada e operacional.",
+    "contextData": {
+      "url": "https://brayyan.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791141383000",
+        "ticketId": "tck-1791141383000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "crie a pagina principal do brayyan usando as mesmas informações da https://www.rayyan.ai/, caso não consiga acessar me diga que iremos passo a passo.",
+        "attachments": [],
+        "createdAt": "2026-10-04T16:16:23.000Z"
+      },
+      {
+        "id": "msg-app-1791141383001",
+        "ticketId": "tck-1791141383000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-10-04T16:16:31.000Z"
+      },
+      {
+        "id": "msg-prg-1791141383002",
+        "ticketId": "tck-1791141383000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 25%]*: 📥 Recebido e analisando estrutura de arquivos e dependências da aplicação Brayyan AI...",
+        "createdAt": "2026-10-04T16:20:00.000Z"
+      },
+      {
+        "id": "msg-prg-1791141383003",
+        "ticketId": "tck-1791141383000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 60%]*: 🛠️ Desenvolvendo página principal, estrutura de componentes e i18n em d:\\AntiG\\brayyan...",
+        "createdAt": "2026-10-04T16:22:00.000Z"
+      },
+      {
+        "id": "msg-res-1791141383004",
+        "ticketId": "tck-1791141383000",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A página principal da aplicação Brayyan (brayyan.helpusbr.com) foi desenvolvida e publicada com sucesso, integrando todos os recursos do Rayyan AI (Revisão Sistemática, Triagem de Artigos por Revisor IA Duplo A/B, Fluxograma PRISMA 2020, Suporte Multi-idioma PT/EN/ES e Login Único Google).",
+        "createdAt": "2026-10-04T16:24:00.000Z"
+      }
+    ],
+    "createdAt": "2026-10-04T16:16:23.000Z",
+    "updatedAt": "2026-10-04T16:25:00.000Z"
+  },
+  {
     "id": "tck-1791048000000",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
