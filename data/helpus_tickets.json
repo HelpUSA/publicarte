@@ -59,13 +59,23 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 25%]*: 📥 Recebido pelo Antigravity! Analisando arquivos e requisitos da solicitação...",
         "createdAt": "2026-10-04T23:55:14.701Z"
+      },
+      {
+        "id": "msg-prg-1791158118431",
+        "ticketId": "tck-1791145115000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 50%]*: 🛠️ Desenvolvendo página principal, estrutura de componentes e i18n em HelpUSA/brayyan...",
+        "createdAt": "2026-10-04T23:55:18.431Z"
       }
     ],
     "createdAt": "2026-10-04T16:58:35.000Z",
     "updatedAt": "2026-10-04T23:55:21.324Z",
     "assignedTo": "HelpUS Master",
-    "progressPercentage": 25,
-    "progressStep": "📥 Recebido pelo Antigravity! Analisando arquivos e requisitos da solicitação..."
+    "progressPercentage": 50,
+    "progressStep": "🛠️ Desenvolvendo página principal, estrutura de componentes e i18n em HelpUSA/brayyan..."
   },
   {
     "id": "tck-1791142000000",
