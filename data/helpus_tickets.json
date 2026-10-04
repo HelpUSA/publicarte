@@ -4,10 +4,10 @@
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
     "code": "NEU-107",
-    "title": "Ajuste e Verificação de Sistema",
-    "description": "Solicitação de verificação e ajustes para continuidade dos testes na aplicação Dr. Eduardo Magalhães Neurologista (Neuro).",
+    "title": "Calendário e máscara de data nos campos de exame e emissão",
+    "description": "Nos dois Campos que são data do exame e data da emissão assinatura do laudo ficará mais prático se ao clicar abrir um pequeno calendário, e que o campo de digitação já tenha uma máscara prévia com formato de data com as barras separando o dia mês e ano",
     "category": "support",
-    "priority": "high",
+    "priority": "medium",
     "status": "pending_approval",
     "createdByEmail": "eduardojcmagalhaes@gmail.com",
     "createdByName": "Eduardo Magalhães (Neuro)",
@@ -26,13 +26,13 @@
         "senderName": "Eduardo Magalhães (Neuro)",
         "senderRole": "client",
         "isInternalNote": false,
-        "content": "Solicitação de verificação e ajustes para continuidade dos testes na aplicação Dr. Eduardo Magalhães Neurologista (Neuro).",
+        "content": "Nos dois Campos que são data do exame e data da emissão assinatura do laudo ficará mais prático se ao clicar abrir um pequeno calendário, e que o campo de digitação já tenha uma máscara prévia com formato de data com as barras separando o dia mês e ano",
         "attachments": [],
-        "createdAt": "2026-10-03T18:00:00.000Z"
+        "createdAt": "2026-10-03T23:01:51.000Z"
       }
     ],
-    "createdAt": "2026-10-03T18:00:00.000Z",
-    "updatedAt": "2026-10-03T18:00:00.000Z"
+    "createdAt": "2026-10-03T23:01:51.000Z",
+    "updatedAt": "2026-10-03T23:01:51.000Z"
   },
   {
     "id": "tck-1791041805230",
