@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1791145115000",
+    "tenantId": "brayyan",
+    "tenantName": "Brayyan — Revisão Sistemática com IA",
+    "code": "BRA-110",
+    "title": "verificar atualizações",
+    "description": "ainda não vi as atualizações visando ficar com tela inicial parecida com a tela inicial do rayyan. se no git estiver privado pode por publico. veja se as configurações do vercel, square e cloudflare.",
+    "category": "feature",
+    "priority": "high",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://brayyan.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791145115000",
+        "ticketId": "tck-1791145115000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "ainda não vi as atualizações visando ficar com tela inicial parecida com a tela inicial do rayyan. se no git estiver privado pode por publico. veja se as configurações do vercel, square e cloudflare.",
+        "attachments": [],
+        "createdAt": "2026-10-04T16:58:35.000Z"
+      }
+    ],
+    "createdAt": "2026-10-04T16:58:35.000Z",
+    "updatedAt": "2026-10-04T16:58:35.000Z"
+  },
+  {
     "id": "tck-1791142000000",
     "tenantId": "brayyan",
     "tenantName": "Brayyan — Revisão Sistemática com IA",
