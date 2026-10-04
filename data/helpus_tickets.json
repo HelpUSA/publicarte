@@ -69,13 +69,23 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 50%]*: 🛠️ Desenvolvendo melhorias de interface estilo Rayyan AI e i18n em HelpUSA/brayyan...",
         "createdAt": "2026-10-04T20:50:13.514Z"
+      },
+      {
+        "id": "msg-prg-1791147017701",
+        "ticketId": "tck-1791145115000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 75%]*: ⚡ Disparando pipeline de build e validando publicação na Vercel Cloud...",
+        "createdAt": "2026-10-04T20:50:17.699Z"
       }
     ],
     "createdAt": "2026-10-04T16:58:35.000Z",
     "updatedAt": "2026-10-04T20:41:31.299Z",
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressPercentage": 50,
-    "progressStep": "🛠️ Desenvolvendo página principal, estrutura de componentes e i18n em HelpUSA/brayyan..."
+    "progressPercentage": 75,
+    "progressStep": "⚡ Disparando pipeline de build autônomo na Vercel Cloud para brayyan.helpusbr.com..."
   },
   {
     "id": "tck-1791142000000",
