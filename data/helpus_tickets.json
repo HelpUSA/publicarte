@@ -1,37 +1,5 @@
 [
   {
-    "id": "tck-1791147000000",
-    "tenantId": "brayyan",
-    "tenantName": "Brayyan — Revisão Sistemática com IA",
-    "code": "BRA-113",
-    "title": "[SIMULAÇÃO] Teste do Fluxo de Notificação do Watcher com Aceite",
-    "description": "Validação em tempo real do fluxo de notificação do script run_helpus_watcher.bat ao clicar no botão Aceitar no portal support.helpusbr.com.",
-    "category": "feature",
-    "priority": "high",
-    "status": "pending_approval",
-    "createdByEmail": "helpus.ecommerce@gmail.com",
-    "createdByName": "HelpUS Master SuperAdmin",
-    "contextData": {
-      "url": "https://brayyan.helpusbr.com",
-      "userEmail": "helpus.ecommerce@gmail.com",
-      "userName": "HelpUS Master SuperAdmin",
-      "os": "Windows 11 (Chrome 128)"
-    },
-    "attachments": [],
-    "messages": [
-      {
-        "id": "msg-1791147000000",
-        "ticketId": "tck-1791147000000",
-        "senderEmail": "helpus.ecommerce@gmail.com",
-        "senderName": "HelpUS Master SuperAdmin",
-        "content": "Estou enviando esta simulação para testar se o watcher local (run_helpus_watcher.bat) captura o evento de aceite corretamente.",
-        "createdAt": "2026-10-04T22:00:00.000Z"
-      }
-    ],
-    "createdAt": "2026-10-04T22:00:00.000Z",
-    "updatedAt": "2026-10-04T22:00:00.000Z"
-  },
-  {
     "id": "tck-1791161730396",
     "tenantId": "brayyan",
     "tenantName": "Brayyan — Revisão Sistemática com IA",
@@ -258,6 +226,61 @@
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
     "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional."
+  },
+  {
+    "id": "tck-1791147000000",
+    "tenantId": "brayyan",
+    "tenantName": "Brayyan — Revisão Sistemática com IA",
+    "code": "BRA-113",
+    "title": "[SIMULAÇÃO] Teste do Fluxo de Notificação do Watcher com Aceite",
+    "description": "Validação em tempo real do fluxo de notificação do script run_helpus_watcher.bat ao clicar no botão Aceitar no portal support.helpusbr.com.",
+    "category": "feature",
+    "priority": "high",
+    "status": "in_production",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://brayyan.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791147000000",
+        "ticketId": "tck-1791147000000",
+        "senderEmail": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "content": "Estou enviando esta simulação para testar se o watcher local (run_helpus_watcher.bat) captura o evento de aceite corretamente.",
+        "createdAt": "2026-10-04T22:00:00.000Z"
+      },
+      {
+        "id": "msg-app-1791164677490",
+        "ticketId": "tck-1791147000000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-10-05T01:44:37.490Z"
+      },
+      {
+        "id": "msg-prod-1791164677491",
+        "ticketId": "tck-1791147000000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Brayyan — Revisão Sistemática com IA). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-05T01:44:37.490Z"
+      }
+    ],
+    "createdAt": "2026-10-04T22:00:00.000Z",
+    "updatedAt": "2026-10-05T01:44:37.490Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressPercentage": 0,
+    "progressStep": "⚡ Entrada em Produção autorizada. Robô autônomo aguardando execução..."
   },
   {
     "id": "tck-1791145115000",
