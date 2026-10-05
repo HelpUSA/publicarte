@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1791147000000",
+    "tenantId": "brayyan",
+    "tenantName": "Brayyan — Revisão Sistemática com IA",
+    "code": "BRA-113",
+    "title": "[SIMULAÇÃO] Teste do Fluxo de Notificação do Watcher com Aceite",
+    "description": "Validação em tempo real do fluxo de notificação do script run_helpus_watcher.bat ao clicar no botão Aceitar no portal support.helpusbr.com.",
+    "category": "feature",
+    "priority": "high",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://brayyan.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791147000000",
+        "ticketId": "tck-1791147000000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Validação em tempo real do fluxo de notificação do script run_helpus_watcher.bat ao clicar no botão Aceitar no portal support.helpusbr.com.",
+        "attachments": [],
+        "createdAt": "2026-10-04T22:37:00.000Z"
+      }
+    ],
+    "createdAt": "2026-10-04T22:37:00.000Z",
+    "updatedAt": "2026-10-04T22:37:00.000Z"
+  },
+  {
     "id": "tck-1791145115000",
     "tenantId": "brayyan",
     "tenantName": "Brayyan — Revisão Sistemática com IA",
