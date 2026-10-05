@@ -8,7 +8,7 @@
     "description": "ainda não vi as atualizações visando ficar com tela inicial parecida com a tela inicial do rayyan. se no git estiver privado pode por publico. veja se as configurações do vercel, square e cloudflare.",
     "category": "feature",
     "priority": "high",
-    "status": "in_production",
+    "status": "resolved",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
@@ -139,13 +139,23 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 75%]*: ⚡ Disparando pipeline de build autônomo na Vercel Cloud para brayyan.helpusbr.com...",
         "createdAt": "2026-10-05T00:00:57.912Z"
+      },
+      {
+        "id": "msg-prg-1791158469228",
+        "ticketId": "tck-1791145115000",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A solicitação [BRA-110] foi processada com sucesso pelo Antigravity Watcher. A página principal da aplicação Brayyan — Revisão Sistemática com IA (brayyan.helpusbr.com) está 100% atualizada e publicada em produção na Vercel.",
+        "createdAt": "2026-10-05T00:01:09.228Z"
       }
     ],
     "createdAt": "2026-10-04T16:58:35.000Z",
     "updatedAt": "2026-10-04T23:59:41.743Z",
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressPercentage": 75,
-    "progressStep": "⚡ Disparando pipeline de build autônomo na Vercel Cloud para brayyan.helpusbr.com..."
+    "progressPercentage": 100,
+    "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional."
   },
   {
     "id": "tck-1791142000000",
