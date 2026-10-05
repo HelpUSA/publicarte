@@ -65,13 +65,23 @@
         "isInternalNote": false,
         "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Brayyan — Revisão Sistemática com IA). Acompanhe o progresso da compilação e verificação de deploy...",
         "createdAt": "2026-10-05T00:55:37.283Z"
+      },
+      {
+        "id": "msg-prg-1791161784351",
+        "ticketId": "tck-1791161730396",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 25%]*: 📥 Recebido pelo Antigravity! Analisando arquivos e requisitos da solicitação...",
+        "createdAt": "2026-10-05T00:56:24.351Z"
       }
     ],
     "createdAt": "2026-10-05T00:55:30.396Z",
     "updatedAt": "2026-10-05T00:55:37.283Z",
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressPercentage": 0,
-    "progressStep": "⚡ Entrada em Produção autorizada. Robô autônomo aguardando execução..."
+    "progressPercentage": 25,
+    "progressStep": "📥 Recebido pelo Antigravity! Analisando arquivos e requisitos da solicitação..."
   },
   {
     "id": "tck-1791158906919",
