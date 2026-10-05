@@ -8,7 +8,7 @@
     "description": "Simulação para validação em tempo real do aceite do usuário no portal e acompanhamento pelo robô autônomo em segundo plano.",
     "category": "feature",
     "priority": "high",
-    "status": "open",
+    "status": "pending_approval",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
