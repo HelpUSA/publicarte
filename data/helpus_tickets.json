@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1791199612636",
+    "tenantId": "brayyan",
+    "tenantName": "Brayyan — Revisão Sistemática com IA",
+    "code": "BRA-115",
+    "title": "[SIMULAÇÃO] Teste de Progresso em Tempo Real no Painel",
+    "description": "Validação das fases de progresso (25% Análise, 50% Código, 75% Build, 100% Deploy) exibidas em tempo real na tela do portal.",
+    "category": "feature",
+    "priority": "high",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://brayyan.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791199612636",
+        "ticketId": "tck-1791199612636",
+        "senderEmail": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "content": "Aguardando o aceite no portal para demonstrar a animação e fases de progresso em tempo real.",
+        "createdAt": "2026-10-05T11:26:52.636Z"
+      }
+    ],
+    "createdAt": "2026-10-05T11:26:52.637Z",
+    "updatedAt": "2026-10-05T11:26:52.637Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressPercentage": 0,
+    "progressStep": "Aguardando aceite no portal"
+  },
+  {
     "id": "tck-1791165624473",
     "tenantId": "brayyan",
     "tenantName": "Brayyan — Revisão Sistemática com IA",
