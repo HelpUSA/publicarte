@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1791232533324",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-116",
+    "title": "integração com base de dados winsoft",
+    "description": "Gostaria que a página de edição de laudos tenha acesso aos dados dos pacientes previamente cadastrados em nossa base de dados do consultorio, a winsoft. Gostaria também que eu conseguisse pesquisar o nome completo e data da nascimento de um paciente para elaborar o laudo dele digitando o CPF, conforme é possivel fazer em plataformas de prescrição digital, sem necessidade de previo cadastro, visto que buscam os dados em site da receita federal. ",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791232533324",
+        "ticketId": "tck-1791232533324",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Gostaria que a página de edição de laudos tenha acesso aos dados dos pacientes previamente cadastrados em nossa base de dados do consultorio, a winsoft. Gostaria também que eu conseguisse pesquisar o nome completo e data da nascimento de um paciente para elaborar o laudo dele digitando o CPF, conforme é possivel fazer em plataformas de prescrição digital, sem necessidade de previo cadastro, visto que buscam os dados em site da receita federal. ",
+        "attachments": [],
+        "createdAt": "2026-10-05T20:35:33.324Z"
+      }
+    ],
+    "createdAt": "2026-10-05T20:35:33.324Z",
+    "updatedAt": "2026-10-05T20:35:33.324Z"
+  },
+  {
     "id": "tck-1791199612636",
     "tenantId": "brayyan",
     "tenantName": "Brayyan — Revisão Sistemática com IA",
