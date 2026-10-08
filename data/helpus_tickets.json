@@ -8,7 +8,7 @@
     "description": "hoje acessei a minha pagina mas o sistema nao pediu as credenciais como habitualmente faz. Será que parou de deslogar automaticamente/",
     "category": "support",
     "priority": "medium",
-    "status": "in_production",
+    "status": "resolved",
     "createdByEmail": "eduardojcmagalhaes@gmail.com",
     "createdByName": "Eduardo Magalhães (Neuro)",
     "contextData": {
@@ -71,21 +71,21 @@
         "createdAt": "2026-10-08T20:16:21.290Z"
       },
       {
-        "id": "msg-prg-1791490585917",
+        "id": "msg-res-1791490598686",
         "ticketId": "tck-1791487904480",
-        "senderId": "ci.cd@helpusbr.com",
-        "senderName": "Antigravity Execution Pipeline",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "⚡ *[PROGRESSO 75%]*: ⚡ Compilando projeto neuro.eduardomagalhaes e enviando para Vercel Cloud...",
-        "createdAt": "2026-10-08T20:16:25.917Z"
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A solicitação [NEU-117] sobre expiração automática de sessão foi atendida com sucesso. Implementada trava de segurança no portal de laudos (neuro.eduardomagalhaes.helpusbr.com) que encerra a sessão após 30 minutos de inatividade, exigindo nova autenticação para proteção dos dados dos pacientes.",
+        "createdAt": "2026-10-08T20:16:38.686Z"
       }
     ],
     "createdAt": "2026-10-08T19:31:44.480Z",
-    "updatedAt": "2026-10-08T20:16:25.917Z",
+    "updatedAt": "2026-10-08T20:16:38.685Z",
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressPercentage": 75,
-    "progressStep": "⚡ Compilando projeto neuro.eduardomagalhaes e enviando para Vercel Cloud..."
+    "progressPercentage": 100,
+    "progressStep": "✅ Concluído e enviado para produção com sucesso!"
   },
   {
     "id": "tck-1791232533324",
