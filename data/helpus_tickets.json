@@ -69,13 +69,23 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 50%]*: 🛠️ Implementando expiração automática de 30 min de inatividade...",
         "createdAt": "2026-10-08T20:16:21.290Z"
+      },
+      {
+        "id": "msg-prg-1791490585917",
+        "ticketId": "tck-1791487904480",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 75%]*: ⚡ Compilando projeto neuro.eduardomagalhaes e enviando para Vercel Cloud...",
+        "createdAt": "2026-10-08T20:16:25.917Z"
       }
     ],
     "createdAt": "2026-10-08T19:31:44.480Z",
-    "updatedAt": "2026-10-08T20:16:21.290Z",
+    "updatedAt": "2026-10-08T20:16:25.917Z",
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressPercentage": 50,
-    "progressStep": "🛠️ Implementando expiração automática de 30 min de inatividade..."
+    "progressPercentage": 75,
+    "progressStep": "⚡ Compilando projeto neuro.eduardomagalhaes e enviando para Vercel Cloud..."
   },
   {
     "id": "tck-1791232533324",
