@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1791487904480",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-117",
+    "title": "ACESSO seguro",
+    "description": "hoje acessei a minha pagina mas o sistema nao pediu as credenciais como habitualmente faz. Será que parou de deslogar automaticamente/",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791487904480",
+        "ticketId": "tck-1791487904480",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "hoje acessei a minha pagina mas o sistema nao pediu as credenciais como habitualmente faz. Será que parou de deslogar automaticamente/",
+        "attachments": [],
+        "createdAt": "2026-10-08T19:31:44.480Z"
+      }
+    ],
+    "createdAt": "2026-10-08T19:31:44.480Z",
+    "updatedAt": "2026-10-08T19:31:44.480Z"
+  },
+  {
     "id": "tck-1791232533324",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
