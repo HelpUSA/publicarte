@@ -47,28 +47,28 @@
         "createdAt": "2026-10-11T17:00:33.346Z"
       },
       {
-        "id": "msg-app-1791753727041",
+        "id": "msg-app-1791753757362",
         "ticketId": "tck-1791738033346",
         "senderId": "helpus-master",
         "senderName": "HelpUS Master SuperAdmin",
         "senderRole": "agent",
         "isInternalNote": false,
         "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
-        "createdAt": "2026-10-11T21:22:07.041Z"
+        "createdAt": "2026-10-11T21:22:37.362Z"
       },
       {
-        "id": "msg-prod-1791753727042",
+        "id": "msg-prod-1791753757363",
         "ticketId": "tck-1791738033346",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Pipeline de Produção Vercel",
         "senderRole": "agent",
         "isInternalNote": false,
         "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Dr. Eduardo Magalhães Neurologista (Neuro)). Acompanhe o progresso da compilação e verificação de deploy...",
-        "createdAt": "2026-10-11T21:22:07.041Z"
+        "createdAt": "2026-10-11T21:22:37.362Z"
       }
     ],
     "createdAt": "2026-10-11T17:00:33.346Z",
-    "updatedAt": "2026-10-11T21:22:07.041Z",
+    "updatedAt": "2026-10-11T21:22:37.362Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 0,
     "progressStep": "⚡ Entrada em Produção autorizada. Robô autônomo aguardando execução..."
