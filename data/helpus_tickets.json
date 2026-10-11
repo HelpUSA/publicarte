@@ -122,7 +122,7 @@
     "description": "Pagina continua logada mesmo após varias horas. Seria interessante configurar um tempo máximo para permanecer logado. ",
     "category": "support",
     "priority": "medium",
-    "status": "in_production",
+    "status": "resolved",
     "createdByEmail": "eduardojcmagalhaes@gmail.com",
     "createdByName": "Eduardo Magalhães (Neuro)",
     "contextData": {
@@ -163,13 +163,53 @@
         "isInternalNote": false,
         "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Dr. Eduardo Magalhães Neurologista (Neuro)). Acompanhe o progresso da compilação e verificação de deploy...",
         "createdAt": "2026-10-11T17:02:55.062Z"
+      },
+      {
+        "id": "msg-prg-1791755156181",
+        "ticketId": "tck-1791737759841",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 25%]*: 📥 Identificado que a expiração de sessão dependia de recarregamento da página, sem monitoramento ativo contínuo enquanto a aba permanecia aberta por várias horas...",
+        "createdAt": "2026-10-11T21:45:26.181Z"
+      },
+      {
+        "id": "msg-prg-1791755156182",
+        "ticketId": "tck-1791737759841",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 50%]*: 🛠️ Desenvolvido watchdog ativo de inatividade em segundo plano (intervalo de 10s), detecção de retorno à aba (visibilitychange) e renovação por eventos de mouse/teclado...",
+        "createdAt": "2026-10-11T21:45:36.181Z"
+      },
+      {
+        "id": "msg-prg-1791755156183",
+        "ticketId": "tck-1791737759841",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[PROGRESSO 75%]*: 📦 Compilação do projeto neuro.eduardomagalhaes e publicação do novo sistema de segurança na Vercel Cloud, com badge visual de proteção ativa...",
+        "createdAt": "2026-10-11T21:45:46.181Z"
+      },
+      {
+        "id": "msg-res-1791755156184",
+        "ticketId": "tck-1791737759841",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A solicitação [NEU-118] sobre tempo máximo de permanência logado foi atendida e implantada com sucesso! O sistema agora monitora ativamente a inatividade em tempo real e encerra a sessão com limpeza de credenciais caso o usuário fique 30 minutos sem interagir, mesmo com a aba aberta em segundo plano.",
+        "createdAt": "2026-10-11T21:45:56.180Z"
       }
     ],
     "createdAt": "2026-10-11T16:55:59.841Z",
-    "updatedAt": "2026-10-11T17:02:55.062Z",
-    "assignedTo": "Eduardo Magalhães (Neuro)",
-    "progressPercentage": 0,
-    "progressStep": "⚡ Entrada em Produção autorizada. Robô autônomo aguardando execução..."
+    "updatedAt": "2026-10-11T21:45:56.180Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressPercentage": 100,
+    "progressStep": "✅ Concluído e enviado para produção com sucesso!"
   },
   {
     "id": "tck-1791487904480",
