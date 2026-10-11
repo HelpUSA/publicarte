@@ -1,5 +1,40 @@
 [
   {
+    "id": "tck-1791737759841",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-118",
+    "title": "acesso seguro",
+    "description": "Pagina continua logada mesmo após varias horas. Seria interessante configurar um tempo máximo para permanecer logado. ",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1791737759841",
+        "ticketId": "tck-1791737759841",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Pagina continua logada mesmo após varias horas. Seria interessante configurar um tempo máximo para permanecer logado. ",
+        "attachments": [],
+        "createdAt": "2026-10-11T16:55:59.841Z"
+      }
+    ],
+    "createdAt": "2026-10-11T16:55:59.841Z",
+    "updatedAt": "2026-10-11T16:55:59.841Z"
+  },
+  {
     "id": "tck-1791487904480",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
