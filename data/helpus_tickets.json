@@ -8,8 +8,8 @@
     "description": "Solicitação para remoção dos textos circulares com badges de CRM fictícios (CRM/SP, CRM/RJ, CRM/PR) na seção de depoimentos da aplicação AIDoctor (aidoctor.helpusbr.com), adequando a página às normas de publicidade médica do CFM.",
     "category": "feature",
     "priority": "high",
-    "status": "pending_approval",
-    "progressPercentage": 0,
+    "status": "in_production",
+    "progressPercentage": 25,
     "assignedTo": "HelpUS Master SuperAdmin",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "SuperAdmin HelpUS",
@@ -40,10 +40,21 @@
         "content": "Retire o texto circulado na imagem em anexo dos depoimentos para adequação CFM.",
         "attachments": [],
         "createdAt": "2026-10-25T17:30:00.000Z"
+      },
+      {
+        "id": "msg-prog-1793054741908",
+        "ticketId": "tck-1792960000000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "? *[PROGRESSO REAL 25%]*: Requisitos validados com sucesso para AIDoctor (aidoctor.helpusbr.com). Secao de depoimentos mapeada para remocao de mencoes irregulares a CRM.",
+        "createdAt": "2026-10-26T22:45:41Z"
       }
     ],
     "createdAt": "2026-10-25T17:30:00.000Z",
-    "updatedAt": "2026-10-26T19:50:00.000Z"
+    "updatedAt": "2026-10-26T22:45:41Z",
+    "progressStep": "Fase 1/4 (25%): Analise tecnica e auditoria de conformidade CFM concluida."
   },
   {
     "id": "tck-1793043251703",
