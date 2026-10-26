@@ -52,45 +52,9 @@
         "createdAt": "2026-10-26T22:45:41Z"
       }
     ],
-    "createdAt": "2026-10-25T17:30:00.000Z",
-    "updatedAt": "2026-10-26T22:45:41Z",
-    "progressStep": "Fase 1/4 (25%): Analise tecnica e auditoria de conformidade CFM concluida."
-  },
-  {
-    "id": "tck-1793043251703",
-    "tenantId": "aidoctor",
-    "tenantName": "AIDoctor",
-    "code": "AID-102",
-    "title": "Inclusão de badge de versão v1.2.0 no rodapé (Teste HelpUS)",
-    "description": "Solicitação para inclusão de badge informativo de versão 'v1.2.0 - HelpUS Verified' no rodapé da página principal do AIDoctor (aidoctor.helpusbr.com), demonstrando a esteira ponta a ponta com aprovação Master.",
-    "category": "support",
-    "priority": "medium",
-    "status": "pending_approval",
-    "assignedTo": "HelpUS Master SuperAdmin",
-    "createdByEmail": "helpus.ecommerce@gmail.com",
-    "createdByName": "HelpUS Master SuperAdmin",
-    "contextData": {
-      "url": "https://aidoctor.helpusbr.com",
-      "userEmail": "helpus.ecommerce@gmail.com",
-      "userName": "HelpUS Master SuperAdmin",
-      "os": "Windows 11 (Chrome 128)"
-    },
-    "attachments": [],
-    "messages": [
-      {
-        "id": "msg-1793043251703",
-        "ticketId": "tck-1793043251703",
-        "senderId": "helpus.ecommerce@gmail.com",
-        "senderName": "HelpUS Master SuperAdmin",
-        "senderRole": "client",
-        "isInternalNote": false,
-        "content": "Solicitação para inclusão de badge informativo de versão 'v1.2.0 - HelpUS Verified' no rodapé do AIDoctor (aidoctor.helpusbr.com), demonstrando a esteira ponta a ponta com aprovação Master.",
-        "attachments": [],
-        "createdAt": "2026-10-26T19:34:11.703652+00:00"
-      }
-    ],
-    "createdAt": "2026-10-26T19:34:11.703652+00:00",
-    "updatedAt": "2026-10-26T19:34:11.703652+00:00"
+    "createdAt": "2026-10-26T20:50:00.000Z",
+    "updatedAt": "2026-10-26T20:50:00.000Z",
+    "progressStep": "Fase 1/4 (25%): Análise técnica e auditoria de conformidade CFM concluída."
   },
   {
     "id": "tck-1791240000000",
