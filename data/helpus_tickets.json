@@ -1,5 +1,51 @@
 [
   {
+    "id": "tck-1792960000000",
+    "tenantId": "aidoctor",
+    "tenantName": "AIDoctor",
+    "code": "AID-101",
+    "title": "Retire o texto circulado na imagem em anexo",
+    "description": "Solicitação para remoção dos textos circulares com badges de CRM fictícios (CRM/SP, CRM/RJ, CRM/PR) na seção de depoimentos da aplicação AIDoctor (aidoctor.helpusbr.com), adequando a página às normas de publicidade médica do CFM.",
+    "category": "feature",
+    "priority": "high",
+    "status": "pending_approval",
+    "progressPercentage": 0,
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "SuperAdmin HelpUS",
+    "contextData": {
+      "url": "https://aidoctor.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "SuperAdmin HelpUS",
+      "os": "Mobile Android / Chrome",
+      "screen": "472x1024"
+    },
+    "attachments": [
+      {
+        "id": "att-aid-01",
+        "name": "screenshot_crm_circulado.png",
+        "url": "/uploads/screenshot_crm_circulado.png",
+        "type": "image/png",
+        "size": 142000
+      }
+    ],
+    "messages": [
+      {
+        "id": "msg-aid-001",
+        "ticketId": "tck-1792960000000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "SuperAdmin HelpUS",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Retire o texto circulado na imagem em anexo dos depoimentos para adequação CFM.",
+        "attachments": [],
+        "createdAt": "2026-10-25T17:30:00.000Z"
+      }
+    ],
+    "createdAt": "2026-10-25T17:30:00.000Z",
+    "updatedAt": "2026-10-26T19:50:00.000Z"
+  },
+  {
     "id": "tck-1793043251703",
     "tenantId": "aidoctor",
     "tenantName": "AIDoctor",
