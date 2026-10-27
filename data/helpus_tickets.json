@@ -1,5 +1,43 @@
 [
   {
+    "id": "tck-1793064298714",
+    "tenantId": "aidoctor",
+    "tenantName": "AIDoctor",
+    "code": "AID-103",
+    "title": "Inclusão de selo informativo '✓ HelpUS Verified 2026' no rodapé",
+    "description": "Solicitação para inclusão de selo visual de autenticidade e segurança ('✓ HelpUS Verified 2026') no rodapé da página inicial da aplicação AIDoctor (aidoctor.helpusbr.com), demonstrando a esteira ponta a ponta com homologação técnica.",
+    "category": "feature",
+    "priority": "medium",
+    "status": "pending_approval",
+    "progressPercentage": 0,
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "SuperAdmin HelpUS",
+    "contextData": {
+      "url": "https://aidoctor.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "SuperAdmin HelpUS",
+      "os": "Windows 11 (Chrome 128)",
+      "screen": "1920x1080"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1793064298714",
+        "ticketId": "tck-1793064298714",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "SuperAdmin HelpUS",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Olá equipe HelpUS! Gostaria de incluir um selo informativo discreto '✓ HelpUS Verified 2026' no rodapé do AIDoctor, ao lado do logo de desenvolvimento.",
+        "attachments": [],
+        "createdAt": "2026-10-27T01:24:58Z"
+      }
+    ],
+    "createdAt": "2026-10-27T01:24:58Z",
+    "updatedAt": "2026-10-27T01:24:58Z"
+  },
+  {
     "id": "tck-1792960000000",
     "tenantId": "aidoctor",
     "tenantName": "AIDoctor",
