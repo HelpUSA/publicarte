@@ -16,7 +16,7 @@
     "assignedTo": "HelpUS Master SuperAdmin",
     "assignedToName": "IA Autônoma (HelpUS Tech)",
     "createdAt": "2026-10-27T13:19:23Z",
-    "updatedAt": "2026-10-27T14:05:06Z",
+    "updatedAt": "2026-10-27T14:06:06.329Z",
     "attachments": [],
     "contextData": {
       "applicationUrl": "https://aidoctor.helpusbr.com",
@@ -44,6 +44,16 @@
         "isInternalNote": false,
         "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada.",
         "createdAt": "2026-10-27T14:04:56Z"
+      },
+      {
+        "id": "msg-prog-1793109906508",
+        "ticketId": "tck-1793107163020",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
+        "createdAt": "2026-10-27T14:05:06Z"
       },
       {
         "id": "msg-app-1793109948939",
@@ -76,14 +86,14 @@
         "createdAt": "2026-10-27T14:05:55.760Z"
       },
       {
-        "id": "msg-prog-1793109906508",
+        "id": "msg-prg-1793109966329",
         "ticketId": "tck-1793107163020",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
-        "createdAt": "2026-10-27T14:05:06Z"
+        "content": "⚡ *[PROGRESSO 50%]*: ⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
+        "createdAt": "2026-10-27T14:06:06.329Z"
       }
     ],
     "events": [
@@ -116,6 +126,20 @@
         "timestamp": "2026-10-27T14:05:55.760Z",
         "seq": 2,
         "signature": "6b2ee77c2e5a443d208ad1b2ad049a3404c6c77dbff87499fa0629b8a8277778"
+      },
+      {
+        "id": "evt-prg-1793109966329-50",
+        "ticketId": "tck-1793107163020",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
+        "timestamp": "2026-10-27T14:06:06.329Z",
+        "seq": 3,
+        "signature": "7af4770a60621f7a08897e2eecd87db4d74b24661526453d019fbe7dd0d94068"
       }
     ]
   },
