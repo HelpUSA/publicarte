@@ -49,6 +49,16 @@
         "createdAt": "2026-10-27T14:45:06Z"
       },
       {
+        "id": "msg-prog-1793112316957",
+        "ticketId": "tck-1793112038283",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "createdAt": "2026-10-27T14:45:16Z"
+      },
+      {
         "id": "msg-app-1793112347846",
         "ticketId": "tck-1793112038283",
         "senderId": "helpus-master",
@@ -89,18 +99,18 @@
         "createdAt": "2026-10-27T14:46:06.324Z"
       },
       {
-        "id": "msg-prog-1793112316957",
+        "id": "msg-prg-1793112376702",
         "ticketId": "tck-1793112038283",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
-        "createdAt": "2026-10-27T14:45:16Z"
+        "content": "⚡ *[PROGRESSO 75%]*: 📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "createdAt": "2026-10-27T14:46:16.702Z"
       }
     ],
     "createdAt": "2026-10-27T14:40:38.283Z",
-    "updatedAt": "2026-10-27T14:45:16Z",
+    "updatedAt": "2026-10-27T14:46:16.702Z",
     "events": [
       {
         "id": "evt-create-1793112038283",
@@ -159,6 +169,20 @@
         "timestamp": "2026-10-27T14:46:06.324Z",
         "seq": 4,
         "signature": "490cb284bb036f8c88bafda505ccde29908be53f797f3025236e207c14ad68ba"
+      },
+      {
+        "id": "evt-prg-1793112376702-75",
+        "ticketId": "tck-1793112038283",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 75,
+        "status": "in_production",
+        "note": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "timestamp": "2026-10-27T14:46:16.702Z",
+        "seq": 5,
+        "signature": "9b8987f8ab59d200d55025cd57ffc6420a3a43aab38e002d698a3673696bc844"
       }
     ],
     "progressPercentage": 75,
