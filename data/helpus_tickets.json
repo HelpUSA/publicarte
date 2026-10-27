@@ -8,7 +8,7 @@
     "description": "Solicitação para inserção de um indicador visual discreto '● ONLINE' ao lado da logomarca no cabeçalho superior (header) da aplicação AIDoctor (aidoctor.helpusbr.com), demonstrando a integridade da esteira de aprovação autônoma e validação de layout.",
     "category": "frontend",
     "priority": "medium",
-    "status": "in_production",
+    "status": "resolved",
     "progressPercentage": 100,
     "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
     "createdByEmail": "helpus.ecommerce@gmail.com",
@@ -16,7 +16,7 @@
     "assignedTo": "HelpUS Master SuperAdmin",
     "assignedToName": "IA Autônoma (HelpUS Tech)",
     "createdAt": "2026-10-27T13:19:23Z",
-    "updatedAt": "2026-10-27T14:06:26.363Z",
+    "updatedAt": "2026-10-27T14:37:59.596Z",
     "attachments": [],
     "contextData": {
       "applicationUrl": "https://aidoctor.helpusbr.com",
@@ -134,6 +134,16 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 100%]*: ✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
         "createdAt": "2026-10-27T14:06:26.363Z"
+      },
+      {
+        "id": "msg-res-1793111879596",
+        "ticketId": "tck-1793107163020",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ Demanda atendida e homologada com sucesso.",
+        "createdAt": "2026-10-27T14:37:59.596Z"
       }
     ],
     "events": [
@@ -208,6 +218,20 @@
         "timestamp": "2026-10-27T14:06:26.363Z",
         "seq": 5,
         "signature": "f2d3159577c2d25104accbf382500eaf45dfdd3ba6fb7ba3cf849aa4bbad62d4"
+      },
+      {
+        "id": "evt-res-1793111879596",
+        "ticketId": "tck-1793107163020",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ Demanda atendida e homologada com sucesso.",
+        "timestamp": "2026-10-27T14:37:59.596Z",
+        "seq": 6,
+        "signature": "844c0b6669be2e57c758111af04994d3992b70cd69189983884aa6486fad7b09"
       }
     ]
   },
