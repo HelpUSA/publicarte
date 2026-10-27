@@ -777,13 +777,23 @@
         "isInternalNote": false,
         "content": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
         "createdAt": "2026-10-27T11:41:11Z"
+      },
+      {
+        "id": "msg-prog-1793101279938",
+        "ticketId": "tck-1791199612636",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "createdAt": "2026-10-27T11:41:19Z"
       }
     ],
     "createdAt": "2026-10-05T11:26:52.637Z",
-    "updatedAt": "2026-10-27T11:41:11Z",
+    "updatedAt": "2026-10-27T11:41:19Z",
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressPercentage": 50,
-    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso."
+    "progressPercentage": 75,
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados."
   },
   {
     "id": "tck-1791165624473",
