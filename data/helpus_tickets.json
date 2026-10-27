@@ -1,5 +1,54 @@
 [
   {
+    "id": "tck-1793112038283",
+    "tenantId": "aidoctor",
+    "tenantName": "AIDoctor",
+    "code": "AID-121",
+    "title": "Inserir badge de status '● ONLINE' no cabeçalho superior do AIDoctor",
+    "description": "Inserção do componente visual indicador de status '● ONLINE' com background translúcido e borda esmeralda no cabeçalho superior (Header) da aplicação AIDoctor (aidoctor.helpusbr.com), posicionado imediatamente após o logotipo principal.",
+    "category": "feature",
+    "priority": "high",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "SuperAdmin HelpUS",
+    "contextData": {
+      "url": "https://aidoctor.helpusbr.com",
+      "applicationUrl": "https://aidoctor.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "SuperAdmin HelpUS"
+    },
+    "messages": [
+      {
+        "id": "msg-1793112038283",
+        "ticketId": "tck-1793112038283",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "SuperAdmin HelpUS",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Inserção do componente visual indicador de status '● ONLINE' com background translúcido e borda esmeralda no cabeçalho superior (Header) da aplicação AIDoctor (aidoctor.helpusbr.com), posicionado imediatamente após o logotipo principal.",
+        "createdAt": "2026-10-27T14:40:38.283Z"
+      }
+    ],
+    "createdAt": "2026-10-27T14:40:38.283Z",
+    "updatedAt": "2026-10-27T14:40:38.283Z",
+    "events": [
+      {
+        "id": "evt-create-1793112038283",
+        "ticketId": "tck-1793112038283",
+        "type": "ticket_created",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Inserir badge de status '● ONLINE' no cabeçalho superior do AIDoctor",
+        "timestamp": "2026-10-27T14:40:38.283Z",
+        "seq": 1,
+        "signature": "a9e4ad86b5896cecd9a0c3402a1273250fd87dea640f1938df62e378daef9f40"
+      }
+    ]
+  },
+  {
     "id": "tck-1793107163020",
     "code": "AID-105",
     "tenantId": "aidoctor",
@@ -444,7 +493,7 @@
     "category": "feature",
     "priority": "high",
     "status": "resolved",
-    "progressPercentage": 0,
+    "progressPercentage": 100,
     "assignedTo": "HelpUS Master SuperAdmin",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "SuperAdmin HelpUS",
