@@ -39,6 +39,16 @@
         "createdAt": "2026-10-27T20:58:16Z"
       },
       {
+        "id": "msg-prog-1793134714485",
+        "ticketId": "tck-1793133936596",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
+        "createdAt": "2026-10-27T20:58:34Z"
+      },
+      {
         "id": "msg-app-1793134747127",
         "ticketId": "tck-1793133936596",
         "senderId": "helpus-master",
@@ -69,18 +79,18 @@
         "createdAt": "2026-10-27T20:59:16.143Z"
       },
       {
-        "id": "msg-prog-1793134714485",
+        "id": "msg-prg-1793134773802",
         "ticketId": "tck-1793133936596",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
-        "createdAt": "2026-10-27T20:58:34Z"
+        "content": "⚡ *[PROGRESSO 50%]*: ⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
+        "createdAt": "2026-10-27T20:59:33.802Z"
       }
     ],
     "createdAt": "2026-10-27T20:45:36.596Z",
-    "updatedAt": "2026-10-27T20:58:34Z",
+    "updatedAt": "2026-10-27T20:59:33.802Z",
     "events": [
       {
         "id": "evt-create-1793133936596",
@@ -125,6 +135,20 @@
         "timestamp": "2026-10-27T20:59:16.143Z",
         "seq": 3,
         "signature": "432d15e333c7e99a88fe78d901444ba8e686e046ee330d1bcb2b1eb9ff3b8d50"
+      },
+      {
+        "id": "evt-prg-1793134773802-50",
+        "ticketId": "tck-1793133936596",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
+        "timestamp": "2026-10-27T20:59:33.802Z",
+        "seq": 4,
+        "signature": "1968e458b73d4ddbebd8592807db63d4173c9b473d9746816dda4cd236300960"
       }
     ],
     "progressPercentage": 50,
