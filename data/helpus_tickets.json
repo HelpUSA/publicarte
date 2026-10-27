@@ -16,7 +16,7 @@
     "assignedTo": "HelpUS Master SuperAdmin",
     "assignedToName": "IA Autônoma (HelpUS Tech)",
     "createdAt": "2026-10-27T13:19:23Z",
-    "updatedAt": "2026-10-27T14:05:16Z",
+    "updatedAt": "2026-10-27T14:06:16.437Z",
     "attachments": [],
     "contextData": {
       "applicationUrl": "https://aidoctor.helpusbr.com",
@@ -54,6 +54,16 @@
         "isInternalNote": false,
         "content": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
         "createdAt": "2026-10-27T14:05:06Z"
+      },
+      {
+        "id": "msg-prog-1793109916825",
+        "ticketId": "tck-1793107163020",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "createdAt": "2026-10-27T14:05:16Z"
       },
       {
         "id": "msg-app-1793109948939",
@@ -96,14 +106,14 @@
         "createdAt": "2026-10-27T14:06:06.329Z"
       },
       {
-        "id": "msg-prog-1793109916825",
+        "id": "msg-prg-1793109976437",
         "ticketId": "tck-1793107163020",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
-        "createdAt": "2026-10-27T14:05:16Z"
+        "content": "⚡ *[PROGRESSO 75%]*: 📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "createdAt": "2026-10-27T14:06:16.437Z"
       }
     ],
     "events": [
@@ -150,6 +160,20 @@
         "timestamp": "2026-10-27T14:06:06.329Z",
         "seq": 3,
         "signature": "7af4770a60621f7a08897e2eecd87db4d74b24661526453d019fbe7dd0d94068"
+      },
+      {
+        "id": "evt-prg-1793109976437-75",
+        "ticketId": "tck-1793107163020",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 75,
+        "status": "in_production",
+        "note": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "timestamp": "2026-10-27T14:06:16.437Z",
+        "seq": 4,
+        "signature": "06c09963bcf266b5d4248ae943c152b5fb48c9e0d665d05c98caf8e7d87ee176"
       }
     ]
   },
