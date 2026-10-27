@@ -8,15 +8,15 @@
     "description": "Solicitação para inserção de um indicador visual discreto '● ONLINE' ao lado da logomarca no cabeçalho superior (header) da aplicação AIDoctor (aidoctor.helpusbr.com), demonstrando a integridade da esteira de aprovação autônoma e validação de layout.",
     "category": "frontend",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "progressPercentage": 0,
-    "progressStep": "Aguardando Autorização Master SuperAdmin para início do atendimento.",
+    "progressStep": "Aprovação registrada. Aguardando confirmação de início pelo operador local.",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "SuperAdmin HelpUS",
-    "assignedTo": "ia.engine@helpusbr.com",
+    "assignedTo": "HelpUS Master SuperAdmin",
     "assignedToName": "IA Autônoma (HelpUS Tech)",
     "createdAt": "2026-10-27T13:19:23Z",
-    "updatedAt": "2026-10-27T13:19:23Z",
+    "updatedAt": "2026-10-27T14:05:48.939Z",
     "attachments": [],
     "contextData": {
       "applicationUrl": "https://aidoctor.helpusbr.com",
@@ -34,6 +34,44 @@
         "content": "Olá equipe HelpUS! Gostaria de incluir o badge oficial '● ONLINE' no cabeçalho superior da plataforma AIDoctor.",
         "attachments": [],
         "createdAt": "2026-10-27T13:19:23Z"
+      },
+      {
+        "id": "msg-app-1793109948939",
+        "ticketId": "tck-1793107163020",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin). A execução ainda não foi iniciada.",
+        "createdAt": "2026-10-27T14:05:48.939Z"
+      },
+      {
+        "id": "msg-prod-1793109948940",
+        "ticketId": "tck-1793107163020",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🕒 *[APROVAÇÃO REGISTRADA]*: Chamado autorizado e aguardando despacho controlado para execução local (AIDoctor). Nenhum build ou deploy é iniciado automaticamente pela aprovação.",
+        "createdAt": "2026-10-27T14:05:48.939Z"
+      }
+    ],
+    "events": [
+      {
+        "id": "evt-appr-9033e705-77c4-44f7-8b48-0a4e8bdb7b6e",
+        "ticketId": "tck-1793107163020",
+        "tenantId": "aidoctor",
+        "idempotencyKey": "helpus-approval-outbox-v1:tck-1793107163020:evt-appr-9033e705-77c4-44f7-8b48-0a4e8bdb7b6e",
+        "type": "master_approved",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "in_production",
+        "note": "Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin); aguardando despacho de execução.",
+        "timestamp": "2026-10-27T14:05:48.939Z",
+        "seq": 1,
+        "signature": "3b6a057b3d252f2935ae0ad2eb1f1247675b8bf2b6708a56b2c5c1468e7ced2c"
       }
     ]
   },
@@ -71,26 +109,6 @@
         "content": "Olá equipe HelpUS! Gostaria de incluir um badge sutil '● ONLINE' no cabeçalho do AIDoctor ao lado do nome da aplicação.",
         "attachments": [],
         "createdAt": "2026-10-27T02:26:06Z"
-      },
-      {
-        "id": "msg-app-1793105994601",
-        "ticketId": "tck-1793067966159",
-        "senderId": "helpus-master",
-        "senderName": "HelpUS Master SuperAdmin",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
-        "createdAt": "2026-10-27T12:59:54.601Z"
-      },
-      {
-        "id": "msg-prod-1793105994602",
-        "ticketId": "tck-1793067966159",
-        "senderId": "ci.cd@helpusbr.com",
-        "senderName": "Pipeline de Produção Vercel",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (AIDoctor). Acompanhe o progresso da compilação e verificação de deploy...",
-        "createdAt": "2026-10-27T12:59:54.601Z"
       },
       {
         "id": "msg-prog-1793105943660",
@@ -133,6 +151,26 @@
         "createdAt": "2026-10-27T12:59:34Z"
       },
       {
+        "id": "msg-app-1793105994601",
+        "ticketId": "tck-1793067966159",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-10-27T12:59:54.601Z"
+      },
+      {
+        "id": "msg-prod-1793105994602",
+        "ticketId": "tck-1793067966159",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (AIDoctor). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-27T12:59:54.601Z"
+      },
+      {
         "id": "msg-1793106056816",
         "ticketId": "tck-1793067966159",
         "senderId": "helpus.ecommerce@gmail.com",
@@ -143,7 +181,8 @@
         "createdAt": "2026-10-27T13:00:56.816Z"
       }
     ],
-    "tenantName": "AIDoctor"
+    "tenantName": "AIDoctor",
+    "events": []
   },
   {
     "id": "tck-1793064298714",
@@ -232,7 +271,8 @@
     ],
     "createdAt": "2026-10-27T01:24:58Z",
     "updatedAt": "2026-10-27T02:05:00Z",
-    "progressStep": "Fase 5/5: Chamado homologado, validado e encerrado pelo SuperAdmin."
+    "progressStep": "Fase 5/5: Chamado homologado, validado e encerrado pelo SuperAdmin.",
+    "events": []
   },
   {
     "id": "tck-1792960000000",
@@ -243,8 +283,8 @@
     "description": "Solicitação para remoção dos textos circulares com badges de CRM fictícios (CRM/SP, CRM/RJ, CRM/PR) na seção de depoimentos da aplicação AIDoctor (aidoctor.helpusbr.com), adequando a página às normas de publicidade médica do CFM.",
     "category": "feature",
     "priority": "high",
-    "status": "closed",
-    "progressPercentage": 100,
+    "status": "pending_approval",
+    "progressPercentage": 0,
     "assignedTo": "HelpUS Master SuperAdmin",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "SuperAdmin HelpUS",
@@ -275,6 +315,56 @@
         "content": "Retire o texto circulado na imagem em anexo dos depoimentos para adequação CFM.",
         "attachments": [],
         "createdAt": "2026-10-25T17:30:00.000Z"
+      },
+      {
+        "id": "msg-aid-001",
+        "ticketId": "tck-1792960000000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "SuperAdmin HelpUS",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Retire o texto circulado na imagem em anexo (CRM/SP no card de depoimentos de médicos).",
+        "createdAt": "2026-10-25T17:30:00.000Z"
+      },
+      {
+        "id": "msg-aid-002",
+        "ticketId": "tck-1792960000000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-10-25T17:34:00.000Z"
+      },
+      {
+        "id": "msg-aid-003",
+        "ticketId": "tck-1792960000000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (AIDoctor). Compilação e deploy concluídos.",
+        "createdAt": "2026-10-25T17:34:05.000Z"
+      },
+      {
+        "id": "msg-aid-004",
+        "ticketId": "tck-1792960000000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: O texto circulado 'CRM/SP' e os placeholders 'CRM/RJ' e 'CRM/PR' foram completamente removidos dos cards de depoimentos da página https://aidoctor.helpusbr.com. Em seu lugar, foram inseridos ícones vetoriais neutros em SVG estilizados em dourado (#D4AF37), garantindo 100% de conformidade com a Resolução CFM nº 2.336/2023 de Publicidade Médica. Deploy realizado em produção na Vercel com sucesso.",
+        "createdAt": "2026-10-25T17:53:00.000Z"
+      },
+      {
+        "id": "msg-aid-005",
+        "ticketId": "tck-1792960000000",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "🔄 *Chamado Reaberto pelo Cliente (HelpUS Master SuperAdmin)*\n\nMotivo da Reabertura: a mensagem ainda continua.\n\n*Aguardando Nova Aprovação Master para Envio a Produção.*",
+        "createdAt": "2026-10-25T19:25:00.000Z"
       },
       {
         "id": "msg-prog-1793054741908",
@@ -329,7 +419,75 @@
     ],
     "createdAt": "2026-10-26T20:50:00.000Z",
     "updatedAt": "2026-10-27T00:55:26Z",
-    "progressStep": "Chamado validado, encerrado e arquivado com sucesso."
+    "progressStep": "Chamado validado, encerrado e arquivado com sucesso.",
+    "events": [
+      {
+        "id": "evt-aid-001",
+        "ticketId": "tck-1792960000000",
+        "type": "ticket_created",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Retire o texto circulado na imagem em anexo",
+        "timestamp": "2026-10-25T17:30:00.000Z",
+        "signature": "c283e30ec8b513a97fc2bf6394ea3c3caa17e7a31e0fd1e4d80b066a8086e559"
+      },
+      {
+        "id": "evt-aid-002",
+        "ticketId": "tck-1792960000000",
+        "type": "master_approved",
+        "actorEmail": "master.superadmin@helpusbr.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "in_production",
+        "note": "Aprovação Concedida pelo Administrador HelpUS",
+        "timestamp": "2026-10-25T17:34:00.000Z",
+        "signature": "d906aec36dfdd945a1fef49094e1cfbb24f7f2b3943aef1daff6b55e4d6de2da"
+      },
+      {
+        "id": "evt-aid-003",
+        "ticketId": "tck-1792960000000",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 75,
+        "status": "in_production",
+        "note": "Deploy acionado na Vercel",
+        "timestamp": "2026-10-25T17:34:05.000Z",
+        "signature": "612e60f2d4aaa9a981f830dbb45336a970913750cb1cb6f92eb217317f13c1a0"
+      },
+      {
+        "id": "evt-aid-004",
+        "ticketId": "tck-1792960000000",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "Deploy realizado em produção na Vercel com sucesso",
+        "timestamp": "2026-10-25T17:53:00.000Z",
+        "signature": "1c098f42abb9aec3f13c6ec8adfaf29c615bf12ca78eaf382008450cd67c5f15"
+      },
+      {
+        "id": "evt-aid-005",
+        "ticketId": "tck-1792960000000",
+        "type": "ticket_reopened_by_client",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "a mensagem ainda continua.",
+        "timestamp": "2026-10-25T19:25:00.000Z",
+        "signature": "d5a2a0d1e5dc4af924e4b89227171b7202e1e4570646bc725fcea5f146a2dfb4"
+      }
+    ],
+    "reopenedAt": "2026-10-25T19:25:00.000Z"
   },
   {
     "id": "tck-1791240000000",
@@ -337,7 +495,7 @@
     "tenantName": "USMLE Prep Suite",
     "code": "USM-120",
     "title": "Falha de Login Google (Invalid sessionId) e Travamento dos Baralhos de Flashcards",
-    "description": "A usuária Maryana Chaves reportou 3 problemas críticos através de áudios e capturas de tela no USMLE Prep Suite (usmle.helpusbr.com):\n1. Falha no Login Google: Exibição do erro 'Error: sessionId: Invalid sessionId' ao autenticar com a conta Google autorizada, impedindo o acesso à plataforma.\n2. Botão de Flashcards sem avançar: Na tela de revisão de flashcards, ao clicar no botão '+3 dias' (revisão espaçada / bom), o botão registra o clique mas o cartão não avança para o próximo, travando a sessão.\n3. Repetição de cartões entre baralhos: Ao selecionar baralhos diferentes de especialidades (ex: Farmacologia, Cardiologia, etc.), os cartões apresentados são os mesmos em todas as matérias.\nReferência enviada: Captura do aplicativo Thea AI no iPad, modelo de referência utilizado pela aluna para estudos de repetição espaçada no USMLE Step 1.",
+    "description": "A usuária Maryana Chaves reportou 3 problemas críticos através de áudios e capturas de tela no USMLE Prep Suite (usmle.helpusbr.com): 1) Falha no Login Google com erro 'sessionId: Invalid sessionId'; 2) Botão '+3 dias' dos Flashcards não avança o cartão; 3) Baralhos diferentes exibindo os mesmos cards repetidos.",
     "category": "bug",
     "priority": "urgent",
     "status": "resolved",
@@ -395,6 +553,32 @@
         "createdAt": "2026-10-11T21:46:57.000Z"
       },
       {
+        "id": "msg-1791240000001",
+        "ticketId": "tck-1791240000000",
+        "senderId": "marychavesmcp@gmail.com",
+        "senderName": "Maryana Chaves",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Olá equipe HelpUS! Estou com problemas no login Google (Invalid sessionId), os botões dos flashcards (+3 dias) não avançam e todos os baralhos estão com as mesmas perguntas repetidas. Seguem prints do erro e do app Thea AI no meu iPad.",
+        "attachments": [
+          {
+            "id": "att-usmle-01",
+            "name": "WhatsApp Image - Erro sessionId no Login Google.jpeg",
+            "url": "/uploads/maryana_login_error_sessionid.jpeg",
+            "type": "image/jpeg",
+            "size": 68117
+          },
+          {
+            "id": "att-usmle-02",
+            "name": "WhatsApp Image - Referência Thea AI Flashcards iPad.jpeg",
+            "url": "/uploads/maryana_ipad_thea_ai.jpeg",
+            "type": "image/jpeg",
+            "size": 109169
+          }
+        ],
+        "createdAt": "2026-10-11T21:46:57.000Z"
+      },
+      {
         "id": "msg-1791240000002",
         "ticketId": "tck-1791240000000",
         "senderId": "helpus-master",
@@ -402,6 +586,16 @@
         "senderRole": "agent",
         "isInternalNote": false,
         "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...\n\n📝 *[INSTRUÇÕES ADICIONAIS DA GESTÃO]*:\nChamado prioritário da aluna Maryana Chaves para o ambiente USMLE Prep Suite (usmle.helpusbr.com).\n1. Corrigir a camada de conexão com o banco de dados em `src/lib/db.ts` com lazy loading resiliente contra ausência transitória de `DATABASE_URL`.\n2. Tornar flexíveis os schemas Zod de `sessionId` em todas as rotas de sessão (`/api/sessions/...`) para aceitar strings alfanuméricas com geração automática de UUID de fallback (`crypto.randomUUID()`).\n3. Corrigir o schema da API de revisão de flashcards (`/api/flashcards/review/route.ts`) para aceitar IDs de cards textuais.\n4. Implementar transição otimista instantânea no componente de flashcards (`src/app/flashcards/session/page.tsx`) para avançar o card no momento do clique (inclusive no botão '+3 dias').\n5. Criar e disponibilizar 5 baralhos completos de alto rendimento cobrindo Farmacologia, Cardiologia, Nutrição 2026, Endocrinologia e Rapid Recall.\n6. Publicar em produção na Vercel e validar integridade.",
+        "createdAt": "2026-10-11T21:55:00.000Z"
+      },
+      {
+        "id": "msg-1791240000002",
+        "ticketId": "tck-1791240000000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção com lazy pool PostgreSQL, schemas abertos de sessionId, avanço otimista dos flashcards e 5 baralhos High-Yield.",
         "createdAt": "2026-10-11T21:55:00.000Z"
       },
       {
@@ -443,13 +637,24 @@
         "isInternalNote": false,
         "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Chamado USM-120 homologado e implantado com 100% de sucesso em produção!\nTodas as pendências relatadas pela usuária Maryana Chaves foram resolvidas:\n1. Autenticação Google & Sessões: O erro 'sessionId: Invalid sessionId' foi eliminado com a nova camada de validação e UUID fallback.\n2. Botões de Repetição Espaçada: O botão '+3 dias' e todos os demais botões agora avançam instantaneamente para o próximo card com transição otimista fluida e gravação em segundo plano.\n3. Baralhos Exclusivos por Matéria: Cada especialidade carrega seus próprios flashcards especializados, com navegação responsiva otimizada para iPad e desktop.\n4. Deploy Homologado na Vercel: Aplicação ao vivo em https://usmle.helpusbr.com",
         "createdAt": "2026-10-11T22:30:00.000Z"
+      },
+      {
+        "id": "msg-1791240000006",
+        "ticketId": "tck-1791240000000",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: Chamado USM-120 homologado e implantado com sucesso na nuvel Vercel (https://usmle.helpusbr.com). Login Google regularizado, avanço instantâneo nos flashcards ativado e 5 baralhos especializados disponibilizados.",
+        "createdAt": "2026-10-11T22:30:00.000Z"
       }
     ],
-    "adminNotes": "Chamado aprovado pelo HelpUS Master SuperAdmin. Deploy executado em produção na Vercel com lazy pool no PostgreSQL, schemas de sessionId tolerantes, avanço de flashcards otimista e 5 baralhos High-Yield.",
+    "adminNotes": "Chamado prioritário homologado e executado em produção na Vercel.",
     "progressPercentage": 100,
     "progressStep": "✨ Concluído e implantado em produção na Vercel (https://usmle.helpusbr.com)",
     "createdAt": "2026-10-11T21:46:57.000Z",
-    "updatedAt": "2026-10-11T22:30:00.000Z"
+    "updatedAt": "2026-10-11T22:30:00.000Z",
+    "events": []
   },
   {
     "id": "tck-1791738033346",
@@ -563,7 +768,8 @@
     "updatedAt": "2026-10-11T21:34:16.905Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Concluído e enviado para produção com sucesso!"
+    "progressStep": "✅ Concluído e enviado para produção com sucesso!",
+    "events": []
   },
   {
     "id": "tck-1791737759841",
@@ -661,7 +867,8 @@
     "updatedAt": "2026-10-11T21:45:56.180Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Concluído e enviado para produção com sucesso!"
+    "progressStep": "✅ Concluído e enviado para produção com sucesso!",
+    "events": []
   },
   {
     "id": "tck-1791487904480",
@@ -749,7 +956,8 @@
     "updatedAt": "2026-10-08T20:16:38.685Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Concluído e enviado para produção com sucesso!"
+    "progressStep": "✅ Concluído e enviado para produção com sucesso!",
+    "events": []
   },
   {
     "id": "tck-1791232533324",
@@ -817,7 +1025,8 @@
     "updatedAt": "2026-10-05T23:36:18.604Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Concluído e enviado para produção com sucesso!"
+    "progressStep": "✅ Concluído e enviado para produção com sucesso!",
+    "events": []
   },
   {
     "id": "tck-1791199612636",
@@ -912,7 +1121,8 @@
     "updatedAt": "2026-10-27T11:41:27Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção."
+    "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
+    "events": []
   },
   {
     "id": "tck-1791165624473",
@@ -977,7 +1187,8 @@
     "updatedAt": "2026-10-05T11:19:41.942Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Concluído e enviado para produção com sucesso!"
+    "progressStep": "✅ Concluído e enviado para produção com sucesso!",
+    "events": []
   },
   {
     "id": "tck-1791161730396",
@@ -1091,7 +1302,8 @@
     "updatedAt": "2026-10-05T00:55:37.283Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional."
+    "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional.",
+    "events": []
   },
   {
     "id": "tck-1791158906919",
@@ -1205,7 +1417,8 @@
     "updatedAt": "2026-10-05T00:08:35.936Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional."
+    "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional.",
+    "events": []
   },
   {
     "id": "tck-1791147000000",
@@ -1270,7 +1483,8 @@
     "updatedAt": "2026-10-05T01:54:00.000Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Validação e simulação concluídas com sucesso em segundo plano!"
+    "progressStep": "✅ Validação e simulação concluídas com sucesso em segundo plano!",
+    "events": []
   },
   {
     "id": "tck-1791145115000",
@@ -1304,26 +1518,6 @@
         "createdAt": "2026-10-04T16:58:35.000Z"
       },
       {
-        "id": "msg-app-1791158121324",
-        "ticketId": "tck-1791145115000",
-        "senderId": "helpus-master",
-        "senderName": "HelpUS Master",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master). Autorizando envio para produção...",
-        "createdAt": "2026-10-04T23:55:21.324Z"
-      },
-      {
-        "id": "msg-prod-1791158121325",
-        "ticketId": "tck-1791145115000",
-        "senderId": "ci.cd@helpusbr.com",
-        "senderName": "Pipeline de Produção Vercel",
-        "senderRole": "agent",
-        "isInternalNote": false,
-        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Brayyan — Revisão Sistemática com IA). Acompanhe o progresso da compilação e verificação de deploy...",
-        "createdAt": "2026-10-04T23:55:21.324Z"
-      },
-      {
         "id": "msg-prg-1791158114701",
         "ticketId": "tck-1791145115000",
         "senderId": "ci.cd@helpusbr.com",
@@ -1342,6 +1536,26 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 50%]*: 🛠️ Desenvolvendo página principal, estrutura de componentes e i18n em HelpUSA/brayyan...",
         "createdAt": "2026-10-04T23:55:18.431Z"
+      },
+      {
+        "id": "msg-app-1791158121324",
+        "ticketId": "tck-1791145115000",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master). Autorizando envio para produção...",
+        "createdAt": "2026-10-04T23:55:21.324Z"
+      },
+      {
+        "id": "msg-prod-1791158121325",
+        "ticketId": "tck-1791145115000",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (Brayyan — Revisão Sistemática com IA). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-04T23:55:21.324Z"
       },
       {
         "id": "msg-prg-1791158123144",
@@ -1428,7 +1642,8 @@
     "updatedAt": "2026-10-04T23:59:41.743Z",
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressPercentage": 100,
-    "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional."
+    "progressStep": "✅ Deploy concluído na Vercel! A aplicação Brayyan — Revisão Sistemática com IA está 100% publicada e operacional.",
+    "events": []
   },
   {
     "id": "tck-1791142000000",
@@ -1516,7 +1731,8 @@
       }
     ],
     "createdAt": "2026-10-04T16:30:00.000Z",
-    "updatedAt": "2026-10-04T16:35:00.000Z"
+    "updatedAt": "2026-10-04T16:35:00.000Z",
+    "events": []
   },
   {
     "id": "tck-1791141383000",
@@ -1594,7 +1810,8 @@
       }
     ],
     "createdAt": "2026-10-04T16:16:23.000Z",
-    "updatedAt": "2026-10-04T16:25:00.000Z"
+    "updatedAt": "2026-10-04T16:25:00.000Z",
+    "events": []
   },
   {
     "id": "tck-1791048000000",
@@ -1660,7 +1877,9 @@
       }
     ],
     "createdAt": "2026-10-03T23:01:51.000Z",
-    "updatedAt": "2026-10-04T06:00:00.000Z"
+    "updatedAt": "2026-10-04T06:00:00.000Z",
+    "progressPercentage": 0,
+    "events": []
   },
   {
     "id": "tck-1791041805230",
@@ -1702,11 +1921,23 @@
         "isInternalNote": false,
         "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A base de dados de produtos da Public Arte foi atualizada com sucesso a partir da análise detalhada das publicações dos 3 catálogos PDF. Foram catalogados 21 produtos reais completos organizados por categorias (Banners & Lonas, Flybanners, Placas & Fachadas, Adesivos Vinílicos, Gráfica Rápida, Serigrafia & DTF e Brindes Promocionais), com fotos reais, unidades de medida e valores comercializados em produção.",
         "createdAt": "2026-10-03T17:10:00.000Z"
+      },
+      {
+        "id": "msg-res-1791041805230",
+        "ticketId": "tck-1791041805230",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: A base de dados de produtos da Public Arte foi atualizada com sucesso a partir da análise detalhada das publicações dos 3 catálogos PDF. Foram catalogados 21 produtos reais completos organizados por categorias.",
+        "createdAt": "2026-10-03T17:10:00.000Z"
       }
     ],
     "createdAt": "2026-10-03T12:36:45.523Z",
     "updatedAt": "2026-10-03T17:10:00.000Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressPercentage": 0,
+    "events": []
   },
   {
     "id": "tck-1791038803000",
@@ -1752,7 +1983,9 @@
     ],
     "createdAt": "2026-10-03T09:06:43.000Z",
     "updatedAt": "2026-10-03T12:05:00.000Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressPercentage": 0,
+    "events": []
   },
   {
     "id": "tck-1790973331000",
@@ -1798,7 +2031,9 @@
     ],
     "createdAt": "2026-10-02T17:35:31.000Z",
     "updatedAt": "2026-10-02T17:41:00.000Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressPercentage": 0,
+    "events": []
   },
   {
     "id": "tck-1790972000000",
@@ -1844,7 +2079,9 @@
     ],
     "createdAt": "2026-10-02T17:13:08.000Z",
     "updatedAt": "2026-10-02T17:25:00.000Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "events": [],
+    "progressPercentage": 0
   },
   {
     "id": "tck-1790944637381",
@@ -1890,7 +2127,9 @@
     ],
     "createdAt": "2026-10-02T12:37:17.381Z",
     "updatedAt": "2026-10-02T13:45:00.000Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "events": [],
+    "progressPercentage": 0
   },
   {
     "id": "tck-1790934711474",
@@ -1936,6 +2175,8 @@
     ],
     "createdAt": "2026-10-02T09:51:51.474Z",
     "updatedAt": "2026-10-02T10:55:00.000Z",
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "events": [],
+    "progressPercentage": 0
   }
 ]
