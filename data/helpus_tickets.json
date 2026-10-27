@@ -7,7 +7,7 @@
     "description": "Solicitação para inserção de um indicador visual discreto '● ONLINE' ao lado da logomarca no cabeçalho superior (header) da aplicação AIDoctor (aidoctor.helpusbr.com), demonstrando a integridade da esteira de aprovação autônoma e validação de layout.",
     "category": "frontend",
     "priority": "medium",
-    "status": "resolved",
+    "status": "closed",
     "progressPercentage": 100,
     "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
     "createdByEmail": "helpus.ecommerce@gmail.com",
@@ -15,7 +15,7 @@
     "assignedTo": "HelpUS Master SuperAdmin",
     "assignedToName": "IA Autônoma (HelpUS Tech)",
     "createdAt": "2026-10-27T02:26:06Z",
-    "updatedAt": "2026-10-27T13:00:33.810Z",
+    "updatedAt": "2026-10-27T13:00:56.816Z",
     "attachments": [],
     "contextData": {
       "applicationUrl": "https://aidoctor.helpusbr.com",
@@ -93,6 +93,16 @@
         "isInternalNote": false,
         "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
         "createdAt": "2026-10-27T12:59:34Z"
+      },
+      {
+        "id": "msg-1793106056816",
+        "ticketId": "tck-1793067966159",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "✅ *Chamado Concluído & Encerrado com Sucesso pelo Cliente (HelpUS Master SuperAdmin)*",
+        "createdAt": "2026-10-27T13:00:56.816Z"
       }
     ],
     "tenantName": "AIDoctor"
