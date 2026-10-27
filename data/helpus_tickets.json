@@ -29,6 +29,16 @@
         "createdAt": "2026-10-27T14:40:38.283Z"
       },
       {
+        "id": "msg-prog-1793112296305",
+        "ticketId": "tck-1793112038283",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada.",
+        "createdAt": "2026-10-27T14:44:56Z"
+      },
+      {
         "id": "msg-app-1793112347846",
         "ticketId": "tck-1793112038283",
         "senderId": "helpus-master",
@@ -49,18 +59,18 @@
         "createdAt": "2026-10-27T14:45:47.846Z"
       },
       {
-        "id": "msg-prog-1793112296305",
+        "id": "msg-prg-1793112356100",
         "ticketId": "tck-1793112038283",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada.",
-        "createdAt": "2026-10-27T14:44:56Z"
+        "content": "⚡ *[PROGRESSO 25%]*: 🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada.",
+        "createdAt": "2026-10-27T14:45:56.100Z"
       }
     ],
     "createdAt": "2026-10-27T14:40:38.283Z",
-    "updatedAt": "2026-10-27T14:44:56Z",
+    "updatedAt": "2026-10-27T14:45:56.100Z",
     "events": [
       {
         "id": "evt-create-1793112038283",
@@ -91,6 +101,20 @@
         "timestamp": "2026-10-27T14:45:47.846Z",
         "seq": 2,
         "signature": "9da29ae388dd3bad005f01ea481a79580fd1cc6b56ee63213b6cefc4a3df61ab"
+      },
+      {
+        "id": "evt-prg-1793112356100-25",
+        "ticketId": "tck-1793112038283",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 25,
+        "status": "in_production",
+        "note": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada.",
+        "timestamp": "2026-10-27T14:45:56.100Z",
+        "seq": 3,
+        "signature": "80ceb9ec0bf97315716e6f64f0b92408ec18122b1e901a934422c53d3a9d4925"
       }
     ],
     "progressPercentage": 25,
