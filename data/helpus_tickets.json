@@ -8,7 +8,7 @@
     "description": "Solicitação para inclusão de selo visual de autenticidade e segurança ('✓ HelpUS Verified 2026') no rodapé da página inicial da aplicação AIDoctor (aidoctor.helpusbr.com), demonstrando a esteira ponta a ponta com homologação técnica.",
     "category": "feature",
     "priority": "medium",
-    "status": "resolved",
+    "status": "closed",
     "progressPercentage": 100,
     "assignedTo": "HelpUS Master SuperAdmin",
     "createdByEmail": "helpus.ecommerce@gmail.com",
@@ -72,11 +72,21 @@
         "isInternalNote": false,
         "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Selo visual de autenticidade '✓ HelpUS Verified 2026' inserido com sucesso no rodapé do AIDoctor. Ticket solucionado com validação plena do Master SuperAdmin.",
         "createdAt": "2026-10-27T01:31:03Z"
+      },
+      {
+        "id": "msg-prog-1793066700860",
+        "ticketId": "tck-1793064298714",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ *[ENCERRAMENTO CONFIRMADO]*: Validação final homologada pelo Master SuperAdmin no Portal. O chamado foi oficialmente encerrado.",
+        "createdAt": "2026-10-27T02:05:00Z"
       }
     ],
     "createdAt": "2026-10-27T01:24:58Z",
-    "updatedAt": "2026-10-27T01:31:03Z",
-    "progressStep": "Fase 4/4 (100%): Chamado homologado e solucionado com sucesso."
+    "updatedAt": "2026-10-27T02:05:00Z",
+    "progressStep": "Fase 5/5: Chamado homologado, validado e encerrado pelo SuperAdmin."
   },
   {
     "id": "tck-1792960000000",
