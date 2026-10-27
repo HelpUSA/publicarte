@@ -7,15 +7,15 @@
     "description": "Solicitação para inserção de um indicador visual discreto '● ONLINE' ao lado da logomarca no cabeçalho superior (header) da aplicação AIDoctor (aidoctor.helpusbr.com), demonstrando a integridade da esteira de aprovação autônoma e validação de layout.",
     "category": "frontend",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "progressPercentage": 0,
-    "progressStep": "Aguardando Autorização Master SuperAdmin para início do atendimento.",
+    "progressStep": "⚡ Entrada em Produção autorizada. Robô autônomo aguardando execução...",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "SuperAdmin HelpUS",
-    "assignedTo": "ia.engine@helpusbr.com",
+    "assignedTo": "HelpUS Master SuperAdmin",
     "assignedToName": "IA Autônoma (HelpUS Tech)",
     "createdAt": "2026-10-27T02:26:06Z",
-    "updatedAt": "2026-10-27T02:26:06Z",
+    "updatedAt": "2026-10-27T12:59:54.601Z",
     "attachments": [],
     "contextData": {
       "applicationUrl": "https://aidoctor.helpusbr.com",
@@ -33,8 +33,29 @@
         "content": "Olá equipe HelpUS! Gostaria de incluir um badge sutil '● ONLINE' no cabeçalho do AIDoctor ao lado do nome da aplicação.",
         "attachments": [],
         "createdAt": "2026-10-27T02:26:06Z"
+      },
+      {
+        "id": "msg-app-1793105994601",
+        "ticketId": "tck-1793067966159",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação Concedida pelo Administrador HelpUS (HelpUS Master SuperAdmin). Autorizando envio para produção...",
+        "createdAt": "2026-10-27T12:59:54.601Z"
+      },
+      {
+        "id": "msg-prod-1793105994602",
+        "ticketId": "tck-1793067966159",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: O robô autônomo iniciou o processamento do código e o envio para a nuvem Vercel (AIDoctor). Acompanhe o progresso da compilação e verificação de deploy...",
+        "createdAt": "2026-10-27T12:59:54.601Z"
       }
-    ]
+    ],
+    "tenantName": "AIDoctor"
   },
   {
     "id": "tck-1793064298714",
