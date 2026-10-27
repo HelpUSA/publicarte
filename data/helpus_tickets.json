@@ -1,5 +1,42 @@
 [
   {
+    "id": "tck-1793067966159",
+    "code": "AID-104",
+    "tenantId": "aidoctor",
+    "title": "Inclusão de badge informativo '● ONLINE' no cabeçalho do AIDoctor",
+    "description": "Solicitação para inserção de um indicador visual discreto '● ONLINE' ao lado da logomarca no cabeçalho superior (header) da aplicação AIDoctor (aidoctor.helpusbr.com), demonstrando a integridade da esteira de aprovação autônoma e validação de layout.",
+    "category": "frontend",
+    "priority": "medium",
+    "status": "pending_approval",
+    "progressPercentage": 0,
+    "progressStep": "Aguardando Autorização Master SuperAdmin para início do atendimento.",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "SuperAdmin HelpUS",
+    "assignedTo": "ia.engine@helpusbr.com",
+    "assignedToName": "IA Autônoma (HelpUS Tech)",
+    "createdAt": "2026-10-27T02:26:06Z",
+    "updatedAt": "2026-10-27T02:26:06Z",
+    "attachments": [],
+    "contextData": {
+      "applicationUrl": "https://aidoctor.helpusbr.com",
+      "sourcePath": "d:\\AntiG\\AIDoctor\\index.html",
+      "component": "header .brand"
+    },
+    "messages": [
+      {
+        "id": "msg-1793067966159",
+        "ticketId": "tck-1793067966159",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "SuperAdmin HelpUS",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Olá equipe HelpUS! Gostaria de incluir um badge sutil '● ONLINE' no cabeçalho do AIDoctor ao lado do nome da aplicação.",
+        "attachments": [],
+        "createdAt": "2026-10-27T02:26:06Z"
+      }
+    ]
+  },
+  {
     "id": "tck-1793064298714",
     "tenantId": "aidoctor",
     "tenantName": "AIDoctor",
