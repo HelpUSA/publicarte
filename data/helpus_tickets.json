@@ -1,5 +1,54 @@
 [
   {
+    "id": "tck-1793133936596",
+    "tenantId": "aidoctor",
+    "tenantName": "AIDoctor",
+    "code": "AID-122",
+    "title": "Inserir indicador visual '● ONLINE' no cabeçalho superior do AIDoctor",
+    "description": "Inserção do indicador de status '● ONLINE' com background translúcido e borda verde esmeralda no cabeçalho superior (Header) da aplicação AIDoctor (aidoctor.helpusbr.com), posicionado imediatamente após o logotipo principal.",
+    "category": "feature",
+    "priority": "high",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "SuperAdmin HelpUS",
+    "contextData": {
+      "url": "https://aidoctor.helpusbr.com",
+      "applicationUrl": "https://aidoctor.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "SuperAdmin HelpUS"
+    },
+    "messages": [
+      {
+        "id": "msg-1793133936596",
+        "ticketId": "tck-1793133936596",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "SuperAdmin HelpUS",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Inserção do indicador de status '● ONLINE' com background translúcido e borda verde esmeralda no cabeçalho superior (Header) da aplicação AIDoctor (aidoctor.helpusbr.com), posicionado imediatamente após o logotipo principal.",
+        "createdAt": "2026-10-27T20:45:36.596Z"
+      }
+    ],
+    "createdAt": "2026-10-27T20:45:36.596Z",
+    "updatedAt": "2026-10-27T20:45:36.596Z",
+    "events": [
+      {
+        "id": "evt-create-1793133936596",
+        "ticketId": "tck-1793133936596",
+        "type": "ticket_created",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Inserir indicador visual '● ONLINE' no cabeçalho superior do AIDoctor",
+        "timestamp": "2026-10-27T20:45:36.596Z",
+        "seq": 1,
+        "signature": "81e47a48a9a099d2aead00cce7d88f50eec5421eab42d12aceefdbf4b92ac11d"
+      }
+    ]
+  },
+  {
     "id": "tck-1793112038283",
     "tenantId": "aidoctor",
     "tenantName": "AIDoctor",
@@ -219,7 +268,7 @@
         "signature": "5c82a063d1f7c4b6de7f21c18038b18ba7a58278f31709142f6227d3104c3806"
       }
     ],
-    "progressPercentage": 75,
+    "progressPercentage": 100,
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressStep": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados."
   },
