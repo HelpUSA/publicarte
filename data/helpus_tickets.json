@@ -1,5 +1,43 @@
 [
   {
+    "id": "tck-1793107163020",
+    "code": "AID-105",
+    "tenantId": "aidoctor",
+    "tenantName": "AIDoctor",
+    "title": "Inclusão de badge informativo '● ONLINE' no cabeçalho do AIDoctor",
+    "description": "Solicitação para inserção de um indicador visual discreto '● ONLINE' ao lado da logomarca no cabeçalho superior (header) da aplicação AIDoctor (aidoctor.helpusbr.com), demonstrando a integridade da esteira de aprovação autônoma e validação de layout.",
+    "category": "frontend",
+    "priority": "medium",
+    "status": "pending_approval",
+    "progressPercentage": 0,
+    "progressStep": "Aguardando Autorização Master SuperAdmin para início do atendimento.",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "SuperAdmin HelpUS",
+    "assignedTo": "ia.engine@helpusbr.com",
+    "assignedToName": "IA Autônoma (HelpUS Tech)",
+    "createdAt": "2026-10-27T13:19:23Z",
+    "updatedAt": "2026-10-27T13:19:23Z",
+    "attachments": [],
+    "contextData": {
+      "applicationUrl": "https://aidoctor.helpusbr.com",
+      "component": "Cabeçalho Superior (Header) ao lado da logomarca AIDoctor",
+      "sourcePath": "d:\\AntiG\\AIDoctor\\index.html"
+    },
+    "messages": [
+      {
+        "id": "msg-1793107163020",
+        "ticketId": "tck-1793107163020",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "SuperAdmin HelpUS",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Olá equipe HelpUS! Gostaria de incluir o badge oficial '● ONLINE' no cabeçalho superior da plataforma AIDoctor.",
+        "attachments": [],
+        "createdAt": "2026-10-27T13:19:23Z"
+      }
+    ]
+  },
+  {
     "id": "tck-1793067966159",
     "code": "AID-104",
     "tenantId": "aidoctor",
