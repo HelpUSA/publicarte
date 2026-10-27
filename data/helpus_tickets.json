@@ -443,7 +443,7 @@
     "description": "Solicitação para remoção dos textos circulares com badges de CRM fictícios (CRM/SP, CRM/RJ, CRM/PR) na seção de depoimentos da aplicação AIDoctor (aidoctor.helpusbr.com), adequando a página às normas de publicidade médica do CFM.",
     "category": "feature",
     "priority": "high",
-    "status": "pending_approval",
+    "status": "resolved",
     "progressPercentage": 0,
     "assignedTo": "HelpUS Master SuperAdmin",
     "createdByEmail": "helpus.ecommerce@gmail.com",
@@ -575,10 +575,20 @@
         "isInternalNote": false,
         "content": "? *[CHAMADO ENCERRADO]*: O solicitante validou a solucao em producao e confirmou o encerramento definitivo do atendimento.",
         "createdAt": "2026-10-27T00:55:26Z"
+      },
+      {
+        "id": "msg-res-1793111889219",
+        "ticketId": "tck-1792960000000",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ Demanda atendida e homologada com sucesso.",
+        "createdAt": "2026-10-27T14:38:09.219Z"
       }
     ],
     "createdAt": "2026-10-26T20:50:00.000Z",
-    "updatedAt": "2026-10-27T00:55:26Z",
+    "updatedAt": "2026-10-27T14:38:09.219Z",
     "progressStep": "Chamado validado, encerrado e arquivado com sucesso.",
     "events": [
       {
@@ -645,6 +655,20 @@
         "note": "a mensagem ainda continua.",
         "timestamp": "2026-10-25T19:25:00.000Z",
         "signature": "d5a2a0d1e5dc4af924e4b89227171b7202e1e4570646bc725fcea5f146a2dfb4"
+      },
+      {
+        "id": "evt-res-1793111889219",
+        "ticketId": "tck-1792960000000",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ Demanda atendida e homologada com sucesso.",
+        "timestamp": "2026-10-27T14:38:09.219Z",
+        "seq": 6,
+        "signature": "1c528a48c1c4b21fcee6addb9b74f10a86b45110df8541b342125d758ca335e0"
       }
     ],
     "reopenedAt": "2026-10-25T19:25:00.000Z"
