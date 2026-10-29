@@ -31,6 +31,16 @@
         "createdAt": "2026-10-29T11:49:15.712Z"
       },
       {
+        "id": "msg-prog-1793276042622",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Ordem técnica recebida pelo Antigravity para desenvolvimento e implementação.",
+        "createdAt": "2026-10-29T12:14:02Z"
+      },
+      {
         "id": "msg-app-1793276096818",
         "ticketId": "tck-1793274555712",
         "senderId": "helpus-master",
@@ -51,18 +61,18 @@
         "createdAt": "2026-10-29T12:14:56.818Z"
       },
       {
-        "id": "msg-prog-1793276042622",
+        "id": "msg-prg-1793276106001",
         "ticketId": "tck-1793274555712",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Ordem técnica recebida pelo Antigravity para desenvolvimento e implementação.",
-        "createdAt": "2026-10-29T12:14:02Z"
+        "content": "⚡ *[PROGRESSO 25%]*: 🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Ordem técnica recebida pelo Antigravity para desenvolvimento e implementação.",
+        "createdAt": "2026-10-29T12:15:06.001Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:14:02Z",
+    "updatedAt": "2026-10-29T12:15:06.001Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -93,6 +103,20 @@
         "timestamp": "2026-10-29T12:14:56.819Z",
         "seq": 2,
         "signature": "20e24698960637cba3db659c0042af565b684dc72861ebe71a0ab1e9961c7753"
+      },
+      {
+        "id": "evt-prg-1793276106001-25",
+        "ticketId": "tck-1793274555712",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 25,
+        "status": "in_production",
+        "note": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Ordem técnica recebida pelo Antigravity para desenvolvimento e implementação.",
+        "timestamp": "2026-10-29T12:15:06.001Z",
+        "seq": 3,
+        "signature": "e59d7a02e7eeaae418b01a466a40b3f2dd046c4fce61f0397aa0b0cc186bf184"
       }
     ],
     "progressPercentage": 25,
