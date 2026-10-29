@@ -8,7 +8,7 @@
     "description": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
     "category": "support",
     "priority": "medium",
-    "status": "resolved",
+    "status": "pending_approval",
     "createdByEmail": "dralexgomes@gmail.com",
     "createdByName": "Dr. Alexander Gomes",
     "contextData": {
@@ -129,10 +129,21 @@
         "isInternalNote": false,
         "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
         "createdAt": "2026-10-29T11:57:56.810Z"
+      },
+      {
+        "id": "msg-reset-1793275350363",
+        "ticketId": "tck-1793274555712",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "Master SuperAdmin (HelpUS)",
+        "senderRole": "system",
+        "isInternalNote": true,
+        "content": "🔄 Chamado retornado para 'pending_approval' pelo Master SuperAdmin. Todo o histórico anterior foi integralmente preservado.",
+        "attachments": [],
+        "createdAt": "2026-10-29T12:02:30.363Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T11:57:56.810Z",
+    "updatedAt": "2026-10-29T12:02:30.363Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -219,12 +230,25 @@
         "timestamp": "2026-10-29T11:57:56.810Z",
         "seq": 6,
         "signature": "69865dc4711e5040a443a8f8ac0f95504a0a956a717876e6ccf684b9137b17b7"
+      },
+      {
+        "id": "evt-reset-1793275350363",
+        "ticketId": "tck-1793274555712",
+        "type": "ticket_reset_by_master",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Chamado retornado para 'pending_approval' pelo Master SuperAdmin.",
+        "timestamp": "2026-10-29T12:02:30.363Z",
+        "seq": 7,
+        "signature": "7a0fdf9f950118747bab0a9e53fd414b1a1e088ca8a7c41e6ee78f10826705fe"
       }
     ],
-    "progressPercentage": 75,
+    "progressPercentage": 0,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
-    "progressStep": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados."
+    "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente."
   },
   {
     "id": "tck-1791240000000",
