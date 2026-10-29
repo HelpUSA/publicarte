@@ -153,7 +153,7 @@
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:44:45Z",
+    "updatedAt": "2026-10-29T12:45:48.048Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -270,6 +270,20 @@
         "timestamp": "2026-10-29T12:45:39.198Z",
         "seq": 8,
         "signature": "980f53ad1dbb460eb61fc56f2ba279ae22a581422f2ea11b0365fc10c17ae776"
+      },
+      {
+        "id": "evt-prg-1793277948048-75",
+        "ticketId": "tck-1793274555712",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 75,
+        "status": "in_production",
+        "note": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com.",
+        "timestamp": "2026-10-29T12:45:48.048Z",
+        "seq": 9,
+        "signature": "6f5eefb637346349dc84eec1c9326ec971f533bb2710423eb6de68570704c96b"
       }
     ],
     "progressPercentage": 75,
