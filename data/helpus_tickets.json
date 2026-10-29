@@ -92,7 +92,7 @@
       }
     ],
     "createdAt": "2026-10-29T11:19:24.126Z",
-    "updatedAt": "2026-10-29T11:21:12Z",
+    "updatedAt": "2026-10-29T11:22:15.330Z",
     "events": [
       {
         "id": "evt-create-1793272764126",
@@ -151,6 +151,20 @@
         "timestamp": "2026-10-29T11:22:05.191Z",
         "seq": 4,
         "signature": "6c132c391e31b34c2b8a6884ad9781ebfb2ab78b9aa3d727ba4f459709b6ef36"
+      },
+      {
+        "id": "evt-prg-1793272935331-75",
+        "ticketId": "tck-1793272764126",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 75,
+        "status": "in_production",
+        "note": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "timestamp": "2026-10-29T11:22:15.331Z",
+        "seq": 5,
+        "signature": "f8df5b4b4a74474a149fd8f02b06924fccada3d0272f906d3a3c96c8ac157b06"
       }
     ],
     "progressPercentage": 75,
