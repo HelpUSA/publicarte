@@ -61,6 +61,16 @@
         "createdAt": "2026-10-29T11:56:44Z"
       },
       {
+        "id": "msg-prog-1793275014081",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
+        "createdAt": "2026-10-29T11:56:54Z"
+      },
+      {
         "id": "msg-app-1793275040736",
         "ticketId": "tck-1793274555712",
         "senderId": "helpus-master",
@@ -111,18 +121,18 @@
         "createdAt": "2026-10-29T11:57:47.221Z"
       },
       {
-        "id": "msg-prog-1793275014081",
+        "id": "msg-res-1793275076810",
         "ticketId": "tck-1793274555712",
         "senderId": "ia.engine@helpusbr.com",
         "senderName": "IA Autônoma (HelpUS Tech)",
         "senderRole": "agent",
         "isInternalNote": false,
         "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
-        "createdAt": "2026-10-29T11:56:54Z"
+        "createdAt": "2026-10-29T11:57:56.810Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T11:56:54Z",
+    "updatedAt": "2026-10-29T11:57:56.810Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -195,12 +205,26 @@
         "timestamp": "2026-10-29T11:57:47.221Z",
         "seq": 5,
         "signature": "32a7f57cf3638c420e50b3340909682d8fe38d3edea46c483a1861a3e0c87fa1"
+      },
+      {
+        "id": "evt-res-1793275076810",
+        "ticketId": "tck-1793274555712",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção.",
+        "timestamp": "2026-10-29T11:57:56.810Z",
+        "seq": 6,
+        "signature": "69865dc4711e5040a443a8f8ac0f95504a0a956a717876e6ccf684b9137b17b7"
       }
     ],
-    "progressPercentage": 100,
+    "progressPercentage": 75,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
-    "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda atendida, testada e homologada com sucesso em produção."
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados."
   },
   {
     "id": "tck-1791240000000",
