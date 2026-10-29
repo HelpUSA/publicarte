@@ -8,7 +8,7 @@
     "description": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "dralexgomes@gmail.com",
     "createdByName": "Dr. Alexander Gomes",
     "contextData": {
@@ -29,10 +29,20 @@
         "content": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
         "attachments": [],
         "createdAt": "2026-10-29T11:49:15.712Z"
+      },
+      {
+        "id": "msg-prog-1793277860657",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada.",
+        "createdAt": "2026-10-29T12:44:20Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:41:19.138Z",
+    "updatedAt": "2026-10-29T12:44:20Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -49,10 +59,11 @@
         "signature": "df5336a0ad9714c13dac57269a16477e54b7f98f8e05d7ac994e7a4b7c6eceb4"
       }
     ],
-    "progressPercentage": 0,
+    "progressPercentage": 25,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
-    "reopenedAt": "2026-10-29T12:26:57.317Z"
+    "reopenedAt": "2026-10-29T12:26:57.317Z",
+    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada."
   },
   {
     "id": "tck-1791240000000",
