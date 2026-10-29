@@ -8,7 +8,7 @@
     "description": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
     "category": "support",
     "priority": "medium",
-    "status": "resolved",
+    "status": "pending_approval",
     "createdByEmail": "dralexgomes@gmail.com",
     "createdByName": "Dr. Alexander Gomes",
     "contextData": {
@@ -170,10 +170,21 @@
         "isInternalNote": false,
         "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial. Demanda testada e publicada em produção.",
         "createdAt": "2026-10-29T12:45:57.355Z"
+      },
+      {
+        "id": "msg-reset-1793278275207",
+        "ticketId": "tck-1793274555712",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "Master SuperAdmin (HelpUS)",
+        "senderRole": "system",
+        "isInternalNote": true,
+        "content": "🔄 Chamado retornado para 'pending_approval' pelo Master SuperAdmin. Todo o histórico anterior foi integralmente preservado.",
+        "attachments": [],
+        "createdAt": "2026-10-29T12:51:15.207Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:45:57.355Z",
+    "updatedAt": "2026-10-29T12:51:15.207Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -318,13 +329,26 @@
         "timestamp": "2026-10-29T12:45:57.355Z",
         "seq": 10,
         "signature": "2bb212fe6c51ea7c8b4de95a83acfe1d6942623c2568bb86961e2ebceb12b182"
+      },
+      {
+        "id": "evt-reset-1793278275207",
+        "ticketId": "tck-1793274555712",
+        "type": "ticket_reset_by_master",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Chamado retornado para 'pending_approval' pelo Master SuperAdmin.",
+        "timestamp": "2026-10-29T12:51:15.207Z",
+        "seq": 11,
+        "signature": "5df5611a198f795eb8251e6914e3c3892c6f20848059cd20617c03f34152b0e8"
       }
     ],
-    "progressPercentage": 75,
+    "progressPercentage": 0,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
-    "reopenedAt": "2026-10-29T12:26:57.317Z",
-    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com."
+    "reopenedAt": "2026-10-29T12:26:57.317Z"
   },
   {
     "id": "tck-1791240000000",
