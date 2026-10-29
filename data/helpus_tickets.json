@@ -100,10 +100,20 @@
         "isInternalNote": false,
         "content": "🕒 *[APROVAÇÃO REGISTRADA]*: Chamado autorizado e aguardando despacho controlado para execução local (AIDoctor). Nenhum build ou deploy é iniciado automaticamente pela aprovação.",
         "createdAt": "2026-10-29T12:32:21.209Z"
+      },
+      {
+        "id": "msg-prog-1793277086897",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Ordem técnica recebida pelo Antigravity para desenvolvimento e implementação.",
+        "createdAt": "2026-10-29T12:31:26Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:32:21.209Z",
+    "updatedAt": "2026-10-29T12:31:26Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -180,11 +190,11 @@
         "signature": "6fa280f3c39da8c7ea58cd64f849ced23d0157c701f021786b30e54158887c8b"
       }
     ],
-    "progressPercentage": 0,
+    "progressPercentage": 25,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
     "reopenedAt": "2026-10-29T12:26:57.317Z",
-    "progressStep": "Aprovação registrada. Aguardando confirmação de início pelo operador local."
+    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Ordem técnica recebida pelo Antigravity para desenvolvimento e implementação."
   },
   {
     "id": "tck-1791240000000",
