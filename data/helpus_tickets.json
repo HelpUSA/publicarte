@@ -82,7 +82,7 @@
       }
     ],
     "createdAt": "2026-10-29T11:19:24.126Z",
-    "updatedAt": "2026-10-29T11:21:02Z",
+    "updatedAt": "2026-10-29T11:22:05.191Z",
     "events": [
       {
         "id": "evt-create-1793272764126",
@@ -127,6 +127,20 @@
         "timestamp": "2026-10-29T11:19:38.174Z",
         "seq": 3,
         "signature": "e43d72ca423f5865eb1504dab31479c4b7fea1797af6f848803705df5092a838"
+      },
+      {
+        "id": "evt-prg-1793272925191-50",
+        "ticketId": "tck-1793272764126",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
+        "timestamp": "2026-10-29T11:22:05.191Z",
+        "seq": 4,
+        "signature": "6c132c391e31b34c2b8a6884ad9781ebfb2ab78b9aa3d727ba4f459709b6ef36"
       }
     ],
     "progressPercentage": 50,
