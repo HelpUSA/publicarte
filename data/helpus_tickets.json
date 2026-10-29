@@ -89,10 +89,20 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 50%]*: ⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso.",
         "createdAt": "2026-10-29T11:57:37.483Z"
+      },
+      {
+        "id": "msg-prog-1793275004513",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados.",
+        "createdAt": "2026-10-29T11:56:44Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T11:57:37.483Z",
+    "updatedAt": "2026-10-29T11:56:44Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -153,10 +163,10 @@
         "signature": "f133049abab6a4f92fdc963803f69211dcdb301adda15184ae9882e150bf89da"
       }
     ],
-    "progressPercentage": 50,
+    "progressPercentage": 75,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
-    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Modificação técnica implementada nos arquivos da aplicação com sucesso."
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados."
   },
   {
     "id": "tck-1791240000000",
