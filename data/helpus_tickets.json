@@ -224,6 +224,16 @@
         "createdAt": "2026-10-29T12:54:43Z"
       },
       {
+        "id": "msg-prog-1793278492344",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial. Demanda testada e publicada em produção.",
+        "createdAt": "2026-10-29T12:54:52Z"
+      },
+      {
         "id": "msg-app-1793278514080",
         "ticketId": "tck-1793274555712",
         "senderId": "helpus-master",
@@ -274,18 +284,18 @@
         "createdAt": "2026-10-29T12:55:46.619Z"
       },
       {
-        "id": "msg-prog-1793278492344",
+        "id": "msg-res-1793278555591",
         "ticketId": "tck-1793274555712",
         "senderId": "ia.engine@helpusbr.com",
         "senderName": "IA Autônoma (HelpUS Tech)",
         "senderRole": "agent",
         "isInternalNote": false,
         "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial. Demanda testada e publicada em produção.",
-        "createdAt": "2026-10-29T12:54:52Z"
+        "createdAt": "2026-10-29T12:55:55.591Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:54:52Z",
+    "updatedAt": "2026-10-29T12:55:55.591Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -516,13 +526,27 @@
         "timestamp": "2026-10-29T12:55:46.619Z",
         "seq": 16,
         "signature": "26f24def220416717cbad498c6ee0f49281c3bcac913d401bbf16d579a331995"
+      },
+      {
+        "id": "evt-res-1793278555591",
+        "ticketId": "tck-1793274555712",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ *[SOLUÇÃO HOMOLOGADA]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial. Demanda testada e publicada em produção.",
+        "timestamp": "2026-10-29T12:55:55.591Z",
+        "seq": 17,
+        "signature": "f1bbc73de9ce39804248a49b0ff0672edad465b1d1d5eeb06f7cfa7bcf6fbf32"
       }
     ],
-    "progressPercentage": 100,
+    "progressPercentage": 75,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
     "reopenedAt": "2026-10-29T12:51:15.207Z",
-    "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial. Demanda testada e publicada em produção."
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com."
   },
   {
     "id": "tck-1791240000000",
