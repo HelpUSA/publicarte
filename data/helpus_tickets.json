@@ -8,7 +8,7 @@
     "description": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "dralexgomes@gmail.com",
     "createdByName": "Dr. Alexander Gomes",
     "contextData": {
@@ -29,10 +29,30 @@
         "content": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
         "attachments": [],
         "createdAt": "2026-10-29T11:49:15.712Z"
+      },
+      {
+        "id": "msg-app-1793276096818",
+        "ticketId": "tck-1793274555712",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin). A execução ainda não foi iniciada.",
+        "createdAt": "2026-10-29T12:14:56.818Z"
+      },
+      {
+        "id": "msg-prod-1793276096819",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🕒 *[APROVAÇÃO REGISTRADA]*: Chamado autorizado e aguardando despacho controlado para execução local (AIDoctor). Nenhum build ou deploy é iniciado automaticamente pela aprovação.",
+        "createdAt": "2026-10-29T12:14:56.818Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:02:30.363Z",
+    "updatedAt": "2026-10-29T12:14:56.818Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -47,11 +67,28 @@
         "timestamp": "2026-10-29T11:49:15.712Z",
         "seq": 1,
         "signature": "df5336a0ad9714c13dac57269a16477e54b7f98f8e05d7ac994e7a4b7c6eceb4"
+      },
+      {
+        "id": "evt-appr-11f5de95-3208-4280-bf0f-c6ba8b122cf5",
+        "ticketId": "tck-1793274555712",
+        "tenantId": "aidoctor",
+        "idempotencyKey": "helpus-approval-outbox-v1:tck-1793274555712:evt-appr-11f5de95-3208-4280-bf0f-c6ba8b122cf5",
+        "type": "master_approved",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "in_production",
+        "note": "Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin); aguardando despacho de execução.",
+        "timestamp": "2026-10-29T12:14:56.819Z",
+        "seq": 2,
+        "signature": "20e24698960637cba3db659c0042af565b684dc72861ebe71a0ab1e9961c7753"
       }
     ],
     "progressPercentage": 0,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente."
+    "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
+    "progressStep": "Aprovação registrada. Aguardando confirmação de início pelo operador local."
   },
   {
     "id": "tck-1791240000000",
