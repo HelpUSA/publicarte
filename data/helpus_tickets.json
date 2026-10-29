@@ -140,10 +140,20 @@
         "isInternalNote": false,
         "content": "⚙️ *[FASE 2/4 - 50%]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial.",
         "createdAt": "2026-10-29T12:44:36Z"
+      },
+      {
+        "id": "msg-prog-1793277885119",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com.",
+        "createdAt": "2026-10-29T12:44:45Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:45:39.198Z",
+    "updatedAt": "2026-10-29T12:44:45Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -262,11 +272,11 @@
         "signature": "980f53ad1dbb460eb61fc56f2ba279ae22a581422f2ea11b0365fc10c17ae776"
       }
     ],
-    "progressPercentage": 50,
+    "progressPercentage": 75,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
     "reopenedAt": "2026-10-29T12:26:57.317Z",
-    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial."
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com."
   },
   {
     "id": "tck-1791240000000",
