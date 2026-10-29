@@ -8,7 +8,7 @@
     "description": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "dralexgomes@gmail.com",
     "createdByName": "Dr. Alexander Gomes",
     "contextData": {
@@ -122,6 +122,17 @@
         "createdAt": "2026-10-29T12:32:29.764Z"
       },
       {
+        "id": "msg-reset-1793277679138",
+        "ticketId": "tck-1793274555712",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "Master SuperAdmin (HelpUS)",
+        "senderRole": "system",
+        "isInternalNote": true,
+        "content": "🔄 Chamado retornado para 'pending_approval' pelo Master SuperAdmin. Todo o histórico anterior foi integralmente preservado.",
+        "attachments": [],
+        "createdAt": "2026-10-29T12:41:19.138Z"
+      },
+      {
         "id": "msg-prog-1793277860657",
         "ticketId": "tck-1793274555712",
         "senderId": "ci.cd@helpusbr.com",
@@ -181,10 +192,30 @@
         "content": "🔄 Chamado retornado para 'pending_approval' pelo Master SuperAdmin. Todo o histórico anterior foi integralmente preservado.",
         "attachments": [],
         "createdAt": "2026-10-29T12:51:15.207Z"
+      },
+      {
+        "id": "msg-app-1793278514080",
+        "ticketId": "tck-1793274555712",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin). A execução ainda não foi iniciada.",
+        "createdAt": "2026-10-29T12:55:14.080Z"
+      },
+      {
+        "id": "msg-prod-1793278514081",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🕒 *[APROVAÇÃO REGISTRADA]*: Chamado autorizado e aguardando despacho controlado para execução local (AIDoctor). Nenhum build ou deploy é iniciado automaticamente pela aprovação.",
+        "createdAt": "2026-10-29T12:55:14.080Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:51:15.207Z",
+    "updatedAt": "2026-10-29T12:55:14.079Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -275,6 +306,20 @@
         "signature": "a15509eb4e240fa9cf779887ebc040e46c316c7acc924387f8f53959c5f7c6ea"
       },
       {
+        "id": "evt-reset-1793277679138",
+        "ticketId": "tck-1793274555712",
+        "type": "ticket_reset_by_master",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Chamado retornado para 'pending_approval' pelo Master SuperAdmin.",
+        "timestamp": "2026-10-29T12:41:19.138Z",
+        "seq": 7,
+        "signature": "fd6b1a6fc1b67d7ff0ed501d0565c121458477fbb38eb6831fb285b087231196"
+      },
+      {
         "id": "evt-prg-1793277923533-25",
         "ticketId": "tck-1793274555712",
         "type": "production_step",
@@ -343,12 +388,29 @@
         "timestamp": "2026-10-29T12:51:15.207Z",
         "seq": 11,
         "signature": "5df5611a198f795eb8251e6914e3c3892c6f20848059cd20617c03f34152b0e8"
+      },
+      {
+        "id": "evt-appr-5bd71509-6db1-47c4-ab7a-606221b6bfb4",
+        "ticketId": "tck-1793274555712",
+        "tenantId": "aidoctor",
+        "idempotencyKey": "helpus-approval-outbox-v1:tck-1793274555712:evt-appr-5bd71509-6db1-47c4-ab7a-606221b6bfb4",
+        "type": "master_approved",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "in_production",
+        "note": "Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin); aguardando despacho de execução.",
+        "timestamp": "2026-10-29T12:55:14.080Z",
+        "seq": 13,
+        "signature": "2d89dba8729221efd2da4db7b9fd2900fed9cb10a6ebc34f4bab2036b83b1388"
       }
     ],
     "progressPercentage": 0,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
-    "reopenedAt": "2026-10-29T12:26:57.317Z"
+    "reopenedAt": "2026-10-29T12:51:15.207Z",
+    "progressStep": "Aprovação registrada. Aguardando confirmação de início pelo operador local."
   },
   {
     "id": "tck-1791240000000",
