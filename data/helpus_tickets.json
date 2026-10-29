@@ -8,7 +8,7 @@
     "description": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
     "category": "support",
     "priority": "medium",
-    "status": "in_production",
+    "status": "pending_approval",
     "createdByEmail": "dralexgomes@gmail.com",
     "createdByName": "Dr. Alexander Gomes",
     "contextData": {
@@ -120,10 +120,21 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 25%]*: 🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Ordem técnica recebida pelo Antigravity para desenvolvimento e implementação.",
         "createdAt": "2026-10-29T12:32:29.764Z"
+      },
+      {
+        "id": "msg-reset-1793277679138",
+        "ticketId": "tck-1793274555712",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "Master SuperAdmin (HelpUS)",
+        "senderRole": "system",
+        "isInternalNote": true,
+        "content": "🔄 Chamado retornado para 'pending_approval' pelo Master SuperAdmin. Todo o histórico anterior foi integralmente preservado.",
+        "attachments": [],
+        "createdAt": "2026-10-29T12:41:19.138Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:32:29.764Z",
+    "updatedAt": "2026-10-29T12:41:19.138Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -212,13 +223,26 @@
         "timestamp": "2026-10-29T12:32:29.764Z",
         "seq": 6,
         "signature": "a15509eb4e240fa9cf779887ebc040e46c316c7acc924387f8f53959c5f7c6ea"
+      },
+      {
+        "id": "evt-reset-1793277679138",
+        "ticketId": "tck-1793274555712",
+        "type": "ticket_reset_by_master",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Chamado retornado para 'pending_approval' pelo Master SuperAdmin.",
+        "timestamp": "2026-10-29T12:41:19.138Z",
+        "seq": 7,
+        "signature": "fd6b1a6fc1b67d7ff0ed501d0565c121458477fbb38eb6831fb285b087231196"
       }
     ],
-    "progressPercentage": 25,
+    "progressPercentage": 0,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
-    "reopenedAt": "2026-10-29T12:26:57.317Z",
-    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Ordem técnica recebida pelo Antigravity para desenvolvimento e implementação."
+    "reopenedAt": "2026-10-29T12:26:57.317Z"
   },
   {
     "id": "tck-1791240000000",
