@@ -130,10 +130,20 @@
         "isInternalNote": false,
         "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada.",
         "createdAt": "2026-10-29T12:44:20Z"
+      },
+      {
+        "id": "msg-prog-1793277876216",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial.",
+        "createdAt": "2026-10-29T12:44:36Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:45:23.533Z",
+    "updatedAt": "2026-10-29T12:44:36Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -238,11 +248,11 @@
         "signature": "626c2ee4e7139f7e6222715a71ab47269e7e04d3f8017688ff527a7771d6b29e"
       }
     ],
-    "progressPercentage": 25,
+    "progressPercentage": 50,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "caso não encontre a imagem certa, pode gerar uma automaticamente.",
     "reopenedAt": "2026-10-29T12:26:57.317Z",
-    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada."
+    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial."
   },
   {
     "id": "tck-1791240000000",
