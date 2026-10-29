@@ -1,5 +1,57 @@
 [
   {
+    "id": "tck-1793274555712",
+    "tenantId": "aidoctor",
+    "tenantName": "AIDoctor",
+    "code": "AID-129",
+    "title": "Bandeira Brasil - Paraguai ",
+    "description": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "dralexgomes@gmail.com",
+    "createdByName": "Dr. Alexander Gomes",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "dralexgomes@gmail.com",
+      "userName": "Dr. Alexander Gomes",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1793274555712",
+        "ticketId": "tck-1793274555712",
+        "senderId": "dralexgomes@gmail.com",
+        "senderName": "Dr. Alexander Gomes",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Colocar imagem de bandeira metade Brasil e metade Paraguai Na página inicial ",
+        "attachments": [],
+        "createdAt": "2026-10-29T11:49:15.712Z"
+      }
+    ],
+    "createdAt": "2026-10-29T11:49:15.712Z",
+    "updatedAt": "2026-10-29T11:49:15.712Z",
+    "events": [
+      {
+        "id": "evt-create-1793274555712",
+        "ticketId": "tck-1793274555712",
+        "type": "ticket_created",
+        "actorEmail": "dralexgomes@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Bandeira Brasil - Paraguai ",
+        "timestamp": "2026-10-29T11:49:15.712Z",
+        "seq": 1,
+        "signature": "df5336a0ad9714c13dac57269a16477e54b7f98f8e05d7ac994e7a4b7c6eceb4"
+      }
+    ],
+    "progressPercentage": 0
+  },
+  {
     "id": "tck-1791240000000",
     "tenantId": "usmle",
     "tenantName": "USMLE Prep Suite",
