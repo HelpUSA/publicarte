@@ -204,6 +204,16 @@
         "createdAt": "2026-10-29T12:54:18Z"
       },
       {
+        "id": "msg-prog-1793278473679",
+        "ticketId": "tck-1793274555712",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial.",
+        "createdAt": "2026-10-29T12:54:33Z"
+      },
+      {
         "id": "msg-app-1793278514080",
         "ticketId": "tck-1793274555712",
         "senderId": "helpus-master",
@@ -234,18 +244,18 @@
         "createdAt": "2026-10-29T12:55:22.036Z"
       },
       {
-        "id": "msg-prog-1793278473679",
+        "id": "msg-prg-1793278537133",
         "ticketId": "tck-1793274555712",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "⚙️ *[FASE 2/4 - 50%]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial.",
-        "createdAt": "2026-10-29T12:54:33Z"
+        "content": "⚡ *[PROGRESSO 50%]*: ⚙️ *[FASE 2/4 - 50%]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial.",
+        "createdAt": "2026-10-29T12:55:37.133Z"
       }
     ],
     "createdAt": "2026-10-29T11:49:15.712Z",
-    "updatedAt": "2026-10-29T12:54:33Z",
+    "updatedAt": "2026-10-29T12:55:37.132Z",
     "events": [
       {
         "id": "evt-create-1793274555712",
@@ -448,6 +458,20 @@
         "timestamp": "2026-10-29T12:55:22.036Z",
         "seq": 14,
         "signature": "f7db4ddffbaa9562e9ec2de05343d8b0a949635da1c9b937da14875865fbaebb"
+      },
+      {
+        "id": "evt-prg-1793278537133-50",
+        "ticketId": "tck-1793274555712",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Bandeira bipartida Brasil - Paraguai integrada com sucesso na página inicial.",
+        "timestamp": "2026-10-29T12:55:37.133Z",
+        "seq": 15,
+        "signature": "0825c2f030c32eefe17b76104e62c6263f5f9a0357d9a109202fed1e920b3f96"
       }
     ],
     "progressPercentage": 50,
