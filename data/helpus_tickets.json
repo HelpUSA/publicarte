@@ -1,5 +1,56 @@
 [
   {
+    "id": "tck-1793272764126",
+    "tenantId": "aidoctor",
+    "tenantName": "AIDoctor",
+    "code": "AID-123",
+    "title": "Retirar o indicador visual ONLINE no cabeçalho.",
+    "description": "Retirar o indicador visual ONLINE no cabeçalho. era apenas um teste.",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1793272764126",
+        "ticketId": "tck-1793272764126",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Retirar o indicador visual ONLINE no cabeçalho. era apenas um teste.",
+        "attachments": [],
+        "createdAt": "2026-10-29T11:19:24.126Z"
+      }
+    ],
+    "createdAt": "2026-10-29T11:19:24.126Z",
+    "updatedAt": "2026-10-29T11:19:24.126Z",
+    "events": [
+      {
+        "id": "evt-create-1793272764126",
+        "ticketId": "tck-1793272764126",
+        "type": "ticket_created",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Retirar o indicador visual ONLINE no cabeçalho.",
+        "timestamp": "2026-10-29T11:19:24.126Z",
+        "seq": 1,
+        "signature": "0b52671ed215351cbc64d42327adf15571f30ad876668e8b4d4cfe41ed6f784e"
+      }
+    ]
+  },
+  {
     "id": "tck-1793133936596",
     "tenantId": "aidoctor",
     "tenantName": "AIDoctor",
@@ -219,7 +270,7 @@
         "signature": "2b2fd9de90f1a6ee7e612d46bdaa12186b4fa42921115064d8e6a05bf4c62d5c"
       }
     ],
-    "progressPercentage": 75,
+    "progressPercentage": 100,
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressStep": "📦 *[FASE 3/4 - 75%]*: Validação estática, integridade de layout e testes aprovados."
   },
