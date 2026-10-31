@@ -69,10 +69,20 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 25%]*: 🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada.",
         "createdAt": "2026-10-31T21:11:41.306Z"
+      },
+      {
+        "id": "msg-prog-1793481044110",
+        "ticketId": "tck-1793480723769",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: Demanda técnica processada e validada.",
+        "createdAt": "2026-10-31T21:10:44Z"
       }
     ],
     "createdAt": "2026-10-31T21:05:23.769Z",
-    "updatedAt": "2026-10-31T21:11:41.306Z",
+    "updatedAt": "2026-10-31T21:10:44Z",
     "events": [
       {
         "id": "evt-create-1793480723769",
@@ -119,9 +129,9 @@
         "signature": "b5a98b0e9811fb61b33971114bebc058279aa84e8acf8143b317c46d5ee4aed7"
       }
     ],
-    "progressPercentage": 25,
+    "progressPercentage": 50,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Análise de requisitos e escopo iniciada."
+    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Demanda técnica processada e validada."
   },
   {
     "id": "tck-1793473230120",
