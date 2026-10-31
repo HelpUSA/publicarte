@@ -57,6 +57,16 @@
         "createdAt": "2026-10-31T19:42:18Z"
       },
       {
+        "id": "msg-prog-1793475747744",
+        "ticketId": "tck-1793473230120",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: Demanda técnica processada e validada.",
+        "createdAt": "2026-10-31T19:42:27Z"
+      },
+      {
         "id": "msg-app-1793475794752",
         "ticketId": "tck-1793473230120",
         "senderId": "helpus-master",
@@ -87,18 +97,18 @@
         "createdAt": "2026-10-31T19:43:24.111Z"
       },
       {
-        "id": "msg-prog-1793475747744",
+        "id": "msg-prg-1793475813219",
         "ticketId": "tck-1793473230120",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "⚙️ *[FASE 2/4 - 50%]*: Demanda técnica processada e validada.",
-        "createdAt": "2026-10-31T19:42:27Z"
+        "content": "⚡ *[PROGRESSO 50%]*: ⚙️ *[FASE 2/4 - 50%]*: Demanda técnica processada e validada.",
+        "createdAt": "2026-10-31T19:43:33.219Z"
       }
     ],
     "createdAt": "2026-10-31T19:00:30.120Z",
-    "updatedAt": "2026-10-31T19:42:27Z",
+    "updatedAt": "2026-10-31T19:43:33.219Z",
     "events": [
       {
         "id": "evt-create-1793473230120",
@@ -143,6 +153,20 @@
         "timestamp": "2026-10-31T19:43:24.111Z",
         "seq": 3,
         "signature": "9a668499e5350e3396ea93c2246e77128a85a26c215038c2726eab3542b0042f"
+      },
+      {
+        "id": "evt-prg-1793475813219-50",
+        "ticketId": "tck-1793473230120",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Demanda técnica processada e validada.",
+        "timestamp": "2026-10-31T19:43:33.219Z",
+        "seq": 4,
+        "signature": "7450243298f9cd35c77d7b1d84929beeb7babcf2acbf44aabac1bf7a06f2c567"
       }
     ],
     "progressPercentage": 50,
