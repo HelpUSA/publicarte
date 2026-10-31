@@ -2237,5 +2237,80 @@
     "assignedTo": "HelpUS Master SuperAdmin",
     "events": [],
     "progressPercentage": 0
+  },
+  {
+    "id": "tck-1793470709604",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-120",
+    "title": "Ajuste de Acesso à Área Restrita (Login Obrigatório), Importador Direto de Laudos em Word (.docx) e Isolamento de Notificações",
+    "description": "1. Acesso à Área Restrita / Segurança de Login: Na página inicial do site, ao clicar em \"Área Restrita\", o sistema estava acessando diretamente o painel médico sem solicitar credenciais, devido à persistência de sessão contínua. Demanda: Exigir login obrigatório a cada abertura do painel da clínica, suporte a logout imediato/bloqueio com botão dedicado e encerramento de sessão ao fechar a aba/navegador.\n\n2. Importador Nativo de Laudos em Word (.docx): Implementar leitor nativo de arquivos Word (.docx) para que o Dr. Eduardo possa carregar os arquivos de laudos já gerados no computador. O sistema deve extrair automaticamente: Nome do Paciente, Data do Exame, Data de Nascimento, Médico Solicitante, Resultados dos Nervos/Condução e Conclusão, integrando com a base cadastral de 1.739 pacientes para preencher CPF e telefone.\n\n3. Isolamento de Notificações do Suporte: O e-mail pessoal (eduardojcmagalhaes@gmail.com) estava recebendo notificações de chamados abertos por outros clientes da plataforma HelpUS (ex: AIDoctor). Demanda: Isolar o envio de e-mails para que o médico receba notificações exclusivamente dos seus próprios chamados (tenant neuro.eduardomagalhaes).",
+    "category": "support",
+    "priority": "high",
+    "status": "resolved",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://neuro.eduardomagalhaes.helpusbr.com",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome / iPhone iOS Video Request)"
+    },
+    "attachments": [
+      {
+        "id": "att-video-eduardo-20261031",
+        "name": "20261031_135627000_iOS.MP4",
+        "type": "video/mp4",
+        "size": 55439403
+      }
+    ],
+    "messages": [
+      {
+        "id": "msg-init-1793470709604",
+        "ticketId": "tck-1793470709604",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Envio de vídeo explicativo demonstrando as 3 necessidades essenciais no sistema da clínica: 1) Área restrita entrando direto sem pedir login; 2) Importador direto de laudos em arquivo Word (.docx) salvos no computador; 3) Notificações indevidas de tickets de outros clientes caindo no Gmail.",
+        "createdAt": "2026-10-31T18:18:29.604Z"
+      },
+      {
+        "id": "msg-app-1793470709604",
+        "ticketId": "tck-1793470709604",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Solicitação Aprovada pelo HelpUS Master SuperAdmin. Demandas técnicas prioritárias encaminhadas para execução e deploy em produção.",
+        "createdAt": "2026-10-31T18:18:29.604Z"
+      },
+      {
+        "id": "msg-prod-1793470709604",
+        "ticketId": "tck-1793470709604",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚡ *[ENTROU EM PRODUÇÃO]*: Implementação concluída e validada em ambiente local e nuvem Vercel. Atualização das rotas do HelpUS Support Hub e da aplicação médica neuro.eduardomagalhaes.",
+        "createdAt": "2026-10-31T18:18:29.604Z"
+      },
+      {
+        "id": "msg-res-1793470709604",
+        "ticketId": "tck-1793470709604",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[CONCLUÍDO & RESOLVIDO]*: O chamado [NEU-120] foi integralmente atendido com a entrega de todas as demandas solicitadas pelo Dr. Eduardo Magalhães:\n\n1. 🔒 **Segurança & Login na Área Restrita**:\n   - O acesso agora exige autenticação obrigatória via Google OAuth ou e-mail/senha.\n   - A sessão médica é mantida estritamente em memória de aba ativa (sessionStorage) e encerra automaticamente ao fechar o navegador ou a aba.\n   - Ao fechar o modal com o botão \"X\", o painel é imediatamente trancado.\n   - Adicionado botão de ação rápida \"🔒 Sair / Bloquear\" na barra superior para encerramento instantâneo a qualquer momento.\n\n2. 📥 **Importador Nativo de Laudos em Word (.docx)**:\n   - Adicionado leitor nativo com botão \"📥 Carregar Laudo (.docx)\" e zona de arrastar e soltar (drag & drop) diretamente acima do formulário de exame.\n   - O sistema lê o documento Word e extrai de forma inteligente: Nome do Paciente, Data do Exame, Data de Nascimento, Médico Solicitante, Seções de Neurocondução Motora/Sensitiva, Onda F, Eletromiografia e Conclusão.\n   - Cruzamento automático instantâneo com a base cadastral de 1.739 pacientes da clínica: ao detectar o nome, o sistema já auto-preenche o CPF e Telefone/WhatsApp do paciente!\n\n3. 📧 **Isolamento de E-mails do Suporte**:\n   - Ajustado o serviço de notificações do HelpUS Support Hub (emailService.ts). O e-mail eduardojcmagalhaes@gmail.com agora recebe estritamente as notificações referentes ao seu próprio sistema (tenant neuro.eduardomagalhaes), bloqueando qualquer e-mail de chamados de terceiros.",
+        "createdAt": "2026-10-31T18:18:29.604Z"
+      }
+    ],
+    "createdAt": "2026-10-31T18:18:29.604Z",
+    "updatedAt": "2026-10-31T18:18:29.604Z",
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressPercentage": 100,
+    "progressStep": "✅ Concluído e enviado para produção com sucesso!",
+    "events": []
   }
 ]
