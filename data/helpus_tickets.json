@@ -1,5 +1,56 @@
 [
   {
+    "id": "tck-1793480723769",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-131",
+    "title": "gerar pdf de laudo",
+    "description": "Realizei um upload de arquivo docx com laudo de paciente, mas ao clicar no botao assinar e gerar pdf timbrado, nada acontece. ",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1793480723769",
+        "ticketId": "tck-1793480723769",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Realizei um upload de arquivo docx com laudo de paciente, mas ao clicar no botao assinar e gerar pdf timbrado, nada acontece. ",
+        "attachments": [],
+        "createdAt": "2026-10-31T21:05:23.769Z"
+      }
+    ],
+    "createdAt": "2026-10-31T21:05:23.769Z",
+    "updatedAt": "2026-10-31T21:05:23.769Z",
+    "events": [
+      {
+        "id": "evt-create-1793480723769",
+        "ticketId": "tck-1793480723769",
+        "type": "ticket_created",
+        "actorEmail": "eduardojcmagalhaes@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "gerar pdf de laudo",
+        "timestamp": "2026-10-31T21:05:23.769Z",
+        "seq": 1,
+        "signature": "feb4f8a6fb1db64306bfefa4bc326be0108741b68e029916ee6295b51e4ff1bb"
+      }
+    ]
+  },
+  {
     "id": "tck-1793473230120",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
