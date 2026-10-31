@@ -67,6 +67,16 @@
         "createdAt": "2026-10-31T19:42:27Z"
       },
       {
+        "id": "msg-prog-1793475756046",
+        "ticketId": "tck-1793473230120",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com.",
+        "createdAt": "2026-10-31T19:42:36Z"
+      },
+      {
         "id": "msg-app-1793475794752",
         "ticketId": "tck-1793473230120",
         "senderId": "helpus-master",
@@ -107,18 +117,18 @@
         "createdAt": "2026-10-31T19:43:33.219Z"
       },
       {
-        "id": "msg-prog-1793475756046",
+        "id": "msg-prg-1793475822103",
         "ticketId": "tck-1793473230120",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com.",
-        "createdAt": "2026-10-31T19:42:36Z"
+        "content": "⚡ *[PROGRESSO 75%]*: 📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com.",
+        "createdAt": "2026-10-31T19:43:42.103Z"
       }
     ],
     "createdAt": "2026-10-31T19:00:30.120Z",
-    "updatedAt": "2026-10-31T19:42:36Z",
+    "updatedAt": "2026-10-31T19:43:42.103Z",
     "events": [
       {
         "id": "evt-create-1793473230120",
@@ -177,6 +187,20 @@
         "timestamp": "2026-10-31T19:43:33.219Z",
         "seq": 4,
         "signature": "7450243298f9cd35c77d7b1d84929beeb7babcf2acbf44aabac1bf7a06f2c567"
+      },
+      {
+        "id": "evt-prg-1793475822103-75",
+        "ticketId": "tck-1793473230120",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 75,
+        "status": "in_production",
+        "note": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com.",
+        "timestamp": "2026-10-31T19:43:42.103Z",
+        "seq": 5,
+        "signature": "f1e6a65b34761878c2b0f80fb0de1cb377c6eaa3a46b22168bc12e0ef25c9646"
       }
     ],
     "progressPercentage": 75,
