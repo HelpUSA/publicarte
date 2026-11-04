@@ -800,7 +800,7 @@
       }
     ],
     "createdAt": "2026-11-04T11:24:04.003Z",
-    "updatedAt": "2026-11-04T14:32:53Z",
+    "updatedAt": "2026-11-04T14:34:05.172Z",
     "events": [
       {
         "id": "evt-create-1793791444003",
@@ -931,6 +931,20 @@
         "timestamp": "2026-11-04T14:18:55.442Z",
         "seq": 9,
         "signature": "730318e0d867d79f0fd688b22092cd89074bb49efa791d96d0b68046b9da5fee"
+      },
+      {
+        "id": "evt-prg-1793802845172-25",
+        "ticketId": "tck-1793791444003",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 25,
+        "status": "in_production",
+        "note": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Timeout (900s) aguardando conclusão da modificação de código pelo Worker.",
+        "timestamp": "2026-11-04T14:34:05.172Z",
+        "seq": 10,
+        "signature": "77c33d5941d69a4de71aeac292bf9c57542a62fe1050dfb634450c474232cc03"
       }
     ],
     "progressPercentage": 25,
