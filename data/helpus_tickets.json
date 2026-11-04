@@ -1,5 +1,54 @@
 [
   {
+    "id": "tck-1793798311056",
+    "tenantId": "helpus-support",
+    "tenantName": "HelpUS Support Hub",
+    "code": "HEL-135",
+    "title": "Alterar a cor do indicador v3.0 Ativo de verde para azul no cabeçalho do HelpUS Support",
+    "description": "Alterar a cor do badge/indicador ● v3.0 Ativo (localizado ao lado de SaaS Hub no cabeçalho superior) de verde esmeralda (emerald) para azul (blue/sky) na página inicial (src/app/page.tsx), no portal de atendimento (src/app/portal/page.tsx) e no componente Navbar (src/components/Navbar.tsx) do site https://support.helpusbr.com.",
+    "category": "feature",
+    "priority": "high",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://support.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 / Chrome"
+    },
+    "messages": [
+      {
+        "id": "msg-1793798311056",
+        "ticketId": "tck-1793798311056",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Alterar a cor do badge/indicador ● v3.0 Ativo (localizado ao lado de SaaS Hub no cabeçalho superior) de verde esmeralda (emerald) para azul (blue/sky) na página inicial (src/app/page.tsx), no portal de atendimento (src/app/portal/page.tsx) e no componente Navbar (src/components/Navbar.tsx) do site https://support.helpusbr.com.",
+        "createdAt": "2026-11-04T13:18:31.056Z"
+      }
+    ],
+    "createdAt": "2026-11-04T13:18:31.056Z",
+    "updatedAt": "2026-11-04T13:18:31.056Z",
+    "events": [
+      {
+        "id": "evt-create-1793798311056",
+        "ticketId": "tck-1793798311056",
+        "type": "ticket_created",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Alterar a cor do indicador v3.0 Ativo de verde para azul no cabeçalho do HelpUS Support",
+        "timestamp": "2026-11-04T13:18:31.056Z",
+        "seq": 1,
+        "signature": "6504be064dc39def2158eb9e8965b48d54efa33971d2a436ee926100d154b992"
+      }
+    ]
+  },
+  {
     "id": "tck-1793794342872",
     "tenantId": "helpus-support",
     "tenantName": "HelpUS Support Hub",
