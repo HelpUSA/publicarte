@@ -1,5 +1,56 @@
 [
   {
+    "id": "tck-1793791444003",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-133",
+    "title": "Carregamento de PDF com laudo já pronto",
+    "description": "Quero ter a opção de fazer upload de arquivos em PDF com laudos e traçados dos exames prontos, que nao mais precisam de edição, apenas para assinatura digital e liberação para o paciente. Esta funcionalidade irá ser bastante útil em alguns cenários do meu atendimento no dia a dia. ",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1793791444003",
+        "ticketId": "tck-1793791444003",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Quero ter a opção de fazer upload de arquivos em PDF com laudos e traçados dos exames prontos, que nao mais precisam de edição, apenas para assinatura digital e liberação para o paciente. Esta funcionalidade irá ser bastante útil em alguns cenários do meu atendimento no dia a dia. ",
+        "attachments": [],
+        "createdAt": "2026-11-04T11:24:04.003Z"
+      }
+    ],
+    "createdAt": "2026-11-04T11:24:04.003Z",
+    "updatedAt": "2026-11-04T11:24:04.003Z",
+    "events": [
+      {
+        "id": "evt-create-1793791444003",
+        "ticketId": "tck-1793791444003",
+        "type": "ticket_created",
+        "actorEmail": "eduardojcmagalhaes@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Carregamento de PDF com laudo já pronto",
+        "timestamp": "2026-11-04T11:24:04.003Z",
+        "seq": 1,
+        "signature": "6dbc85849cf244bd666b13351e29eb9d244628886b3069e0bbb0937fe1d784a2"
+      }
+    ]
+  },
+  {
     "id": "tck-1793791290974",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
@@ -64,7 +115,8 @@
         "seq": 1,
         "signature": "9565b0d56ea109f6237e36dd9e144e83997917dfccbbbd781ac139a2bc738932"
       }
-    ]
+    ],
+    "progressPercentage": 0
   },
   {
     "id": "tck-1793480723769",
