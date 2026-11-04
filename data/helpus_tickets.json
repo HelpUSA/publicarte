@@ -67,10 +67,20 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 25%]*: 🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
         "createdAt": "2026-11-04T12:12:42.228Z"
+      },
+      {
+        "id": "msg-prog-1793794532558",
+        "ticketId": "tck-1793794342872",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Timeout (240s) aguardando conclusão da modificação de código pelo Worker.",
+        "createdAt": "2026-11-04T12:15:32Z"
       }
     ],
     "createdAt": "2026-11-04T12:12:22.872Z",
-    "updatedAt": "2026-11-04T12:12:42.228Z",
+    "updatedAt": "2026-11-04T12:15:32Z",
     "events": [
       {
         "id": "evt-create-1793794342872",
@@ -120,7 +130,7 @@
     "progressPercentage": 25,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "Teste interno de ponta a ponta do Motor Executor Multi-Tenant Real v3.0.",
-    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação..."
+    "progressStep": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Timeout (240s) aguardando conclusão da modificação de código pelo Worker."
   },
   {
     "id": "tck-1793791444003",
