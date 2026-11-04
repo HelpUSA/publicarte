@@ -1,5 +1,54 @@
 [
   {
+    "id": "tck-1793794342872",
+    "tenantId": "helpus-support",
+    "tenantName": "HelpUS Support Hub",
+    "code": "HEL-134",
+    "title": "Exibir indicador v3.0 Ativo no cabeçalho Navbar do HelpUS Support",
+    "description": "No arquivo src/components/Navbar.tsx do projeto helpus-support, ao lado do badge 'SaaS Hub', adicione um badge verde discreto com o texto 'v3.0 Ativo' (classes emerald) indicando que o motor multi-tenant v3.0 está operacional.",
+    "category": "feature",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://support.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11"
+    },
+    "messages": [
+      {
+        "id": "msg-1793794342872",
+        "ticketId": "tck-1793794342872",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "No arquivo src/components/Navbar.tsx do projeto helpus-support, ao lado do badge 'SaaS Hub', adicione um badge verde discreto com o texto 'v3.0 Ativo' (classes emerald) indicando que o motor multi-tenant v3.0 está operacional.",
+        "createdAt": "2026-11-04T12:12:22.872Z"
+      }
+    ],
+    "createdAt": "2026-11-04T12:12:22.872Z",
+    "updatedAt": "2026-11-04T12:12:22.872Z",
+    "events": [
+      {
+        "id": "evt-create-1793794342872",
+        "ticketId": "tck-1793794342872",
+        "type": "ticket_created",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Exibir indicador v3.0 Ativo no cabeçalho Navbar do HelpUS Support",
+        "timestamp": "2026-11-04T12:12:22.872Z",
+        "seq": 1,
+        "signature": "1122a39ad37fca02b681acb65bf80fc7c74e4a499d571b8ceb8a58f418e746a0"
+      }
+    ]
+  },
+  {
     "id": "tck-1793791444003",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
@@ -463,7 +512,7 @@
         "signature": "aa434432cf436eec0ce4f0a5e9f8113be000c642a321ec819b9919b22a02f15a"
       }
     ],
-    "progressPercentage": 75,
+    "progressPercentage": 100,
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com."
   },
