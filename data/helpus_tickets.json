@@ -89,10 +89,20 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 50%]*: ⚙️ *[FASE 2/4 - 50%]*: Demanda técnica processada e validada.",
         "createdAt": "2026-11-04T11:30:21.560Z"
+      },
+      {
+        "id": "msg-prog-1793791759149",
+        "ticketId": "tck-1793791444003",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com.",
+        "createdAt": "2026-11-04T11:29:19Z"
       }
     ],
     "createdAt": "2026-11-04T11:24:04.003Z",
-    "updatedAt": "2026-11-04T11:30:21.560Z",
+    "updatedAt": "2026-11-04T11:29:19Z",
     "events": [
       {
         "id": "evt-create-1793791444003",
@@ -153,9 +163,9 @@
         "signature": "aca1e11263ae8e5ef399fe9ad62c544d2ce4c8f262d2f64f21b6855f28827608"
       }
     ],
-    "progressPercentage": 50,
+    "progressPercentage": 75,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Demanda técnica processada e validada."
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com."
   },
   {
     "id": "tck-1793791290974",
