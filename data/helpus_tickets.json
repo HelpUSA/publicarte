@@ -8,7 +8,7 @@
     "description": "No arquivo src/components/Navbar.tsx do projeto helpus-support, ao lado do badge 'SaaS Hub', adicione um badge verde discreto com o texto 'v3.0 Ativo' (classes emerald) indicando que o motor multi-tenant v3.0 está operacional.",
     "category": "feature",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
@@ -100,7 +100,7 @@
       }
     ],
     "createdAt": "2026-11-04T12:12:22.872Z",
-    "updatedAt": "2026-11-04T12:21:05Z",
+    "updatedAt": "2026-11-04T12:22:17.029Z",
     "events": [
       {
         "id": "evt-create-1793794342872",
@@ -173,6 +173,20 @@
         "timestamp": "2026-11-04T12:16:50.105Z",
         "seq": 5,
         "signature": "4a97556364b01097ea4b43247bfcb2482fcc13bd17e3e58552d46335a6b98197"
+      },
+      {
+        "id": "evt-prg-1793794937029-0",
+        "ticketId": "tck-1793794342872",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "in_production",
+        "note": "Aguardando aprovação do Master SuperAdmin no Portal.",
+        "timestamp": "2026-11-04T12:22:17.029Z",
+        "seq": 6,
+        "signature": "52ab39602cae815255cf7cb3f1ad3e14ddda88262dfb6ef875483535e4254329"
       }
     ],
     "progressPercentage": 0,
