@@ -77,10 +77,20 @@
         "isInternalNote": false,
         "content": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Timeout (240s) aguardando conclusão da modificação de código pelo Worker.",
         "createdAt": "2026-11-04T12:15:32Z"
+      },
+      {
+        "id": "msg-prog-1793794538856",
+        "ticketId": "tck-1793794342872",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Timeout (240s) aguardando conclusão da modificação de código pelo Worker.",
+        "createdAt": "2026-11-04T12:15:38Z"
       }
     ],
     "createdAt": "2026-11-04T12:12:22.872Z",
-    "updatedAt": "2026-11-04T12:16:43.897Z",
+    "updatedAt": "2026-11-04T12:15:38Z",
     "events": [
       {
         "id": "evt-create-1793794342872",
