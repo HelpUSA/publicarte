@@ -160,7 +160,7 @@
       }
     ],
     "createdAt": "2026-11-04T12:12:22.872Z",
-    "updatedAt": "2026-11-04T12:53:16Z",
+    "updatedAt": "2026-11-04T12:54:28.782Z",
     "events": [
       {
         "id": "evt-create-1793794342872",
@@ -303,6 +303,20 @@
         "timestamp": "2026-11-04T12:25:46.550Z",
         "seq": 10,
         "signature": "e8ce6d3fc4b20b033eee52ff9510df2fbf1159dbda1810875f5a9a143f82a2a9"
+      },
+      {
+        "id": "evt-res-1793796868783",
+        "ticketId": "tck-1793794342872",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ *[SOLUÇÃO HOMOLOGADA]*: Inserido o badge esmeralda pulsante '● v3.0 Ativo' ao lado de 'SaaS Hub' diretamente nos cabeçalhos reais da Landing Page (src/app/page.tsx), do Painel Master/Portal (src/app/portal/page.tsx) e do componente Navbar (src/components/Navbar.tsx), além da remoção total de textos estáticos no gerador de PDF (src/lib/pdfGenerator.ts).\n• Aplicação Atualizada: HelpUS Support Hub (https://support.helpusbr.com)\n• Local do Site Alterado: Cabeçalho Superior (Header) da Página Inicial (src/app/page.tsx, linhas 64-72) ao lado do badge 'SaaS Hub' e Cabeçalho do Portal Master (src/app/portal/page.tsx, linhas 900-906)\n• Commit GitHub Verificado: `022f64f`\n• Arquivos Alterados: `src/app/page.tsx, src/app/portal/page.tsx, src/components/Navbar.tsx, src/lib/pdfGenerator.ts, src/lib/store.ts`\n• Produção Vercel READY: https://helpus-support-quddy4g5k-help-us.vercel.app\n• Onde e Como Testar: Abra https://support.helpusbr.com (pressione Ctrl+F5 se necessário) e observe no topo superior esquerdo, ao lado de 'HelpUS Support' e 'SaaS Hub', o indicador verde esmeralda '● v3.0 Ativo'. Em seguida, acesse o Painel Master (/portal), abra o chamado HEL-134 e clique em 'Baixar PDF' para conferir o relatório 100% dinâmico com os prints do local alterado.",
+        "timestamp": "2026-11-04T12:54:28.783Z",
+        "seq": 11,
+        "signature": "bede69dc931e44bf9de1c54a3fd03a8183c0cf16bfa82127b1ef045c865d97e6"
       }
     ],
     "progressPercentage": 100,
