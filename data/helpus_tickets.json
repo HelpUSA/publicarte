@@ -8,7 +8,7 @@
     "description": "No arquivo src/components/Navbar.tsx do projeto helpus-support, ao lado do badge 'SaaS Hub', adicione um badge verde discreto com o texto 'v3.0 Ativo' (classes emerald) indicando que o motor multi-tenant v3.0 está operacional.",
     "category": "feature",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "helpus.ecommerce@gmail.com",
     "createdByName": "HelpUS Master SuperAdmin",
     "contextData": {
@@ -27,10 +27,30 @@
         "isInternalNote": false,
         "content": "No arquivo src/components/Navbar.tsx do projeto helpus-support, ao lado do badge 'SaaS Hub', adicione um badge verde discreto com o texto 'v3.0 Ativo' (classes emerald) indicando que o motor multi-tenant v3.0 está operacional.",
         "createdAt": "2026-11-04T12:12:22.872Z"
+      },
+      {
+        "id": "msg-app-1793794350576",
+        "ticketId": "tck-1793794342872",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin). A execução ainda não foi iniciada.\n\n📝 *[INSTRUÇÕES ADICIONAIS DA GESTÃO]*:\nTeste interno de ponta a ponta do Motor Executor Multi-Tenant Real v3.0.",
+        "createdAt": "2026-11-04T12:12:30.576Z"
+      },
+      {
+        "id": "msg-prod-1793794350577",
+        "ticketId": "tck-1793794342872",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🕒 *[APROVAÇÃO REGISTRADA]*: Chamado autorizado e aguardando despacho controlado para execução local (HelpUS Support Hub). Nenhum build ou deploy é iniciado automaticamente pela aprovação.",
+        "createdAt": "2026-11-04T12:12:30.576Z"
       }
     ],
     "createdAt": "2026-11-04T12:12:22.872Z",
-    "updatedAt": "2026-11-04T12:12:22.872Z",
+    "updatedAt": "2026-11-04T12:12:30.576Z",
     "events": [
       {
         "id": "evt-create-1793794342872",
@@ -45,8 +65,28 @@
         "timestamp": "2026-11-04T12:12:22.872Z",
         "seq": 1,
         "signature": "1122a39ad37fca02b681acb65bf80fc7c74e4a499d571b8ceb8a58f418e746a0"
+      },
+      {
+        "id": "evt-appr-4f2df3be-1264-4f4e-8758-bd2bb9ce311d",
+        "ticketId": "tck-1793794342872",
+        "tenantId": "helpus-support",
+        "idempotencyKey": "helpus-approval-outbox-v1:tck-1793794342872:evt-appr-4f2df3be-1264-4f4e-8758-bd2bb9ce311d",
+        "type": "master_approved",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "in_production",
+        "note": "Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin); aguardando despacho de execução.",
+        "timestamp": "2026-11-04T12:12:30.576Z",
+        "seq": 2,
+        "signature": "5b95d54f394ff5849a24f369d03d695dc24950ea61c36531586fdfcd5df00861"
       }
-    ]
+    ],
+    "progressPercentage": 0,
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "adminNotes": "Teste interno de ponta a ponta do Motor Executor Multi-Tenant Real v3.0.",
+    "progressStep": "Aprovação registrada. Aguardando confirmação de início pelo operador local."
   },
   {
     "id": "tck-1793791444003",
