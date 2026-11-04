@@ -1125,7 +1125,7 @@
       }
     ],
     "createdAt": "2026-11-04T11:21:30.974Z",
-    "updatedAt": "2026-11-04T14:14:29Z",
+    "updatedAt": "2026-11-04T14:15:42.758Z",
     "events": [
       {
         "id": "evt-create-1793791290974",
@@ -1312,12 +1312,26 @@
         "timestamp": "2026-11-04T14:15:22.633Z",
         "seq": 13,
         "signature": "6a0a9bbd0b41b8ff6778c197942634a89a0a948bc0b43fe311f681ca1da06303"
+      },
+      {
+        "id": "evt-res-1793801742758",
+        "ticketId": "tck-1793791290974",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ *[SOLUÇÃO HOMOLOGADA]*: Implementado parser inteligente avançado no leitor nativo de documentos Word (.docx/.doc) para extração e transcrição completa de todos os campos clínicos solicitados (CPF, Nome Completo, Médico Solicitante, Idade e Data de Nascimento). Adicionado campo de estado e input dedicado de Idade no formulário cadastral do gerador de laudos, sincronizado dinamicamente com o cálculo automático por data de nascimento. Corrigida a transcrição para a emissão de Laudos em PDF e ampliado o banner de confirmação pós-leitura para exibir detalhadamente todos os dados extraídos do documento Word.\n• Aplicação Atualizada: Dr. Eduardo Magalhães Neurologista (Neuro) (https://neuro.eduardomagalhaes.helpusbr.com)\n• Local do Site Alterado: Painel Médico / Gerador de Laudos Clínicos (Módulo 'Importador Direto de Laudo Word (.docx)' e formulário de 'Dados Cadastrais do Paciente')\n• Commit GitHub Verificado: `413780a`\n• Arquivos Alterados: `src/components/MedicalLaudosApp.jsx`\n• Produção Vercel READY: https://neuroeduardomagalhaes.vercel.app\n• Onde e Como Testar: 1. Acesse https://neuro.eduardomagalhaes.helpusbr.com e entre no Painel Médico (ou acesse com ?panel=open). 2. Na aba 'Gerador de Laudos', localize a seção 'Importador Direto de Laudo Word (.docx)'. 3. Carregue ou arraste qualquer laudo em formato .docx que possua CPF, Nome do Paciente, Data de Nascimento/Idade e Médico Solicitante (em linha única ou em linhas separadas). 4. Observe o banner de sucesso verde exibir instantaneamente: Nome do Paciente, CPF formatado, Data de Nascimento com Idade, Médico Solicitante e Data do Exame. 5. Verifique que todos os 5 campos são transcritos imediatamente para os respectivos campos de formulário e incorporados ao cabeçalho do laudo gerado.",
+        "timestamp": "2026-11-04T14:15:42.758Z",
+        "seq": 14,
+        "signature": "9d2fa568c5bf1a32dbc1749f204ad0bc96ba7c37b70348b1297110165b6de2ad"
       }
     ],
     "progressPercentage": 100,
     "assignedTo": "HelpUS Master SuperAdmin",
     "reopenedAt": "2026-11-04T13:30:57.569Z",
-    "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: Implementado parser inteligente avançado no leitor nativo de documentos Word (.docx/.doc) para extração e transcrição completa de todos os campos clínicos solicitados (CPF, Nome Completo, Médico Solicitante, Idade e Data de Nascimento). Adicionado campo de estado e input dedicado de Idade no formulário cadastral do gerador de laudos, sincronizado dinamicamente com o cálculo automático por data de nascimento. Corrigida a transcrição para a emissão de Laudos em PDF e ampliado o banner de confirmação pós-leitura para exibir detalhadamente todos os dados extraídos do documento Word.\n• Aplicação Atualizada: Dr. Eduardo Magalhães Neurologista (Neuro) (https://neuro.eduardomagalhaes.helpusbr.com)\n• Local do Site Alterado: Painel Médico / Gerador de Laudos Clínicos (Módulo 'Importador Direto de Laudo Word (.docx)' e formulário de 'Dados Cadastrais do Paciente')\n• Commit GitHub Verificado: `413780a`\n• Arquivos Alterados: `src/components/MedicalLaudosApp.jsx`\n• Produção Vercel READY: https://neuroeduardomagalhaes.vercel.app\n• Onde e Como Testar: 1. Acesse https://neuro.eduardomagalhaes.helpusbr.com e entre no Painel Médico (ou acesse com ?panel=open). 2. Na aba 'Gerador de Laudos', localize a seção 'Importador Direto de Laudo Word (.docx)'. 3. Carregue ou arraste qualquer laudo em formato .docx que possua CPF, Nome do Paciente, Data de Nascimento/Idade e Médico Solicitante (em linha única ou em linhas separadas). 4. Observe o banner de sucesso verde exibir instantaneamente: Nome do Paciente, CPF formatado, Data de Nascimento com Idade, Médico Solicitante e Data do Exame. 5. Verifique que todos os 5 campos são transcritos imediatamente para os respectivos campos de formulário e incorporados ao cabeçalho do laudo gerado.",
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://neuro.eduardomagalhaes.helpusbr.com (Deployment Vercel: https://neuroeduardomagalhaes.vercel.app • Commit GitHub: `413780a`).",
     "solutionCommitSha": "413780a",
     "resolutionReport": {
       "summary": "Implementado parser inteligente avançado no leitor nativo de documentos Word (.docx/.doc) para extração e transcrição completa de todos os campos clínicos solicitados (CPF, Nome Completo, Médico Solicitante, Idade e Data de Nascimento). Adicionado campo de estado e input dedicado de Idade no formulário cadastral do gerador de laudos, sincronizado dinamicamente com o cálculo automático por data de nascimento. Corrigida a transcrição para a emissão de Laudos em PDF e ampliado o banner de confirmação pós-leitura para exibir detalhadamente todos os dados extraídos do documento Word.",
