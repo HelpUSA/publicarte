@@ -91,7 +91,7 @@
       }
     ],
     "createdAt": "2026-11-04T13:18:31.056Z",
-    "updatedAt": "2026-11-04T13:21:45Z",
+    "updatedAt": "2026-11-04T13:22:57.609Z",
     "events": [
       {
         "id": "evt-create-1793798311056",
@@ -150,6 +150,20 @@
         "timestamp": "2026-11-04T13:21:55.413Z",
         "seq": 4,
         "signature": "1249111eb43dcd7bb32ddecae5c7ecbee1c9786adb074462e0f5b16fe19ecfda"
+      },
+      {
+        "id": "evt-prg-1793798577609-75",
+        "ticketId": "tck-1793798311056",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 75,
+        "status": "in_production",
+        "note": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://support.helpusbr.com (Deployment Vercel: https://helpus-support-deqn35anl-help-us.vercel.app • Commit GitHub: `94570e4`).",
+        "timestamp": "2026-11-04T13:22:57.609Z",
+        "seq": 5,
+        "signature": "06e0662a9367feee0c0c21ed76438a1017bf208a33a24c979dd0ff7cc3e85ea0"
       }
     ],
     "progressPercentage": 75,
