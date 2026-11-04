@@ -61,6 +61,16 @@
         "createdAt": "2026-11-04T11:29:19Z"
       },
       {
+        "id": "msg-prog-1793791768420",
+        "ticketId": "tck-1793791444003",
+        "senderId": "ia.engine@helpusbr.com",
+        "senderName": "IA Autônoma (HelpUS Tech)",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda técnica processada e validada. Demanda testada e publicada em produção.",
+        "createdAt": "2026-11-04T11:29:28Z"
+      },
+      {
         "id": "msg-app-1793791804819",
         "ticketId": "tck-1793791444003",
         "senderId": "helpus-master",
@@ -111,18 +121,18 @@
         "createdAt": "2026-11-04T11:30:30.746Z"
       },
       {
-        "id": "msg-prog-1793791768420",
+        "id": "msg-res-1793791839694",
         "ticketId": "tck-1793791444003",
         "senderId": "ia.engine@helpusbr.com",
         "senderName": "IA Autônoma (HelpUS Tech)",
         "senderRole": "agent",
         "isInternalNote": false,
         "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda técnica processada e validada. Demanda testada e publicada em produção.",
-        "createdAt": "2026-11-04T11:29:28Z"
+        "createdAt": "2026-11-04T11:30:39.694Z"
       }
     ],
     "createdAt": "2026-11-04T11:24:04.003Z",
-    "updatedAt": "2026-11-04T11:29:28Z",
+    "updatedAt": "2026-11-04T11:30:39.694Z",
     "events": [
       {
         "id": "evt-create-1793791444003",
@@ -195,11 +205,25 @@
         "timestamp": "2026-11-04T11:30:30.746Z",
         "seq": 5,
         "signature": "78df7a94dfdcd0aebf433ce2fb280fe9273b0a4189efb1b28a6d998e747a70aa"
+      },
+      {
+        "id": "evt-res-1793791839694",
+        "ticketId": "tck-1793791444003",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda técnica processada e validada. Demanda testada e publicada em produção.",
+        "timestamp": "2026-11-04T11:30:39.694Z",
+        "seq": 6,
+        "signature": "b431218d5d02e5a03e17143a69c4c622bb2103b2c15dd4b04a68ce6ecf68900e"
       }
     ],
-    "progressPercentage": 100,
+    "progressPercentage": 75,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda técnica processada e validada. Demanda testada e publicada em produção."
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com."
   },
   {
     "id": "tck-1793791290974",
