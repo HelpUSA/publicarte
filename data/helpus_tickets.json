@@ -221,7 +221,7 @@
         "signature": "b431218d5d02e5a03e17143a69c4c622bb2103b2c15dd4b04a68ce6ecf68900e"
       }
     ],
-    "progressPercentage": 75,
+    "progressPercentage": 100,
     "assignedTo": "HelpUS Master SuperAdmin",
     "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com."
   },
@@ -234,7 +234,7 @@
     "description": "quero que os dados constando nos docx que eu carregar, como CPF, NOME COMPLETO, MEDICO SOLICITANTE, IDADe, data de nascimento, sejam lidas e trancritas. Os dados nao estao sendo lidos, somente o nome do paciente, mas os demais não. ",
     "category": "support",
     "priority": "medium",
-    "status": "pending_approval",
+    "status": "in_production",
     "createdByEmail": "eduardojcmagalhaes@gmail.com",
     "createdByName": "Eduardo Magalhães (Neuro)",
     "contextData": {
@@ -271,10 +271,30 @@
           }
         ],
         "createdAt": "2026-11-04T11:21:30.974Z"
+      },
+      {
+        "id": "msg-app-1793792098266",
+        "ticketId": "tck-1793791290974",
+        "senderId": "helpus-master",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "✅ Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin). A execução ainda não foi iniciada.",
+        "createdAt": "2026-11-04T11:34:58.266Z"
+      },
+      {
+        "id": "msg-prod-1793792098267",
+        "ticketId": "tck-1793791290974",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Pipeline de Produção Vercel",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🕒 *[APROVAÇÃO REGISTRADA]*: Chamado autorizado e aguardando despacho controlado para execução local (Dr. Eduardo Magalhães Neurologista (Neuro)). Nenhum build ou deploy é iniciado automaticamente pela aprovação.",
+        "createdAt": "2026-11-04T11:34:58.266Z"
       }
     ],
     "createdAt": "2026-11-04T11:21:30.974Z",
-    "updatedAt": "2026-11-04T11:21:30.974Z",
+    "updatedAt": "2026-11-04T11:34:58.266Z",
     "events": [
       {
         "id": "evt-create-1793791290974",
@@ -289,9 +309,27 @@
         "timestamp": "2026-11-04T11:21:30.974Z",
         "seq": 1,
         "signature": "9565b0d56ea109f6237e36dd9e144e83997917dfccbbbd781ac139a2bc738932"
+      },
+      {
+        "id": "evt-appr-194791e3-b6c6-4fad-8654-718ca965ea76",
+        "ticketId": "tck-1793791290974",
+        "tenantId": "neuro.eduardomagalhaes",
+        "idempotencyKey": "helpus-approval-outbox-v1:tck-1793791290974:evt-appr-194791e3-b6c6-4fad-8654-718ca965ea76",
+        "type": "master_approved",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "in_production",
+        "note": "Aprovação registrada pelo Administrador HelpUS (HelpUS Master SuperAdmin); aguardando despacho de execução.",
+        "timestamp": "2026-11-04T11:34:58.266Z",
+        "seq": 2,
+        "signature": "7a943a42ea269541acea3c6b3ebd87bb3f74885b5c39a13b92dd66d128d2b76c"
       }
     ],
-    "progressPercentage": 0
+    "progressPercentage": 0,
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "progressStep": "Aprovação registrada. Aguardando confirmação de início pelo operador local."
   },
   {
     "id": "tck-1793480723769",
