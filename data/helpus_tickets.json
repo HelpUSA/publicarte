@@ -1087,7 +1087,7 @@
       }
     ],
     "createdAt": "2026-11-04T11:21:30.974Z",
-    "updatedAt": "2026-11-04T14:13:27Z",
+    "updatedAt": "2026-11-04T14:14:40.303Z",
     "events": [
       {
         "id": "evt-create-1793791290974",
@@ -1246,6 +1246,20 @@
         "timestamp": "2026-11-04T14:14:20.191Z",
         "seq": 11,
         "signature": "44c12238b65fe8cda90540db94d1a1ce4465cb2a00fa8a126ef85e0cf8cf77d9"
+      },
+      {
+        "id": "evt-prg-1793801680303-50",
+        "ticketId": "tck-1793791290974",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Implementado parser inteligente avançado no leitor nativo de documentos Word (.docx/.doc) para extração e transcrição completa de todos os campos clínicos solicitados (CPF, Nome Completo, Médico Solicitante, Idade e Data de Nascimento). Adicionado campo de estado e input dedicado de Idade no formulário cadastral do gerador de laudos, sincronizado dinamicamente com o cálculo automático por data de nascimento. Corrigida a transcrição para a emissão de Laudos em PDF e ampliado o banner de confirmação pós-leitura para exibir detalhadamente todos os dados extraídos do documento Word. | Compilação validada com sucesso | Commit GitHub: `413780a` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx`.",
+        "timestamp": "2026-11-04T14:14:40.303Z",
+        "seq": 12,
+        "signature": "63c092080e64e97f968d7f42bbf48193fec642deaf5d5479526f0d954dc87ed3"
       }
     ],
     "progressPercentage": 50,
