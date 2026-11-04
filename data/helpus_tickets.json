@@ -20,6 +20,16 @@
     "attachments": [],
     "messages": [
       {
+        "id": "msg-prog-1793798289792",
+        "ticketId": "tck-1793798311056",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
+        "createdAt": "2026-11-04T13:18:09Z"
+      },
+      {
         "id": "msg-1793798311056",
         "ticketId": "tck-1793798311056",
         "senderId": "helpus.ecommerce@gmail.com",
@@ -50,18 +60,18 @@
         "createdAt": "2026-11-04T13:19:10.700Z"
       },
       {
-        "id": "msg-prog-1793798289792",
+        "id": "msg-prg-1793798361583",
         "ticketId": "tck-1793798311056",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
-        "createdAt": "2026-11-04T13:18:09Z"
+        "content": "⚡ *[PROGRESSO 25%]*: 🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
+        "createdAt": "2026-11-04T13:19:21.583Z"
       }
     ],
     "createdAt": "2026-11-04T13:18:31.056Z",
-    "updatedAt": "2026-11-04T13:18:09Z",
+    "updatedAt": "2026-11-04T13:19:21.583Z",
     "events": [
       {
         "id": "evt-create-1793798311056",
@@ -92,6 +102,20 @@
         "timestamp": "2026-11-04T13:19:10.700Z",
         "seq": 2,
         "signature": "e458b7a178edb855c8cbaa8be2845ef2252052e5c8466fcc28d11ee1c1c5b210"
+      },
+      {
+        "id": "evt-prg-1793798361583-25",
+        "ticketId": "tck-1793798311056",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 25,
+        "status": "in_production",
+        "note": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
+        "timestamp": "2026-11-04T13:19:21.583Z",
+        "seq": 3,
+        "signature": "a540abdad70173efb8398837760f25c935d3b1e56f6283250cdba6bdb8eb0772"
       }
     ],
     "progressPercentage": 25,
