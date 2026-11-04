@@ -81,7 +81,7 @@
       }
     ],
     "createdAt": "2026-11-04T13:18:31.056Z",
-    "updatedAt": "2026-11-04T13:20:44Z",
+    "updatedAt": "2026-11-04T13:21:55.413Z",
     "events": [
       {
         "id": "evt-create-1793798311056",
@@ -126,6 +126,20 @@
         "timestamp": "2026-11-04T13:19:21.583Z",
         "seq": 3,
         "signature": "a540abdad70173efb8398837760f25c935d3b1e56f6283250cdba6bdb8eb0772"
+      },
+      {
+        "id": "evt-prg-1793798515413-50",
+        "ticketId": "tck-1793798311056",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Alteração das classes Tailwind CSS do indicador de versão 'v3.0 Ativo' e de seu ponto pulsante (bullet) de verde esmeralda (bg-emerald-500/10, text-emerald-400, border-emerald-500/20, bg-emerald-400) para azul (bg-blue-500/10, text-blue-400, border-blue-500/20, bg-blue-400) nos cabeçalhos da página inicial, do portal do cliente e no componente Navbar compartilhado. | Compilação validada com sucesso | Commit GitHub: `94570e4` | Arquivos alterados: `src/app/page.tsx, src/app/portal/page.tsx, src/components/Navbar.tsx`.",
+        "timestamp": "2026-11-04T13:21:55.413Z",
+        "seq": 4,
+        "signature": "1249111eb43dcd7bb32ddecae5c7ecbee1c9786adb074462e0f5b16fe19ecfda"
       }
     ],
     "progressPercentage": 50,
