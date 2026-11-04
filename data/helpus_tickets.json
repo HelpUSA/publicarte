@@ -820,7 +820,7 @@
       }
     ],
     "createdAt": "2026-11-04T11:24:04.003Z",
-    "updatedAt": "2026-11-04T14:33:59Z",
+    "updatedAt": "2026-11-04T14:35:11.661Z",
     "events": [
       {
         "id": "evt-create-1793791444003",
@@ -979,6 +979,20 @@
         "timestamp": "2026-11-04T14:34:52.408Z",
         "seq": 11,
         "signature": "33231fefb20f8a461074ed5f4a7df641539183136f6db82613adf16ced6b0aac"
+      },
+      {
+        "id": "evt-prg-1793802911661-50",
+        "ticketId": "tck-1793791444003",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Implementada a funcionalidade completa de Carregamento de PDF com Laudo Já Pronto e Traçados dos Exames no Painel do Consultório (MedicalLaudosApp.jsx) e integração de consulta/download no Portal do Paciente (PatientPortalModal.jsx). O médico agora conta com um alternador de modo ('Modo Digitação / Modelos' vs 'Modo PDF Pronto (Laudo & Traçados) — Dispensa Edição') na aba Emissão de Laudos, bem como ação rápida no importador nativo. No modo PDF Pronto, o sistema dispensa digitação de texto e oferece: 1) Associação aos dados cadastrais do paciente (com busca por CPF/Mevo e histórico Winsoft de 1.739 pacientes); 2) Dois slots de upload dedicados (PDF do Laudo Pronto principal e PDF opcional com gráficos/traçados do equipamento EEG/ENMG) com suporte a drag & drop; 3) Visualizador / Pré-visualização interativa integrada do PDF carregado via iframe; 4) Assinatura Digital ICP-Brasil (PAdES) com chancela oficial do Dr. Eduardo Magalhães (CRM-RO 2103 • RQE 504), hash SHA-256 e validação por QR Code; 5) Ação de Liberação para o Paciente com persistência em localStorage ('neuro_released_exams') e atualização do histórico cadastral; 6) Notificação direta com link para WhatsApp do paciente; 7) Integração total no Portal do Paciente, onde a consulta por CPF localiza o exame liberado e permite o download direto do PDF original carregado pelo médico. | Compilação validada com sucesso | Commit GitHub: `8c714f0` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx, src/components/PatientPortalModal.jsx`.",
+        "timestamp": "2026-11-04T14:35:11.661Z",
+        "seq": 12,
+        "signature": "cd1f5a7196a5602317508ef23b06dd53fcd25c6999c2faa6e55b72e2630f697f"
       }
     ],
     "progressPercentage": 50,
