@@ -68,10 +68,20 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 25%]*: 🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
         "createdAt": "2026-11-04T13:19:21.583Z"
+      },
+      {
+        "id": "msg-prog-1793798444042",
+        "ticketId": "tck-1793798311056",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: Alteração das classes Tailwind CSS do indicador de versão 'v3.0 Ativo' e de seu ponto pulsante (bullet) de verde esmeralda (bg-emerald-500/10, text-emerald-400, border-emerald-500/20, bg-emerald-400) para azul (bg-blue-500/10, text-blue-400, border-blue-500/20, bg-blue-400) nos cabeçalhos da página inicial, do portal do cliente e no componente Navbar compartilhado. | Compilação validada com sucesso | Commit GitHub: `94570e4` | Arquivos alterados: `src/app/page.tsx, src/app/portal/page.tsx, src/components/Navbar.tsx`.",
+        "createdAt": "2026-11-04T13:20:44Z"
       }
     ],
     "createdAt": "2026-11-04T13:18:31.056Z",
-    "updatedAt": "2026-11-04T13:19:21.583Z",
+    "updatedAt": "2026-11-04T13:20:44Z",
     "events": [
       {
         "id": "evt-create-1793798311056",
@@ -118,9 +128,10 @@
         "signature": "a540abdad70173efb8398837760f25c935d3b1e56f6283250cdba6bdb8eb0772"
       }
     ],
-    "progressPercentage": 25,
+    "progressPercentage": 50,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação..."
+    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Alteração das classes Tailwind CSS do indicador de versão 'v3.0 Ativo' e de seu ponto pulsante (bullet) de verde esmeralda (bg-emerald-500/10, text-emerald-400, border-emerald-500/20, bg-emerald-400) para azul (bg-blue-500/10, text-blue-400, border-blue-500/20, bg-blue-400) nos cabeçalhos da página inicial, do portal do cliente e no componente Navbar compartilhado. | Compilação validada com sucesso | Commit GitHub: `94570e4` | Arquivos alterados: `src/app/page.tsx, src/app/portal/page.tsx, src/components/Navbar.tsx`.",
+    "solutionCommitSha": "94570e4"
   },
   {
     "id": "tck-1793794342872",
