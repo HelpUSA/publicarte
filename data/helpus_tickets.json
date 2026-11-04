@@ -615,7 +615,7 @@
     "description": "Quero ter a opção de fazer upload de arquivos em PDF com laudos e traçados dos exames prontos, que nao mais precisam de edição, apenas para assinatura digital e liberação para o paciente. Esta funcionalidade irá ser bastante útil em alguns cenários do meu atendimento no dia a dia. ",
     "category": "support",
     "priority": "medium",
-    "status": "resolved",
+    "status": "pending_approval",
     "createdByEmail": "eduardojcmagalhaes@gmail.com",
     "createdByName": "Eduardo Magalhães (Neuro)",
     "contextData": {
@@ -736,10 +736,21 @@
         "isInternalNote": false,
         "content": "✨ *[SOLUÇÃO HOMOLOGADA]*: Demanda técnica processada e validada. Demanda testada e publicada em produção.",
         "createdAt": "2026-11-04T11:30:39.694Z"
+      },
+      {
+        "id": "msg-reset-1793799061184",
+        "ticketId": "tck-1793791444003",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "Master SuperAdmin (HelpUS)",
+        "senderRole": "system",
+        "isInternalNote": true,
+        "content": "🔄 Chamado retornado para 'pending_approval' pelo Master SuperAdmin. Todo o histórico anterior foi integralmente preservado.",
+        "attachments": [],
+        "createdAt": "2026-11-04T13:31:01.184Z"
       }
     ],
     "createdAt": "2026-11-04T11:24:04.003Z",
-    "updatedAt": "2026-11-04T11:30:39.694Z",
+    "updatedAt": "2026-11-04T13:31:01.184Z",
     "events": [
       {
         "id": "evt-create-1793791444003",
@@ -826,11 +837,24 @@
         "timestamp": "2026-11-04T11:30:39.694Z",
         "seq": 6,
         "signature": "b431218d5d02e5a03e17143a69c4c622bb2103b2c15dd4b04a68ce6ecf68900e"
+      },
+      {
+        "id": "evt-reset-1793799061184",
+        "ticketId": "tck-1793791444003",
+        "type": "ticket_reset_by_master",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "master_superadmin",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Chamado retornado para 'pending_approval' pelo Master SuperAdmin.",
+        "timestamp": "2026-11-04T13:31:01.184Z",
+        "seq": 7,
+        "signature": "12e7299aeea0000b794662d561b526a124ff14577b62865faa81cc84011e9286"
       }
     ],
-    "progressPercentage": 100,
-    "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://aidoctor.helpusbr.com."
+    "progressPercentage": 0,
+    "assignedTo": "HelpUS Master SuperAdmin"
   },
   {
     "id": "tck-1793791290974",
@@ -1096,7 +1120,8 @@
       }
     ],
     "progressPercentage": 0,
-    "assignedTo": "HelpUS Master SuperAdmin"
+    "assignedTo": "HelpUS Master SuperAdmin",
+    "reopenedAt": "2026-11-04T13:30:57.569Z"
   },
   {
     "id": "tck-1793480723769",
