@@ -47,10 +47,20 @@
         "isInternalNote": false,
         "content": "🕒 *[APROVAÇÃO REGISTRADA]*: Chamado autorizado e aguardando despacho controlado para execução local (HelpUS Support Hub). Nenhum build ou deploy é iniciado automaticamente pela aprovação.",
         "createdAt": "2026-11-04T12:12:30.576Z"
+      },
+      {
+        "id": "msg-prog-1793794290682",
+        "ticketId": "tck-1793794342872",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
+        "createdAt": "2026-11-04T12:11:30Z"
       }
     ],
     "createdAt": "2026-11-04T12:12:22.872Z",
-    "updatedAt": "2026-11-04T12:12:30.576Z",
+    "updatedAt": "2026-11-04T12:11:30Z",
     "events": [
       {
         "id": "evt-create-1793794342872",
@@ -83,10 +93,10 @@
         "signature": "5b95d54f394ff5849a24f369d03d695dc24950ea61c36531586fdfcd5df00861"
       }
     ],
-    "progressPercentage": 0,
+    "progressPercentage": 25,
     "assignedTo": "HelpUS Master SuperAdmin",
     "adminNotes": "Teste interno de ponta a ponta do Motor Executor Multi-Tenant Real v3.0.",
-    "progressStep": "Aprovação registrada. Aguardando confirmação de início pelo operador local."
+    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (HelpUS Support Hub — https://support.helpusbr.com). Analisando código-fonte e requisitos da solicitação..."
   },
   {
     "id": "tck-1793791444003",
