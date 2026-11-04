@@ -1077,7 +1077,7 @@
       }
     ],
     "createdAt": "2026-11-04T11:21:30.974Z",
-    "updatedAt": "2026-11-04T14:13:08Z",
+    "updatedAt": "2026-11-04T14:14:20.190Z",
     "events": [
       {
         "id": "evt-create-1793791290974",
@@ -1222,6 +1222,20 @@
         "timestamp": "2026-11-04T13:36:59.393Z",
         "seq": 10,
         "signature": "c739ad9f015158850ae3c9317ffbd5f86430415ee3c742f5e45a44f6f5b42f9f"
+      },
+      {
+        "id": "evt-prg-1793801660191-25",
+        "ticketId": "tck-1793791290974",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 25,
+        "status": "in_production",
+        "note": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
+        "timestamp": "2026-11-04T14:14:20.191Z",
+        "seq": 11,
+        "signature": "44c12238b65fe8cda90540db94d1a1ce4465cb2a00fa8a126ef85e0cf8cf77d9"
       }
     ],
     "progressPercentage": 25,
