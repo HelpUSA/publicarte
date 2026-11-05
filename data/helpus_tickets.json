@@ -1,5 +1,54 @@
 [
   {
+    "id": "tck-1793893276662",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-136",
+    "title": "Aperfeiçoamento da Leitura de Laudos Word (.docx) sem Dados Residuais e Novo Fluxo de Laudo .PDF Finalizado (Com Timbrado), Assinatura Digital e Login/Senha do Paciente",
+    "description": "Registro e documentação técnica das melhorias solicitadas pelo Dr. Eduardo Magalhães via áudios do WhatsApp referentes aos chamados NEU-132 e NEU-133:\n1. Para arquivos Word (.docx): corrigir a leitura automática do CPF do paciente e do Médico Solicitante (incluindo tabelas de cabeçalho em múltiplas colunas e rótulos em linhas separadas), limpando obrigatoriamente qualquer dado residual do paciente de demonstração caso o arquivo .docx não informe algum campo.\n2. Para arquivos .PDF: como o arquivo .PDF anexado já é um laudo pronto e finalizado (inclusive com papel timbrado), não deve ser feita leitura/extração de texto nem edição; o sistema deve apenas permitir anexar o .PDF finalizado, estampar a Assinatura Digital ICP-Brasil diretamente no arquivo PDF e disponibilizar para o paciente acessar e baixar com Login e Senha no Portal do Paciente.",
+    "category": "feature",
+    "priority": "high",
+    "status": "pending_approval",
+    "createdByEmail": "helpus.ecommerce@gmail.com",
+    "createdByName": "HelpUS Master SuperAdmin",
+    "contextData": {
+      "url": "https://neuro.eduardomagalhaes.helpusbr.com",
+      "userEmail": "helpus.ecommerce@gmail.com",
+      "userName": "HelpUS Master SuperAdmin",
+      "os": "Windows 11 / Chrome"
+    },
+    "messages": [
+      {
+        "id": "msg-1793893276662",
+        "ticketId": "tck-1793893276662",
+        "senderId": "helpus.ecommerce@gmail.com",
+        "senderName": "HelpUS Master SuperAdmin",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Registro e documentação técnica das melhorias solicitadas pelo Dr. Eduardo Magalhães via áudios do WhatsApp referentes aos chamados NEU-132 e NEU-133:\n1. Para arquivos Word (.docx): corrigir a leitura automática do CPF do paciente e do Médico Solicitante (incluindo tabelas de cabeçalho em múltiplas colunas e rótulos em linhas separadas), limpando obrigatoriamente qualquer dado residual do paciente de demonstração caso o arquivo .docx não informe algum campo.\n2. Para arquivos .PDF: como o arquivo .PDF anexado já é um laudo pronto e finalizado (inclusive com papel timbrado), não deve ser feita leitura/extração de texto nem edição; o sistema deve apenas permitir anexar o .PDF finalizado, estampar a Assinatura Digital ICP-Brasil diretamente no arquivo PDF e disponibilizar para o paciente acessar e baixar com Login e Senha no Portal do Paciente.",
+        "createdAt": "2026-11-05T15:41:16.662Z"
+      }
+    ],
+    "createdAt": "2026-11-05T15:41:16.662Z",
+    "updatedAt": "2026-11-05T15:41:16.662Z",
+    "events": [
+      {
+        "id": "evt-create-1793893276662",
+        "ticketId": "tck-1793893276662",
+        "type": "ticket_created",
+        "actorEmail": "helpus.ecommerce@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "Aperfeiçoamento da Leitura de Laudos Word (.docx) sem Dados Residuais e Novo Fluxo de Laudo .PDF Finalizado (Com Timbrado), Assinatura Digital e Login/Senha do Paciente",
+        "timestamp": "2026-11-05T15:41:16.662Z",
+        "seq": 1,
+        "signature": "0be3bf4dd3f6cf91f832aff8a4bc7bbdcc38c596ec2888b40d1bff7794a09bb2"
+      }
+    ]
+  },
+  {
     "id": "tck-1793798311056",
     "tenantId": "helpus-support",
     "tenantName": "HelpUS Support Hub",
