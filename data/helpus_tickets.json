@@ -99,10 +99,20 @@
         "isInternalNote": false,
         "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
         "createdAt": "2026-11-07T12:02:40Z"
+      },
+      {
+        "id": "msg-prog-1794052986096",
+        "ticketId": "tck-1794051682245",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: 1) Árvore de Modelos configurada para iniciar fechada por padrão (isTreeVisible = false), expandindo a área útil de edição em 100% da largura da tela e podendo ser aberta com 1 clique no botão 'Abrir Árvore de Modelos'. 2) Topo do Painel do Consultório redesenhado e compactado em barra única (unificando título, abas de navegação, seletor de fluxo .docx/.pdf e botões de upload rápido), reduzindo o espaço vertical ocupado pelas linhas superiores e eliminando barras de rolagem verticais desnecessárias. 3) Adicionada a barra sempre visível 'PDFs Previamente Anexados' no topo da área de emissão (e ações na tabela), permitindo visualizar todos os PDFs anexados e clicar em 'Reabrir / Editar' (recarregando o PDF do cofre IndexedDB e os dados do paciente para alteração), 'Trocar PDF' (anexar outro PDF substituindo o atual), 'Excluir' ou '+ Anexar Outro PDF'. | Compilação validada com sucesso | Commit GitHub: `118a4dd` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx, src/utils/pdfVault.js`.",
+        "createdAt": "2026-11-07T12:03:06Z"
       }
     ],
     "createdAt": "2026-11-07T11:41:22.245Z",
-    "updatedAt": "2026-11-07T12:03:55.746Z",
+    "updatedAt": "2026-11-07T12:03:06Z",
     "events": [
       {
         "id": "evt-create-1794051682245",
@@ -177,9 +187,10 @@
         "signature": "d6bfa9a22fd2a6b8988e994ccd05ec8e4b7217a6953d52429d2bd4b5b80d5f2b"
       }
     ],
-    "progressPercentage": 25,
+    "progressPercentage": 50,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação..."
+    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: 1) Árvore de Modelos configurada para iniciar fechada por padrão (isTreeVisible = false), expandindo a área útil de edição em 100% da largura da tela e podendo ser aberta com 1 clique no botão 'Abrir Árvore de Modelos'. 2) Topo do Painel do Consultório redesenhado e compactado em barra única (unificando título, abas de navegação, seletor de fluxo .docx/.pdf e botões de upload rápido), reduzindo o espaço vertical ocupado pelas linhas superiores e eliminando barras de rolagem verticais desnecessárias. 3) Adicionada a barra sempre visível 'PDFs Previamente Anexados' no topo da área de emissão (e ações na tabela), permitindo visualizar todos os PDFs anexados e clicar em 'Reabrir / Editar' (recarregando o PDF do cofre IndexedDB e os dados do paciente para alteração), 'Trocar PDF' (anexar outro PDF substituindo o atual), 'Excluir' ou '+ Anexar Outro PDF'. | Compilação validada com sucesso | Commit GitHub: `118a4dd` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx, src/utils/pdfVault.js`.",
+    "solutionCommitSha": "118a4dd"
   },
   {
     "id": "tck-1793893276662",
