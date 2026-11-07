@@ -1,5 +1,56 @@
 [
   {
+    "id": "tck-1794051682245",
+    "tenantId": "neuro.eduardomagalhaes",
+    "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
+    "code": "NEU-137",
+    "title": "ajustes no layout da pagina ",
+    "description": "Ao abrir a pagina de edição de laudos, quero que a arvore de modelos fique por default fechada. Quero que a pagina nao precise ter que utilizar muitas barras de rolagem verticais , hoje isso é necessario, gostaria de um layout em que a tela nao precisasse ser rolada. A parte superior, as linhas superiores, ocupam muito espaço util na tela. Gostaria que os pdf previamente anexados ficassem visiveis de modo que possa ser reaberto caso eu queira alterar algo, exlcuir, ou anexar outro pdf. ",
+    "category": "support",
+    "priority": "medium",
+    "status": "pending_approval",
+    "createdByEmail": "eduardojcmagalhaes@gmail.com",
+    "createdByName": "Eduardo Magalhães (Neuro)",
+    "contextData": {
+      "url": "https://support.helpusbr.com/portal",
+      "userEmail": "eduardojcmagalhaes@gmail.com",
+      "userName": "Eduardo Magalhães (Neuro)",
+      "os": "Windows 11 (Chrome 128)"
+    },
+    "attachments": [],
+    "messages": [
+      {
+        "id": "msg-1794051682245",
+        "ticketId": "tck-1794051682245",
+        "senderId": "eduardojcmagalhaes@gmail.com",
+        "senderName": "Eduardo Magalhães (Neuro)",
+        "senderRole": "client",
+        "isInternalNote": false,
+        "content": "Ao abrir a pagina de edição de laudos, quero que a arvore de modelos fique por default fechada. Quero que a pagina nao precise ter que utilizar muitas barras de rolagem verticais , hoje isso é necessario, gostaria de um layout em que a tela nao precisasse ser rolada. A parte superior, as linhas superiores, ocupam muito espaço util na tela. Gostaria que os pdf previamente anexados ficassem visiveis de modo que possa ser reaberto caso eu queira alterar algo, exlcuir, ou anexar outro pdf. ",
+        "attachments": [],
+        "createdAt": "2026-11-07T11:41:22.245Z"
+      }
+    ],
+    "createdAt": "2026-11-07T11:41:22.245Z",
+    "updatedAt": "2026-11-07T11:41:22.245Z",
+    "events": [
+      {
+        "id": "evt-create-1794051682245",
+        "ticketId": "tck-1794051682245",
+        "type": "ticket_created",
+        "actorEmail": "eduardojcmagalhaes@gmail.com",
+        "actorRole": "client",
+        "authorized": true,
+        "progressPercentage": 0,
+        "status": "pending_approval",
+        "note": "ajustes no layout da pagina ",
+        "timestamp": "2026-11-07T11:41:22.245Z",
+        "seq": 1,
+        "signature": "8b13741c2fe00735913716446eccad8a731dc5f6beceaeb49d13587c87aa6933"
+      }
+    ]
+  },
+  {
     "id": "tck-1793893276662",
     "tenantId": "neuro.eduardomagalhaes",
     "tenantName": "Dr. Eduardo Magalhães Neurologista (Neuro)",
