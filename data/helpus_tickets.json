@@ -89,10 +89,20 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 25%]*: ⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Falha ao iniciar Worker Antigravity: {\n  \"response\": {},\n  \"error\": \"failed to fetch available models: rpc error: code = Unavailable desc = connection error: desc = \\\"transport: Error while dialing: dial tcp [::1]:56655: connectex: No connection could be made because the target machine actively refused it.\\\"\"\n}\n",
         "createdAt": "2026-11-07T11:42:27.154Z"
+      },
+      {
+        "id": "msg-prog-1794052960341",
+        "ticketId": "tck-1794051682245",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
+        "createdAt": "2026-11-07T12:02:40Z"
       }
     ],
     "createdAt": "2026-11-07T11:41:22.245Z",
-    "updatedAt": "2026-11-07T11:42:27.154Z",
+    "updatedAt": "2026-11-07T12:02:40Z",
     "events": [
       {
         "id": "evt-create-1794051682245",
@@ -155,7 +165,7 @@
     ],
     "progressPercentage": 25,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Falha ao iniciar Worker Antigravity: {\n  \"response\": {},\n  \"error\": \"failed to fetch available models: rpc error: code = Unavailable desc = connection error: desc = \\\"transport: Error while dialing: dial tcp [::1]:56655: connectex: No connection could be made because the target machine actively refused it.\\\"\"\n}\n"
+    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação..."
   },
   {
     "id": "tck-1793893276662",
