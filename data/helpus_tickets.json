@@ -30,6 +30,16 @@
         "createdAt": "2026-11-07T11:41:02Z"
       },
       {
+        "id": "msg-prog-1794051671894",
+        "ticketId": "tck-1794051682245",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Falha ao iniciar Worker Antigravity: {\n  \"response\": {},\n  \"error\": \"failed to fetch available models: rpc error: code = Unavailable desc = connection error: desc = \\\"transport: Error while dialing: dial tcp [::1]:56655: connectex: No connection could be made because the target machine actively refused it.\\\"\"\n}\n",
+        "createdAt": "2026-11-07T11:41:11Z"
+      },
+      {
         "id": "msg-1794051682245",
         "ticketId": "tck-1794051682245",
         "senderId": "eduardojcmagalhaes@gmail.com",
@@ -71,18 +81,18 @@
         "createdAt": "2026-11-07T11:42:17.505Z"
       },
       {
-        "id": "msg-prog-1794051671894",
+        "id": "msg-prg-1794051747154",
         "ticketId": "tck-1794051682245",
         "senderId": "ci.cd@helpusbr.com",
         "senderName": "Antigravity Execution Pipeline",
         "senderRole": "agent",
         "isInternalNote": false,
-        "content": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Falha ao iniciar Worker Antigravity: {\n  \"response\": {},\n  \"error\": \"failed to fetch available models: rpc error: code = Unavailable desc = connection error: desc = \\\"transport: Error while dialing: dial tcp [::1]:56655: connectex: No connection could be made because the target machine actively refused it.\\\"\"\n}\n",
-        "createdAt": "2026-11-07T11:41:11Z"
+        "content": "⚡ *[PROGRESSO 25%]*: ⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Falha ao iniciar Worker Antigravity: {\n  \"response\": {},\n  \"error\": \"failed to fetch available models: rpc error: code = Unavailable desc = connection error: desc = \\\"transport: Error while dialing: dial tcp [::1]:56655: connectex: No connection could be made because the target machine actively refused it.\\\"\"\n}\n",
+        "createdAt": "2026-11-07T11:42:27.154Z"
       }
     ],
     "createdAt": "2026-11-07T11:41:22.245Z",
-    "updatedAt": "2026-11-07T11:41:11Z",
+    "updatedAt": "2026-11-07T11:42:27.154Z",
     "events": [
       {
         "id": "evt-create-1794051682245",
@@ -127,6 +137,20 @@
         "timestamp": "2026-11-07T11:42:17.505Z",
         "seq": 3,
         "signature": "24311322bdcd994033edc66440f50f0d7bb02a8802b3545b6cfe69e7557734f3"
+      },
+      {
+        "id": "evt-prg-1794051747154-25",
+        "ticketId": "tck-1794051682245",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 25,
+        "status": "in_production",
+        "note": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Falha ao iniciar Worker Antigravity: {\n  \"response\": {},\n  \"error\": \"failed to fetch available models: rpc error: code = Unavailable desc = connection error: desc = \\\"transport: Error while dialing: dial tcp [::1]:56655: connectex: No connection could be made because the target machine actively refused it.\\\"\"\n}\n",
+        "timestamp": "2026-11-07T11:42:27.155Z",
+        "seq": 4,
+        "signature": "080044d38aa2f29de52d0385ef335f7c9636187e49817454b79f473233291daf"
       }
     ],
     "progressPercentage": 25,
