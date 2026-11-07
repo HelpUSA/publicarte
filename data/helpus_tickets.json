@@ -69,10 +69,20 @@
         "isInternalNote": false,
         "content": "⚡ *[PROGRESSO 25%]*: 🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
         "createdAt": "2026-11-07T11:42:17.505Z"
+      },
+      {
+        "id": "msg-prog-1794051671894",
+        "ticketId": "tck-1794051682245",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Falha ao iniciar Worker Antigravity: {\n  \"response\": {},\n  \"error\": \"failed to fetch available models: rpc error: code = Unavailable desc = connection error: desc = \\\"transport: Error while dialing: dial tcp [::1]:56655: connectex: No connection could be made because the target machine actively refused it.\\\"\"\n}\n",
+        "createdAt": "2026-11-07T11:41:11Z"
       }
     ],
     "createdAt": "2026-11-07T11:41:22.245Z",
-    "updatedAt": "2026-11-07T11:42:17.505Z",
+    "updatedAt": "2026-11-07T11:41:11Z",
     "events": [
       {
         "id": "evt-create-1794051682245",
@@ -121,7 +131,7 @@
     ],
     "progressPercentage": 25,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação..."
+    "progressStep": "⚠️ *[RETIDO EM 25% — AGUARDANDO REVISÃO TÉCNICA]*: Falha ao iniciar Worker Antigravity: {\n  \"response\": {},\n  \"error\": \"failed to fetch available models: rpc error: code = Unavailable desc = connection error: desc = \\\"transport: Error while dialing: dial tcp [::1]:56655: connectex: No connection could be made because the target machine actively refused it.\\\"\"\n}\n"
   },
   {
     "id": "tck-1793893276662",
