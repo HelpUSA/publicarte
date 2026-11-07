@@ -122,7 +122,7 @@
       }
     ],
     "createdAt": "2026-11-07T11:41:22.245Z",
-    "updatedAt": "2026-11-07T12:04:00Z",
+    "updatedAt": "2026-11-07T12:05:16.576Z",
     "events": [
       {
         "id": "evt-create-1794051682245",
@@ -209,6 +209,20 @@
         "timestamp": "2026-11-07T12:04:21.657Z",
         "seq": 6,
         "signature": "1fac9314cb2e85832b46e8bafc3ca8a7b81b9865fb96e203b703f5c618e79476"
+      },
+      {
+        "id": "evt-prg-1794053116576-75",
+        "ticketId": "tck-1794051682245",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 75,
+        "status": "in_production",
+        "note": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://neuro.eduardomagalhaes.helpusbr.com (Deployment Vercel: https://neuroeduardomagalhaes.vercel.app • Commit GitHub: `118a4dd`).",
+        "timestamp": "2026-11-07T12:05:16.576Z",
+        "seq": 7,
+        "signature": "223b5932932d10cd2fa076e8fe027e6c5d9570b385ed3ca2ddb7498a26e58988"
       }
     ],
     "progressPercentage": 75,
