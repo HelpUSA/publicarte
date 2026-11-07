@@ -151,7 +151,7 @@
       }
     ],
     "createdAt": "2026-11-07T11:41:22.245Z",
-    "updatedAt": "2026-11-07T12:04:17Z",
+    "updatedAt": "2026-11-07T12:05:34.293Z",
     "events": [
       {
         "id": "evt-create-1794051682245",
@@ -252,11 +252,25 @@
         "timestamp": "2026-11-07T12:05:16.576Z",
         "seq": 7,
         "signature": "223b5932932d10cd2fa076e8fe027e6c5d9570b385ed3ca2ddb7498a26e58988"
+      },
+      {
+        "id": "evt-res-1794053134294",
+        "ticketId": "tck-1794051682245",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ *[SOLUÇÃO HOMOLOGADA]*: 1) Árvore de Modelos configurada para iniciar fechada por padrão (isTreeVisible = false), expandindo a área útil de edição em 100% da largura da tela e podendo ser aberta com 1 clique no botão 'Abrir Árvore de Modelos'. 2) Topo do Painel do Consultório redesenhado e compactado em barra única (unificando título, abas de navegação, seletor de fluxo .docx/.pdf e botões de upload rápido), reduzindo o espaço vertical ocupado pelas linhas superiores e eliminando barras de rolagem verticais desnecessárias. 3) Adicionada a barra sempre visível 'PDFs Previamente Anexados' no topo da área de emissão (e ações na tabela), permitindo visualizar todos os PDFs anexados e clicar em 'Reabrir / Editar' (recarregando o PDF do cofre IndexedDB e os dados do paciente para alteração), 'Trocar PDF' (anexar outro PDF substituindo o atual), 'Excluir' ou '+ Anexar Outro PDF'.\n• Aplicação Atualizada: Dr. Eduardo Magalhães Neurologista (Neuro) (https://neuro.eduardomagalhaes.helpusbr.com)\n• Local do Site Alterado: Painel do Consultório — Cabeçalho Superior Compacto, Área de Edição de Laudos (Árvore fechada por padrão) e Barra de Gestão de PDFs Previamente Anexados\n• Commit GitHub Verificado: `118a4dd`\n• Arquivos Alterados: `src/components/MedicalLaudosApp.jsx, src/utils/pdfVault.js`\n• Produção Vercel READY: https://neuroeduardomagalhaes.vercel.app\n• Onde e Como Testar: 1. Acesse https://neuro.eduardomagalhaes.helpusbr.com e entre no Painel do Consultório.\n2. Verifique que a Árvore de Modelos já inicia fechada por padrão (com botão 'Abrir Árvore de Modelos' na barra superior) e que o cabeçalho foi compactado para evitar rolagem vertical excessiva.\n3. Observe a barra 'PDFs Previamente Anexados' logo abaixo do seletor de fluxo: clique em 'Reabrir / Editar' em qualquer PDF para reabri-lo e alterar dados, clique em 'Trocar PDF' para anexar outro arquivo PDF, ou clique no ícone de lixeira para excluí-lo.",
+        "timestamp": "2026-11-07T12:05:34.294Z",
+        "seq": 8,
+        "signature": "67186263cdf74f550c52c210dfd92b769f1e157f821ecc6e395862291043a6fd"
       }
     ],
     "progressPercentage": 100,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "✨ *[SOLUÇÃO HOMOLOGADA]*: 1) Árvore de Modelos configurada para iniciar fechada por padrão (isTreeVisible = false), expandindo a área útil de edição em 100% da largura da tela e podendo ser aberta com 1 clique no botão 'Abrir Árvore de Modelos'. 2) Topo do Painel do Consultório redesenhado e compactado em barra única (unificando título, abas de navegação, seletor de fluxo .docx/.pdf e botões de upload rápido), reduzindo o espaço vertical ocupado pelas linhas superiores e eliminando barras de rolagem verticais desnecessárias. 3) Adicionada a barra sempre visível 'PDFs Previamente Anexados' no topo da área de emissão (e ações na tabela), permitindo visualizar todos os PDFs anexados e clicar em 'Reabrir / Editar' (recarregando o PDF do cofre IndexedDB e os dados do paciente para alteração), 'Trocar PDF' (anexar outro PDF substituindo o atual), 'Excluir' ou '+ Anexar Outro PDF'.\n• Aplicação Atualizada: Dr. Eduardo Magalhães Neurologista (Neuro) (https://neuro.eduardomagalhaes.helpusbr.com)\n• Local do Site Alterado: Painel do Consultório — Cabeçalho Superior Compacto, Área de Edição de Laudos (Árvore fechada por padrão) e Barra de Gestão de PDFs Previamente Anexados\n• Commit GitHub Verificado: `118a4dd`\n• Arquivos Alterados: `src/components/MedicalLaudosApp.jsx, src/utils/pdfVault.js`\n• Produção Vercel READY: https://neuroeduardomagalhaes.vercel.app\n• Onde e Como Testar: 1. Acesse https://neuro.eduardomagalhaes.helpusbr.com e entre no Painel do Consultório.\n2. Verifique que a Árvore de Modelos já inicia fechada por padrão (com botão 'Abrir Árvore de Modelos' na barra superior) e que o cabeçalho foi compactado para evitar rolagem vertical excessiva.\n3. Observe a barra 'PDFs Previamente Anexados' logo abaixo do seletor de fluxo: clique em 'Reabrir / Editar' em qualquer PDF para reabri-lo e alterar dados, clique em 'Trocar PDF' para anexar outro arquivo PDF, ou clique no ícone de lixeira para excluí-lo.",
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://neuro.eduardomagalhaes.helpusbr.com (Deployment Vercel: https://neuroeduardomagalhaes.vercel.app • Commit GitHub: `118a4dd`).",
     "solutionCommitSha": "118a4dd",
     "resolutionReport": {
       "summary": "1) Árvore de Modelos configurada para iniciar fechada por padrão (isTreeVisible = false), expandindo a área útil de edição em 100% da largura da tela e podendo ser aberta com 1 clique no botão 'Abrir Árvore de Modelos'. 2) Topo do Painel do Consultório redesenhado e compactado em barra única (unificando título, abas de navegação, seletor de fluxo .docx/.pdf e botões de upload rápido), reduzindo o espaço vertical ocupado pelas linhas superiores e eliminando barras de rolagem verticais desnecessárias. 3) Adicionada a barra sempre visível 'PDFs Previamente Anexados' no topo da área de emissão (e ações na tabela), permitindo visualizar todos os PDFs anexados e clicar em 'Reabrir / Editar' (recarregando o PDF do cofre IndexedDB e os dados do paciente para alteração), 'Trocar PDF' (anexar outro PDF substituindo o atual), 'Excluir' ou '+ Anexar Outro PDF'.",
