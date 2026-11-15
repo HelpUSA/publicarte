@@ -88,7 +88,7 @@
       }
     ],
     "createdAt": "2026-11-14T19:58:09.172Z",
-    "updatedAt": "2026-11-15T13:35:56Z",
+    "updatedAt": "2026-11-15T13:35:59.863Z",
     "events": [
       {
         "id": "evt-create-1794686289172",
@@ -133,6 +133,20 @@
         "timestamp": "2026-11-15T13:26:26.149Z",
         "seq": 3,
         "signature": "3979f53808aa2245f36394af149217e72d28ba78a8ef9040c7e9c47e841c73e0"
+      },
+      {
+        "id": "evt-prg-1794749759863-50",
+        "ticketId": "tck-1794686289172",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Restaurada a rolagem vertical completa (overflow-y-auto com min-h-0) no painel de emissão e edição de laudos médicos (MedicalLaudosApp.jsx), corrigindo o travamento que impedia rolar até o fim da página. Implementado também o comportamento colapsável (accordion) com estado fechado por padrão (isPatientDataSectionOpen = false e isBodyEditorSectionOpen = false) tanto para as linhas de preenchimento manual dos dados do paciente (CPF, nome completo, data de nascimento, idade, médico solicitante, data do exame e telefone) quanto para o editor integral do corpo do laudo técnico (toolbar de formatação e textarea/sub-seções), permitindo abrir e fechar cada seção com um clique no cabeçalho ou botão correspondente. | Compilação validada com sucesso | Commit GitHub: `e4c763b` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx`.",
+        "timestamp": "2026-11-15T13:35:59.863Z",
+        "seq": 4,
+        "signature": "292614819e68310ca7b666f81fd703a61b489f9fea74a111a2ff93a91da1d94b"
       }
     ],
     "progressPercentage": 50,
