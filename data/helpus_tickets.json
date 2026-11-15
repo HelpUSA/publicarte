@@ -126,7 +126,7 @@
       }
     ],
     "createdAt": "2026-11-14T19:58:09.172Z",
-    "updatedAt": "2026-11-15T13:36:56Z",
+    "updatedAt": "2026-11-15T13:37:01.671Z",
     "events": [
       {
         "id": "evt-create-1794686289172",
@@ -199,6 +199,20 @@
         "timestamp": "2026-11-15T13:36:43.292Z",
         "seq": 5,
         "signature": "641a641af92a500182793cd0fe89d7c21157b20fc51812894808a82945a6d419"
+      },
+      {
+        "id": "evt-res-1794749821671",
+        "ticketId": "tck-1794686289172",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ *[SOLUÇÃO HOMOLOGADA]*: Restaurada a rolagem vertical completa (overflow-y-auto com min-h-0) no painel de emissão e edição de laudos médicos (MedicalLaudosApp.jsx), corrigindo o travamento que impedia rolar até o fim da página. Implementado também o comportamento colapsável (accordion) com estado fechado por padrão (isPatientDataSectionOpen = false e isBodyEditorSectionOpen = false) tanto para as linhas de preenchimento manual dos dados do paciente (CPF, nome completo, data de nascimento, idade, médico solicitante, data do exame e telefone) quanto para o editor integral do corpo do laudo técnico (toolbar de formatação e textarea/sub-seções), permitindo abrir e fechar cada seção com um clique no cabeçalho ou botão correspondente.\n• Aplicação Atualizada: Dr. Eduardo Magalhães Neurologista (Neuro) (https://neuro.eduardomagalhaes.helpusbr.com)\n• Local do Site Alterado: Painel do Consultório / Emissão de Laudos Médicos (aba Emissão de Laudos - fluxo Laudo Word / Digitação)\n• Commit GitHub Verificado: `e4c763b`\n• Arquivos Alterados: `src/components/MedicalLaudosApp.jsx`\n• Produção Vercel READY: https://neuroeduardomagalhaes.vercel.app\n• Onde e Como Testar: 1. Acesse https://neuro.eduardomagalhaes.helpusbr.com?panel=open (ou acesse o site e clique no botão de acesso ao Painel do Consultório).\n2. Realize a verificação reCAPTCHA e entre no painel.\n3. Na aba 'Emissão de Laudos' (modo Laudo Word / Digitação), observe que a seção de 'Preenchimento Manual de Dados do Paciente' e a seção de 'Edição Integral do Corpo do Laudo Técnico' iniciam fechadas por padrão, exibindo resumos compactos e elegantes.\n4. Clique em '📂 Abrir Dados do Paciente' ou '📂 Abrir Edição do Corpo' para expandir as seções e verificar que os campos são exibidos e editáveis normalmente.\n5. Role a página para baixo e confirme que a rolagem vertical funciona suavemente, permitindo alcançar facilmente a barra de ações inferiores ('Disparar Link no WhatsApp' e 'Assinar & Gerar PDF Timbrado').",
+        "timestamp": "2026-11-15T13:37:01.671Z",
+        "seq": 6,
+        "signature": "d7cd722301ee2c9ec80caf27b8fc01a1a35bd6ad447392ce7918ef042918ec49"
       }
     ],
     "progressPercentage": 100,
