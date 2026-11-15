@@ -85,10 +85,20 @@
         "isInternalNote": false,
         "content": "⚙️ *[FASE 2/4 - 50%]*: Restaurada a rolagem vertical completa (overflow-y-auto com min-h-0) no painel de emissão e edição de laudos médicos (MedicalLaudosApp.jsx), corrigindo o travamento que impedia rolar até o fim da página. Implementado também o comportamento colapsável (accordion) com estado fechado por padrão (isPatientDataSectionOpen = false e isBodyEditorSectionOpen = false) tanto para as linhas de preenchimento manual dos dados do paciente (CPF, nome completo, data de nascimento, idade, médico solicitante, data do exame e telefone) quanto para o editor integral do corpo do laudo técnico (toolbar de formatação e textarea/sub-seções), permitindo abrir e fechar cada seção com um clique no cabeçalho ou botão correspondente. | Compilação validada com sucesso | Commit GitHub: `e4c763b` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx`.",
         "createdAt": "2026-11-15T13:35:56Z"
+      },
+      {
+        "id": "msg-prog-1794749799654",
+        "ticketId": "tck-1794686289172",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://neuro.eduardomagalhaes.helpusbr.com (Deployment Vercel: https://neuroeduardomagalhaes.vercel.app • Commit GitHub: `e4c763b`).",
+        "createdAt": "2026-11-15T13:36:39Z"
       }
     ],
     "createdAt": "2026-11-14T19:58:09.172Z",
-    "updatedAt": "2026-11-15T13:35:59.863Z",
+    "updatedAt": "2026-11-15T13:36:39Z",
     "events": [
       {
         "id": "evt-create-1794686289172",
@@ -149,9 +159,9 @@
         "signature": "292614819e68310ca7b666f81fd703a61b489f9fea74a111a2ff93a91da1d94b"
       }
     ],
-    "progressPercentage": 50,
+    "progressPercentage": 75,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Restaurada a rolagem vertical completa (overflow-y-auto com min-h-0) no painel de emissão e edição de laudos médicos (MedicalLaudosApp.jsx), corrigindo o travamento que impedia rolar até o fim da página. Implementado também o comportamento colapsável (accordion) com estado fechado por padrão (isPatientDataSectionOpen = false e isBodyEditorSectionOpen = false) tanto para as linhas de preenchimento manual dos dados do paciente (CPF, nome completo, data de nascimento, idade, médico solicitante, data do exame e telefone) quanto para o editor integral do corpo do laudo técnico (toolbar de formatação e textarea/sub-seções), permitindo abrir e fechar cada seção com um clique no cabeçalho ou botão correspondente. | Compilação validada com sucesso | Commit GitHub: `e4c763b` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx`.",
+    "progressStep": "📦 *[FASE 3/4 - 75%]*: Deploy de produção concluído e homologado com sucesso em https://neuro.eduardomagalhaes.helpusbr.com (Deployment Vercel: https://neuroeduardomagalhaes.vercel.app • Commit GitHub: `e4c763b`).",
     "solutionCommitSha": "e4c763b"
   },
   {
