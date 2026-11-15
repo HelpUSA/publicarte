@@ -88,7 +88,7 @@
       }
     ],
     "createdAt": "2026-11-15T14:10:31.025Z",
-    "updatedAt": "2026-11-15T14:38:51Z",
+    "updatedAt": "2026-11-15T14:38:56.669Z",
     "events": [
       {
         "id": "evt-create-1794751831025",
@@ -133,6 +133,20 @@
         "timestamp": "2026-11-15T14:28:25.443Z",
         "seq": 3,
         "signature": "d72ec62645526bf3b310bae6cf45bea5df273b05fabab768e9faaea6905e9698"
+      },
+      {
+        "id": "evt-prg-1794753536670-50",
+        "ticketId": "tck-1794751831025",
+        "type": "production_step",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 50,
+        "status": "in_production",
+        "note": "⚙️ *[FASE 2/4 - 50%]*: Refatoração e otimização visual da estação 'Inserir Laudo em PDF Já Pronto / Finalizado' no componente MedicalLaudosApp. O layout anteriormente empilhado em coluna única linear (com mais de 2.000px de altura vertical, forçando rolagem excessiva) foi redesenhado em um painel split-screen de alta densidade no desktop (Side-by-Side Dashboard de 12 colunas). Na coluna esquerda ficam os uploads compactos (PDF timbrado e traçados opcionais), a vinculação rápida de paciente com busca na base e os controles de Assinatura Digital ICP-Brasil e credenciais do Portal do Paciente. Na coluna direita, alinhada lado a lado, fica a pré-visualização em tempo real do PDF com iframe integrado, eliminando a necessidade de rolar a página para conferir o documento enquanto preenche os dados. O banner explicativo foi sintetizado em uma barra compacta, e a tabela de histórico de laudos liberados passou a contar com gaveta retrátil (abrir/recolher) e rolagem interna, mantendo 100% de todas as funcionalidades existentes intactas. | Compilação validada com sucesso | Commit GitHub: `041f568` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx`.",
+        "timestamp": "2026-11-15T14:38:56.670Z",
+        "seq": 4,
+        "signature": "506d9d8a52b12196ba0e60dd703cc4837a7dd30530135529f78afd6b064cd445"
       }
     ],
     "progressPercentage": 50,
