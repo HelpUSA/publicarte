@@ -126,7 +126,7 @@
       }
     ],
     "createdAt": "2026-11-15T14:10:31.025Z",
-    "updatedAt": "2026-11-15T14:39:54Z",
+    "updatedAt": "2026-11-15T14:39:59.764Z",
     "events": [
       {
         "id": "evt-create-1794751831025",
@@ -199,6 +199,20 @@
         "timestamp": "2026-11-15T14:39:42.272Z",
         "seq": 5,
         "signature": "bf035977758e11787f7215cf7f814322f8bb8c88d5ef5602b4a1f7904b70d084"
+      },
+      {
+        "id": "evt-res-1794753599764",
+        "ticketId": "tck-1794751831025",
+        "type": "ticket_resolved",
+        "actorEmail": "ci.cd@helpusbr.com",
+        "actorRole": "system_pipeline",
+        "authorized": true,
+        "progressPercentage": 100,
+        "status": "resolved",
+        "note": "✨ *[SOLUÇÃO HOMOLOGADA]*: Refatoração e otimização visual da estação 'Inserir Laudo em PDF Já Pronto / Finalizado' no componente MedicalLaudosApp. O layout anteriormente empilhado em coluna única linear (com mais de 2.000px de altura vertical, forçando rolagem excessiva) foi redesenhado em um painel split-screen de alta densidade no desktop (Side-by-Side Dashboard de 12 colunas). Na coluna esquerda ficam os uploads compactos (PDF timbrado e traçados opcionais), a vinculação rápida de paciente com busca na base e os controles de Assinatura Digital ICP-Brasil e credenciais do Portal do Paciente. Na coluna direita, alinhada lado a lado, fica a pré-visualização em tempo real do PDF com iframe integrado, eliminando a necessidade de rolar a página para conferir o documento enquanto preenche os dados. O banner explicativo foi sintetizado em uma barra compacta, e a tabela de histórico de laudos liberados passou a contar com gaveta retrátil (abrir/recolher) e rolagem interna, mantendo 100% de todas as funcionalidades existentes intactas.\n• Aplicação Atualizada: Dr. Eduardo Magalhães Neurologista (Neuro) (https://neuro.eduardomagalhaes.helpusbr.com)\n• Local do Site Alterado: Painel Médico / Consultório -> Aba Emissão de Laudos -> Modo 'PDF Já Pronto / Finalizado' (acessível via botão superior '📄 PDF Já Pronto / Finalizado' ou na URL ?panel=open)\n• Commit GitHub Verificado: `041f568`\n• Arquivos Alterados: `src/components/MedicalLaudosApp.jsx`\n• Produção Vercel READY: https://neuroeduardomagalhaes.vercel.app\n• Onde e Como Testar: 1. Acesse https://neuro.eduardomagalhaes.helpusbr.com/?panel=open (ou clique em 'Painel Médico / Consultório' na página inicial);\n2. No topo da tela de Emissão de Laudos, clique no botão '📄 PDF Já Pronto / Finalizado';\n3. Observe o novo layout enxuto e sem rolagem excessiva: o banner superior está compacto e a tela divide-se lado a lado no desktop (painel de fluxo à esquerda e visualizador de PDF à direita);\n4. Ao anexar um arquivo PDF ou selecionar um da base/histórico, note que o PDF é exibido imediatamente no lado direito sem precisar rolar para baixo;\n5. Teste as funcionalidades existentes: busca de paciente na base de 1.739 registros, preenchimento de campos, geração de nova senha, botão de Assinatura Digital ICP-Brasil e liberação com Login e Senha;\n6. Clique na barra 'Histórico de Laudos em PDF Assinados' para expandir ou recolher a lista de exames anteriores, observando a rolagem interna da tabela.",
+        "timestamp": "2026-11-15T14:39:59.764Z",
+        "seq": 6,
+        "signature": "cfc77c4134764b7ab4ecbc5c6dcf1dc8f48f29bce34a651c8107e255520ef791"
       }
     ],
     "progressPercentage": 100,
