@@ -75,10 +75,20 @@
         "isInternalNote": false,
         "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
         "createdAt": "2026-11-15T13:26:22Z"
+      },
+      {
+        "id": "msg-prog-1794749756621",
+        "ticketId": "tck-1794686289172",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "⚙️ *[FASE 2/4 - 50%]*: Restaurada a rolagem vertical completa (overflow-y-auto com min-h-0) no painel de emissão e edição de laudos médicos (MedicalLaudosApp.jsx), corrigindo o travamento que impedia rolar até o fim da página. Implementado também o comportamento colapsável (accordion) com estado fechado por padrão (isPatientDataSectionOpen = false e isBodyEditorSectionOpen = false) tanto para as linhas de preenchimento manual dos dados do paciente (CPF, nome completo, data de nascimento, idade, médico solicitante, data do exame e telefone) quanto para o editor integral do corpo do laudo técnico (toolbar de formatação e textarea/sub-seções), permitindo abrir e fechar cada seção com um clique no cabeçalho ou botão correspondente. | Compilação validada com sucesso | Commit GitHub: `e4c763b` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx`.",
+        "createdAt": "2026-11-15T13:35:56Z"
       }
     ],
     "createdAt": "2026-11-14T19:58:09.172Z",
-    "updatedAt": "2026-11-15T13:26:26.149Z",
+    "updatedAt": "2026-11-15T13:35:56Z",
     "events": [
       {
         "id": "evt-create-1794686289172",
@@ -125,9 +135,10 @@
         "signature": "3979f53808aa2245f36394af149217e72d28ba78a8ef9040c7e9c47e841c73e0"
       }
     ],
-    "progressPercentage": 25,
+    "progressPercentage": 50,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação..."
+    "progressStep": "⚙️ *[FASE 2/4 - 50%]*: Restaurada a rolagem vertical completa (overflow-y-auto com min-h-0) no painel de emissão e edição de laudos médicos (MedicalLaudosApp.jsx), corrigindo o travamento que impedia rolar até o fim da página. Implementado também o comportamento colapsável (accordion) com estado fechado por padrão (isPatientDataSectionOpen = false e isBodyEditorSectionOpen = false) tanto para as linhas de preenchimento manual dos dados do paciente (CPF, nome completo, data de nascimento, idade, médico solicitante, data do exame e telefone) quanto para o editor integral do corpo do laudo técnico (toolbar de formatação e textarea/sub-seções), permitindo abrir e fechar cada seção com um clique no cabeçalho ou botão correspondente. | Compilação validada com sucesso | Commit GitHub: `e4c763b` | Arquivos alterados: `src/components/MedicalLaudosApp.jsx`.",
+    "solutionCommitSha": "e4c763b"
   },
   {
     "id": "tck-1791240000000",
