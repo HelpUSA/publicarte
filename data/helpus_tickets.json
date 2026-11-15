@@ -65,10 +65,20 @@
         "isInternalNote": false,
         "content": "🕒 *[APROVAÇÃO REGISTRADA]*: Chamado autorizado e aguardando despacho controlado para execução local (Dr. Eduardo Magalhães Neurologista (Neuro)). Nenhum build ou deploy é iniciado automaticamente pela aprovação.",
         "createdAt": "2026-11-15T14:27:53.291Z"
+      },
+      {
+        "id": "msg-prog-1794752901505",
+        "ticketId": "tck-1794751831025",
+        "senderId": "ci.cd@helpusbr.com",
+        "senderName": "Antigravity Execution Pipeline",
+        "senderRole": "agent",
+        "isInternalNote": false,
+        "content": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação...",
+        "createdAt": "2026-11-15T14:28:21Z"
       }
     ],
     "createdAt": "2026-11-15T14:10:31.025Z",
-    "updatedAt": "2026-11-15T14:27:53.286Z",
+    "updatedAt": "2026-11-15T14:28:21Z",
     "events": [
       {
         "id": "evt-create-1794751831025",
@@ -101,9 +111,9 @@
         "signature": "9dc319e676ed7a896695b80785eeb0c5eb18e32c1cab353b91d2c574951b824f"
       }
     ],
-    "progressPercentage": 0,
+    "progressPercentage": 25,
     "assignedTo": "HelpUS Master SuperAdmin",
-    "progressStep": "Aprovação registrada. Aguardando confirmação de início pelo operador local."
+    "progressStep": "🔍 *[FASE 1/4 - 25%]*: Aprovado pelo Master SuperAdmin. Repositório identificado (Dr. Eduardo Magalhães Neurologista (Neuro) — https://neuro.eduardomagalhaes.helpusbr.com). Analisando código-fonte e requisitos da solicitação..."
   },
   {
     "id": "tck-1794686289172",
